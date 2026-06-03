@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -121,16 +121,9 @@ window.addEventListener('DOMContentLoaded', function () {
   var data = {};
   try { data = JSON.parse(localStorage.getItem('csh_prop') || '{}'); } catch (e) {}
 
-  // Back link
-  document.getElementById('back-btn').addEventListener('click', function () {
-    var slug = BACK_SLUGS[data.portfolio] || 'investors';
-    window.top.location.href = BASE + '/' + slug;
-  });
-
-  // Logo
-  document.getElementById('logo').addEventListener('click', function () {
-    window.top.location.href = BASE;
-  });
+  // Back link — set href dynamically on the anchor
+  var backSlug = BACK_SLUGS[data.portfolio] || 'investors';
+  document.getElementById('back-btn').href = BASE + '/' + backSlug;
 
   if (!data.address) {
     document.getElementById('main-content').style.display = 'none';
@@ -157,18 +150,17 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Contact — back link in button
-  document.getElementById('contact-back-btn').addEventListener('click', function () {
-    window.top.location.href = BASE + '/investors';
-  });
+  // Contact back btn href is static, set in HTML
 });
 </script>
 
 <header class="site-header">
-  <img id="logo"
-       src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png"
-       alt="CSH Rentals" />
-  <span id="back-btn" class="site-header__back">← Back</span>
+  <a href="https://tagplanning.wixstudio.com/csh-rentals" target="_top">
+    <img id="logo"
+         src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png"
+         alt="CSH Rentals" />
+  </a>
+  <a id="back-btn" class="site-header__back" href="https://tagplanning.wixstudio.com/csh-rentals/investors" target="_top">← Back</a>
 </header>
 
 <!-- MAIN CONTENT (shown when property is found) -->
@@ -194,8 +186,8 @@ window.addEventListener('DOMContentLoaded', function () {
         We typically respond within one business day.
       </p>
       <div class="contact__actions">
-        <a class="btn-primary" href="mailto:info@cshrentals.com">Email Us</a>
-        <button id="contact-back-btn" class="btn-secondary">View All Portfolios</button>
+        <a class="btn-primary" href="mailto:customstarkhomes@gmail.com">Email Us</a>
+        <a id="contact-back-btn" class="btn-secondary" href="https://tagplanning.wixstudio.com/csh-rentals/investors" target="_top">View All Portfolios</a>
       </div>
     </div>
   </div>
@@ -207,10 +199,9 @@ window.addEventListener('DOMContentLoaded', function () {
   <div class="not-found">
     <h2>No Property Selected</h2>
     <p>Please select a property from one of the portfolio pages.</p>
-    <button class="btn-primary"
-            onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/investors'">
+    <a class="btn-primary" href="https://tagplanning.wixstudio.com/csh-rentals/investors" target="_top">
       View Portfolios
-    </button>
+    </a>
   </div>
 </div>
 

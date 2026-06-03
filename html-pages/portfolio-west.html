@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -39,15 +39,19 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
 <script>
 function viewProperty(address) {
   try { localStorage.setItem('csh_prop', JSON.stringify({ address: address, portfolio: 'West — 44708' })); } catch(e) {}
-  window.top.location.href = 'https://tagplanning.wixstudio.com/csh-rentals/property-detail';
+  var a = document.createElement('a');
+  a.href = 'https://tagplanning.wixstudio.com/csh-rentals/property-detail';
+  a.target = '_top';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 </script>
 
 <header class="site-header">
-  <img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals"
-       onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals'" />
-  <a class="site-header__back" href="#"
-     onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/investors'; return false;">← Investors</a>
+  <a href="https://tagplanning.wixstudio.com/csh-rentals" target="_top"><img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals"
+       /></a>
+  <a class="site-header__back" href="https://tagplanning.wixstudio.com/csh-rentals/investors" target="_top">← Investors</a>
 </header>
 
 <section class="hero">
