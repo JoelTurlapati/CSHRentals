@@ -1,0 +1,151 @@
+class CshInvestors extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+csh-investors { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: #f5f7fa; }
+
+.site-header { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 14px 32px; display: flex; align-items: center; gap: 16px; }
+.site-header img { height: 48px; width: auto; cursor: pointer; }
+.site-header__back { margin-left: auto; font-size: 13px; font-weight: 600; color: #1A3557; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
+.site-header__back:hover { opacity: 1; }
+
+.hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 64px 32px 56px; text-align: center; }
+.hero__eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C8962A; margin-bottom: 16px; }
+.hero__title { font-size: clamp(28px, 5vw, 52px); font-weight: 800; line-height: 1.1; margin-bottom: 40px; letter-spacing: -0.01em; }
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.12); border-radius: 10px; overflow: hidden; }
+@media (min-width: 600px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
+.stat { background: rgba(255,255,255,0.07); padding: 24px 20px; text-align: center; }
+.stat__value { font-size: clamp(20px, 3.5vw, 30px); font-weight: 800; color: #C8962A; line-height: 1; margin-bottom: 6px; }
+.stat__label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+
+.mktg-msg { background: #fff; border-left: 4px solid #C8962A; margin: 40px auto; max-width: 900px; padding: 24px 28px; border-radius: 0 8px 8px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.mktg-msg p { font-size: 15px; line-height: 1.7; color: #2a2a2a; font-style: italic; }
+
+.section-heading { text-align: center; margin: 0 auto 32px; max-width: 900px; padding: 0 24px; }
+.section-heading h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 800; color: #0D1F35; margin-bottom: 8px; }
+.section-heading p { font-size: 14px; color: #666; }
+
+.portfolios { max-width: 960px; margin: 0 auto; padding: 0 24px 16px; display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 700px) { .portfolios { grid-template-columns: repeat(2, 1fr); } }
+.portfolio-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+.portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.13); }
+.portfolio-card__img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.portfolio-card__body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.portfolio-card__zip { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #C8962A; margin-bottom: 4px; }
+.portfolio-card__name { font-size: 18px; font-weight: 800; color: #0D1F35; margin-bottom: 4px; }
+.portfolio-card__count { font-size: 13px; color: #666; margin-bottom: 16px; }
+.portfolio-card__homes { list-style: none; margin-bottom: 20px; flex: 1; }
+.portfolio-card__homes li { font-size: 13px; color: #444; padding: 4px 0; border-bottom: 1px solid #f0f0f0; line-height: 1.4; }
+.portfolio-card__homes li:last-child { border-bottom: none; }
+.portfolio-card__cta { display: block; width: 100%; padding: 12px; background: #1A3557; color: #fff; text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+.portfolio-card__cta:hover { background: #0D1F35; }
+
+.standalone { max-width: 960px; margin: 40px auto 0; padding: 0 24px 60px; }
+.standalone__card { background: #fff; border-radius: 10px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+.standalone__title { font-size: 16px; font-weight: 800; color: #0D1F35; margin-bottom: 4px; }
+.standalone__note { font-size: 13px; color: #888; margin-bottom: 18px; font-style: italic; }
+.standalone__list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.standalone__list li { font-size: 13px; color: #444; padding: 10px 14px; background: #f5f7fa; border-radius: 6px; border-left: 3px solid #C8962A; }
+</style>
+
+<header class="site-header">
+  <a href="/"><img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals" /></a>
+  <a class="site-header__back" href="/">&larr; Home</a>
+</header>
+
+<section class="hero">
+  <p class="hero__eyebrow">Investment Opportunity &mdash; Canton, Ohio</p>
+  <h1 class="hero__title">Acquire the Entire Portfolio</h1>
+  <div class="stats-grid">
+    <div class="stat"><div class="stat__value">45</div><div class="stat__label">Total Properties</div></div>
+    <div class="stat"><div class="stat__value">$6,599,000</div><div class="stat__label">Sale Price</div></div>
+    <div class="stat"><div class="stat__value">100%</div><div class="stat__label">Occupancy</div></div>
+    <div class="stat"><div class="stat__value">$64,416</div><div class="stat__label">Combined Monthly</div></div>
+    <div class="stat"><div class="stat__value">$772,992</div><div class="stat__label">Annual Income</div></div>
+    <div class="stat"><div class="stat__value">$605,000</div><div class="stat__label">2024 NOI</div></div>
+  </div>
+</section>
+
+<div class="mktg-msg" style="margin-left:auto;margin-right:auto;max-width:860px;margin-top:40px;margin-bottom:8px;">
+  <p>We are currently marketing the entire portfolio as one investment opportunity. If a buyer for the entire portfolio is not secured, individual portfolio opportunities may be considered.</p>
+</div>
+
+<div class="section-heading" style="margin-top:40px;">
+  <h2>Portfolio Groups</h2>
+  <p>25 properties across 4 geographic portfolios in Canton, Ohio</p>
+</div>
+
+<div class="portfolios">
+  <div class="portfolio-card">
+    <img class="portfolio-card__img" src="https://static.wixstatic.com/media/64b604_58624372dd254cd1862819ae1f18967c~mv2.jpeg" alt="West Portfolio" />
+    <div class="portfolio-card__body">
+      <div class="portfolio-card__zip">44708</div>
+      <div class="portfolio-card__name">West Portfolio</div>
+      <div class="portfolio-card__count">5 single-family homes</div>
+      <ul class="portfolio-card__homes">
+        <li>818 25th St NW</li><li>426 Vince Ave NW</li><li>2923 Helen Pl NW</li>
+        <li>307 Bellflower Ave NW</li><li>2945 15th St NW</li>
+      </ul>
+      <a class="portfolio-card__cta" href="/portfolio-west">View Portfolio</a>
+    </div>
+  </div>
+
+  <div class="portfolio-card">
+    <img class="portfolio-card__img" src="https://static.wixstatic.com/media/64b604_9225bf5be3764aff89bdf709ab0c474e~mv2.jpeg" alt="Northwest Central Portfolio" />
+    <div class="portfolio-card__body">
+      <div class="portfolio-card__zip">44709</div>
+      <div class="portfolio-card__name">Northwest Central Portfolio</div>
+      <div class="portfolio-card__count">12 single-family homes</div>
+      <ul class="portfolio-card__homes">
+        <li>519 21st St NW</li><li>1338 25th St NW</li><li>1430 19th St NW</li>
+        <li>1919 Frazer Ave NW</li><li>1540 Norwood Pl NW</li><li>1511 23rd St NW</li>
+        <li>1569 25th St NW</li><li>1600 27th St NW</li><li>1701 27th St NW</li>
+        <li>800 22nd St NW</li><li>1611 25th St NW</li><li>725 22nd St NW</li>
+      </ul>
+      <a class="portfolio-card__cta" href="/portfolio-northwest">View Portfolio</a>
+    </div>
+  </div>
+
+  <div class="portfolio-card">
+    <img class="portfolio-card__img" src="https://static.wixstatic.com/media/64b604_2fadc168b10c4853b32cb35c72fc023b~mv2.jpeg" alt="Northeast Portfolio" />
+    <div class="portfolio-card__body">
+      <div class="portfolio-card__zip">44714</div>
+      <div class="portfolio-card__name">Northeast Portfolio</div>
+      <div class="portfolio-card__count">6 single-family homes</div>
+      <ul class="portfolio-card__homes">
+        <li>1207 Colonial Blvd NE</li><li>1206 24th St NE</li><li>1012 28th St NE</li>
+        <li>804 29th St NE</li><li>1326 24th St NE</li><li>1203 25th St NE</li>
+      </ul>
+      <a class="portfolio-card__cta" href="/portfolio-northeast">View Portfolio</a>
+    </div>
+  </div>
+
+  <div class="portfolio-card">
+    <img class="portfolio-card__img" src="https://static.wixstatic.com/media/64b604_5849d546b0c34c91ac87049e3cd2c186~mv2.jpeg" alt="Central Portfolio" />
+    <div class="portfolio-card__body">
+      <div class="portfolio-card__zip">44703</div>
+      <div class="portfolio-card__name">Central Portfolio</div>
+      <div class="portfolio-card__count">2 single-family homes</div>
+      <ul class="portfolio-card__homes">
+        <li>1708 18th St NW</li><li>1734 Woodland Ave NW</li>
+      </ul>
+      <a class="portfolio-card__cta" href="/portfolio-central">View Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<div class="standalone">
+  <div class="standalone__card">
+    <div class="standalone__title">Additional Properties</div>
+    <div class="standalone__note">5 properties &mdash; individual opportunities available upon request</div>
+    <ul class="standalone__list">
+      <li>300 Montrose Ave NW</li><li>2631 Demington Ave NW</li>
+      <li>1103 22nd St NE</li><li>225 Grandview Ave NW</li><li>903 23rd St NW</li>
+    </ul>
+  </div>
+</div>
+`;
+  }
+}
+customElements.define('csh-investors', CshInvestors);
