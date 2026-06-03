@@ -3,107 +3,361 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CSH Rentals</title>
+<title>CSH Rentals | Canton, Ohio</title>
 </head>
 <body>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body {
-  margin: 0; padding: 0; width: 100%;
-  min-height: 100vh;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f8f8f8;
-}
+html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #1a1a1a; }
 
-.page {
+/* ── NAV ── */
+.nav {
+  background: #fff;
+  border-bottom: 1px solid #e0e4ea;
+  padding: 0 32px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 40px 20px;
-  text-align: center;
+  height: 68px;
+  gap: 24px;
 }
-
-.logo {
-  margin-bottom: 48px;
-}
-.logo img {
-  max-width: 280px;
-  width: 100%;
-  height: auto;
-}
-
-.buttons {
+.nav__logo img { height: 46px; width: auto; display: block; }
+.nav__links {
+  margin-left: auto;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  max-width: 340px;
-}
-
-@media (min-width: 600px) {
-  .buttons {
-    flex-direction: row;
-    max-width: 680px;
-    gap: 28px;
-  }
-}
-
-.btn-card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 36px 28px;
+  gap: 4px;
+}
+.nav__link {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1A3557;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.nav__link:hover { background: #f0f4f8; }
+.nav__link--cta {
   background: #1A3557;
   color: #fff;
-  border: none;
-  border-radius: 8px;
+  margin-left: 8px;
+}
+.nav__link--cta:hover { background: #0D1F35; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  background-image: url('https://static.wixstatic.com/media/64b604_952be5d06ea04a69bc9932917a74d19c~mv2.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.45);
+}
+.hero__body {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 80px 24px;
+  max-width: 760px;
+}
+.hero__eyebrow {
+  display: inline-block;
+  background: #C8962A;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.hero__title {
+  font-size: clamp(30px, 6vw, 58px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.hero__sub {
+  font-size: clamp(15px, 2vw, 18px);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+.hero__btns {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+@media (min-width: 520px) {
+  .hero__btns { flex-direction: row; justify-content: center; }
+}
+.btn-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 40px;
+  border-radius: 7px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(26,53,87,0.18);
+  border: none;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+  min-width: 180px;
 }
-.btn-card:hover {
-  background: #142b47;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(26,53,87,0.28);
+.btn-hero:hover { transform: translateY(-2px); }
+.btn-hero--tenant {
+  background: #fff;
+  color: #1A3557;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
 }
+.btn-hero--tenant:hover { background: #f0f4f8; box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
+.btn-hero--investor {
+  background: #C8962A;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(200,150,42,0.4);
+}
+.btn-hero--investor:hover { background: #b5841f; box-shadow: 0 8px 28px rgba(200,150,42,0.5); }
+.btn-hero__label { font-size: 17px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.btn-hero__sub { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
 
-.btn-card__label {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+/* ── STATS STRIP ── */
+.stats {
+  background: #1A3557;
+  padding: 28px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
 }
-.btn-card__sub {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+.stat {
+  flex: 1 1 160px;
+  text-align: center;
+  padding: 14px 20px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.stat:last-child { border-right: none; }
+.stat__value { font-size: 26px; font-weight: 800; color: #C8962A; line-height: 1; margin-bottom: 5px; }
+.stat__label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+
+/* ── OFFERINGS ── */
+.offerings {
+  max-width: 960px;
+  margin: 56px auto;
+  padding: 0 24px;
+}
+.offerings__heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.offerings__heading h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 800; color: #0D1F35; margin-bottom: 8px; }
+.offerings__heading p { font-size: 15px; color: #666; }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.13); }
+.card__img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.card__tag {
+  display: inline-block;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 20px; margin-bottom: 12px;
+  background: #eef2f7; color: #1A3557;
+}
+.card__tag--str { background: #fef6e4; color: #b07818; }
+.card__title { font-size: 20px; font-weight: 800; color: #0D1F35; margin-bottom: 8px; }
+.card__text { font-size: 14px; color: #555; line-height: 1.65; margin-bottom: 20px; flex: 1; }
+.card__cta {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #1A3557;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.75;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.card__cta:hover { background: #0D1F35; }
+.card__cta--gold { background: #C8962A; }
+.card__cta--gold:hover { background: #b5841f; }
+
+/* ── CONTACT STRIP ── */
+.contact-strip {
+  background: #f0f4f8;
+  border-top: 1px solid #dde3ea;
+  padding: 40px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contact-item { display: flex; flex-direction: column; gap: 4px; }
+.contact-item__label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #888; }
+.contact-item__value { font-size: 15px; font-weight: 600; color: #1A3557; text-decoration: none; }
+.contact-item__value:hover { text-decoration: underline; }
+
+/* ── FOOTER ── */
+.footer {
+  background: #0D1F35;
+  padding: 20px 32px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
 }
 </style>
 
-<div class="page">
-  <div class="logo">
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__logo">
     <img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals" />
   </div>
+  <div class="nav__links">
+    <a class="nav__link" href="#" onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/tenants'; return false;">Tenants</a>
+    <a class="nav__link" href="#" onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/investors'; return false;">Investors</a>
+    <a class="nav__link nav__link--cta" href="mailto:customstarkhomes@gmail.com">Contact</a>
+  </div>
+</nav>
 
-  <div class="buttons">
-    <a class="btn-card" href="#" onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/tenants'; return false;">
-      <span class="btn-card__label">Tenants</span>
-      <span class="btn-card__sub">Click Here</span>
-    </a>
-    <a class="btn-card" href="#" onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/investors'; return false;">
-      <span class="btn-card__label">Investors</span>
-      <span class="btn-card__sub">Click Here</span>
-    </a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__body">
+    <span class="hero__eyebrow">Canton, Ohio · Est. CSH Rentals</span>
+    <h1 class="hero__title">Quality Rentals.<br/>Proven Portfolio.</h1>
+    <p class="hero__sub">45 long-term rental homes across Canton, OH — plus a lakeside short-term rental in Geneva-on-the-Lake. Serving tenants and investors across Northeast Ohio.</p>
+    <div class="hero__btns">
+      <a class="btn-hero btn-hero--tenant" href="#"
+         onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/tenants'; return false;">
+        <span class="btn-hero__label">Tenants</span>
+        <span class="btn-hero__sub">Apply Here</span>
+      </a>
+      <a class="btn-hero btn-hero--investor" href="#"
+         onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/investors'; return false;">
+        <span class="btn-hero__label">Investors</span>
+        <span class="btn-hero__sub">View Portfolio</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat__value">45</div>
+    <div class="stat__label">Rental Properties</div>
+  </div>
+  <div class="stat">
+    <div class="stat__value">100%</div>
+    <div class="stat__label">Occupancy</div>
+  </div>
+  <div class="stat">
+    <div class="stat__value">$605K</div>
+    <div class="stat__label">2024 NOI</div>
+  </div>
+  <div class="stat">
+    <div class="stat__value">2</div>
+    <div class="stat__label">Ohio Markets</div>
   </div>
 </div>
+
+<!-- OFFERINGS -->
+<div class="offerings">
+  <div class="offerings__heading">
+    <h2>Our Properties</h2>
+    <p>Long-term rentals in Canton and a vacation home on Lake Erie</p>
+  </div>
+  <div class="cards">
+
+    <!-- LTR PORTFOLIO -->
+    <div class="card">
+      <img class="card__img"
+           src="https://static.wixstatic.com/media/64b604_58624372dd254cd1862819ae1f18967c~mv2.jpeg"
+           alt="Canton rental portfolio" />
+      <div class="card__body">
+        <span class="card__tag">Long-Term Rental · Canton, OH</span>
+        <h3 class="card__title">45 Property Canton Portfolio</h3>
+        <p class="card__text">Single-family rental homes across four Canton neighborhoods — West (44708), Northwest Central (44709), Northeast (44714), and Central (44703). 100% occupied with proven cash flow.</p>
+        <a class="card__cta card__cta--gold" href="#"
+           onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/investors'; return false;">
+          View Portfolio
+        </a>
+      </div>
+    </div>
+
+    <!-- GENEVA STR -->
+    <div class="card">
+      <img class="card__img"
+           src="https://static.wixstatic.com/media/64b604_523186930e5946028762053d55f0b1ce~mv2.jpeg"
+           alt="Geneva on the Lake vacation rental" />
+      <div class="card__body">
+        <span class="card__tag card__tag--str">Short-Term Rental · Geneva-on-the-Lake, OH</span>
+        <h3 class="card__title">Geneva on the Lake STR</h3>
+        <p class="card__text">A vacation rental on the shores of Lake Erie in Geneva-on-the-Lake, Ohio — one of the region's most popular summer destinations. Available for short-term stays.</p>
+        <a class="card__cta" href="#"
+           onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/geneva-str'; return false;">
+          View Property
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-item">
+    <span class="contact-item__label">Email</span>
+    <a class="contact-item__value" href="mailto:customstarkhomes@gmail.com">customstarkhomes@gmail.com</a>
+  </div>
+  <div class="contact-item">
+    <span class="contact-item__label">Address</span>
+    <span class="contact-item__value">1428 Market Ave. N., Canton, OH 44714</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2025 CSH Rents &nbsp;·&nbsp; 1428 Market Ave N, Canton, OH 44714 &nbsp;·&nbsp; customstarkhomes@gmail.com
+</footer>
 
 </body>
 </html>
