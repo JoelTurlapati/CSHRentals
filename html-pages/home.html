@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CSH Rentals</title>
+</head>
+<body>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  margin: 0; padding: 0; width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8f8f8;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 48px;
+}
+.logo img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 340px;
+}
+
+@media (min-width: 600px) {
+  .buttons {
+    flex-direction: row;
+    max-width: 680px;
+    gap: 28px;
+  }
+}
+
+.btn-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 36px 28px;
+  background: #1A3557;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(26,53,87,0.18);
+}
+.btn-card:hover {
+  background: #142b47;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(26,53,87,0.28);
+}
+
+.btn-card__label {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.btn-card__sub {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+</style>
+
+<div class="page">
+  <div class="logo">
+    <img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals" />
+  </div>
+
+  <div class="buttons">
+    <a class="btn-card" href="#" onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/tenants'; return false;">
+      <span class="btn-card__label">Tenants</span>
+      <span class="btn-card__sub">Click Here</span>
+    </a>
+    <a class="btn-card" href="#" onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/investors'; return false;">
+      <span class="btn-card__label">Investors</span>
+      <span class="btn-card__sub">Click Here</span>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
