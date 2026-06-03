@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CSH Rentals | Northwest Central Portfolio</title>
+</head>
+<body>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #1a1a1a; }
+
+.site-header { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 14px 32px; display: flex; align-items: center; gap: 16px; }
+.site-header img { height: 48px; width: auto; cursor: pointer; }
+.site-header__back { margin-left: auto; font-size: 13px; font-weight: 600; color: #1A3557; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
+.site-header__back:hover { opacity: 1; }
+
+.hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 48px 32px 44px; text-align: center; }
+.hero__zip { display: inline-block; background: #C8962A; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
+.hero__title { font-size: clamp(24px, 4vw, 40px); font-weight: 800; margin-bottom: 8px; }
+.hero__sub { font-size: 15px; color: rgba(255,255,255,0.7); }
+
+.gallery { max-width: 960px; margin: 36px auto 0; padding: 0 24px; }
+.gallery h2 { font-size: 16px; font-weight: 800; color: #0D1F35; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+.gallery__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.gallery__grid img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; display: block; cursor: pointer; transition: opacity 0.2s; }
+.gallery__grid img:hover { opacity: 0.88; }
+
+.properties { max-width: 960px; margin: 40px auto 60px; padding: 0 24px; }
+.properties h2 { font-size: 16px; font-weight: 800; color: #0D1F35; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+.prop-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.prop-card { background: #fff; border-radius: 8px; padding: 18px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); border-left: 4px solid #C8962A; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.prop-card__address { font-size: 14px; font-weight: 700; color: #0D1F35; line-height: 1.3; }
+.prop-card__city { font-size: 12px; color: #888; margin-top: 2px; }
+.prop-card__btn { flex-shrink: 0; padding: 8px 14px; background: #1A3557; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 5px; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+.prop-card__btn:hover { background: #0D1F35; }
+</style>
+
+<script>
+function viewProperty(address) {
+  try { localStorage.setItem('csh_prop', JSON.stringify({ address: address, portfolio: 'Northwest Central — 44709' })); } catch(e) {}
+  window.top.location.href = 'https://tagplanning.wixstudio.com/csh-rentals/property-detail';
+}
+</script>
+
+<header class="site-header">
+  <img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals"
+       onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals'" />
+  <a class="site-header__back" href="#"
+     onclick="window.top.location.href='https://tagplanning.wixstudio.com/csh-rentals/investors'; return false;">← Investors</a>
+</header>
+
+<section class="hero">
+  <div class="hero__zip">44709 — Northwest Central Canton</div>
+  <h1 class="hero__title">Northwest Central Portfolio</h1>
+  <p class="hero__sub">12 single-family rental homes</p>
+</section>
+
+<div class="gallery">
+  <h2>Property Photos</h2>
+  <div class="gallery__grid">
+    <img src="https://static.wixstatic.com/media/64b604_d8710688375f47928e359dc9b936e689~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_eba12b8701834579ba2a30b2bd122351~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_3b2ba7ecaa034316951e9df1a6c5ff74~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_9225bf5be3764aff89bdf709ab0c474e~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_33ba492a11134da4bf528511adbc6375~mv2.png" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_28a42e5cd1994e2a9d2c3c73d0cdbbf4~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_c830989a0cc24dbebee253e0e40a7132~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_90ef583aa5e84c388a54b1091014dae0~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_e54c155ba0154360b5f6da668c16b252~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_f5a8ead372e44655b39aaacd298b3ef3~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_8f2c3ebd9b634367984a41fc52d1e85b~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_3fd8475e03c14f498b65cf38a78c1830~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_911989f2e7ec40449e3af16ec76df729~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_d85ebb0a791444d2bf066d66b56cc28d~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_143fe9a153144f17965e3966f2919892~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_a8cfba711da0401491558d7b672900a3~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_2fadc168b10c4853b32cb35c72fc023b~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_ab764bbc2bd341e593c144de14e3839a~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_6d787ec44dd14bb5820d300ba95679dd~mv2.jpeg" alt="Property photo" />
+    <img src="https://static.wixstatic.com/media/64b604_4205f0e960d94555857430409d7a840d~mv2.jpeg" alt="Property photo" />
+  </div>
+</div>
+
+<div class="properties">
+  <h2>Properties</h2>
+  <div class="prop-list">
+    <div class="prop-card">
+      <div><div class="prop-card__address">519 21st St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('519 21st St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1338 25th St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1338 25th St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1430 19th St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1430 19th St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1919 Frazer Ave NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1919 Frazer Ave NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1540 Norwood Pl NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1540 Norwood Pl NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1511 23rd St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1511 23rd St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1569 25th St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1569 25th St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1600 27th St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1600 27th St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1701 27th St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1701 27th St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">800 22nd St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('800 22nd St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">1611 25th St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('1611 25th St NW')">Details</button>
+    </div>
+    <div class="prop-card">
+      <div><div class="prop-card__address">725 22nd St NW</div><div class="prop-card__city">Canton, OH 44709</div></div>
+      <button class="prop-card__btn" onclick="viewProperty('725 22nd St NW')">Details</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
