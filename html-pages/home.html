@@ -251,8 +251,8 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
     <img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals" />
   </div>
   <div class="nav__links">
-    <a class="nav__link" href="https://tagplanning.wixstudio.com/csh-rentals/tenants" target="_top">Tenants</a>
-    <a class="nav__link" href="https://tagplanning.wixstudio.com/csh-rentals/investors" target="_top">Investors</a>
+    <a class="nav__link" href="https://tagplanning.wixstudio.com/csh-rentals/tenants">Tenants</a>
+    <a class="nav__link" href="https://tagplanning.wixstudio.com/csh-rentals/investors">Investors</a>
     <a class="nav__link nav__link--cta" href="mailto:customstarkhomes@gmail.com">Contact</a>
   </div>
 </nav>
@@ -265,11 +265,11 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
     <h1 class="hero__title">Quality Rentals.<br/>Proven Portfolio.</h1>
     <p class="hero__sub">45 long-term rental homes across Canton, OH — plus a lakeside short-term rental in Geneva-on-the-Lake. Serving tenants and investors across Northeast Ohio.</p>
     <div class="hero__btns">
-      <a class="btn-hero btn-hero--tenant" href="https://tagplanning.wixstudio.com/csh-rentals/tenants" target="_top">
+      <a class="btn-hero btn-hero--tenant" href="https://tagplanning.wixstudio.com/csh-rentals/tenants">
         <span class="btn-hero__label">Tenants</span>
         <span class="btn-hero__sub">Apply Here</span>
       </a>
-      <a class="btn-hero btn-hero--investor" href="https://tagplanning.wixstudio.com/csh-rentals/investors" target="_top">
+      <a class="btn-hero btn-hero--investor" href="https://tagplanning.wixstudio.com/csh-rentals/investors">
         <span class="btn-hero__label">Investors</span>
         <span class="btn-hero__sub">View Portfolio</span>
       </a>
@@ -314,7 +314,7 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
         <span class="card__tag">Long-Term Rental · Canton, OH</span>
         <h3 class="card__title">45 Property Canton Portfolio</h3>
         <p class="card__text">Single-family rental homes across four Canton neighborhoods — West (44708), Northwest Central (44709), Northeast (44714), and Central (44703). 100% occupied with proven cash flow.</p>
-        <a class="card__cta card__cta--gold" href="https://tagplanning.wixstudio.com/csh-rentals/investors" target="_top">
+        <a class="card__cta card__cta--gold" href="https://tagplanning.wixstudio.com/csh-rentals/investors">
           View Portfolio
         </a>
       </div>
@@ -329,7 +329,7 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
         <span class="card__tag card__tag--str">Short-Term Rental · Geneva-on-the-Lake, OH</span>
         <h3 class="card__title">Geneva on the Lake STR</h3>
         <p class="card__text">A vacation rental on the shores of Lake Erie in Geneva-on-the-Lake, Ohio — one of the region's most popular summer destinations. Available for short-term stays.</p>
-        <a class="card__cta" href="https://tagplanning.wixstudio.com/csh-rentals/geneva-str" target="_top">
+        <a class="card__cta" href="https://tagplanning.wixstudio.com/csh-rentals/geneva-str">
           View Property
         </a>
       </div>
@@ -355,5 +355,17 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
   © 2025 CSH Rents &nbsp;·&nbsp; 1428 Market Ave N, Canton, OH 44714 &nbsp;·&nbsp; customstarkhomes@gmail.com
 </footer>
 
+
+<script>
+// CSH navigation: intercept all link clicks and postMessage to parent Wix page
+document.addEventListener('click', function(e) {
+  var a = e.target.closest('a[href]');
+  if (!a) return;
+  var href = a.getAttribute('href');
+  if (!href || href === '#' || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+  e.preventDefault();
+  window.parent.postMessage({ type: 'csh-navigate', url: href }, '*');
+});
+</script>
 </body>
 </html>
