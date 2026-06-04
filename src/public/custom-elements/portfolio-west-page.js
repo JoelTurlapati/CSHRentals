@@ -5,7 +5,7 @@ class CshPortfolioWest extends HTMLElement {
     var PROPERTIES = [
       {
         address: '818 25th St NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/d9828b_2d552cf9168f4741b747927451fcf538~mv2.jpg',
+        cover: 'https://static.wixstatic.com/media/d9828b_dd8ce18a72e94c4fa877aa68589c2ca2~mv2.jpg',
         photos: [
           'https://static.wixstatic.com/media/d9828b_2d552cf9168f4741b747927451fcf538~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_ccf98a0e23944898846af9a30f0b9384~mv2.jpg',
@@ -36,8 +36,9 @@ class CshPortfolioWest extends HTMLElement {
       },
       {
         address: '426 Vince Ave NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/d9828b_91181a946ee7448fb5525cc2baee3f8b~mv2.jpg',
+        cover: 'https://static.wixstatic.com/media/d9828b_3ac1ab9c458848ff8a621af4c3385070~mv2.jpg',
         photos: [
+          'https://static.wixstatic.com/media/d9828b_3ac1ab9c458848ff8a621af4c3385070~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_91181a946ee7448fb5525cc2baee3f8b~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_9ab220a06f1346d6b909584eeca402d4~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_720a6e9a74154ccaa5bbaede9136e421~mv2.jpg',
@@ -56,7 +57,7 @@ class CshPortfolioWest extends HTMLElement {
       },
       {
         address: '2923 Helen Pl NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/d9828b_ff8a7a91e8d54815bdb4ecff04240cbe~mv2.jpg',
+        cover: 'https://static.wixstatic.com/media/d9828b_17c9b99a75f14787903669f403c5d08c~mv2.jpg',
         photos: [
           'https://static.wixstatic.com/media/d9828b_ff8a7a91e8d54815bdb4ecff04240cbe~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_43748fc2834b46a4bc025cad544a1cc6~mv2.jpg',
@@ -77,8 +78,9 @@ class CshPortfolioWest extends HTMLElement {
       },
       {
         address: '307 Bellflower Ave NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/d9828b_0d92a9b6f6f0423c94bd3e7c1e791913~mv2.jpg',
+        cover: 'https://static.wixstatic.com/media/d9828b_54c7dbff12b54ba295aa04eb7bcf09ac~mv2.jpg',
         photos: [
+          'https://static.wixstatic.com/media/d9828b_54c7dbff12b54ba295aa04eb7bcf09ac~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_0d92a9b6f6f0423c94bd3e7c1e791913~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_dce0e3a56f1447ac8743c1d92e6dd080~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_507a57c23b234d4bab9526552c3c2e46~mv2.jpg',
@@ -103,7 +105,7 @@ class CshPortfolioWest extends HTMLElement {
       },
       {
         address: '2945 15th St NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/d9828b_8ad572acd9534fde971928bf4dfd845b~mv2.jpg',
+        cover: 'https://static.wixstatic.com/media/d9828b_94a06d8274bf4fc19d20e895e478b8d7~mv2.jpg',
         photos: [
           'https://static.wixstatic.com/media/d9828b_8ad572acd9534fde971928bf4dfd845b~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_4f2d0b1522354f43b4af160ada13b862~mv2.jpg',
