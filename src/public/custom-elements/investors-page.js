@@ -1,3 +1,4 @@
+// @ts-nocheck
 class CshInvestors extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `

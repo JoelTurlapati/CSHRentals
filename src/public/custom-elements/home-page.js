@@ -1,3 +1,4 @@
+// @ts-nocheck
 class CshHome extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `

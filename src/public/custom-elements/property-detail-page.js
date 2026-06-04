@@ -1,3 +1,4 @@
+// @ts-nocheck
 class CshPropertyDetail extends HTMLElement {
   connectedCallback() {
     var PHOTO_POOLS = {

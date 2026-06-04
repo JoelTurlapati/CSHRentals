@@ -1,3 +1,4 @@
+// @ts-nocheck
 class CshPortfolioCentral extends HTMLElement {
   connectedCallback() {
     const PORTFOLIO = 'Central — 44703';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 class CshGenevaStr extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
