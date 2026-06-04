@@ -19,7 +19,7 @@ csh-tenants { display: block; font-family: 'Segoe UI', Arial, sans-serif; color:
 .form-section { max-width: 860px; margin: 48px auto 64px; padding: 0 24px; }
 .form-section__heading { font-size: 16px; font-weight: 800; color: #0D1F35; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
 
-.form-placeholder { background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 40px; text-align: center; font-size: 15px; color: #888; }
+.cognito { background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 32px; min-height: 200px; }
 
 .footer { background: #0D1F35; padding: 20px 32px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
 </style>
@@ -37,7 +37,7 @@ csh-tenants { display: block; font-family: 'Segoe UI', Arial, sans-serif; color:
 
 <div class="form-section">
   <div class="form-section__heading">Rental Pre-Approval</div>
-  <div class="form-placeholder">The application form will appear here.</div>
+  <div class="cognito"></div>
 </div>
 
 <footer class="footer">
@@ -57,6 +57,16 @@ csh-tenants { display: block; font-family: 'Segoe UI', Arial, sans-serif; color:
       window.location.assign(window.location.origin + _b + href);
     });
 
+    if (window.Cognito) {
+      window.Cognito.load('forms', { id: '1' });
+    } else {
+      const s1 = document.createElement('script');
+      s1.src = 'https://services.cognitoforms.com/s/faZh5--E3U28FO23IbMiRQ';
+      s1.onload = function() {
+        window.Cognito && window.Cognito.load('forms', { id: '1' });
+      };
+      document.head.appendChild(s1);
+    }
   }
 }
 customElements.define('csh-tenants', CshTenants);
