@@ -94,8 +94,14 @@ csh-geneva-str { display: block; font-family: 'Segoe UI', Arial, sans-serif; col
 `;
     const _b = window.location.hostname.includes('wixstudio.com')
       ? '/' + window.location.pathname.split('/')[1] : '';
-    if (_b) this.querySelectorAll('a[href^="/"]').forEach(function(a) {
-      a.setAttribute('href', _b + a.getAttribute('href'));
+    this.addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('/')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.assign(window.location.origin + _b + href);
     });
   }
 }
