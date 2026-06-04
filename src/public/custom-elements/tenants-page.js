@@ -57,15 +57,19 @@ csh-tenants { display: block; font-family: 'Segoe UI', Arial, sans-serif; color:
       window.location.assign(window.location.origin + _b + href);
     });
 
-    const container = this.querySelector('.cognito');
-    const s1 = document.createElement('script');
-    s1.src = 'https://services.cognitoforms.com/s/faZh5--E3U28FO23IbMiRQ';
-    s1.onload = function() {
-      const s2 = document.createElement('script');
-      s2.textContent = 'Cognito.load("forms", { id: "1" });';
-      container.appendChild(s2);
-    };
-    container.appendChild(s1);
+    function loadCognito() {
+      if (window.Cognito) {
+        window.Cognito.load('forms', { id: '1' });
+        return;
+      }
+      const s1 = document.createElement('script');
+      s1.src = 'https://services.cognitoforms.com/s/faZh5--E3U28FO23IbMiRQ';
+      s1.onload = function() {
+        window.Cognito && window.Cognito.load('forms', { id: '1' });
+      };
+      document.head.appendChild(s1);
+    }
+    loadCognito();
   }
 }
 customElements.define('csh-tenants', CshTenants);
