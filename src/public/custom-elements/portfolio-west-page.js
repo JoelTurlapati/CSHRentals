@@ -1,10 +1,15 @@
 // @ts-nocheck
 class CshPortfolioWest extends HTMLElement {
   connectedCallback() {
-    var PORTFOLIO = 'West — 44708';
+    var PORTFOLIO = 'Portfolio A — West / 44708 & Outlier Cluster';
     var PROPERTIES = [
       {
-        address: '818 25th St NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
+        address: '806 23rd St NW', city: 'Canton, OH 44708', beds: 2, baths: 1,
+        cover: 'https://static.wixstatic.com/media/d9828b_01ee6699f540475790cef8f11779998d~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_01ee6699f540475790cef8f11779998d~mv2.jpg']
+      },
+      {
+        address: '818 25th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
         cover: 'https://static.wixstatic.com/media/d9828b_dd8ce18a72e94c4fa877aa68589c2ca2~mv2.jpg',
         photos: [
           'https://static.wixstatic.com/media/d9828b_2d552cf9168f4741b747927451fcf538~mv2.jpg',
@@ -35,7 +40,12 @@ class CshPortfolioWest extends HTMLElement {
         ]
       },
       {
-        address: '426 Vince Ave NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
+        address: '2007 Kirk Ct NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
+        cover: 'https://static.wixstatic.com/media/d9828b_19f40f3c1faa4237ba63d5fe42b70647~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_19f40f3c1faa4237ba63d5fe42b70647~mv2.jpg']
+      },
+      {
+        address: '426 Vince Ave NW', city: 'Canton, OH 44708', beds: 3, baths: 2,
         cover: 'https://static.wixstatic.com/media/d9828b_3ac1ab9c458848ff8a621af4c3385070~mv2.jpg',
         photos: [
           'https://static.wixstatic.com/media/d9828b_3ac1ab9c458848ff8a621af4c3385070~mv2.jpg',
@@ -77,7 +87,12 @@ class CshPortfolioWest extends HTMLElement {
         ]
       },
       {
-        address: '307 Bellflower Ave NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
+        address: '635 Greenfield Ave SW', city: 'Canton, OH 44706', beds: 2, baths: 2,
+        cover: 'https://static.wixstatic.com/media/d9828b_1a1d76a9b76443d5a64141ebcf6c48ca~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_1a1d76a9b76443d5a64141ebcf6c48ca~mv2.jpg']
+      },
+      {
+        address: '307 Bellflower Ave NW', city: 'Canton, OH 44708', beds: 3, baths: 1.5,
         cover: 'https://static.wixstatic.com/media/d9828b_54c7dbff12b54ba295aa04eb7bcf09ac~mv2.jpg',
         photos: [
           'https://static.wixstatic.com/media/d9828b_54c7dbff12b54ba295aa04eb7bcf09ac~mv2.jpg',
@@ -102,6 +117,11 @@ class CshPortfolioWest extends HTMLElement {
           'https://static.wixstatic.com/media/d9828b_8306e160b4c94e5ea0cb1b285419a7df~mv2.jpg',
           'https://static.wixstatic.com/media/d9828b_dd6a9810870c45248ce23edc5ac62b04~mv2.jpg'
         ]
+      },
+      {
+        address: '1502 37th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
+        cover: 'https://static.wixstatic.com/media/d9828b_23e65475ee2943f694e904a9b6f5e626~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_23e65475ee2943f694e904a9b6f5e626~mv2.jpg']
       },
       {
         address: '2945 15th St NW', city: 'Canton, OH 44708', beds: 3, baths: 1,
@@ -181,11 +201,11 @@ csh-portfolio-west { display: block; font-family: 'Segoe UI', Arial, sans-serif;
   <a class="site-header__back" href="/investors">&larr; All Portfolios</a>
 </header>
 <section class="hero">
-  <div class="hero__badge">44708 &mdash; West Canton</div>
-  <h1 class="hero__title">West Portfolio</h1>
-  <p class="hero__sub">5 single-family rental homes</p>
+  <div class="hero__badge">Portfolio A &mdash; West Canton</div>
+  <h1 class="hero__title">Portfolio A: West / 44708 &amp; Outlier Cluster</h1>
+  <p class="hero__sub">9 single-family rental homes &nbsp;&middot;&nbsp; ZIP 44708 / 44709 / 44706</p>
 </section>
-<div class="section-head"><h2>Properties</h2><span>5 homes &middot; Canton, OH 44708</span></div>
+<div class="section-head"><h2>Properties</h2><span>9 homes &middot; $11,700/mo &middot; $114,396 NOI</span></div>
 <div class="prop-grid">${cardsHtml}</div>
 `;
 
