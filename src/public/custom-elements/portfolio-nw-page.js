@@ -5,128 +5,88 @@ class CshPortfolioNw extends HTMLElement {
     var PROPERTIES = [
       {
         address: '519 21st St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_d8710688375f47928e359dc9b936e689~mv2.jpeg',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_d8710688375f47928e359dc9b936e689~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_911989f2e7ec40449e3af16ec76df729~mv2.jpeg'
-        ]
+        cover: 'https://static.wixstatic.com/media/d9828b_aeaa9243b88049f1b91625261782e32a~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_aeaa9243b88049f1b91625261782e32a~mv2.jpg','https://static.wixstatic.com/media/d9828b_48e820ffdd1d4ba2a50337b1c77cd284~mv2.jpg','https://static.wixstatic.com/media/d9828b_ed54a63873eb429d84f81bbc576109ec~mv2.jpg','https://static.wixstatic.com/media/d9828b_dcdc2cb563094a3b89805e1df15e038c~mv2.jpg','https://static.wixstatic.com/media/d9828b_c0072de36d7e4cfc96b7a6ddd32541f2~mv2.jpg','https://static.wixstatic.com/media/d9828b_d0321c07d9f14b1da7dad0736b05cc66~mv2.jpg','https://static.wixstatic.com/media/d9828b_1a21a12c038840fd87251fee0ce12ca7~mv2.jpg','https://static.wixstatic.com/media/d9828b_16f5e16ef3e748d6974a9dca3ce70d10~mv2.jpg','https://static.wixstatic.com/media/d9828b_46dbd0170fa64b47ab669baa8c1971e8~mv2.jpg','https://static.wixstatic.com/media/d9828b_28d9ee4f69df4101b10bd5f2a77bf478~mv2.jpg','https://static.wixstatic.com/media/d9828b_3b637f258ac947c98c99c15a86ff69b7~mv2.jpg','https://static.wixstatic.com/media/d9828b_1f24f12f551e43ebaf47f66734e6cf1d~mv2.jpg','https://static.wixstatic.com/media/d9828b_1c83d81251fd494c8504f52614f65788~mv2.jpg','https://static.wixstatic.com/media/d9828b_f66794b9795c42d987d74351295ccbb7~mv2.jpg','https://static.wixstatic.com/media/d9828b_e66c629024684ea98bf26eb5ccc17144~mv2.jpg','https://static.wixstatic.com/media/d9828b_546ad72822dd436fa61814f9ba0c70bb~mv2.jpg','https://static.wixstatic.com/media/d9828b_4c0a67c15bcf4e309f5759b5f58db594~mv2.jpg','https://static.wixstatic.com/media/d9828b_02b594a16c66444bbb1bbdff2ddbbe92~mv2.jpg','https://static.wixstatic.com/media/d9828b_ec4dbc46770d48e698a99a2f13073a11~mv2.jpg','https://static.wixstatic.com/media/d9828b_29e4864c249c46aca2d7dbe88e918837~mv2.jpg']
       },
       {
         address: '1338 25th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_eba12b8701834579ba2a30b2bd122351~mv2.jpeg',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_eba12b8701834579ba2a30b2bd122351~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_d85ebb0a791444d2bf066d66b56cc28d~mv2.jpeg'
-        ]
+        cover: 'https://static.wixstatic.com/media/d9828b_cd3a356d6925476986fa32125ee1f715~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_cd3a356d6925476986fa32125ee1f715~mv2.jpg','https://static.wixstatic.com/media/d9828b_946db911f5854acf98d9945616b1702b~mv2.jpg','https://static.wixstatic.com/media/d9828b_23da1c2552c6437eb66222ffbfbb73d7~mv2.jpg','https://static.wixstatic.com/media/d9828b_064c133466734212ba0153b2db7d1fab~mv2.jpg','https://static.wixstatic.com/media/d9828b_d9c0e622862e4347bc0f2ff45daa5b2b~mv2.jpg','https://static.wixstatic.com/media/d9828b_c17d107a12e844e1b8db08a0cc11b514~mv2.jpg','https://static.wixstatic.com/media/d9828b_3400137e85c947159c6bf4aba96b4e71~mv2.jpg','https://static.wixstatic.com/media/d9828b_83a446fb796e49339f061709f5bbfed4~mv2.jpg','https://static.wixstatic.com/media/d9828b_f2f4633249504b5f896d908dca4691b8~mv2.jpg','https://static.wixstatic.com/media/d9828b_8ae90511b312453e8b1732c252094803~mv2.jpg','https://static.wixstatic.com/media/d9828b_c3a6a65784fb461caeb94cc2bbe90297~mv2.jpg','https://static.wixstatic.com/media/d9828b_792354b773fc4626808800d787a0f198~mv2.jpg','https://static.wixstatic.com/media/d9828b_8fcf9630ab394c05972eef556e2f7721~mv2.jpg','https://static.wixstatic.com/media/d9828b_9144a61ee67c4a238c99043261074f7a~mv2.jpg','https://static.wixstatic.com/media/d9828b_9d2b5f784da94dbd9a6f5ffe0c96d5c7~mv2.jpg','https://static.wixstatic.com/media/d9828b_56a5ba3ffeaf4df9b1bf19cc31b8bdb9~mv2.jpg','https://static.wixstatic.com/media/d9828b_b6f0750b4e5b4b488fc609b0e2432307~mv2.jpg','https://static.wixstatic.com/media/d9828b_4407e04acd61475caac0c94a96b303c8~mv2.jpg','https://static.wixstatic.com/media/d9828b_176b2da33c214ddd98a843e15794e7aa~mv2.jpg','https://static.wixstatic.com/media/d9828b_b3b42866c5d7402cbc1e08fae1274f1a~mv2.jpg']
       },
       {
         address: '1430 19th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_3b2ba7ecaa034316951e9df1a6c5ff74~mv2.jpeg',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_3b2ba7ecaa034316951e9df1a6c5ff74~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_143fe9a153144f17965e3966f2919892~mv2.jpeg'
-        ]
+        cover: 'https://static.wixstatic.com/media/d9828b_83954cb5091b4baa85375ce5d16eebf0~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_83954cb5091b4baa85375ce5d16eebf0~mv2.jpg','https://static.wixstatic.com/media/d9828b_7cc81e4690f2411ca550c9b857a72ade~mv2.jpg','https://static.wixstatic.com/media/d9828b_ed540304c07b4728aea597314ffb8aca~mv2.jpg','https://static.wixstatic.com/media/d9828b_840d67cf25da4662b82d315528e5c91f~mv2.jpg','https://static.wixstatic.com/media/d9828b_969b6ee3036a4587b176209b7b2a8421~mv2.jpg','https://static.wixstatic.com/media/d9828b_c548321f5a53437996e4773d981aa1e7~mv2.jpg','https://static.wixstatic.com/media/d9828b_3ff5ff4fb87a4201bf2c1503c418f271~mv2.jpg','https://static.wixstatic.com/media/d9828b_c985e3bf73d34a05a4d39934086398bb~mv2.jpg','https://static.wixstatic.com/media/d9828b_b557c7c2173245ccab336eabc7938435~mv2.jpg','https://static.wixstatic.com/media/d9828b_60b7e5b4acce4cefbf481015d72e267b~mv2.jpg','https://static.wixstatic.com/media/d9828b_0b3148184f9c440b85d14f45fd5e7256~mv2.jpg','https://static.wixstatic.com/media/d9828b_1a759132191d45808ff36146d8d70658~mv2.jpg','https://static.wixstatic.com/media/d9828b_87a89a90848045dab6eee23dc3ecbdbc~mv2.jpg','https://static.wixstatic.com/media/d9828b_a346f0ad61e4430ab0bd6e0443529da9~mv2.jpg','https://static.wixstatic.com/media/d9828b_0d84c818fe0c466d9b475b5471463a66~mv2.jpg','https://static.wixstatic.com/media/d9828b_1a5308115a594f378a74e1d25c4994b5~mv2.jpg','https://static.wixstatic.com/media/d9828b_04b99893f8194ee2856d895044db5543~mv2.jpg','https://static.wixstatic.com/media/d9828b_721dc974bc2642ec9c0c05ec77d91a49~mv2.jpg','https://static.wixstatic.com/media/d9828b_4384a6e9723c4e81b0bf8b464d977ca0~mv2.jpg','https://static.wixstatic.com/media/d9828b_4a19a643806e40ae9d6be60ca3d2c382~mv2.jpg']
       },
       {
         address: '1919 Frazer Ave NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_9225bf5be3764aff89bdf709ab0c474e~mv2.jpeg',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_9225bf5be3764aff89bdf709ab0c474e~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_a8cfba711da0401491558d7b672900a3~mv2.jpeg'
-        ]
+        cover: 'https://static.wixstatic.com/media/d9828b_68cc2bcbc5ca495c8af5e70722ecf6c5~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_68cc2bcbc5ca495c8af5e70722ecf6c5~mv2.jpg','https://static.wixstatic.com/media/d9828b_55623abf26b646f0acf5ac105640eb98~mv2.jpg','https://static.wixstatic.com/media/d9828b_6971f7d2c9b2496e86820c435b2b60f6~mv2.jpg','https://static.wixstatic.com/media/d9828b_a86e1ed6ebfe4061a8b03f4ff1424709~mv2.jpg','https://static.wixstatic.com/media/d9828b_9d3b0e25b9a64e029d5ca303d73452eb~mv2.jpg','https://static.wixstatic.com/media/d9828b_b44206a3b69045ada56499ef3c3cc30b~mv2.jpg','https://static.wixstatic.com/media/d9828b_2a967defc22f4dbea0c2e30e94aa0f4a~mv2.jpg','https://static.wixstatic.com/media/d9828b_e839cf4319ed4d888a82d883ec580ac0~mv2.jpg','https://static.wixstatic.com/media/d9828b_cc62349453604b258759e7968967f78f~mv2.jpg','https://static.wixstatic.com/media/d9828b_8bbfeb1f7b0c41e7ad9ecbe8412e20d4~mv2.jpg','https://static.wixstatic.com/media/d9828b_7b8823ec507a4af1acb5998da0b2d11a~mv2.jpg','https://static.wixstatic.com/media/d9828b_396c92c93f804cf99e3c469867db1be6~mv2.jpg','https://static.wixstatic.com/media/d9828b_a710f40c6af44b5f9e125a018421c59d~mv2.jpg','https://static.wixstatic.com/media/d9828b_1a1796823bce49e2b2bac368f3a70445~mv2.jpg','https://static.wixstatic.com/media/d9828b_e96595954533494788a9cc0a715caed6~mv2.jpg','https://static.wixstatic.com/media/d9828b_f70a4da023634d81aaa37ed6ba564b3c~mv2.jpg','https://static.wixstatic.com/media/d9828b_10c72115a64e41cba731d2bfd8e480e4~mv2.jpg','https://static.wixstatic.com/media/d9828b_9e0482432bbe44079008006d1165376b~mv2.jpg']
       },
       {
         address: '1540 Norwood Pl NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_33ba492a11134da4bf528511adbc6375~mv2.png',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_33ba492a11134da4bf528511adbc6375~mv2.png',
-          'https://static.wixstatic.com/media/64b604_2fadc168b10c4853b32cb35c72fc023b~mv2.jpeg'
-        ]
+        cover: 'https://static.wixstatic.com/media/d9828b_01644bc90254440f817a801e0691ebf4~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_01644bc90254440f817a801e0691ebf4~mv2.jpg','https://static.wixstatic.com/media/d9828b_94f19659fa6a401b9b1cc48440a29f61~mv2.jpg','https://static.wixstatic.com/media/d9828b_b24937d0bcf24215beb7b2d78d59cdbf~mv2.jpg','https://static.wixstatic.com/media/d9828b_972fc43de93547e594ece91e6bf35506~mv2.jpg','https://static.wixstatic.com/media/d9828b_f1cbe5e4abd049ef96e875a9f60593ce~mv2.jpg','https://static.wixstatic.com/media/d9828b_c89a5e9a6ea2478186bcbba7c4843e55~mv2.jpg','https://static.wixstatic.com/media/d9828b_5807b2bc0c9f402398cb524dec4ef05b~mv2.jpg','https://static.wixstatic.com/media/d9828b_64fd9148f12c412e917135647f324a38~mv2.jpg','https://static.wixstatic.com/media/d9828b_17bb58da5764443f82f3ee1ced6fbee3~mv2.jpg','https://static.wixstatic.com/media/d9828b_c6fa3a1e986d478abb7919ea0106c638~mv2.jpg','https://static.wixstatic.com/media/d9828b_10ff7a967f564de3a4c27c01a16dd1da~mv2.jpg','https://static.wixstatic.com/media/d9828b_099a197094784b3583f2e7e6d69b56ff~mv2.jpg','https://static.wixstatic.com/media/d9828b_b9bef72d949e4fc0ab5822e3f4507ece~mv2.jpg','https://static.wixstatic.com/media/d9828b_9a2dd8d6ab744124b24a5874644e9226~mv2.jpg','https://static.wixstatic.com/media/d9828b_3eac5a42d3da4aa481050c4d3d28b69d~mv2.jpg','https://static.wixstatic.com/media/d9828b_cc546ae222a44d449937a018f938d94b~mv2.jpg','https://static.wixstatic.com/media/d9828b_9786cd9b838a4f38bf2a53f9df41d02f~mv2.jpg','https://static.wixstatic.com/media/d9828b_243b20e1cd1e402ebcee2fa078561a2a~mv2.jpg','https://static.wixstatic.com/media/d9828b_b18544ca24c7411da3f3741454bdbc2a~mv2.jpg','https://static.wixstatic.com/media/d9828b_d466f714fec64c7f8d19b157e7f7f0c3~mv2.jpg']
       },
       {
         address: '1511 23rd St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_28a42e5cd1994e2a9d2c3c73d0cdbbf4~mv2.jpeg',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_28a42e5cd1994e2a9d2c3c73d0cdbbf4~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_ab764bbc2bd341e593c144de14e3839a~mv2.jpeg'
-        ]
+        cover: 'https://static.wixstatic.com/media/d9828b_0c5369f1a6824e5492591c604db19b2d~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_0c5369f1a6824e5492591c604db19b2d~mv2.jpg','https://static.wixstatic.com/media/d9828b_38a8971d5f824ee6b023129b0b8184b3~mv2.jpg','https://static.wixstatic.com/media/d9828b_a4dbf68abaff4818bc8b18de2adec119~mv2.jpg','https://static.wixstatic.com/media/d9828b_5e63c23b371f4962b1476108342b4950~mv2.jpg','https://static.wixstatic.com/media/d9828b_2338cfc4683342e0a78a256db9e53094~mv2.jpg','https://static.wixstatic.com/media/d9828b_dd36b52fc52a485fa1d65752ea45c417~mv2.jpg','https://static.wixstatic.com/media/d9828b_36d918052ee44fcc84b734db21ea010f~mv2.jpg','https://static.wixstatic.com/media/d9828b_f0352348b28b4ddb847457e57e8c91e4~mv2.jpg','https://static.wixstatic.com/media/d9828b_7842d1955f3f436baaa164b4c958f94b~mv2.jpg','https://static.wixstatic.com/media/d9828b_b9eddd97876c4698a837c8f44d0282a3~mv2.jpg','https://static.wixstatic.com/media/d9828b_7dac1566ed2841d08062b33df7fa821d~mv2.jpg','https://static.wixstatic.com/media/d9828b_c123cb6842f74cf996c13cd0b582a056~mv2.jpg','https://static.wixstatic.com/media/d9828b_581545a0cfaf4ad9b1bce31d94deaad0~mv2.jpg','https://static.wixstatic.com/media/d9828b_2b817f0f71874bc1a52f8e08a2e841c8~mv2.jpg','https://static.wixstatic.com/media/d9828b_36f9a16eb39a4ae89e2448d4c01748f9~mv2.jpg','https://static.wixstatic.com/media/d9828b_e31c536137ee4ae49f988394bc841701~mv2.jpg','https://static.wixstatic.com/media/d9828b_5e251cc8400248e7a1085e1ddaef7921~mv2.jpg','https://static.wixstatic.com/media/d9828b_7ffce4bbd75b4bb284e5be200e6f5364~mv2.jpg','https://static.wixstatic.com/media/d9828b_ba16b2129b294cd5b651861d89195327~mv2.jpg','https://static.wixstatic.com/media/d9828b_d131085041e74538a2ca846712921e5a~mv2.jpg']
       },
       {
         address: '1569 25th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_c830989a0cc24dbebee253e0e40a7132~mv2.jpeg',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_c830989a0cc24dbebee253e0e40a7132~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_6d787ec44dd14bb5820d300ba95679dd~mv2.jpeg'
-        ]
+        cover: 'https://static.wixstatic.com/media/d9828b_6d1323047ab94763991a94dfd5257868~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_6d1323047ab94763991a94dfd5257868~mv2.jpg','https://static.wixstatic.com/media/d9828b_bf33fed73aab4efe85671eb54fa6ac27~mv2.jpg','https://static.wixstatic.com/media/d9828b_dd89e6b90ea74fa8a63b78f888c3b7b3~mv2.jpg','https://static.wixstatic.com/media/d9828b_885cf9e3032147588f2689dfac2755f0~mv2.jpg','https://static.wixstatic.com/media/d9828b_90f0116bb8134bcba347e73ee434a189~mv2.jpg','https://static.wixstatic.com/media/d9828b_b6e4d73df7c248e5a8d6e54a3b0504cb~mv2.jpg','https://static.wixstatic.com/media/d9828b_cc5424f53a0a48228406858abf015bfb~mv2.jpg','https://static.wixstatic.com/media/d9828b_d26af80bcc4940db863a0ecfd3dafe44~mv2.jpg','https://static.wixstatic.com/media/d9828b_25765bfed7f045e99d27a67db991126e~mv2.jpg','https://static.wixstatic.com/media/d9828b_21f91fe062d944c28c2356218df34d3d~mv2.jpg','https://static.wixstatic.com/media/d9828b_077a3a166d6c431ea1a92d4ae9476d10~mv2.jpg','https://static.wixstatic.com/media/d9828b_9d7a5b74fb5949eb8ff69b01c5bdcede~mv2.jpg','https://static.wixstatic.com/media/d9828b_34f3d316ab77475abbd824adf21f8f2b~mv2.jpg','https://static.wixstatic.com/media/d9828b_bcdab1627ac744bf8d5e1d145103b7d1~mv2.jpg','https://static.wixstatic.com/media/d9828b_1189f9070c694bdd9220149baa9745d0~mv2.jpg','https://static.wixstatic.com/media/d9828b_7b29a6438dc5421cbc5897f53c3e4944~mv2.jpg','https://static.wixstatic.com/media/d9828b_d7bf9d30afa64876a63534cee7a5e0bb~mv2.jpg','https://static.wixstatic.com/media/d9828b_aab0e206963a4cd69306495c83776e1b~mv2.jpg','https://static.wixstatic.com/media/d9828b_0b3cfcf2ce1b45858906bd7ab95d890d~mv2.jpg','https://static.wixstatic.com/media/d9828b_05510262e0c14ae693bd5d0b0cf1a7a0~mv2.jpg']
       },
       {
         address: '1600 27th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_90ef583aa5e84c388a54b1091014dae0~mv2.jpeg',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_90ef583aa5e84c388a54b1091014dae0~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_4205f0e960d94555857430409d7a840d~mv2.jpeg'
-        ]
+        cover: 'https://static.wixstatic.com/media/d9828b_f43e108bf7264d33b90362a5af8b4240~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_f43e108bf7264d33b90362a5af8b4240~mv2.jpg','https://static.wixstatic.com/media/d9828b_f23e603043774e93b2f96c6ba92c9adc~mv2.jpg','https://static.wixstatic.com/media/d9828b_cfc31263ac224653a66f437b333aa783~mv2.jpg','https://static.wixstatic.com/media/d9828b_515edb7efd304ac99c2323fc0a46fb08~mv2.jpg','https://static.wixstatic.com/media/d9828b_a65c1bd189444475b5afda9be09a5644~mv2.jpg','https://static.wixstatic.com/media/d9828b_5d62cb10ab784148bac30918682ee656~mv2.jpg','https://static.wixstatic.com/media/d9828b_aadfd3d6b6d049e8a7c4000f0960bb7c~mv2.jpg','https://static.wixstatic.com/media/d9828b_f2cb8bf88f5a49e28564ee4a184eaca0~mv2.jpg','https://static.wixstatic.com/media/d9828b_e0d9b6a7e643439b92d43d2c6b4111e3~mv2.jpg','https://static.wixstatic.com/media/d9828b_c8221277ae3f41b795b74ff734480105~mv2.jpg','https://static.wixstatic.com/media/d9828b_f8d07a224c6047e0a6399c19084b2187~mv2.jpg','https://static.wixstatic.com/media/d9828b_025296d583e74af7ac8a65df4988b3fc~mv2.jpg','https://static.wixstatic.com/media/d9828b_95129f968fd740119c628ab969128e6e~mv2.jpg','https://static.wixstatic.com/media/d9828b_789dd30718b047b48a017e99c029f615~mv2.jpg','https://static.wixstatic.com/media/d9828b_73719ffbf21144ab9284d72aee1ecd64~mv2.jpg','https://static.wixstatic.com/media/d9828b_82f9e35074634ca4b17bd452984f1ba4~mv2.jpg','https://static.wixstatic.com/media/d9828b_023b78c0d63b4711964575e67762f01e~mv2.jpg','https://static.wixstatic.com/media/d9828b_1421de1eaa624872826ddf8b5ffbe94b~mv2.jpg','https://static.wixstatic.com/media/d9828b_817354fce8aa4d61bc797ecb1e639809~mv2.jpg','https://static.wixstatic.com/media/d9828b_082b9802ca7047bba2e8a44fc7f394d8~mv2.jpg']
       },
       {
         address: '1701 27th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_e54c155ba0154360b5f6da668c16b252~mv2.jpeg',
-        photos: ['https://static.wixstatic.com/media/64b604_e54c155ba0154360b5f6da668c16b252~mv2.jpeg']
+        cover: 'https://static.wixstatic.com/media/d9828b_858509336eca473e84667ad080ca4522~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_858509336eca473e84667ad080ca4522~mv2.jpg','https://static.wixstatic.com/media/d9828b_e2c829e9a6d74aa483d1c11a737978a3~mv2.jpg','https://static.wixstatic.com/media/d9828b_50cc3d8abd1047ca81141f68eaffd990~mv2.jpg','https://static.wixstatic.com/media/d9828b_66fbd9cc90724c839d3cb6704a7ef0b3~mv2.jpg','https://static.wixstatic.com/media/d9828b_9afe149394594f31b9199cb2a925bd7e~mv2.jpg','https://static.wixstatic.com/media/d9828b_d0a6ff38b2854f51b94dd382c543eadc~mv2.jpg','https://static.wixstatic.com/media/d9828b_87b2a351600349dca4fe3d3fd7b2e25d~mv2.jpg','https://static.wixstatic.com/media/d9828b_a5c4f5a481fb47098703d735fb694ff9~mv2.jpg','https://static.wixstatic.com/media/d9828b_bfec9101870049a1b5d6b4b1c994799d~mv2.jpg','https://static.wixstatic.com/media/d9828b_62a71228e83f485b8db3cc08d023a99c~mv2.jpg','https://static.wixstatic.com/media/d9828b_7061fbfc48c348c087825af0184023cb~mv2.jpg','https://static.wixstatic.com/media/d9828b_25e695ca76a2469780359a3ed4e568a4~mv2.jpg','https://static.wixstatic.com/media/d9828b_701cb0e6c9da4c1a854a588bd210d492~mv2.jpg','https://static.wixstatic.com/media/d9828b_35ed385ac03e4e9ea71ef614a89ba94a~mv2.jpg','https://static.wixstatic.com/media/d9828b_dc02f282885e43e7ac96231fdb21a3cc~mv2.jpg','https://static.wixstatic.com/media/d9828b_2875f1317572426fb6aa6127d21aff14~mv2.jpg','https://static.wixstatic.com/media/d9828b_7f5cd7a5a7a54526b5deac6063ede291~mv2.jpg','https://static.wixstatic.com/media/d9828b_2822522851e240599541658734bfc88a~mv2.jpg','https://static.wixstatic.com/media/d9828b_e5000b0f562d439e8099b38343cec546~mv2.jpg','https://static.wixstatic.com/media/d9828b_045363138ce2426e89a800c8e2114e94~mv2.jpg']
       },
       {
         address: '800 22nd St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_f5a8ead372e44655b39aaacd298b3ef3~mv2.jpeg',
-        photos: ['https://static.wixstatic.com/media/64b604_f5a8ead372e44655b39aaacd298b3ef3~mv2.jpeg']
+        cover: 'https://static.wixstatic.com/media/d9828b_1c51f1c90f5742189ac87d2aa597629e~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_1c51f1c90f5742189ac87d2aa597629e~mv2.jpg','https://static.wixstatic.com/media/d9828b_12b24248d0d543028e3b5714f9f3ae6f~mv2.jpg','https://static.wixstatic.com/media/d9828b_c0b8a91bfcc64b499e53784c39f56945~mv2.jpg','https://static.wixstatic.com/media/d9828b_c9f2f12b91da4c7d8a48595b83316cd3~mv2.jpg','https://static.wixstatic.com/media/d9828b_737b964dc109434b8ed7b4d608211dd5~mv2.jpg','https://static.wixstatic.com/media/d9828b_fd7a6a06d50442ecb4efe5e0c48379c0~mv2.jpg','https://static.wixstatic.com/media/d9828b_a04abac593c04774ae2b3db7bf1a5d38~mv2.jpg','https://static.wixstatic.com/media/d9828b_b3607eb119aa4e6ba618ee62084830d6~mv2.jpg','https://static.wixstatic.com/media/d9828b_5da5253a095c446cbc2dc68a78b2323d~mv2.jpg','https://static.wixstatic.com/media/d9828b_9f8e3f5672b2418d8d1fa36f195ed26a~mv2.jpg','https://static.wixstatic.com/media/d9828b_69b96ff1d4594603a759086d469c0b1b~mv2.jpg','https://static.wixstatic.com/media/d9828b_7f24ad45708d433e9d6b3321c4502e5f~mv2.jpg','https://static.wixstatic.com/media/d9828b_4d2f5f890cd44a9f934cfcd07c90d12f~mv2.jpg','https://static.wixstatic.com/media/d9828b_2234233498f9486aa902547db8e8fb62~mv2.jpg','https://static.wixstatic.com/media/d9828b_aa3eff3960994c6dbbb1d03263427ccb~mv2.jpg','https://static.wixstatic.com/media/d9828b_19266a9b56c1444ab7a9cbff54716ef2~mv2.jpg','https://static.wixstatic.com/media/d9828b_b4000dceb0054df381dda972a776363e~mv2.jpg','https://static.wixstatic.com/media/d9828b_417e79c64e104ebb9b462fd938efdb76~mv2.jpg','https://static.wixstatic.com/media/d9828b_afa4190040f7406cba3573a392e199ff~mv2.jpg','https://static.wixstatic.com/media/d9828b_b098ff71382247d3bb6d2e93a75995fb~mv2.jpg']
       },
       {
         address: '1611 25th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_8f2c3ebd9b634367984a41fc52d1e85b~mv2.jpeg',
-        photos: ['https://static.wixstatic.com/media/64b604_8f2c3ebd9b634367984a41fc52d1e85b~mv2.jpeg']
+        cover: 'https://static.wixstatic.com/media/d9828b_84f3732225644f5bb417827eec03a7b3~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_84f3732225644f5bb417827eec03a7b3~mv2.jpg','https://static.wixstatic.com/media/d9828b_671b2353ab2f4da488a477815e2a2807~mv2.jpg','https://static.wixstatic.com/media/d9828b_94b9e7004b0e41ca9808c17e785046d6~mv2.jpg','https://static.wixstatic.com/media/d9828b_d4faa349c73a4b01937df955a210af60~mv2.jpg','https://static.wixstatic.com/media/d9828b_78ec78703c6044ff82e31647930535a7~mv2.jpg','https://static.wixstatic.com/media/d9828b_5db8f85940e8419faa8cbc243ae88e67~mv2.jpg','https://static.wixstatic.com/media/d9828b_772bb615a58645a1aa6c15236a318ac2~mv2.jpg','https://static.wixstatic.com/media/d9828b_438306ed67424885aff854698aac5bc4~mv2.jpg','https://static.wixstatic.com/media/d9828b_7751757251cc478bab08c91164a00a06~mv2.jpg','https://static.wixstatic.com/media/d9828b_2162090d5f5e4f60a5a579bcfb20ef26~mv2.jpg','https://static.wixstatic.com/media/d9828b_16d66f9d80f5419d89883ec32e45eec0~mv2.jpg','https://static.wixstatic.com/media/d9828b_7fcdd3b4ad1a4a6fa54b3cabc102ae5e~mv2.jpg','https://static.wixstatic.com/media/d9828b_9f3773b449cf4f11b700fa466d61b15f~mv2.jpg','https://static.wixstatic.com/media/d9828b_ad349809aadf467fa84a25cfdc58dadc~mv2.jpg','https://static.wixstatic.com/media/d9828b_d62e1249de88439ea548ae08fca84922~mv2.jpg','https://static.wixstatic.com/media/d9828b_6ff3bb7c8a3d41718b6f5a0ce33c98e8~mv2.jpg','https://static.wixstatic.com/media/d9828b_63ea380ecfcb45fd9658b0b4ec1862e8~mv2.jpg','https://static.wixstatic.com/media/d9828b_9a47877b794e4d8d919186e3f674adfd~mv2.jpg','https://static.wixstatic.com/media/d9828b_e89c6a5e9a5f40ec863fa1c696b8491d~mv2.jpg','https://static.wixstatic.com/media/d9828b_44d8daca04ce43e2bd162e23dcd0ea0f~mv2.jpg']
       },
       {
         address: '725 22nd St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/64b604_3fd8475e03c14f498b65cf38a78c1830~mv2.jpeg',
-        photos: ['https://static.wixstatic.com/media/64b604_3fd8475e03c14f498b65cf38a78c1830~mv2.jpeg']
+        cover: 'https://static.wixstatic.com/media/d9828b_eef32763b2e74befa508a15f195b6520~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_eef32763b2e74befa508a15f195b6520~mv2.jpg','https://static.wixstatic.com/media/d9828b_da3b37fafb8f43eead0e3d9b3dea6f4d~mv2.jpg','https://static.wixstatic.com/media/d9828b_c681bb5e225040d1bff1a0e068c84b58~mv2.jpg','https://static.wixstatic.com/media/d9828b_3607df5543aa4aa8a3e23249b0ed43a8~mv2.jpg','https://static.wixstatic.com/media/d9828b_4868b92d0bca4586b020894027ab8e82~mv2.jpg','https://static.wixstatic.com/media/d9828b_b013d1e5a5964e63b831c4d882c568e9~mv2.jpg','https://static.wixstatic.com/media/d9828b_2b6f3e31df714b23bb76a6c51c8260e1~mv2.jpg','https://static.wixstatic.com/media/d9828b_9667cb20638647838c956978ac6bb87f~mv2.jpg','https://static.wixstatic.com/media/d9828b_b99c59d031fc4f24942b34a6ec33e13b~mv2.jpg','https://static.wixstatic.com/media/d9828b_cfc414bc7aa048bfba8075dae3ffdced~mv2.jpg','https://static.wixstatic.com/media/d9828b_b9f079e0518a48609ccb9b13ab080588~mv2.jpg','https://static.wixstatic.com/media/d9828b_1ab9d556b1ba4b738b10f3a80e68dd62~mv2.jpg','https://static.wixstatic.com/media/d9828b_ddd64342aff143c6a4a65e2a67d86148~mv2.jpg','https://static.wixstatic.com/media/d9828b_9aeccad6b6e146cc95c0dabbf673f7da~mv2.jpg','https://static.wixstatic.com/media/d9828b_3c741a5b6f27441fac6caa28ba8d55b7~mv2.jpg','https://static.wixstatic.com/media/d9828b_65254da5c74345d0987937dd62f44c1e~mv2.jpg','https://static.wixstatic.com/media/d9828b_0b7b81d68b67485d81bf5b0bb473eb6a~mv2.jpg','https://static.wixstatic.com/media/d9828b_702548b8da6948a9847c1ebc44d76392~mv2.jpg','https://static.wixstatic.com/media/d9828b_f080387a1de749dabc8f96e4023726cb~mv2.jpg','https://static.wixstatic.com/media/d9828b_b019750b720b4b4e9139cfd4f2abaeaf~mv2.jpg']
       }
     ];
 
     var cardsHtml = PROPERTIES.map(function(p, i) {
-      return `<div class="prop-card">
-  <div class="prop-card__img-wrap">
-    <img class="prop-card__cover" src="${p.cover}" alt="${p.address}" loading="lazy" />
-    <span class="prop-card__badge">For Rent</span>
-  </div>
-  <div class="prop-card__info">
-    <div class="prop-card__address">${p.address}</div>
-    <div class="prop-card__city">${p.city}</div>
-    <div class="prop-card__specs">${p.beds} Bed &nbsp;&middot;&nbsp; ${p.baths} Bath &nbsp;&middot;&nbsp; Single Family</div>
-    <button class="prop-card__btn" data-idx="${i}">View Details</button>
-  </div>
-</div>`;
+      return '<div class="prop-card" data-idx="' + i + '"><div class="prop-card__img-wrap"><img class="prop-card__cover" src="' + p.cover + '" alt="' + p.address + '" loading="lazy" /><span class="prop-card__badge">For Rent</span></div><div class="prop-card__info"><div class="prop-card__address">' + p.address + '</div><div class="prop-card__city">' + p.city + '</div><div class="prop-card__specs">' + p.beds + ' Bed &nbsp;&middot;&nbsp; ' + p.baths + ' Bath &nbsp;&middot;&nbsp; Single Family</div><div class="prop-card__btn">View Details &rarr;</div></div></div>';
     }).join('');
 
     this.innerHTML = `
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 csh-portfolio-nw { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: #f5f7fa; }
-
 .site-header { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 14px 32px; display: flex; align-items: center; gap: 16px; }
 .site-header img { height: 48px; width: auto; cursor: pointer; }
 .site-header__back { margin-left: auto; font-size: 12px; font-weight: 700; color: #1A3557; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
 .site-header__back:hover { opacity: 1; }
-
 .hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 52px 32px 48px; text-align: center; }
 .hero__badge { display: inline-block; background: #C8962A; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
 .hero__title { font-size: clamp(26px, 4.5vw, 44px); font-weight: 900; margin-bottom: 8px; }
 .hero__sub { font-size: 15px; color: rgba(255,255,255,0.68); }
-
 .section-head { max-width: 1040px; margin: 48px auto 20px; padding: 0 24px; display: flex; align-items: baseline; justify-content: space-between; }
 .section-head h2 { font-size: 18px; font-weight: 800; color: #0D1F35; text-transform: uppercase; letter-spacing: 0.08em; }
 .section-head span { font-size: 13px; color: #888; }
-
 .prop-grid { max-width: 1040px; margin: 0 auto 64px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 24px; }
-
-.prop-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); transition: transform 0.22s, box-shadow 0.22s; display: flex; flex-direction: column; }
-.prop-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.14); }
+.prop-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); transition: transform 0.22s, box-shadow 0.22s; display: flex; flex-direction: column; cursor: pointer; }
+.prop-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.16); }
 .prop-card__img-wrap { position: relative; height: 220px; overflow: hidden; }
 .prop-card__cover { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s; }
 .prop-card:hover .prop-card__cover { transform: scale(1.06); }
@@ -135,25 +95,19 @@ csh-portfolio-nw { display: block; font-family: 'Segoe UI', Arial, sans-serif; c
 .prop-card__address { font-size: 17px; font-weight: 800; color: #0D1F35; margin-bottom: 4px; line-height: 1.3; }
 .prop-card__city { font-size: 12px; color: #999; margin-bottom: 10px; }
 .prop-card__specs { font-size: 13px; color: #555; font-weight: 600; margin-bottom: 18px; flex: 1; }
-.prop-card__btn { width: 100%; padding: 12px; background: #1A3557; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 7px; cursor: pointer; transition: background 0.2s; }
-.prop-card__btn:hover { background: #0D1F35; }
+.prop-card__btn { width: 100%; padding: 12px; background: #1A3557; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 7px; text-align: center; }
+.prop-card:hover .prop-card__btn { background: #0D1F35; }
 </style>
-
 <header class="site-header">
   <a href="/"><img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals" /></a>
   <a class="site-header__back" href="/investors">&larr; All Portfolios</a>
 </header>
-
 <section class="hero">
   <div class="hero__badge">44709 &mdash; Northwest Central Canton</div>
   <h1 class="hero__title">Northwest Central Portfolio</h1>
   <p class="hero__sub">12 single-family rental homes</p>
 </section>
-
-<div class="section-head">
-  <h2>Properties</h2>
-  <span>12 homes &middot; Canton, OH 44709</span>
-</div>
+<div class="section-head"><h2>Properties</h2><span>12 homes &middot; Canton, OH 44709</span></div>
 <div class="prop-grid">${cardsHtml}</div>
 `;
 
@@ -161,25 +115,17 @@ csh-portfolio-nw { display: block; font-family: 'Segoe UI', Arial, sans-serif; c
       ? '/' + window.location.pathname.split('/')[1] : '';
     this.addEventListener('click', function(e) {
       var link = e.target.closest('a');
-      if (!link) return;
-      var href = link.getAttribute('href');
-      if (!href || !href.startsWith('/')) return;
-      e.preventDefault();
-      e.stopPropagation();
-      window.location.assign(window.location.origin + _b + href);
-    });
-    this.querySelectorAll('.prop-card__btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var idx = parseInt(btn.dataset.idx, 10);
-        var p = PROPERTIES[idx];
-        try {
-          localStorage.setItem('csh_prop', JSON.stringify({
-            address: p.address, city: p.city, portfolio: PORTFOLIO,
-            beds: p.beds, baths: p.baths, photos: p.photos
-          }));
-        } catch(e) {}
-        window.location.assign(window.location.origin + _b + '/property-detail');
-      });
+      if (link) {
+        var href = link.getAttribute('href');
+        if (href && href.startsWith('/')) { e.preventDefault(); e.stopPropagation(); window.location.assign(window.location.origin + _b + href); }
+        return;
+      }
+      var card = e.target.closest('.prop-card');
+      if (!card) return;
+      var idx = parseInt(card.dataset.idx, 10);
+      var p = PROPERTIES[idx];
+      try { localStorage.setItem('csh_prop', JSON.stringify({ address: p.address, city: p.city, portfolio: PORTFOLIO, beds: p.beds, baths: p.baths, photos: p.photos })); } catch(err) {}
+      window.location.assign(window.location.origin + _b + '/property-detail');
     });
   }
 }
