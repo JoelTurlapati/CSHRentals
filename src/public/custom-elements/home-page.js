@@ -190,7 +190,7 @@ csh-home { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #1
 </div>
 
 <footer class="footer">
-  &copy; 2025 CSH Rentals &nbsp;&middot;&nbsp; 1428 Market Ave N, Canton, OH 44714 &nbsp;&middot;&nbsp; customstarkhomes@gmail.com
+  &copy; 2025 CSH Rents &nbsp;&middot;&nbsp; 1428 Market Ave N, Canton, OH 44714 &nbsp;&middot;&nbsp; customstarkhomes@gmail.com
 </footer>
 `;
 
