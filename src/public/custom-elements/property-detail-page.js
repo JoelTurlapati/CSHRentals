@@ -37,10 +37,10 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
 .gallery-arrow--next { right: 14px; }
 .gallery-counter { position: absolute; bottom: 14px; right: 16px; background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; z-index: 2; }
 
-.gallery-thumbs { display: flex; gap: 8px; margin-top: 12px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
-.gallery-thumbs::-webkit-scrollbar { height: 4px; }
+.gallery-thumbs { display: flex; gap: 10px; margin-top: 14px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; }
+.gallery-thumbs::-webkit-scrollbar { height: 5px; }
 .gallery-thumbs::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
-.gallery-thumb { flex-shrink: 0; width: 84px; height: 60px; border-radius: 6px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s, opacity 0.2s; }
+.gallery-thumb { flex-shrink: 0; width: 140px; height: 100px; border-radius: 8px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s, opacity 0.2s; }
 .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .gallery-thumb.active { border-color: #C8962A; }
 .gallery-thumb:not(.active) { opacity: 0.65; }

@@ -43,18 +43,21 @@ csh-home { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #1
 .hero__body { position: relative; z-index: 2; text-align: center; padding: 90px 24px 100px; max-width: 800px; }
 .hero__eyebrow { display: inline-block; background: #C8962A; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 18px; border-radius: 20px; margin-bottom: 24px; }
 .hero__title { font-size: clamp(34px, 6.5vw, 66px); font-weight: 900; color: #fff; line-height: 1.06; margin-bottom: 18px; letter-spacing: -0.02em; }
-.hero__sub { font-size: clamp(14px, 2vw, 17px); color: rgba(255,255,255,0.78); line-height: 1.65; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.hero__sub { font-size: clamp(14px, 2vw, 17px); color: rgba(255,255,255,0.78); line-height: 1.65; margin-bottom: 0; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-.hero__btns { display: flex; flex-direction: column; gap: 16px; align-items: center; }
-@media (min-width: 520px) { .hero__btns { flex-direction: row; justify-content: center; } }
-.btn-cta { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 22px 52px; border-radius: 8px; cursor: pointer; text-decoration: none; border: none; transition: transform 0.18s, box-shadow 0.2s; min-width: 210px; }
-.btn-cta:hover { transform: translateY(-3px); }
-.btn-cta__label { font-size: 20px; font-weight: 900; letter-spacing: 0.03em; text-transform: uppercase; }
-.btn-cta__sub { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.72; }
-.btn-cta--tenant { background: #fff; color: #1A3557; box-shadow: 0 6px 28px rgba(0,0,0,0.25); }
-.btn-cta--tenant:hover { background: #f0f4f8; box-shadow: 0 12px 36px rgba(0,0,0,0.3); }
-.btn-cta--investor { background: #C8962A; color: #fff; box-shadow: 0 6px 28px rgba(200,150,42,0.48); }
-.btn-cta--investor:hover { background: #b5841f; box-shadow: 0 12px 36px rgba(200,150,42,0.58); }
+.cta-strip { background: #fff; padding: 52px 32px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px; border-bottom: 2px solid #f0f2f5; }
+.cta-strip__header { text-align: center; flex: 0 0 100%; }
+.cta-strip__title { font-size: clamp(18px, 2.5vw, 24px); font-weight: 900; color: #0D1F35; margin-bottom: 6px; }
+.cta-strip__sub { font-size: 14px; color: #888; }
+.cta-btns { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+.cta-btn { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 26px 60px; border-radius: 10px; text-decoration: none; transition: transform 0.18s, box-shadow 0.2s; min-width: 240px; }
+.cta-btn:hover { transform: translateY(-4px); }
+.cta-btn__label { font-size: 22px; font-weight: 900; letter-spacing: 0.03em; text-transform: uppercase; }
+.cta-btn__sub { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.75; }
+.cta-btn--tenant { background: #1A3557; color: #fff; box-shadow: 0 8px 28px rgba(26,53,87,0.32); }
+.cta-btn--tenant:hover { background: #0D1F35; box-shadow: 0 14px 40px rgba(26,53,87,0.42); }
+.cta-btn--investor { background: #C8962A; color: #fff; box-shadow: 0 8px 28px rgba(200,150,42,0.42); }
+.cta-btn--investor:hover { background: #b5841f; box-shadow: 0 14px 40px rgba(200,150,42,0.52); }
 
 .slide-dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; align-items: center; gap: 8px; }
 .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.38); border: none; cursor: pointer; padding: 0; transition: background 0.3s, transform 0.2s; }
@@ -116,19 +119,26 @@ csh-home { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #1
     <span class="hero__eyebrow">Canton, Ohio &middot; CSH Rentals</span>
     <h1 class="hero__title">Quality Rentals.<br/>Proven Portfolio.</h1>
     <p class="hero__sub">45 single-family rental homes across Canton, OH &mdash; plus a lakeside short-term rental in Geneva-on-the-Lake. Serving tenants and investors across Northeast Ohio.</p>
-    <div class="hero__btns">
-      <a class="btn-cta btn-cta--tenant" href="/tenants">
-        <span class="btn-cta__label">Tenants</span>
-        <span class="btn-cta__sub">Apply Here</span>
-      </a>
-      <a class="btn-cta btn-cta--investor" href="/investors">
-        <span class="btn-cta__label">Investors</span>
-        <span class="btn-cta__sub">View Portfolio</span>
-      </a>
-    </div>
   </div>
   <div class="slide-dots">${dotsHtml}</div>
 </section>
+
+<div class="cta-strip">
+  <div class="cta-strip__header">
+    <p class="cta-strip__title">How Can We Help You?</p>
+    <p class="cta-strip__sub">Choose your path below to get started</p>
+  </div>
+  <div class="cta-btns">
+    <a class="cta-btn cta-btn--tenant" href="/tenants">
+      <span class="cta-btn__label">Tenants</span>
+      <span class="cta-btn__sub">Apply Here</span>
+    </a>
+    <a class="cta-btn cta-btn--investor" href="/investors">
+      <span class="cta-btn__label">Investors</span>
+      <span class="cta-btn__sub">View Portfolio</span>
+    </a>
+  </div>
+</div>
 
 <div class="stats">
   <div class="stat"><div class="stat__value">45</div><div class="stat__label">Rental Properties</div></div>
