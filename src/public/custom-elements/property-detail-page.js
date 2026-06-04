@@ -1,61 +1,6 @@
 // @ts-nocheck
 class CshPropertyDetail extends HTMLElement {
   connectedCallback() {
-    var PHOTO_POOLS = {
-      'West — 44708': [
-        'https://static.wixstatic.com/media/64b604_952be5d06ea04a69bc9932917a74d19c~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_58624372dd254cd1862819ae1f18967c~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_b0cc918ddd644adba6f403392c2cf8c6~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_18658688112848b3a375b894dc9a9761~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_2f12bc452b22496b9086d6f5a95623ad~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_932f794976474b779eaf5d47aa58498a~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_1fb223dce671438ba6e84041ec1ae218~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_acb37a36f21a43ea937a7f332c0b6169~mv2.jpeg'
-      ],
-      'Northwest Central — 44709': [
-        'https://static.wixstatic.com/media/64b604_d8710688375f47928e359dc9b936e689~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_eba12b8701834579ba2a30b2bd122351~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_3b2ba7ecaa034316951e9df1a6c5ff74~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_9225bf5be3764aff89bdf709ab0c474e~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_33ba492a11134da4bf528511adbc6375~mv2.png',
-        'https://static.wixstatic.com/media/64b604_28a42e5cd1994e2a9d2c3c73d0cdbbf4~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_c830989a0cc24dbebee253e0e40a7132~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_90ef583aa5e84c388a54b1091014dae0~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_e54c155ba0154360b5f6da668c16b252~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_f5a8ead372e44655b39aaacd298b3ef3~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_8f2c3ebd9b634367984a41fc52d1e85b~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_3fd8475e03c14f498b65cf38a78c1830~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_911989f2e7ec40449e3af16ec76df729~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_d85ebb0a791444d2bf066d66b56cc28d~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_143fe9a153144f17965e3966f2919892~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_a8cfba711da0401491558d7b672900a3~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_2fadc168b10c4853b32cb35c72fc023b~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_ab764bbc2bd341e593c144de14e3839a~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_6d787ec44dd14bb5820d300ba95679dd~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_4205f0e960d94555857430409d7a840d~mv2.jpeg'
-      ],
-      'Northeast — 44714': [
-        'https://static.wixstatic.com/media/64b604_42982546e42842bda85b0ca6bbcaf941~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_2ad766a98dd9407dbb83a13b6d1fd184~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_0acd871923c148fc9ac34669bba9d555~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_aed71c0306ba4bd08be44753dc10a836~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_776ab6a1bcd14db2b95703e59632b2b4~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_39e32df33f1f47e9939fc964478ac57b~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_7d8fdac44e8643f6a717cf071077bf7c~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_4eebe50b98154767a4488689fc84477b~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_e8e26f04f0c244898fc80b18746dacbb~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_5849d546b0c34c91ac87049e3cd2c186~mv2.jpeg'
-      ],
-      'Central — 44703': [
-        'https://static.wixstatic.com/media/64b604_262b6026b9d3450d8d956c2873ff0df8~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_89794c2ed62144f8b0cce53bb9bf2a23~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_6f3b13e8bbd349f08d4d4cf641557285~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_9848993bc0ac462ebc34dfaf46c27e15~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_5f5afd2ffaac449d835ef226329f2470~mv2.jpeg',
-        'https://static.wixstatic.com/media/64b604_c53805e63cfc4e6ea8185865e9574cab~mv2.jpeg'
-      ]
-    };
-
     var BACK_SLUGS = {
       'West — 44708':              'portfolio-west',
       'Northwest Central — 44709': 'portfolio-northwest',
@@ -70,31 +15,53 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
 
 .site-header { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 14px 32px; display: flex; align-items: center; gap: 16px; }
 .site-header img { height: 48px; width: auto; cursor: pointer; }
-.site-header__back { margin-left: auto; font-size: 13px; font-weight: 600; color: #1A3557; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; cursor: pointer; }
+.site-header__back { margin-left: auto; font-size: 12px; font-weight: 700; color: #1A3557; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
 .site-header__back:hover { opacity: 1; }
 
-.hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 48px 32px 44px; text-align: center; }
-.hero__portfolio { display: inline-block; background: #C8962A; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
-.hero__address { font-size: clamp(22px, 4vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 6px; }
-.hero__city { font-size: 15px; color: rgba(255,255,255,0.65); }
+.hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 44px 32px 40px; text-align: center; }
+.hero__badge { display: inline-block; background: #C8962A; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
+.hero__address { font-size: clamp(24px, 4.5vw, 44px); font-weight: 900; line-height: 1.15; margin-bottom: 10px; }
+.hero__meta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 6px; }
+.hero__meta-item { font-size: 14px; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 6px; }
+.hero__meta-sep { color: rgba(255,255,255,0.3); }
 
-.gallery { max-width: 960px; margin: 36px auto 0; padding: 0 24px; }
-.gallery h2 { font-size: 16px; font-weight: 800; color: #0D1F35; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
-.gallery__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
-.gallery__grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; display: block; transition: opacity 0.2s; cursor: pointer; }
-.gallery__grid img:hover { opacity: 0.88; }
-.gallery__empty { color: #999; font-size: 14px; font-style: italic; }
+.gallery-wrap { max-width: 900px; margin: 40px auto 0; padding: 0 24px; }
 
-.contact { max-width: 680px; margin: 44px auto 60px; padding: 0 24px; }
-.contact__card { background: #fff; border-radius: 10px; padding: 36px 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); text-align: center; }
-.contact__icon { font-size: 36px; margin-bottom: 14px; }
+.gallery-main { position: relative; border-radius: 12px; overflow: hidden; background: #000; line-height: 0; }
+.gallery-main__img { width: 100%; max-height: 540px; object-fit: contain; display: block; transition: opacity 0.3s; background: #0a0f1a; }
+.gallery-main__img.fade { opacity: 0; }
+
+.gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; background: rgba(0,0,0,0.45); border: 2px solid rgba(255,255,255,0.3); color: #fff; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 22px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; backdrop-filter: blur(4px); line-height: 1; }
+.gallery-arrow:hover { background: rgba(0,0,0,0.7); }
+.gallery-arrow--prev { left: 14px; }
+.gallery-arrow--next { right: 14px; }
+.gallery-counter { position: absolute; bottom: 14px; right: 16px; background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; z-index: 2; }
+
+.gallery-thumbs { display: flex; gap: 8px; margin-top: 12px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.gallery-thumbs::-webkit-scrollbar { height: 4px; }
+.gallery-thumbs::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+.gallery-thumb { flex-shrink: 0; width: 84px; height: 60px; border-radius: 6px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s, opacity 0.2s; }
+.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-thumb.active { border-color: #C8962A; }
+.gallery-thumb:not(.active) { opacity: 0.65; }
+.gallery-thumb:hover:not(.active) { opacity: 0.9; }
+
+.prop-info { max-width: 900px; margin: 28px auto 0; padding: 0 24px; }
+.prop-info__card { background: #fff; border-radius: 12px; padding: 24px 28px; box-shadow: 0 2px 14px rgba(0,0,0,0.07); display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+.prop-info__detail { display: flex; flex-direction: column; gap: 3px; }
+.prop-info__label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #999; }
+.prop-info__value { font-size: 15px; font-weight: 700; color: #0D1F35; }
+.prop-info__divider { width: 1px; height: 36px; background: #e8eaec; align-self: center; }
+
+.contact { max-width: 900px; margin: 28px auto 64px; padding: 0 24px; }
+.contact__card { background: #fff; border-radius: 12px; padding: 36px 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); text-align: center; }
 .contact__title { font-size: 22px; font-weight: 800; color: #0D1F35; margin-bottom: 10px; }
 .contact__text { font-size: 15px; color: #555; line-height: 1.65; margin-bottom: 28px; }
 .contact__actions { display: flex; flex-direction: column; gap: 12px; align-items: center; }
 @media (min-width: 480px) { .contact__actions { flex-direction: row; justify-content: center; } }
-.btn-primary { display: inline-block; padding: 13px 28px; background: #1A3557; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 6px; text-decoration: none; cursor: pointer; border: none; transition: background 0.2s; }
-.btn-primary:hover { background: #0D1F35; }
-.btn-secondary { display: inline-block; padding: 13px 28px; background: transparent; color: #1A3557; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 6px; text-decoration: none; cursor: pointer; border: 2px solid #1A3557; transition: all 0.2s; }
+.btn-primary { display: inline-block; padding: 14px 32px; background: #C8962A; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 7px; text-decoration: none; transition: background 0.2s; }
+.btn-primary:hover { background: #b5841f; }
+.btn-secondary { display: inline-block; padding: 14px 32px; background: transparent; color: #1A3557; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 7px; text-decoration: none; border: 2px solid #1A3557; transition: all 0.2s; }
 .btn-secondary:hover { background: #1A3557; color: #fff; }
 
 .not-found { max-width: 480px; margin: 80px auto; padding: 0 24px; text-align: center; }
@@ -103,23 +70,61 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
 </style>
 
 <header class="site-header">
-  <a href="/"><img id="logo" src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals" /></a>
-  <a id="back-btn" class="site-header__back" href="/investors">&larr; Back</a>
+  <a href="/"><img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals" /></a>
+  <a id="back-btn" class="site-header__back" href="/investors">&larr; Back to Portfolio</a>
 </header>
 
 <div id="main-content">
   <section class="hero">
-    <div id="prop-portfolio" class="hero__portfolio"></div>
-    <h1 id="prop-address" class="hero__address"></h1>
-    <p id="prop-city" class="hero__city"></p>
+    <div id="hero-badge" class="hero__badge"></div>
+    <h1 id="hero-address" class="hero__address"></h1>
+    <div class="hero__meta">
+      <span id="hero-beds" class="hero__meta-item"></span>
+      <span class="hero__meta-sep">|</span>
+      <span id="hero-baths" class="hero__meta-item"></span>
+      <span class="hero__meta-sep">|</span>
+      <span id="hero-type" class="hero__meta-item">Single Family</span>
+      <span class="hero__meta-sep">|</span>
+      <span id="hero-city" class="hero__meta-item"></span>
+    </div>
   </section>
-  <div class="gallery">
-    <h2>Property Photos</h2>
-    <div id="gallery-grid" class="gallery__grid"></div>
+
+  <div class="gallery-wrap">
+    <div class="gallery-main">
+      <img id="gallery-img" class="gallery-main__img" src="" alt="Property photo" />
+      <button class="gallery-arrow gallery-arrow--prev" id="gal-prev">&#8249;</button>
+      <button class="gallery-arrow gallery-arrow--next" id="gal-next">&#8250;</button>
+      <div class="gallery-counter"><span id="gal-cur">1</span> / <span id="gal-total">1</span></div>
+    </div>
+    <div id="gallery-thumbs" class="gallery-thumbs"></div>
   </div>
+
+  <div class="prop-info">
+    <div class="prop-info__card">
+      <div class="prop-info__detail">
+        <span class="prop-info__label">Bedrooms</span>
+        <span id="info-beds" class="prop-info__value"></span>
+      </div>
+      <div class="prop-info__divider"></div>
+      <div class="prop-info__detail">
+        <span class="prop-info__label">Bathrooms</span>
+        <span id="info-baths" class="prop-info__value"></span>
+      </div>
+      <div class="prop-info__divider"></div>
+      <div class="prop-info__detail">
+        <span class="prop-info__label">Type</span>
+        <span class="prop-info__value">Single Family</span>
+      </div>
+      <div class="prop-info__divider"></div>
+      <div class="prop-info__detail">
+        <span class="prop-info__label">Portfolio</span>
+        <span id="info-portfolio" class="prop-info__value"></span>
+      </div>
+    </div>
+  </div>
+
   <div class="contact">
     <div class="contact__card">
-      <div class="contact__icon">&#127968;</div>
       <h2 class="contact__title">Interested in This Property?</h2>
       <p class="contact__text">Contact us for rental rates, availability, and to schedule a showing.<br/>We typically respond within one business day.</p>
       <div class="contact__actions">
@@ -139,23 +144,24 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
 </div>
 `;
 
-    const _b = window.location.hostname.includes('wixstudio.com')
+    var _b = window.location.hostname.includes('wixstudio.com')
       ? '/' + window.location.pathname.split('/')[1] : '';
     this.addEventListener('click', function(e) {
-      const link = e.target.closest('a');
+      var link = e.target.closest('a');
       if (!link) return;
-      const href = link.getAttribute('href');
+      var href = link.getAttribute('href');
       if (!href || !href.startsWith('/')) return;
       e.preventDefault();
       e.stopPropagation();
       window.location.assign(window.location.origin + _b + href);
     });
-    // Populate from localStorage after HTML is set
+
     var data = {};
     try { data = JSON.parse(localStorage.getItem('csh_prop') || '{}'); } catch(e) {}
 
     var backSlug = BACK_SLUGS[data.portfolio] || 'investors';
     document.getElementById('back-btn').setAttribute('href', '/' + backSlug);
+    document.getElementById('contact-back-btn').setAttribute('href', '/' + backSlug);
 
     if (!data.address) {
       document.getElementById('main-content').style.display = 'none';
@@ -163,22 +169,67 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
       return;
     }
 
-    document.getElementById('prop-address').textContent = data.address;
-    document.getElementById('prop-city').textContent = 'Canton, Ohio';
-    document.getElementById('prop-portfolio').textContent = data.portfolio || '';
+    document.getElementById('hero-address').textContent = data.address;
+    document.getElementById('hero-badge').textContent = data.portfolio || '';
+    document.getElementById('hero-city').textContent = data.city || 'Canton, Ohio';
+    document.getElementById('hero-beds').textContent = (data.beds || 3) + ' Bedrooms';
+    document.getElementById('hero-baths').textContent = (data.baths || 1) + ' Bathroom';
+    document.getElementById('info-beds').textContent = (data.beds || 3) + ' Bed';
+    document.getElementById('info-baths').textContent = (data.baths || 1) + ' Bath';
+    document.getElementById('info-portfolio').textContent = data.portfolio || '';
 
-    var photos = PHOTO_POOLS[data.portfolio] || [];
-    var grid = document.getElementById('gallery-grid');
-    if (photos.length === 0) {
-      grid.innerHTML = '<p class="gallery__empty">Photos coming soon.</p>';
-    } else {
-      photos.forEach(function(url) {
-        var img = document.createElement('img');
-        img.src = url;
-        img.alt = 'Property photo';
-        grid.appendChild(img);
-      });
+    var photos = (data.photos && data.photos.length) ? data.photos : [];
+    if (!photos.length) {
+      document.getElementById('gallery-img').style.display = 'none';
+      document.getElementById('gal-prev').style.display = 'none';
+      document.getElementById('gal-next').style.display = 'none';
+      document.querySelector('.gallery-counter').style.display = 'none';
+      return;
     }
+
+    var curIdx = 0;
+    var mainImg = document.getElementById('gallery-img');
+    var curEl = document.getElementById('gal-cur');
+    var totalEl = document.getElementById('gal-total');
+    var thumbsEl = document.getElementById('gallery-thumbs');
+
+    totalEl.textContent = photos.length;
+    if (photos.length < 2) {
+      document.getElementById('gal-prev').style.display = 'none';
+      document.getElementById('gal-next').style.display = 'none';
+      document.querySelector('.gallery-counter').style.display = 'none';
+    }
+
+    mainImg.src = photos[0];
+
+    photos.forEach(function(url, i) {
+      var thumb = document.createElement('div');
+      thumb.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+      var img = document.createElement('img');
+      img.src = url;
+      img.alt = 'Photo ' + (i + 1);
+      thumb.appendChild(img);
+      thumb.addEventListener('click', function() { goToPhoto(i); });
+      thumbsEl.appendChild(thumb);
+    });
+
+    function goToPhoto(n) {
+      curIdx = ((n % photos.length) + photos.length) % photos.length;
+      mainImg.classList.add('fade');
+      setTimeout(function() {
+        mainImg.src = photos[curIdx];
+        mainImg.classList.remove('fade');
+      }, 200);
+      curEl.textContent = curIdx + 1;
+      thumbsEl.querySelectorAll('.gallery-thumb').forEach(function(t, i) {
+        t.classList.toggle('active', i === curIdx);
+      });
+      var activeThumb = thumbsEl.querySelectorAll('.gallery-thumb')[curIdx];
+      if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    document.getElementById('gal-prev').addEventListener('click', function() { goToPhoto(curIdx - 1); });
+    document.getElementById('gal-next').addEventListener('click', function() { goToPhoto(curIdx + 1); });
   }
 }
 customElements.define('csh-property-detail', CshPropertyDetail);
