@@ -138,12 +138,17 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
 </div>
 `;
 
+    const _b = window.location.hostname.includes('wixstudio.com')
+      ? '/' + window.location.pathname.split('/')[1] : '';
+    if (_b) this.querySelectorAll('a[href^="/"]').forEach(function(a) {
+      a.setAttribute('href', _b + a.getAttribute('href'));
+    });
     // Populate from localStorage after HTML is set
     var data = {};
     try { data = JSON.parse(localStorage.getItem('csh_prop') || '{}'); } catch(e) {}
 
     var backSlug = BACK_SLUGS[data.portfolio] || 'investors';
-    document.getElementById('back-btn').href = '/' + backSlug;
+    document.getElementById('back-btn').href = _b + '/' + backSlug;
 
     if (!data.address) {
       document.getElementById('main-content').style.display = 'none';

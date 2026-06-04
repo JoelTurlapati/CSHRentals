@@ -92,6 +92,11 @@ csh-geneva-str { display: block; font-family: 'Segoe UI', Arial, sans-serif; col
   </div>
 </div>
 `;
+    const _b = window.location.hostname.includes('wixstudio.com')
+      ? '/' + window.location.pathname.split('/')[1] : '';
+    if (_b) this.querySelectorAll('a[href^="/"]').forEach(function(a) {
+      a.setAttribute('href', _b + a.getAttribute('href'));
+    });
   }
 }
 customElements.define('csh-geneva-str', CshGenevaStr);

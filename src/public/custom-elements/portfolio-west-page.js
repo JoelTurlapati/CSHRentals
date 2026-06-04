@@ -85,10 +85,15 @@ csh-portfolio-west { display: block; font-family: 'Segoe UI', Arial, sans-serif;
 </div>
 `;
 
+    const _b = window.location.hostname.includes('wixstudio.com')
+      ? '/' + window.location.pathname.split('/')[1] : '';
+    if (_b) this.querySelectorAll('a[href^="/"]').forEach(function(a) {
+      a.setAttribute('href', _b + a.getAttribute('href'));
+    });
     this.querySelectorAll('.prop-card__btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         try { localStorage.setItem('csh_prop', JSON.stringify({ address: btn.dataset.address, portfolio: PORTFOLIO })); } catch(e) {}
-        window.location.href = '/property-detail';
+        window.location.href = _b + '/property-detail';
       });
     });
   }
