@@ -11,7 +11,7 @@ class CshPortfolioCentral extends HTMLElement {
       {
         address: '1344 24th St NW', city: 'Canton, OH 44709', beds: 3, baths: 3,
         cover: 'https://static.wixstatic.com/media/d9828b_65a1d84ce8814d63beab35b2edd16bb2~mv2.jpg',
-        photos: ['https://static.wixstatic.com/media/d9828b_65a1d84ce8814d63beab35b2edd16bb2~mv2.jpg']
+        photos: ['https://static.wixstatic.com/media/d9828b_65a1d84ce8814d63beab35b2edd16bb2~mv2.jpg','https://static.wixstatic.com/media/d9828b_3b91dd78d36944dea63b4ee903e94071~mv2.jpg','https://static.wixstatic.com/media/d9828b_66cc08c529ae49d29ba1acf113eb0dd8~mv2.jpg','https://static.wixstatic.com/media/d9828b_81d3c5bccc7a4f6f975fd3a5b4ce03bd~mv2.jpg','https://static.wixstatic.com/media/d9828b_c0d539a02c96408a98a7a0784df7cffc~mv2.jpg','https://static.wixstatic.com/media/d9828b_0c26666bf12548968f2e75e87415d05f~mv2.jpg','https://static.wixstatic.com/media/d9828b_201bf2f480b04f24bc9193bcf7041522~mv2.jpg','https://static.wixstatic.com/media/d9828b_274508ba42a74e96b2838f2f96396b47~mv2.jpg','https://static.wixstatic.com/media/d9828b_a63d0741f564479b9253ead7b53768f1~mv2.jpg','https://static.wixstatic.com/media/d9828b_c0bf46a5ecfa4a198d715a1bb6bd6857~mv2.jpg','https://static.wixstatic.com/media/d9828b_b4591933ffbb4d73bed0597ef6e78b36~mv2.jpg','https://static.wixstatic.com/media/d9828b_334cf3c28fd94c54ba69df14166aae60~mv2.jpg','https://static.wixstatic.com/media/d9828b_94c155a21a0a4fdeadce4c26bea6bc5e~mv2.jpg','https://static.wixstatic.com/media/d9828b_0bd8ab10a9c64d30875592f32ba8ff45~mv2.jpg','https://static.wixstatic.com/media/d9828b_620a33aee54840ef918020fb7765cace~mv2.jpg','https://static.wixstatic.com/media/d9828b_679f8b4caadd42378be28229ffe2d712~mv2.jpg','https://static.wixstatic.com/media/d9828b_93f66492ff60445aaa2bd8a05c14bcb7~mv2.jpg','https://static.wixstatic.com/media/d9828b_063a4c82ac584b21bf73a2a87f4af450~mv2.jpg','https://static.wixstatic.com/media/d9828b_dbed66ddc50e4feb950561eb23ca7ae1~mv2.jpg','https://static.wixstatic.com/media/d9828b_991a5cb34a8042788e7da226fbce7365~mv2.jpg','https://static.wixstatic.com/media/d9828b_a153fdee2e9c47818f8fe247f6029d9b~mv2.jpg','https://static.wixstatic.com/media/d9828b_5fabbb0d79eb4504a6b3b8d79ed1c679~mv2.jpg','https://static.wixstatic.com/media/d9828b_1c38001509724112aba3c97aa16854a3~mv2.jpg','https://static.wixstatic.com/media/d9828b_1afd315e6297401c8e7a145e3a1eecea~mv2.jpg','https://static.wixstatic.com/media/d9828b_2a3bb9e0bfda44ddabef34cdbc8dc89b~mv2.jpg','https://static.wixstatic.com/media/d9828b_82b1b8bb91344a4b8d7194a0cde59875~mv2.jpg']
       },
       {
         address: '1540 Norwood Pl NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
@@ -21,7 +21,7 @@ class CshPortfolioCentral extends HTMLElement {
       {
         address: '1507 Ridgeway Pl NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
         cover: 'https://static.wixstatic.com/media/d9828b_73730af40c8b485aba9b625fff3d6335~mv2.jpg',
-        photos: ['https://static.wixstatic.com/media/d9828b_73730af40c8b485aba9b625fff3d6335~mv2.jpg']
+        photos: ['https://static.wixstatic.com/media/d9828b_73730af40c8b485aba9b625fff3d6335~mv2.jpg','https://static.wixstatic.com/media/d9828b_8af7c251e6e0488188240060dc43a077~mv2.jpg','https://static.wixstatic.com/media/d9828b_1fff20fd36134829aa06d83d5e0f1ac7~mv2.jpg','https://static.wixstatic.com/media/d9828b_85b1b4c51b8a48a9b9819dff953be0e3~mv2.jpg','https://static.wixstatic.com/media/d9828b_f0af7394aec940f99129fc0e62455d97~mv2.jpg','https://static.wixstatic.com/media/d9828b_309569caf91a46dcae8e0102e26edad5~mv2.jpg','https://static.wixstatic.com/media/d9828b_057825d0fa9b4b749e4265cf0474c194~mv2.jpg','https://static.wixstatic.com/media/d9828b_fba1a8f2c85f446bab71e23f85682b72~mv2.jpg','https://static.wixstatic.com/media/d9828b_436586c8bb854297a07f78c8db7e3580~mv2.jpg','https://static.wixstatic.com/media/d9828b_24b66a265be14b0f9cac9105bcb88db9~mv2.jpg','https://static.wixstatic.com/media/d9828b_482c3513e6f44b13a518a5dd9c9a7213~mv2.jpg','https://static.wixstatic.com/media/d9828b_bdcfefa0639e4f6dabc72aaaf12547fa~mv2.jpg','https://static.wixstatic.com/media/d9828b_74358afc5d9949edbd81c5e9b8e3d917~mv2.jpg','https://static.wixstatic.com/media/d9828b_27b18ab11ce1490fb7ad169cfd6dc0c0~mv2.jpg','https://static.wixstatic.com/media/d9828b_b64f4443195541cca66e8a49c52dda6e~mv2.jpg','https://static.wixstatic.com/media/d9828b_3df69482899444c4a391c9dd17034226~mv2.jpg','https://static.wixstatic.com/media/d9828b_40970457b07047898f99cd5507269b26~mv2.jpg','https://static.wixstatic.com/media/d9828b_2a02eaa4512746138581042f90338edc~mv2.jpg','https://static.wixstatic.com/media/d9828b_76e99ee3548c47b1bd7ad3caba339bbc~mv2.jpg','https://static.wixstatic.com/media/d9828b_69bb6a44b2bb47ce9813234351047089~mv2.jpg','https://static.wixstatic.com/media/d9828b_185d9f8281294854aa4126f42eeeb29c~mv2.jpg','https://static.wixstatic.com/media/d9828b_4e80b94124a646cfa6bb012c2e8c8bf2~mv2.jpg','https://static.wixstatic.com/media/d9828b_707e6c1867c144f08c100e543d613096~mv2.jpg','https://static.wixstatic.com/media/d9828b_4e4f204f94e04fa9988a8a43ae293e49~mv2.jpg','https://static.wixstatic.com/media/d9828b_91eb414b0c8546b18e5597a734cecb86~mv2.jpg','https://static.wixstatic.com/media/d9828b_ebe6aa0d0c71473d881a75c8ec0201c7~mv2.jpg','https://static.wixstatic.com/media/d9828b_1d0e88b9a2794b6fa95a3ad96fcdc37d~mv2.jpg']
       },
       {
         address: '1569 25th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
@@ -41,7 +41,7 @@ class CshPortfolioCentral extends HTMLElement {
       {
         address: '1341 Ridgeway Pl NW', city: 'Canton, OH 44709', beds: 3, baths: 2,
         cover: 'https://static.wixstatic.com/media/d9828b_8af7c251e6e0488188240060dc43a077~mv2.jpg',
-        photos: ['https://static.wixstatic.com/media/d9828b_8af7c251e6e0488188240060dc43a077~mv2.jpg']
+        photos: ['https://static.wixstatic.com/media/d9828b_8af7c251e6e0488188240060dc43a077~mv2.jpg','https://static.wixstatic.com/media/d9828b_3484c11b88334bb0be1efebcb06bdee0~mv2.jpg','https://static.wixstatic.com/media/d9828b_0b79e1ad7f2643868cdfc31a62db4687~mv2.jpg','https://static.wixstatic.com/media/d9828b_17b9678080f64d8f91db5cf9f785f211~mv2.jpg','https://static.wixstatic.com/media/d9828b_fce057e1234747c29345c7c9e70a2229~mv2.jpg','https://static.wixstatic.com/media/d9828b_879d1d31cdff4553a3c8aab9a5cf0957~mv2.jpg','https://static.wixstatic.com/media/d9828b_1010597882cf46a2b5e71ae50bbaecaa~mv2.jpg','https://static.wixstatic.com/media/d9828b_78077e15cbb449ebab4996aa19c352ce~mv2.jpg','https://static.wixstatic.com/media/d9828b_a341409b3d9c41b2bd9f83efd3b154af~mv2.jpg','https://static.wixstatic.com/media/d9828b_50a9d7c7b87a4ba0af9141d2ff0cb436~mv2.jpg','https://static.wixstatic.com/media/d9828b_e42908806f734cfe92c7c46533326401~mv2.jpg','https://static.wixstatic.com/media/d9828b_07563371c1964c51ab9cb113f331e58c~mv2.jpg','https://static.wixstatic.com/media/d9828b_9e560f7bce244dc29c4c6cf8b1f9ea2d~mv2.jpg','https://static.wixstatic.com/media/d9828b_482400bc269a40438056db8a14a6e84a~mv2.jpg','https://static.wixstatic.com/media/d9828b_e1ecaf61cfe040ef853683c459f45ae3~mv2.jpg']
       },
       {
         address: '1611 25th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
@@ -60,39 +60,39 @@ class CshPortfolioCentral extends HTMLElement {
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 csh-portfolio-central { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: #f5f7fa; }
-.csh-hdr{background:#0a1628;border-bottom:1px solid rgba(255,255,255,.08);padding:0 28px;display:flex;align-items:center;height:68px;position:sticky;top:0;z-index:200}
+.csh-hdr{background:#0a1628;border-bottom:1px solid rgba(255,255,255,.08);padding:0 28px;display:flex;align-items:center;height:88px;position:sticky;top:0;z-index:200}
 .csh-hdr__logo{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;flex-shrink:0}
-.csh-hdr__logo-img{height:40px;width:auto;border-radius:4px;display:block;object-fit:cover}
-.csh-hdr__logo-text{font-size:8px;font-weight:900;letter-spacing:.22em;color:rgba(255,255,255,.85);text-transform:uppercase}
+.csh-hdr__logo-img{height:52px;width:auto;border-radius:4px;display:block;object-fit:cover}
+.csh-hdr__logo-text{font-size:10px;font-weight:900;letter-spacing:.22em;color:rgba(255,255,255,.85);text-transform:uppercase}
 .csh-hdr__nav{margin-left:auto;display:flex;align-items:center;gap:10px}
-.csh-hdr__btn{padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);transition:background .2s;white-space:nowrap}
+.csh-hdr__btn{padding:10px 18px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);transition:background .2s,border-color .2s;white-space:nowrap}
 .csh-hdr__btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);color:#fff}
 .csh-hdr__btn--gold{background:#c8962a;border-color:#c8962a;color:#0a1628}
 .csh-hdr__btn--gold:hover{background:#dba83a;border-color:#dba83a}
-.csh-hdr__email{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;transition:background .2s}
+.csh-hdr__email{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;transition:background .2s,border-color .2s}
 .csh-hdr__email:hover{background:rgba(255,255,255,.1)}
-.csh-back{display:block;padding:10px 28px;font-size:11px;font-weight:700;color:#5a6b85;text-decoration:none;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid #e0e4ea;background:#fff}
+.csh-back{display:block;padding:10px 28px;font-size:13px;font-weight:700;color:#5a6b85;text-decoration:none;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid #e0e4ea;background:#fff}
 .csh-back:hover{color:#0d1f35}
-.prop-card__rent{font-size:15px;font-weight:800;color:#c8962a;margin-bottom:12px}
+.prop-card__rent{font-size:18px;font-weight:800;color:#c8962a;margin-bottom:12px}
 .hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 52px 32px 48px; text-align: center; }
-.hero__badge { display: inline-block; background: #C8962A; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
-.hero__title { font-size: clamp(26px, 4.5vw, 44px); font-weight: 900; margin-bottom: 8px; }
-.hero__sub { font-size: 15px; color: rgba(255,255,255,0.68); }
+.hero__badge { display: inline-block; background: #C8962A; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
+.hero__title { font-size: clamp(31px, 5.4vw, 53px); font-weight: 900; margin-bottom: 8px; }
+.hero__sub { font-size: 18px; color: rgba(255,255,255,0.68); }
 .section-head { max-width: 1040px; margin: 48px auto 20px; padding: 0 24px; display: flex; align-items: baseline; justify-content: space-between; }
-.section-head h2 { font-size: 18px; font-weight: 800; color: #0D1F35; text-transform: uppercase; letter-spacing: 0.08em; }
-.section-head span { font-size: 13px; color: #888; }
+.section-head h2 { font-size: 22px; font-weight: 800; color: #0D1F35; text-transform: uppercase; letter-spacing: 0.08em; }
+.section-head span { font-size: 16px; color: #888; }
 .prop-grid { max-width: 1040px; margin: 0 auto 64px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 24px; }
 .prop-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); transition: transform 0.22s, box-shadow 0.22s; display: flex; flex-direction: column; cursor: pointer; }
 .prop-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.16); }
 .prop-card__img-wrap { position: relative; height: 220px; overflow: hidden; }
 .prop-card__cover { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s; }
 .prop-card:hover .prop-card__cover { transform: scale(1.06); }
-.prop-card__badge { position: absolute; top: 12px; left: 12px; background: #C8962A; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 12px; }
+.prop-card__badge { position: absolute; top: 12px; left: 12px; background: #C8962A; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 12px; }
 .prop-card__info { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
-.prop-card__address { font-size: 17px; font-weight: 800; color: #0D1F35; margin-bottom: 4px; line-height: 1.3; }
-.prop-card__city { font-size: 12px; color: #999; margin-bottom: 10px; }
-.prop-card__specs { font-size: 13px; color: #555; font-weight: 600; margin-bottom: 18px; flex: 1; }
-.prop-card__btn { width: 100%; padding: 12px; background: #1A3557; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 7px; text-align: center; }
+.prop-card__address { font-size: 20px; font-weight: 800; color: #0D1F35; margin-bottom: 4px; line-height: 1.3; }
+.prop-card__city { font-size: 14px; color: #999; margin-bottom: 10px; }
+.prop-card__specs { font-size: 16px; color: #555; font-weight: 600; margin-bottom: 18px; flex: 1; }
+.prop-card__btn { width: 100%; padding: 12px; background: #1A3557; color: #fff; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 7px; text-align: center; }
 .prop-card:hover .prop-card__btn { background: #0D1F35; }
 </style>
 <header class="csh-hdr">

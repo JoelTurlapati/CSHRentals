@@ -29,7 +29,7 @@ class CshHome extends HTMLElement {
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;background:#eef2f7;color:#0d1f35;line-height:1.6}
+csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;background:#eef2f7;color:#0d1f35;line-height:1.6}
 :root{
   --bg:#eef2f7;--bg-alt:#e4ecf7;--card:#ffffff;
   --navy:#0d1f35;--navy-hdr:#0a1628;
@@ -39,19 +39,19 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
   --shadow:0 2px 16px rgba(10,30,60,.08);
 }
 
-/* ── HEADER ── */
-.csh-hdr{background:#0a1628;border-bottom:1px solid rgba(255,255,255,.08);padding:0 32px;display:flex;align-items:center;height:72px;position:sticky;top:0;z-index:200}
+/* ── HEADER (elements +30%) ── */
+.csh-hdr{background:#0a1628;border-bottom:1px solid rgba(255,255,255,.08);padding:0 32px;display:flex;align-items:center;height:94px;position:sticky;top:0;z-index:200}
 .csh-hdr__logo{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;flex-shrink:0}
-.csh-hdr__logo-img{height:42px;width:auto;border-radius:4px;display:block;object-fit:cover}
-.csh-hdr__logo-text{font-size:8px;font-weight:900;letter-spacing:.22em;color:rgba(255,255,255,.85);text-transform:uppercase;line-height:1}
+.csh-hdr__logo-img{height:55px;width:auto;border-radius:4px;display:block;object-fit:cover}
+.csh-hdr__logo-text{font-size:10px;font-weight:900;letter-spacing:.22em;color:rgba(255,255,255,.85);text-transform:uppercase;line-height:1}
 .csh-hdr__nav{margin-left:auto;display:flex;align-items:center;gap:10px}
-.csh-hdr__btn{padding:9px 18px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:6px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);transition:background .2s,border-color .2s;white-space:nowrap}
+.csh-hdr__btn{padding:12px 23px;font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:6px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);transition:background .2s,border-color .2s;white-space:nowrap}
 .csh-hdr__btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);color:#fff}
 .csh-hdr__btn--gold{background:var(--gold);border-color:var(--gold);color:#0a1628}
 .csh-hdr__btn--gold:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
-.csh-hdr__email{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:background .2s,border-color .2s}
+.csh-hdr__email{width:47px;height:47px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;transition:background .2s,border-color .2s}
 .csh-hdr__email:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6)}
-@media(max-width:640px){.csh-hdr{padding:0 16px}.csh-hdr__btn{padding:8px 12px;font-size:10px}}
+@media(max-width:640px){.csh-hdr{padding:0 16px}.csh-hdr__btn{padding:10px 16px;font-size:13px}}
 
 /* ── SLIDESHOW ── */
 .hero{position:relative;width:100%;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -62,9 +62,9 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
 .slide-arrow:hover{background:rgba(255,255,255,.25)}
 .slide-prev{left:20px}.slide-next{right:20px}
 .hero__body{position:relative;z-index:2;text-align:center;padding:80px 24px 90px;max-width:800px}
-.hero__eyebrow{display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:22px}
-.hero__title{font-size:clamp(32px,6vw,62px);font-weight:900;color:#fff;line-height:1.06;margin-bottom:16px;letter-spacing:-.02em}
-.hero__sub{font-size:clamp(13px,1.8vw,16px);color:rgba(255,255,255,.75);line-height:1.65;max-width:580px;margin:0 auto}
+.hero__eyebrow{display:inline-block;background:var(--gold);color:#fff;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:22px}
+.hero__title{font-size:clamp(38px,7.2vw,74px);font-weight:900;color:#fff;line-height:1.06;margin-bottom:16px;letter-spacing:-.02em}
+.hero__sub{font-size:clamp(16px,2.2vw,19px);color:rgba(255,255,255,.75);line-height:1.65;max-width:580px;margin:0 auto}
 .slide-dots{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:8px}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;padding:0;transition:background .3s,transform .2s}
 .dot.active{background:#fff;transform:scale(1.4)}
@@ -73,36 +73,36 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
 .sec{padding:72px 40px}
 @media(max-width:768px){.sec{padding:56px 24px}}
 .wrap{max-width:1200px;margin:0 auto}
-.sec-lbl{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.sec-h2{font-size:clamp(22px,3vw,36px);font-weight:800;color:var(--navy);line-height:1.12;letter-spacing:-.02em;margin-bottom:12px}
-.sec-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:640px}
+.sec-lbl{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.sec-h2{font-size:clamp(26px,3.6vw,43px);font-weight:800;color:var(--navy);line-height:1.12;letter-spacing:-.02em;margin-bottom:12px}
+.sec-sub{font-size:18px;color:var(--muted);line-height:1.75;max-width:640px}
 .divbar{width:44px;height:3px;background:var(--gold);margin-bottom:22px}
 
 /* ── INTRO ── */
 .intro{background:var(--card);padding:64px 40px 56px;border-bottom:1px solid var(--border)}
 .intro__wrap{max-width:880px;margin:0 auto}
-.intro__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-g);padding:5px 16px;border-radius:20px;margin-bottom:24px}
-.intro__h1{font-size:clamp(24px,4vw,40px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
-.intro__desc{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:36px}
+.intro__tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-g);padding:5px 16px;border-radius:20px;margin-bottom:24px}
+.intro__h1{font-size:clamp(29px,4.8vw,48px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
+.intro__desc{font-size:18px;color:var(--muted);line-height:1.85;margin-bottom:36px}
 .intro__cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px}
 @media(max-width:640px){.intro__cols{grid-template-columns:1fr}}
 .intro__box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px 22px}
-.intro__box-ttl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.intro__box-ttl{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .intro__box ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.intro__box li{font-size:13.5px;color:var(--muted);line-height:1.55;padding-left:16px;position:relative}
+.intro__box li{font-size:16px;color:var(--muted);line-height:1.55;padding-left:16px;position:relative}
 .intro__box li::before{content:'•';position:absolute;left:0;color:var(--gold);font-weight:700}
 .intro__price{background:linear-gradient(135deg,#0a1628,#0d2545);border:1px solid var(--border-g);border-radius:10px;padding:28px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
 .intro__price-val{font-size:clamp(26px,3.5vw,40px);font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1;margin-bottom:5px}
-.intro__price-lbl{font-size:12px;color:rgba(255,255,255,.6)}
-.intro__price-note{font-size:13.5px;color:rgba(255,255,255,.75);line-height:1.75;max-width:360px}
-.intro__price-btn{display:inline-block;padding:12px 26px;background:var(--gold);color:#0a1628;font-size:12px;font-weight:800;letter-spacing:.05em;text-decoration:none;border-radius:6px;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.intro__price-lbl{font-size:14px;color:rgba(255,255,255,.6)}
+.intro__price-note{font-size:16px;color:rgba(255,255,255,.75);line-height:1.75;max-width:360px}
+.intro__price-btn{display:inline-block;padding:12px 26px;background:var(--gold);color:#0a1628;font-size:14px;font-weight:800;letter-spacing:.05em;text-decoration:none;border-radius:6px;white-space:nowrap;transition:background .2s;flex-shrink:0}
 .intro__price-btn:hover{background:var(--gold-lt)}
 
 /* ── CONTACT CTA STRIP ── */
 .cta-strip{background:#0a1628;padding:32px 40px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
 .cta-strip__inner{max-width:640px;margin:0 auto}
-.cta-strip__text{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6}
-.cta-contact-btn{display:inline-block;padding:13px 36px;background:var(--gold);color:#0a1628;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;text-decoration:none;transition:background .2s}
+.cta-strip__text{font-size:17px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6}
+.cta-contact-btn{display:inline-block;padding:13px 36px;background:var(--gold);color:#0a1628;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;text-decoration:none;transition:background .2s}
 .cta-contact-btn:hover{background:var(--gold-lt)}
 
 /* ── PORTFOLIO CARDS ── */
@@ -113,73 +113,86 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
 .p-card__img{width:100%;height:200px;object-fit:cover;display:block;border-radius:12px 12px 0 0}
 .p-card__body{padding:24px;flex:1;display:flex;flex-direction:column;gap:14px}
 .p-card__hdr{display:flex;align-items:center;gap:14px}
-.p-letter{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--gold);color:#0a1628;font-size:19px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.p-title{font-size:16px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
-.p-meta{font-size:12px;color:var(--muted)}
-.p-cta{display:block;width:100%;padding:12px;background:var(--navy);color:#fff;text-align:center;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;text-decoration:none;transition:background .2s}
+.p-letter{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--gold);color:#0a1628;font-size:23px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.p-title{font-size:19px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
+.p-meta{font-size:14px;color:var(--muted)}
+.p-cta{display:block;width:100%;padding:12px;background:var(--navy);color:#fff;text-align:center;font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;text-decoration:none;transition:background .2s}
 .p-cta:hover{background:#1a3557}
 
-/* ── PDF BUTTONS ── */
-.pdf-btns{display:flex;gap:10px;flex-wrap:wrap}
-.pdf-btn{flex:1;min-width:120px;display:block;padding:10px 12px;background:transparent;color:var(--gold);text-align:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--border-g);border-radius:6px;text-decoration:none;transition:background .2s,color .2s}
-.pdf-btn:hover{background:rgba(200,150,42,.09);color:var(--gold-lt)}
+/* ── DROPDOWN ── */
+.drop-wrap{position:relative;display:block}
+.drop-trigger{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px 14px;background:transparent;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--border-g);border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s,color .2s;line-height:1}
+.drop-trigger:hover{background:rgba(200,150,42,.09);color:var(--gold-lt)}
+.drop-arrow{font-size:10px;transition:transform .2s;display:inline-block;flex-shrink:0}
+.drop-wrap.open .drop-arrow{transform:rotate(180deg)}
+.drop-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1.5px solid var(--border-g);border-radius:8px;box-shadow:0 8px 32px rgba(10,30,60,.15);z-index:100;overflow:hidden;min-width:200px}
+.drop-wrap.open .drop-menu{display:block}
+.drop-item{display:block;padding:12px 16px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:background .2s,color .2s;white-space:nowrap}
+.drop-item:hover{background:rgba(200,150,42,.08);color:var(--gold-lt)}
+.drop-item+.drop-item{border-top:1px solid rgba(200,150,42,.18)}
+
+/* Shared P&L dropdown for individual properties section */
+.prem-drop-wrap{display:flex;margin-top:24px;margin-bottom:28px}
+.prem-drop-wrap .drop-wrap{min-width:240px}
 
 /* ── INDIVIDUAL PROPERTIES ── */
-.prem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.prem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
 @media(max-width:960px){.prem-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.prem-grid{grid-template-columns:1fr}}
 .prem-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:box-shadow .2s}
 .prem-card:hover{box-shadow:0 4px 20px rgba(10,30,60,.12)}
 .prem-card__img{width:100%;height:160px;object-fit:cover;display:block}
 .prem-card__body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.prem-badge{display:inline-block;font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:#0a1628;padding:3px 8px;border-radius:3px;width:fit-content}
-.prem-addr{font-size:14px;font-weight:800;color:var(--navy);line-height:1.3}
-.prem-beds{font-size:12px;color:var(--muted);margin-bottom:2px}
+.prem-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:#0a1628;padding:3px 8px;border-radius:3px;width:fit-content}
+.prem-addr{font-size:17px;font-weight:800;color:var(--navy);line-height:1.3}
+.prem-beds{font-size:14px;color:var(--muted);margin-bottom:2px}
 
 /* ── GENEVA ── */
 .gen-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:36px}
 @media(max-width:820px){.gen-grid{grid-template-columns:1fr;gap:36px}}
-.gen-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#0a1628;background:var(--gold);padding:4px 12px;border-radius:3px;margin-bottom:14px}
-.gen-addr{font-size:21px;font-weight:800;color:var(--navy);margin-bottom:5px;line-height:1.2}
-.gen-specs{font-size:13px;color:var(--muted);margin-bottom:16px}
-.gen-desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:22px}
+.gen-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#0a1628;background:var(--gold);padding:4px 12px;border-radius:3px;margin-bottom:14px}
+.gen-addr{font-size:25px;font-weight:800;color:var(--navy);margin-bottom:5px;line-height:1.2}
+.gen-specs{font-size:16px;color:var(--muted);margin-bottom:16px}
+.gen-desc{font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:22px}
 .adu{background:rgba(200,150,42,.06);border:1px solid var(--border-g);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 18px;margin-bottom:20px}
-.adu__ttl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
-.adu__txt{font-size:13px;color:var(--muted);line-height:1.75}
-.gen-metrics{display:flex;flex-direction:column;gap:14px}
-.gm{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px 24px;box-shadow:var(--shadow)}
-.gm__val{font-size:clamp(20px,2.5vw,28px);font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1;margin-bottom:5px}
-.gm__lbl{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-.gm__note{font-size:11px;color:var(--faint)}
+.adu__ttl{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+.adu__txt{font-size:16px;color:var(--muted);line-height:1.75}
 .gen-gallery-wrap{margin-top:20px}
-.gen-gallery-btn{display:block;width:100%;padding:11px;background:transparent;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--border-g);border-radius:6px;cursor:pointer;transition:background .2s;font-family:inherit}
+.gen-gallery-btn{display:block;width:100%;padding:11px;background:transparent;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--border-g);border-radius:6px;cursor:pointer;transition:background .2s;font-family:inherit}
 .gen-gallery-btn:hover{background:rgba(200,150,42,.07)}
 .gen-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
 .gen-gallery-grid.hidden{display:none}
 .gen-gallery-grid img{width:100%;height:150px;object-fit:cover;border-radius:8px;display:block}
 @media(max-width:560px){.gen-gallery-grid{grid-template-columns:1fr}}
 
+/* ── GENEVA METRICS ── */
+.gen-metrics{display:flex;flex-direction:column;gap:14px}
+.gm{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px 24px;box-shadow:var(--shadow)}
+.gm__val{font-size:clamp(24px,3vw,34px);font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1;margin-bottom:5px}
+.gm__lbl{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.gm__note{font-size:13px;color:var(--faint)}
+
 /* ── WHY CANTON ── */
-.wc-tagline{font-size:16px;color:var(--muted);line-height:1.8;text-align:center;max-width:700px;margin:16px auto 44px;font-style:italic}
+.wc-tagline{font-size:19px;color:var(--muted);line-height:1.8;text-align:center;max-width:700px;margin:16px auto 44px;font-style:italic}
 .wc-features{display:flex;flex-direction:column;gap:28px}
 .wc-feature{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:36px 40px;box-shadow:var(--shadow);transition:box-shadow .2s}
 .wc-feature:hover{box-shadow:0 4px 24px rgba(10,30,60,.12)}
 .wc-feature__row{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
-.wc-feature__title{font-size:clamp(20px,2.5vw,26px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
-.wc-feature__desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.wc-feature__title{font-size:clamp(24px,3vw,31px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
+.wc-feature__desc{font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:16px}
 .wc-feature__list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.wc-feature__list li{font-size:13.5px;color:var(--muted);padding-left:18px;position:relative;line-height:1.6}
+.wc-feature__list li{font-size:16px;color:var(--muted);padding-left:18px;position:relative;line-height:1.6}
 .wc-feature__list li::before{content:'•';position:absolute;left:0;color:var(--gold);font-weight:900;font-size:15px;line-height:1.3}
 .wc-feature__list li strong{color:var(--navy)}
-.wc-hi{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.03em;color:var(--gold);background:rgba(200,150,42,.08);border:1.5px solid var(--border-g);border-radius:6px;padding:7px 16px;margin-top:4px}
+.wc-hi{display:inline-block;font-size:14px;font-weight:800;letter-spacing:.03em;color:var(--gold);background:rgba(200,150,42,.08);border:1.5px solid var(--border-g);border-radius:6px;padding:7px 16px;margin-top:4px}
 .wc-imgs{display:flex;flex-direction:column;gap:10px}
 .wc-imgs img{width:100%;height:185px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 2px 10px rgba(10,30,60,.09)}
 .wc-imgs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
 .wc-imgs-row img{width:100%;height:165px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 2px 10px rgba(10,30,60,.09)}
 .wc-img-wide{width:100%;height:200px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 2px 10px rgba(10,30,60,.09);margin-top:16px}
 .wc-close{margin-top:40px;background:linear-gradient(135deg,#0a1628,#0d2545);border:1px solid var(--border-g);border-radius:12px;padding:32px 36px;text-align:center}
-.wc-close__val{font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--gold);letter-spacing:-.02em;margin-bottom:10px}
-.wc-close__txt{font-size:14px;color:rgba(255,255,255,.7);line-height:1.75;max-width:600px;margin:0 auto}
+.wc-close__val{font-size:clamp(26px,3.6vw,41px);font-weight:900;color:var(--gold);letter-spacing:-.02em;margin-bottom:10px}
+.wc-close__txt{font-size:17px;color:rgba(255,255,255,.7);line-height:1.75;max-width:600px;margin:0 auto}
 @media(max-width:768px){
   .wc-feature{padding:22px 18px}
   .wc-feature__row{grid-template-columns:1fr}
@@ -187,7 +200,7 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
 }
 
 /* ── FOOTER ── */
-.footer{background:#0a1628;border-top:1px solid rgba(255,255,255,.08);padding:24px 40px;text-align:center;font-size:11.5px;color:rgba(255,255,255,.45)}
+.footer{background:#0a1628;border-top:1px solid rgba(255,255,255,.08);padding:24px 40px;text-align:center;font-size:14px;color:rgba(255,255,255,.45)}
 </style>
 
 <!-- ══ HEADER ══ -->
@@ -283,9 +296,12 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
             </div>
           </div>
           <a class="p-cta" href="/portfolio-west">View Portfolio A &rarr;</a>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Portfolio_A.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Portfolio_A.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+          <div class="drop-wrap">
+            <button class="drop-trigger" type="button">&#128196; Income Statement <span class="drop-arrow">&#9660;</span></button>
+            <div class="drop-menu">
+              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_A.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
+              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_A.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+            </div>
           </div>
         </div>
       </div>
@@ -302,9 +318,12 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
             </div>
           </div>
           <a class="p-cta" href="/portfolio-northwest">View Portfolio B &rarr;</a>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Portfolio_B.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Portfolio_B.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+          <div class="drop-wrap">
+            <button class="drop-trigger" type="button">&#128196; Income Statement <span class="drop-arrow">&#9660;</span></button>
+            <div class="drop-menu">
+              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_B.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
+              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_B.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+            </div>
           </div>
         </div>
       </div>
@@ -321,9 +340,12 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
             </div>
           </div>
           <a class="p-cta" href="/portfolio-central">View Portfolio C &rarr;</a>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Portfolio_C.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Portfolio_C.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+          <div class="drop-wrap">
+            <button class="drop-trigger" type="button">&#128196; Income Statement <span class="drop-arrow">&#9660;</span></button>
+            <div class="drop-menu">
+              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_C.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
+              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_C.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+            </div>
           </div>
         </div>
       </div>
@@ -340,9 +362,12 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
             </div>
           </div>
           <a class="p-cta" href="/portfolio-northeast">View Portfolio D &rarr;</a>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Portfolio_D.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Portfolio_D.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+          <div class="drop-wrap">
+            <button class="drop-trigger" type="button">&#128196; Income Statement <span class="drop-arrow">&#9660;</span></button>
+            <div class="drop-menu">
+              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_D.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
+              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_D.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+            </div>
           </div>
         </div>
       </div>
@@ -366,6 +391,18 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
     <h2 class="sec-h2">5 Individual Investment Properties</h2>
     <div class="divbar"></div>
     <p class="sec-sub">Five stand-alone homes available for individual sale, each offering strong rental income in established Canton neighborhoods.</p>
+
+    <!-- Shared P&L dropdown for all 5 properties -->
+    <div class="prem-drop-wrap">
+      <div class="drop-wrap">
+        <button class="drop-trigger" type="button">&#128196; P&amp;L Statements <span class="drop-arrow">&#9660;</span></button>
+        <div class="drop-menu">
+          <a class="drop-item" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
+          <a class="drop-item" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
+        </div>
+      </div>
+    </div>
+
     <div class="prem-grid">
 
       <div class="prem-card">
@@ -374,10 +411,6 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
           <span class="prem-badge">Individual Property</span>
           <div class="prem-addr">300 Montrose Ave NW</div>
           <div class="prem-beds">5 bed &nbsp;/&nbsp; 2 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
-          </div>
         </div>
       </div>
 
@@ -387,10 +420,6 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
           <span class="prem-badge">Individual Property</span>
           <div class="prem-addr">2631 Demington Ave NW</div>
           <div class="prem-beds">3 bed &nbsp;/&nbsp; 2 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
-          </div>
         </div>
       </div>
 
@@ -400,10 +429,6 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
           <span class="prem-badge">Individual Property</span>
           <div class="prem-addr">1103 22nd St NE</div>
           <div class="prem-beds">4 bed &nbsp;/&nbsp; 2.5 bath &nbsp;&middot;&nbsp; ZIP 44714</div>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
-          </div>
         </div>
       </div>
 
@@ -413,10 +438,6 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
           <span class="prem-badge">Individual Property</span>
           <div class="prem-addr">225 Grandview Ave NW</div>
           <div class="prem-beds">4 bed &nbsp;/&nbsp; 2.5 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
-          </div>
         </div>
       </div>
 
@@ -426,10 +447,6 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
           <span class="prem-badge">Individual Property</span>
           <div class="prem-addr">903 23rd St NW</div>
           <div class="prem-beds">4 bed &nbsp;/&nbsp; 1.5 bath &nbsp;&middot;&nbsp; ZIP 44709</div>
-          <div class="pdf-btns">
-            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
-            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
-          </div>
         </div>
       </div>
 
@@ -641,11 +658,27 @@ csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;back
     heroEl.addEventListener('mouseenter', function() { clearInterval(autoPlay); });
     heroEl.addEventListener('mouseleave', function() { autoPlay = setInterval(function() { goTo(cur + 1); }, 5000); });
 
-    // ── Navigation & gallery ──
+    // ── Navigation, dropdowns & gallery ──
     const _b = window.location.hostname.includes('wixstudio.com')
       ? '/' + window.location.pathname.split('/')[1] : '';
 
     self.addEventListener('click', (e) => {
+      // Dropdown toggle
+      const dropTrig = e.target.closest('.drop-trigger');
+      if (dropTrig) {
+        e.preventDefault(); e.stopPropagation();
+        const wrap = dropTrig.closest('.drop-wrap');
+        const isOpen = wrap.classList.contains('open');
+        self.querySelectorAll('.drop-wrap.open').forEach(w => w.classList.remove('open'));
+        if (!isOpen) wrap.classList.add('open');
+        return;
+      }
+
+      // Close open dropdowns when clicking outside any drop-wrap
+      if (!e.target.closest('.drop-wrap')) {
+        self.querySelectorAll('.drop-wrap.open').forEach(w => w.classList.remove('open'));
+      }
+
       // Geneva gallery toggle
       const galBtn = e.target.closest('.gen-gallery-btn');
       if (galBtn) {
