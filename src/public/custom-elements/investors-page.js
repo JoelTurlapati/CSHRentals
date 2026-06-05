@@ -8,253 +8,265 @@ class CshInvestors extends HTMLElement {
       document.head.appendChild(l);
     }
 
+    var SLIDES = [
+      'https://static.wixstatic.com/media/64b604_0f42533432c64b84adbdfbda61fcc7e7~mv2.jpeg',
+      'https://static.wixstatic.com/media/64b604_9ee44dbc31dd4d6d851071343ea0fa94~mv2.jpeg',
+      'https://static.wixstatic.com/media/64b604_be845510679b49f29054081aaa6680a9~mv2.jpeg',
+      'https://static.wixstatic.com/media/64b604_b071b082c3314191a292bd349728b657~mv2.jpeg',
+      'https://static.wixstatic.com/media/64b604_150af085b1024681984084f74ed2ed18~mv2.jpeg'
+    ];
+
+    var slidesHtml = SLIDES.map(function(url, i) {
+      return '<div class="slide' + (i === 0 ? ' active' : '') + '" style="background-image:url(\'' + url + '\')"></div>';
+    }).join('');
+    var dotsHtml = SLIDES.map(function(_, i) {
+      return '<button class="dot' + (i === 0 ? ' active' : '') + '" aria-label="Slide ' + (i + 1) + '"></button>';
+    }).join('');
+
+    var PDF_BASE = 'https://raw.githubusercontent.com/JoelTurlapati/CSHRentals/master/src/public/resources/';
+
     this.innerHTML = `
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;background:#0a1628;color:#fff;line-height:1.6}
+csh-investors{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;background:#eef2f7;color:#0d1f35;line-height:1.6}
 :root{
-  --navy:#0a1628;--navy-mid:#0d1f35;--navy-lt:#1a3557;
+  --bg:#eef2f7;--bg-alt:#e4ecf7;--card:#ffffff;
+  --navy:#0d1f35;--navy-hdr:#0a1628;
   --gold:#c8962a;--gold-lt:#dba83a;--gold-dk:#a67820;
-  --white:#fff;--muted:rgba(255,255,255,.65);--faint:rgba(255,255,255,.38);
-  --border:rgba(255,255,255,.10);--border-g:rgba(200,150,42,.28);
+  --text:#0d1f35;--muted:#5a6b85;--faint:#8899bb;
+  --border:rgba(10,30,60,.10);--border-g:rgba(200,150,42,.35);
+  --shadow:0 2px 16px rgba(10,30,60,.08);
 }
 
 /* ── HEADER ── */
-.hdr{background:rgba(10,22,40,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;height:68px;position:sticky;top:0;z-index:200}
-.hdr img{height:38px;width:auto;display:block;cursor:pointer}
-.hdr__back{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
-.hdr__back:hover{color:var(--white)}
-@media(max-width:640px){.hdr{padding:0 20px}}
+.csh-hdr{background:#0a1628;border-bottom:1px solid rgba(255,255,255,.08);padding:0 32px;display:flex;align-items:center;height:72px;position:sticky;top:0;z-index:200}
+.csh-hdr__logo{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;flex-shrink:0}
+.csh-hdr__logo-img{height:42px;width:auto;border-radius:4px;display:block;object-fit:cover}
+.csh-hdr__logo-text{font-size:8px;font-weight:900;letter-spacing:.22em;color:rgba(255,255,255,.85);text-transform:uppercase;line-height:1}
+.csh-hdr__nav{margin-left:auto;display:flex;align-items:center;gap:10px}
+.csh-hdr__btn{padding:9px 18px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:6px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);transition:background .2s,border-color .2s;white-space:nowrap}
+.csh-hdr__btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);color:#fff}
+.csh-hdr__btn--gold{background:var(--gold);border-color:var(--gold);color:#0a1628}
+.csh-hdr__btn--gold:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
+.csh-hdr__email{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:background .2s,border-color .2s}
+.csh-hdr__email:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6)}
+@media(max-width:640px){.csh-hdr{padding:0 16px}.csh-hdr__btn{padding:8px 12px;font-size:10px}}
 
-/* ── HERO ── */
-.hero{background:var(--navy);padding:72px 40px 60px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(200,150,42,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,150,42,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(transparent,var(--navy));pointer-events:none}
-.hero__eye{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-g);padding:5px 18px;border-radius:20px;margin-bottom:24px;position:relative;z-index:1}
-.hero__h1{font-size:clamp(28px,5vw,58px);font-weight:900;color:var(--white);line-height:1.08;letter-spacing:-.025em;margin-bottom:18px;max-width:820px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
-.hero__sub{font-size:clamp(14px,1.8vw,17px);color:var(--muted);max-width:660px;line-height:1.75;margin:0 auto 52px;position:relative;z-index:1}
-.kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;max-width:860px;margin:0 auto 28px;position:relative;z-index:1}
-@media(max-width:600px){.kpi-strip{grid-template-columns:repeat(2,1fr)}}
-.kpi{background:rgba(255,255,255,.03);padding:26px 14px;text-align:center}
-.kpi__val{font-size:clamp(20px,2.6vw,32px);font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1;margin-bottom:7px}
-.kpi__lbl{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-.kpi__note{font-size:10px;color:var(--faint)}
-.price-bar{background:linear-gradient(135deg,#0e2448,#0d1f35);border:1px solid var(--border-g);border-radius:10px;padding:24px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;max-width:860px;margin:0 auto;position:relative;z-index:1}
-.price-bar__ask{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1;margin-bottom:5px}
-.price-bar__break{font-size:12.5px;color:var(--muted)}
-.price-bar__btn{display:inline-block;padding:12px 24px;background:var(--gold);color:var(--navy);font-size:12px;font-weight:800;letter-spacing:.05em;text-decoration:none;border-radius:6px;white-space:nowrap;transition:background .2s}
-.price-bar__btn:hover{background:var(--gold-lt)}
+/* ── SLIDESHOW ── */
+.hero{position:relative;width:100%;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}
+.slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,15,30,.5) 0%,rgba(5,15,30,.6) 60%,rgba(5,15,30,.75) 100%)}
+.slide.active{opacity:1}
+.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.35);color:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:22px;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(6px);line-height:1}
+.slide-arrow:hover{background:rgba(255,255,255,.25)}
+.slide-prev{left:20px}.slide-next{right:20px}
+.hero__body{position:relative;z-index:2;text-align:center;padding:80px 24px 90px;max-width:800px}
+.hero__eyebrow{display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:22px}
+.hero__title{font-size:clamp(32px,6vw,62px);font-weight:900;color:#fff;line-height:1.06;margin-bottom:16px;letter-spacing:-.02em}
+.hero__sub{font-size:clamp(13px,1.8vw,16px);color:rgba(255,255,255,.75);line-height:1.65;max-width:580px;margin:0 auto}
+.slide-dots{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;padding:0;transition:background .3s,transform .2s}
+.dot.active{background:#fff;transform:scale(1.4)}
 
 /* ── SECTION SHARED ── */
 .sec{padding:72px 40px}
 @media(max-width:768px){.sec{padding:56px 24px}}
 .wrap{max-width:1200px;margin:0 auto}
 .sec-lbl{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.sec-h2{font-size:clamp(22px,3.2vw,38px);font-weight:800;color:var(--white);line-height:1.12;letter-spacing:-.02em;margin-bottom:12px}
+.sec-h2{font-size:clamp(22px,3vw,36px);font-weight:800;color:var(--navy);line-height:1.12;letter-spacing:-.02em;margin-bottom:12px}
 .sec-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:640px}
 .divbar{width:44px;height:3px;background:var(--gold);margin-bottom:22px}
 
-/* ── WHY BUY THIS ── */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-@media(max-width:820px){.why-grid{grid-template-columns:1fr;gap:40px}}
-.why-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-.wstat{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:18px 14px;text-align:center}
-.wstat__val{font-size:16px;font-weight:800;color:var(--gold);margin-bottom:5px;line-height:1.2}
-.wstat__lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.why-box{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:30px}
-.why-box__ttl{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-.why-item{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
-.why-item:last-child{margin-bottom:0}
-.why-num{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
-.why-txt{font-size:13.5px;color:var(--muted);line-height:1.65}
-.why-txt strong{color:var(--white)}
+/* ── INTRO ── */
+.intro{background:var(--card);padding:64px 40px 56px;border-bottom:1px solid var(--border)}
+.intro__wrap{max-width:880px;margin:0 auto}
+.intro__tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-g);padding:5px 16px;border-radius:20px;margin-bottom:24px}
+.intro__h1{font-size:clamp(24px,4vw,40px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
+.intro__desc{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:36px}
+.intro__cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px}
+@media(max-width:640px){.intro__cols{grid-template-columns:1fr}}
+.intro__box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px 22px}
+.intro__box-ttl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.intro__box ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.intro__box li{font-size:13.5px;color:var(--muted);line-height:1.55;padding-left:16px;position:relative}
+.intro__box li::before{content:'•';position:absolute;left:0;color:var(--gold);font-weight:700}
+.intro__price{background:linear-gradient(135deg,#0a1628,#0d2545);border:1px solid var(--border-g);border-radius:10px;padding:28px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.intro__price-val{font-size:clamp(26px,3.5vw,40px);font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1;margin-bottom:5px}
+.intro__price-lbl{font-size:12px;color:rgba(255,255,255,.6)}
+.intro__price-note{font-size:13.5px;color:rgba(255,255,255,.75);line-height:1.75;max-width:360px}
+.intro__price-btn{display:inline-block;padding:12px 26px;background:var(--gold);color:#0a1628;font-size:12px;font-weight:800;letter-spacing:.05em;text-decoration:none;border-radius:6px;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.intro__price-btn:hover{background:var(--gold-lt)}
+
+/* ── CONTACT CTA STRIP ── */
+.cta-strip{background:#0a1628;padding:32px 40px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.cta-strip__inner{max-width:640px;margin:0 auto}
+.cta-strip__text{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6}
+.cta-contact-btn{display:inline-block;padding:13px 36px;background:var(--gold);color:#0a1628;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;text-decoration:none;transition:background .2s}
+.cta-contact-btn:hover{background:var(--gold-lt)}
 
 /* ── PORTFOLIO CARDS ── */
 .p-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
 @media(max-width:900px){.p-grid{grid-template-columns:1fr}}
-.p-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s}
-.p-card:hover{border-color:var(--border-g)}
-.p-card__img{width:100%;height:180px;object-fit:cover;display:block}
-.p-card__body{padding:24px;flex:1;display:flex;flex-direction:column;gap:18px}
-.p-card__hdr{display:flex;align-items:flex-start;gap:12px}
-.p-letter{flex-shrink:0;width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.p-title{font-size:16px;font-weight:800;color:var(--white);line-height:1.2;margin-bottom:3px}
-.p-meta{font-size:11.5px;color:var(--muted)}
-.p-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.pm{background:rgba(0,0,0,.2);border-radius:6px;padding:11px 13px}
-.pm__val{font-size:16px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:3px}
-.pm__lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-/* property list */
-.p-homes{list-style:none;display:flex;flex-direction:column;gap:0}
-.p-homes li{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;gap:8px}
-.p-homes li:last-child{border-bottom:none}
-.p-homes li span{font-size:11px;color:var(--gold);font-weight:600;white-space:nowrap}
-.p-homes li em{font-size:10px;color:var(--faint);font-style:normal}
-/* expandable table */
-details summary{cursor:pointer;font-size:11.5px;font-weight:600;color:var(--gold);letter-spacing:.04em;list-style:none;user-select:none;padding:2px 0}
-details summary::-webkit-details-marker{display:none}
-details summary::after{content:' ↓';font-size:10px}
-details[open] summary::after{content:' ↑'}
-.tbl-wrap{overflow-x:auto;border-radius:6px;background:rgba(0,0,0,.18);margin-top:8px}
-.ptbl{width:100%;border-collapse:collapse;font-size:11px;white-space:nowrap}
-.ptbl th{padding:7px 9px;text-align:left;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--border)}
-.ptbl td{padding:6px 9px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
-.ptbl tr:last-child td{border-bottom:none}
-.ptbl td:nth-child(3),.ptbl td:nth-child(4){color:var(--white);font-weight:600}
-/* cta */
-.p-cta{display:block;width:100%;padding:12px;background:var(--gold);color:var(--navy);text-align:center;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;text-decoration:none;transition:background .2s;margin-top:auto}
-.p-cta:hover{background:var(--gold-lt)}
-/* combined bar */
-.combined{margin-top:22px;background:rgba(200,150,42,.06);border:1px solid var(--border-g);border-radius:10px;padding:20px 28px;font-size:13.5px;color:var(--muted);line-height:1.8}
-.combined strong{color:var(--gold);font-weight:800}
+.p-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:visible;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:box-shadow .2s}
+.p-card:hover{box-shadow:0 4px 24px rgba(10,30,60,.13)}
+.p-card__img{width:100%;height:200px;object-fit:cover;display:block;border-radius:12px 12px 0 0}
+.p-card__body{padding:24px;flex:1;display:flex;flex-direction:column;gap:14px}
+.p-card__hdr{display:flex;align-items:center;gap:14px}
+.p-letter{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--gold);color:#0a1628;font-size:19px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.p-title{font-size:16px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
+.p-meta{font-size:12px;color:var(--muted)}
+.p-cta{display:block;width:100%;padding:12px;background:var(--navy);color:#fff;text-align:center;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;text-decoration:none;transition:background .2s}
+.p-cta:hover{background:#1a3557}
 
-/* ── PREMIUM ASSETS ── */
-.prem-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:36px}
-@media(max-width:1100px){.prem-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.prem-grid{grid-template-columns:repeat(2,1fr)}}
-.prem-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:20px 16px;display:flex;flex-direction:column;gap:10px;position:relative;transition:border-color .2s}
-.prem-card:hover{border-color:var(--border-g)}
-.prem-badge{position:absolute;top:10px;right:10px;font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--navy);padding:3px 7px;border-radius:3px}
-.prem-addr{font-size:13px;font-weight:700;color:var(--white);line-height:1.3;padding-right:48px}
-.prem-beds{font-size:11px;color:var(--muted)}
-.prem-metrics{display:flex;flex-direction:column;gap:7px;margin-top:auto;padding-top:8px;border-top:1px solid var(--border)}
-.prem-row{display:flex;justify-content:space-between;align-items:center;gap:6px}
-.prem-row__lbl{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-.prem-row__val{font-size:13px;font-weight:800;color:var(--gold)}
+/* ── PDF BUTTONS ── */
+.pdf-btns{display:flex;gap:10px;flex-wrap:wrap}
+.pdf-btn{flex:1;min-width:120px;display:block;padding:10px 12px;background:transparent;color:var(--gold);text-align:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--border-g);border-radius:6px;text-decoration:none;transition:background .2s,color .2s}
+.pdf-btn:hover{background:rgba(200,150,42,.09);color:var(--gold-lt)}
+
+/* ── INDIVIDUAL PROPERTIES ── */
+.prem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+@media(max-width:960px){.prem-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.prem-grid{grid-template-columns:1fr}}
+.prem-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:box-shadow .2s}
+.prem-card:hover{box-shadow:0 4px 20px rgba(10,30,60,.12)}
+.prem-card__img{width:100%;height:160px;object-fit:cover;display:block}
+.prem-card__body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.prem-badge{display:inline-block;font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:#0a1628;padding:3px 8px;border-radius:3px;width:fit-content}
+.prem-addr{font-size:14px;font-weight:800;color:var(--navy);line-height:1.3}
+.prem-beds{font-size:12px;color:var(--muted);margin-bottom:2px}
 
 /* ── GENEVA ── */
-.gen-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.gen-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:36px}
 @media(max-width:820px){.gen-grid{grid-template-columns:1fr;gap:36px}}
-.gen-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:4px 12px;border-radius:3px;margin-bottom:14px}
-.gen-addr{font-size:21px;font-weight:800;color:var(--white);margin-bottom:5px;line-height:1.2}
+.gen-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#0a1628;background:var(--gold);padding:4px 12px;border-radius:3px;margin-bottom:14px}
+.gen-addr{font-size:21px;font-weight:800;color:var(--navy);margin-bottom:5px;line-height:1.2}
 .gen-specs{font-size:13px;color:var(--muted);margin-bottom:16px}
 .gen-desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:22px}
-.adu{background:rgba(200,150,42,.05);border:1px solid var(--border-g);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 18px}
+.adu{background:rgba(200,150,42,.06);border:1px solid var(--border-g);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 18px;margin-bottom:20px}
 .adu__ttl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
 .adu__txt{font-size:13px;color:var(--muted);line-height:1.75}
-.gen-metrics{display:flex;flex-direction:column;gap:12px}
-.gm{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:22px 24px}
+.gen-metrics{display:flex;flex-direction:column;gap:14px}
+.gm{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px 24px;box-shadow:var(--shadow)}
 .gm__val{font-size:clamp(20px,2.5vw,28px);font-weight:900;color:var(--gold);letter-spacing:-.02em;line-height:1;margin-bottom:5px}
 .gm__lbl{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
 .gm__note{font-size:11px;color:var(--faint)}
+.gen-gallery-wrap{margin-top:20px}
+.gen-gallery-btn{display:block;width:100%;padding:11px;background:transparent;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--border-g);border-radius:6px;cursor:pointer;transition:background .2s;font-family:inherit}
+.gen-gallery-btn:hover{background:rgba(200,150,42,.07)}
+.gen-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.gen-gallery-grid.hidden{display:none}
+.gen-gallery-grid img{width:100%;height:150px;object-fit:cover;border-radius:8px;display:block}
+@media(max-width:560px){.gen-gallery-grid{grid-template-columns:1fr}}
 
 /* ── WHY CANTON ── */
-.wc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
-@media(max-width:900px){.wc-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.wc-grid{grid-template-columns:1fr}}
-.wc-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:24px 20px;transition:border-color .2s}
-.wc-card:hover{border-color:var(--border-g)}
-.wc-icon{font-size:24px;margin-bottom:12px;display:block}
-.wc-title{font-size:14px;font-weight:800;color:var(--white);margin-bottom:8px;line-height:1.3}
-.wc-txt{font-size:12.5px;color:var(--muted);line-height:1.75}
+.wc-tagline{font-size:16px;color:var(--muted);line-height:1.8;text-align:center;max-width:700px;margin:16px auto 44px;font-style:italic}
+.wc-features{display:flex;flex-direction:column;gap:28px}
+.wc-feature{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:36px 40px;box-shadow:var(--shadow);transition:box-shadow .2s}
+.wc-feature:hover{box-shadow:0 4px 24px rgba(10,30,60,.12)}
+.wc-feature__row{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.wc-feature__title{font-size:clamp(20px,2.5vw,26px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
+.wc-feature__desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.wc-feature__list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.wc-feature__list li{font-size:13.5px;color:var(--muted);padding-left:18px;position:relative;line-height:1.6}
+.wc-feature__list li::before{content:'•';position:absolute;left:0;color:var(--gold);font-weight:900;font-size:15px;line-height:1.3}
+.wc-feature__list li strong{color:var(--navy)}
+.wc-hi{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.03em;color:var(--gold);background:rgba(200,150,42,.08);border:1.5px solid var(--border-g);border-radius:6px;padding:7px 16px;margin-top:4px}
+.wc-imgs{display:flex;flex-direction:column;gap:10px}
+.wc-imgs img{width:100%;height:185px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 2px 10px rgba(10,30,60,.09)}
+.wc-imgs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.wc-imgs-row img{width:100%;height:165px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 2px 10px rgba(10,30,60,.09)}
+.wc-img-wide{width:100%;height:200px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 2px 10px rgba(10,30,60,.09);margin-top:16px}
+.wc-close{margin-top:40px;background:linear-gradient(135deg,#0a1628,#0d2545);border:1px solid var(--border-g);border-radius:12px;padding:32px 36px;text-align:center}
+.wc-close__val{font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--gold);letter-spacing:-.02em;margin-bottom:10px}
+.wc-close__txt{font-size:14px;color:rgba(255,255,255,.7);line-height:1.75;max-width:600px;margin:0 auto}
+@media(max-width:768px){
+  .wc-feature{padding:22px 18px}
+  .wc-feature__row{grid-template-columns:1fr}
+  .wc-close{padding:24px 20px}
+}
 
 /* ── FOOTER ── */
-.footer{background:rgba(0,0,0,.35);border-top:1px solid var(--border);padding:20px 40px;text-align:center;font-size:11.5px;color:var(--faint)}
+.footer{background:#0a1628;border-top:1px solid rgba(255,255,255,.08);padding:24px 40px;text-align:center;font-size:11.5px;color:rgba(255,255,255,.45)}
 </style>
 
 <!-- ══ HEADER ══ -->
-<header class="hdr">
-  <a href="/"><img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals"/></a>
-  <a class="hdr__back" href="/">&larr; Home</a>
+<header class="csh-hdr">
+  <a href="/" class="csh-hdr__logo">
+    <img class="csh-hdr__logo-img" src="https://static.wixstatic.com/media/d9828b_5f2ddd29097a4c6c83d205f0ff3bc984~mv2.jpg" alt="CSH Rentals"/>
+    <span class="csh-hdr__logo-text">CSH RENTALS</span>
+  </a>
+  <nav class="csh-hdr__nav">
+    <a class="csh-hdr__btn" href="/tenants">Tenant Pre-Approval</a>
+    <a class="csh-hdr__btn csh-hdr__btn--gold" href="/contact">Contact</a>
+    <a class="csh-hdr__email" href="mailto:scottprivate@tagplanning.com" title="Email Us">&#9993;</a>
+  </nav>
 </header>
 
-<!-- ══ HERO ══ -->
+<!-- ══ SLIDESHOW ══ -->
 <section class="hero">
-  <div class="hero__eye">Investment Opportunity &middot; Canton, Ohio &middot; 2025</div>
-  <h1 class="hero__h1">45 Single-Family Rental Homes &mdash; Canton, Ohio</h1>
-  <p class="hero__sub">A fully stabilized, 100% occupied portfolio available as four investor sub-portfolios, five premium individual assets, or a single bulk acquisition.</p>
-  <div class="kpi-strip">
-    <div class="kpi">
-      <div class="kpi__val">45</div>
-      <div class="kpi__lbl">Total Properties</div>
-      <div class="kpi__note">44 Canton LTR + 1 Geneva STR</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi__val">$62,882</div>
-      <div class="kpi__lbl">Monthly Rent</div>
-      <div class="kpi__note">100% occupancy</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi__val">$754,580</div>
-      <div class="kpi__lbl">Annual Gross Rent</div>
-      <div class="kpi__note">All 45 properties</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi__val">$555,385</div>
-      <div class="kpi__lbl">2025 NOI</div>
-      <div class="kpi__note">44 Canton properties</div>
-    </div>
+  ${slidesHtml}
+  <button class="slide-arrow slide-prev" aria-label="Previous">&#8249;</button>
+  <button class="slide-arrow slide-next" aria-label="Next">&#8250;</button>
+  <div class="hero__body">
+    <span class="hero__eyebrow">Canton, Ohio &middot; CSH Rentals</span>
+    <h1 class="hero__title">Quality Rentals.<br/>Proven Portfolio.</h1>
+    <p class="hero__sub">45 single-family rental homes across Canton, OH &mdash; plus a lakeside short-term rental in Geneva-on-the-Lake. 100% occupied with proven cash flow.</p>
   </div>
-  <div class="price-bar">
-    <div>
-      <div class="price-bar__ask">$6,948,000</div>
-      <div class="price-bar__break">Sale Price &nbsp;&middot;&nbsp; Canton $6,599,000 + Geneva $349,000</div>
+  <div class="slide-dots">${dotsHtml}</div>
+</section>
+
+<!-- ══ INTRO ══ -->
+<section class="intro">
+  <div class="intro__wrap">
+    <div class="intro__tag">Investment Opportunity &middot; Stark County, Ohio</div>
+    <h1 class="intro__h1">Investment Opportunities in Stark County, Ohio</h1>
+    <p class="intro__desc">We are offering a unique opportunity to acquire a collection of 45 investment properties located throughout Stark County, Ohio and Geneva-on-the-Lake. These properties include professionally managed single-family rental homes, individual investment properties, and a short-term rental asset, providing investors with multiple acquisition options to fit their investment strategy.</p>
+    <div class="intro__cols">
+      <div class="intro__box">
+        <div class="intro__box-ttl">Available Investment Opportunities</div>
+        <ul>
+          <li>4 Investment Portfolios consisting of 39 rental properties</li>
+          <li>5 Individual Investment Properties</li>
+          <li>1 Short-Term Rental Property located in Geneva-on-the-Lake</li>
+        </ul>
+      </div>
+      <div class="intro__box">
+        <div class="intro__box-ttl">Available Acquisition Options</div>
+        <ul>
+          <li>Purchase of an individual portfolio</li>
+          <li>Purchase of multiple portfolios</li>
+          <li>Purchase of individual properties (including properties within the portfolios)</li>
+          <li>Purchase of all four portfolios as a single transaction</li>
+          <li>Purchase of all 45 properties as a single transaction</li>
+        </ul>
+      </div>
     </div>
-    <a class="price-bar__btn" href="https://www.crexi.com/properties/1746554/ohio-canton-oh-44-sfh-portfolio" target="_blank">View on CREXI &rarr;</a>
+    <div class="intro__price">
+      <div>
+        <div class="intro__price-val">$6,599,000</div>
+        <div class="intro__price-lbl">Sale Price for All 45 Properties</div>
+      </div>
+      <p class="intro__price-note">Whether you are seeking a single investment property, an established rental portfolio, or a large-scale acquisition opportunity, these assets offer strong income-producing potential in one of Northeast Ohio&rsquo;s most established rental markets.</p>
+      <a class="intro__price-btn" href="https://www.crexi.com/properties/1746554/ohio-canton-oh-44-sfh-portfolio" target="_blank">View on CREXI &rarr;</a>
+    </div>
   </div>
 </section>
 
-<!-- ══ WHY BUY THIS ══ -->
-<section class="sec" id="why-buy" style="background:var(--navy)">
-  <div class="wrap">
-    <div class="why-grid">
-      <div>
-        <div class="sec-lbl">The Opportunity</div>
-        <h2 class="sec-h2">Why Buy This Portfolio</h2>
-        <div class="divbar"></div>
-        <p class="sec-sub">44 single-family rental homes across Canton&rsquo;s most supply-constrained neighborhoods. Every property is occupied, managed, and generating verified cash flow as of 2025.</p>
-        <div class="why-stats">
-          <div class="wstat">
-            <div class="wstat__val">100%</div>
-            <div class="wstat__lbl">Occupancy Rate</div>
-          </div>
-          <div class="wstat">
-            <div class="wstat__val">$1,380</div>
-            <div class="wstat__lbl">Avg Rent / Door / Mo</div>
-          </div>
-          <div class="wstat">
-            <div class="wstat__val">$555,385</div>
-            <div class="wstat__lbl">2025 Net Operating Income</div>
-          </div>
-          <div class="wstat">
-            <div class="wstat__val">Newly Remodeled</div>
-            <div class="wstat__lbl">All Homes</div>
-          </div>
-        </div>
-      </div>
-      <div class="why-box">
-        <div class="why-box__ttl">Five Reasons to Buy</div>
-        <div class="why-item">
-          <div class="why-num">1</div>
-          <div class="why-txt"><strong>Turnkey with built-in property management</strong> &mdash; day one income, no setup required.</div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">2</div>
-          <div class="why-txt"><strong>Unmatched geographic density</strong> &mdash; all homes walkable from each other, a route-efficient operating cluster impossible to replicate.</div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">3</div>
-          <div class="why-txt"><strong>Multiple acquisition formats</strong> &mdash; single portfolio (9&ndash;11 homes), full bulk purchase, or premium individual assets.</div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">4</div>
-          <div class="why-txt"><strong>Opportunity Zone exposure</strong> &mdash; many properties fall within designated OZs, potential tax advantages for qualifying investors.</div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">5</div>
-          <div class="why-txt"><strong>Verified 2025 financials</strong> available to qualified buyers upon request.</div>
-        </div>
-      </div>
-    </div>
+<!-- ══ CONTACT CTA #1 ══ -->
+<div class="cta-strip">
+  <div class="cta-strip__inner">
+    <p class="cta-strip__text">Interested in learning more about this investment opportunity? Our team is ready to answer your questions.</p>
+    <a class="cta-contact-btn" href="/contact">Schedule a Call &rarr;</a>
   </div>
-</section>
+</div>
 
 <!-- ══ FOUR PORTFOLIOS ══ -->
-<section class="sec" id="portfolios" style="background:var(--navy-mid);border-top:1px solid var(--border)">
+<section class="sec" id="portfolios" style="background:var(--bg)">
   <div class="wrap">
     <div class="sec-lbl">Investor Portfolios</div>
     <h2 class="sec-h2">The Four Sub-Portfolios</h2>
+    <div class="divbar"></div>
     <p class="sec-sub">Each portfolio is a geographically tight cluster, fully occupied, and available independently or as part of a bulk acquisition.</p>
 
     <div class="p-grid">
@@ -270,43 +282,11 @@ details[open] summary::after{content:' ↑'}
               <div class="p-meta">9 homes &nbsp;&middot;&nbsp; ZIP 44708 / 44709 / 44706</div>
             </div>
           </div>
-          <div class="p-metrics">
-            <div class="pm"><div class="pm__val">$11,700</div><div class="pm__lbl">Monthly Rent</div></div>
-            <div class="pm"><div class="pm__val">$140,400</div><div class="pm__lbl">Annual Rent</div></div>
-            <div class="pm"><div class="pm__val">$1,300/mo</div><div class="pm__lbl">Avg / Door</div></div>
-            <div class="pm"><div class="pm__val">$114,396</div><div class="pm__lbl">2025 NOI &middot; 83.4%</div></div>
-          </div>
-          <ul class="p-homes">
-            <li>806 23rd St NW <em>2bd/1ba</em> <span>$1,200/mo</span></li>
-            <li>818 25th St NW <em>3bd/1ba</em> <span>$1,250/mo</span></li>
-            <li>2007 Kirk Ct NW <em>3bd/1ba</em> <span>$1,350/mo</span></li>
-            <li>426 Vince Ave NW <em>3bd/2ba</em> <span>$1,550/mo</span></li>
-            <li>2923 Helen Pl NW <em>3bd/1ba</em> <span>$1,350/mo</span></li>
-            <li>635 Greenfield Ave SW <em>2bd/2ba</em> <span>$1,150/mo</span></li>
-            <li>307 Bellflower Ave NW <em>3bd/1.5ba</em> <span>$1,425/mo</span></li>
-            <li>1502 37th St NW <em>3bd/1ba</em> <span>$1,125/mo</span></li>
-            <li>2945 15th St NW <em>3bd/1ba</em> <span>$1,300/mo</span></li>
-          </ul>
-          <details>
-            <summary>View 2025 NOI by property</summary>
-            <div class="tbl-wrap">
-              <table class="ptbl">
-                <thead><tr><th>Address</th><th>Bed/Bath</th><th>Mo. Rent</th><th>2025 NOI</th></tr></thead>
-                <tbody>
-                  <tr><td>806 23rd St NW</td><td>2bd/1ba</td><td>$1,200</td><td>$13,027</td></tr>
-                  <tr><td>818 25th St NW</td><td>3bd/1ba</td><td>$1,250</td><td>$13,871</td></tr>
-                  <tr><td>2007 Kirk Ct NW</td><td>3bd/1ba</td><td>$1,350</td><td>$11,264</td></tr>
-                  <tr><td>426 Vince Ave NW</td><td>3bd/2ba</td><td>$1,550</td><td>$16,364</td></tr>
-                  <tr><td>2923 Helen Pl NW</td><td>3bd/1ba</td><td>$1,350</td><td>$12,352</td></tr>
-                  <tr><td>635 Greenfield Ave SW</td><td>2bd/2ba</td><td>$1,150</td><td>$12,501</td></tr>
-                  <tr><td>307 Bellflower Ave NW</td><td>3bd/1.5ba</td><td>$1,425</td><td>$8,956</td></tr>
-                  <tr><td>1502 37th St NW</td><td>3bd/1ba</td><td>$1,125</td><td>$12,878</td></tr>
-                  <tr><td>2945 15th St NW</td><td>3bd/1ba</td><td>$1,300</td><td>$13,183</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </details>
           <a class="p-cta" href="/portfolio-west">View Portfolio A &rarr;</a>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Portfolio_A.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Portfolio_A.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+          </div>
         </div>
       </div>
 
@@ -321,45 +301,11 @@ details[open] summary::after{content:' ↑'}
               <div class="p-meta">10 homes &nbsp;&middot;&nbsp; ZIP 44709 / 44703</div>
             </div>
           </div>
-          <div class="p-metrics">
-            <div class="pm"><div class="pm__val">$13,325</div><div class="pm__lbl">Monthly Rent</div></div>
-            <div class="pm"><div class="pm__val">$159,900</div><div class="pm__lbl">Annual Rent</div></div>
-            <div class="pm"><div class="pm__val">$1,332/mo</div><div class="pm__lbl">Avg / Door</div></div>
-            <div class="pm"><div class="pm__val">$108,646</div><div class="pm__lbl">2025 NOI &middot; 71.5%</div></div>
-          </div>
-          <ul class="p-homes">
-            <li>519 21st St NW <em>3bd/1ba</em> <span>$1,385/mo</span></li>
-            <li>523 21st St NW <em>3bd/1ba</em> <span>$1,200/mo</span></li>
-            <li>1430 19th St NW <em>3bd/1ba</em> <span>$1,325/mo</span></li>
-            <li>1919 Frazer Ave NW <em>3bd/2ba</em> <span>$1,450/mo</span></li>
-            <li>1708 18th St NW <em>3bd/2ba</em> <span>$1,300/mo</span></li>
-            <li>244 Harter Ave NW <em>4bd/1.5ba</em> <span>$1,640/mo</span></li>
-            <li>800 22nd St NW <em>4bd/1.5ba</em> <span>$1,450/mo</span></li>
-            <li>1511 23rd St NW <em>3bd/2ba</em> <span>$1,300/mo</span></li>
-            <li>1734 Woodland Ave NW <em>3bd/1ba</em> <span>$975/mo</span></li>
-            <li>725 22nd St NW <em>3bd/1ba</em> <span>$1,300/mo</span></li>
-          </ul>
-          <details>
-            <summary>View 2025 NOI by property</summary>
-            <div class="tbl-wrap">
-              <table class="ptbl">
-                <thead><tr><th>Address</th><th>Bed/Bath</th><th>Mo. Rent</th><th>2025 NOI</th></tr></thead>
-                <tbody>
-                  <tr><td>519 21st St NW</td><td>3bd/1ba</td><td>$1,385</td><td>$13,057</td></tr>
-                  <tr><td>523 21st St NW</td><td>3bd/1ba</td><td>$1,200</td><td>$11,842</td></tr>
-                  <tr><td>1430 19th St NW</td><td>3bd/1ba</td><td>$1,325</td><td>$14,868</td></tr>
-                  <tr><td>1919 Frazer Ave NW</td><td>3bd/2ba</td><td>$1,450</td><td>$8,702</td></tr>
-                  <tr><td>1708 18th St NW</td><td>3bd/2ba</td><td>$1,300</td><td>$12,028</td></tr>
-                  <tr><td>244 Harter Ave NW</td><td>4bd/1.5ba</td><td>$1,640</td><td>$14,927</td></tr>
-                  <tr><td>800 22nd St NW</td><td>4bd/1.5ba</td><td>$1,450</td><td>$12,097</td></tr>
-                  <tr><td>1511 23rd St NW</td><td>3bd/2ba</td><td>$1,300</td><td>$10,462</td></tr>
-                  <tr><td>1734 Woodland Ave NW</td><td>3bd/1ba</td><td>$975</td><td>$10,253</td></tr>
-                  <tr><td>725 22nd St NW</td><td>3bd/1ba</td><td>$1,300</td><td>$410</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </details>
           <a class="p-cta" href="/portfolio-northwest">View Portfolio B &rarr;</a>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Portfolio_B.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Portfolio_B.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+          </div>
         </div>
       </div>
 
@@ -374,43 +320,11 @@ details[open] summary::after{content:' ↑'}
               <div class="p-meta">9 homes &nbsp;&middot;&nbsp; ZIP 44709</div>
             </div>
           </div>
-          <div class="p-metrics">
-            <div class="pm"><div class="pm__val">$11,615</div><div class="pm__lbl">Monthly Rent</div></div>
-            <div class="pm"><div class="pm__val">$139,380</div><div class="pm__lbl">Annual Rent</div></div>
-            <div class="pm"><div class="pm__val">$1,291/mo</div><div class="pm__lbl">Avg / Door</div></div>
-            <div class="pm"><div class="pm__val">$103,624</div><div class="pm__lbl">2025 NOI &middot; 75.9%</div></div>
-          </div>
-          <ul class="p-homes">
-            <li>1338 25th St NW <em>3bd/2ba</em> <span>$1,400/mo</span></li>
-            <li>1344 24th St NW <em>3bd/3ba</em> <span>$1,330/mo</span></li>
-            <li>1540 Norwood Pl NW <em>3bd/1ba</em> <span>$1,260/mo</span></li>
-            <li>1507 Ridgeway Pl NW <em>3bd/1ba</em> <span>$1,250/mo</span></li>
-            <li>1569 25th St NW <em>3bd/1ba</em> <span>$1,275/mo</span></li>
-            <li>1600 27th St NW <em>4bd/2ba</em> <span>$1,400/mo</span></li>
-            <li>1701 27th St NW <em>3bd/1ba</em> <span>$1,250/mo</span></li>
-            <li>1341 Ridgeway Pl NW <em>3bd/2ba</em> <span>$1,250/mo</span></li>
-            <li>1611 25th St NW <em>3bd/1ba</em> <span>$1,200/mo</span></li>
-          </ul>
-          <details>
-            <summary>View 2025 NOI by property</summary>
-            <div class="tbl-wrap">
-              <table class="ptbl">
-                <thead><tr><th>Address</th><th>Bed/Bath</th><th>Mo. Rent</th><th>2025 NOI</th></tr></thead>
-                <tbody>
-                  <tr><td>1338 25th St NW</td><td>3bd/2ba</td><td>$1,400</td><td>$15,656</td></tr>
-                  <tr><td>1344 24th St NW</td><td>3bd/3ba</td><td>$1,330</td><td>$7,595</td></tr>
-                  <tr><td>1540 Norwood Pl NW</td><td>3bd/1ba</td><td>$1,260</td><td>$13,498</td></tr>
-                  <tr><td>1507 Ridgeway Pl NW</td><td>3bd/1ba</td><td>$1,250</td><td>$12,099</td></tr>
-                  <tr><td>1569 25th St NW</td><td>3bd/1ba</td><td>$1,275</td><td>$12,630</td></tr>
-                  <tr><td>1600 27th St NW</td><td>4bd/2ba</td><td>$1,400</td><td>$15,400</td></tr>
-                  <tr><td>1701 27th St NW</td><td>3bd/1ba</td><td>$1,250</td><td>$13,314</td></tr>
-                  <tr><td>1341 Ridgeway Pl NW</td><td>3bd/2ba</td><td>$1,250</td><td>$6,579</td></tr>
-                  <tr><td>1611 25th St NW</td><td>3bd/1ba</td><td>$1,200</td><td>$6,853</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </details>
           <a class="p-cta" href="/portfolio-central">View Portfolio C &rarr;</a>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Portfolio_C.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Portfolio_C.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+          </div>
         </div>
       </div>
 
@@ -425,116 +339,97 @@ details[open] summary::after{content:' ↑'}
               <div class="p-meta">11 homes &nbsp;&middot;&nbsp; ZIP 44714</div>
             </div>
           </div>
-          <div class="p-metrics">
-            <div class="pm"><div class="pm__val">$14,965</div><div class="pm__lbl">Monthly Rent</div></div>
-            <div class="pm"><div class="pm__val">$179,580</div><div class="pm__lbl">Annual Rent</div></div>
-            <div class="pm"><div class="pm__val">$1,360/mo</div><div class="pm__lbl">Avg / Door</div></div>
-            <div class="pm"><div class="pm__val">$132,742</div><div class="pm__lbl">2025 NOI &middot; 75.6%</div></div>
-          </div>
-          <ul class="p-homes">
-            <li>1210 25th St NE <em>3bd/1ba</em> <span>$1,390/mo</span></li>
-            <li>1207 Colonial Blvd NE <em>3bd/1ba</em> <span>$1,350/mo</span></li>
-            <li>1335 22nd St NE <em>3bd/1ba</em> <span>$1,220/mo</span></li>
-            <li>1206 24th St NE <em>4bd/1.5ba</em> <span>$1,625/mo</span></li>
-            <li>1012 28th St NE <em>4bd/2ba</em> <span>$1,450/mo</span></li>
-            <li>1219 24th St NE <em>4bd/2ba</em> <span>$1,320/mo</span></li>
-            <li>1330 24th St NE <em>3bd/2ba</em> <span>$1,325/mo</span></li>
-            <li>804 29th St NE <em>4bd/2ba</em> <span>$1,450/mo</span></li>
-            <li>1326 24th St NE <em>4bd/1ba</em> <span>$1,140/mo</span></li>
-            <li>1203 25th St NE <em>3bd/1ba</em> <span>$1,200/mo</span></li>
-            <li>1306 22nd St NE <em>4bd/1.5ba</em> <span>$1,495/mo</span></li>
-          </ul>
-          <details>
-            <summary>View 2025 NOI by property</summary>
-            <div class="tbl-wrap">
-              <table class="ptbl">
-                <thead><tr><th>Address</th><th>Bed/Bath</th><th>Mo. Rent</th><th>2025 NOI</th></tr></thead>
-                <tbody>
-                  <tr><td>1210 25th St NE</td><td>3bd/1ba</td><td>$1,390</td><td>$14,821</td></tr>
-                  <tr><td>1207 Colonial Blvd NE</td><td>3bd/1ba</td><td>$1,350</td><td>$8,206</td></tr>
-                  <tr><td>1335 22nd St NE</td><td>3bd/1ba</td><td>$1,220</td><td>$12,632</td></tr>
-                  <tr><td>1206 24th St NE</td><td>4bd/1.5ba</td><td>$1,625</td><td>$18,043</td></tr>
-                  <tr><td>1012 28th St NE</td><td>4bd/2ba</td><td>$1,450</td><td>$10,102</td></tr>
-                  <tr><td>1219 24th St NE</td><td>4bd/2ba</td><td>$1,320</td><td>$11,046</td></tr>
-                  <tr><td>1330 24th St NE</td><td>3bd/2ba</td><td>$1,325</td><td>$11,461</td></tr>
-                  <tr><td>804 29th St NE</td><td>4bd/2ba</td><td>$1,450</td><td>$13,669</td></tr>
-                  <tr><td>1326 24th St NE</td><td>4bd/1ba</td><td>$1,140</td><td>$11,616</td></tr>
-                  <tr><td>1203 25th St NE</td><td>3bd/1ba</td><td>$1,200</td><td>$11,361</td></tr>
-                  <tr><td>1306 22nd St NE</td><td>4bd/1.5ba</td><td>$1,495</td><td>$9,785</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </details>
           <a class="p-cta" href="/portfolio-northeast">View Portfolio D &rarr;</a>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Portfolio_D.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Portfolio_D.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
+          </div>
         </div>
       </div>
 
-    </div><!-- /p-grid -->
-
-    <div class="combined">
-      <strong>All 4 Portfolios Combined &mdash; 39 Homes:</strong>
-      &nbsp; $51,605/mo &nbsp;&middot;&nbsp; $619,260/yr &nbsp;&middot;&nbsp; $1,323 avg per door &nbsp;&middot;&nbsp;
-      <strong>2025 Combined NOI: $459,408</strong>
     </div>
-
   </div>
 </section>
 
-<!-- ══ PREMIUM INDIVIDUAL ASSETS ══ -->
-<section class="sec" id="premium" style="background:var(--navy);border-top:1px solid var(--border)">
+<!-- ══ CONTACT CTA #2 ══ -->
+<div class="cta-strip">
+  <div class="cta-strip__inner">
+    <p class="cta-strip__text">Ready to explore a portfolio acquisition? Reach out and we'll walk you through the numbers.</p>
+    <a class="cta-contact-btn" href="/contact">Inquire About a Portfolio &rarr;</a>
+  </div>
+</div>
+
+<!-- ══ 5 INDIVIDUAL PROPERTIES ══ -->
+<section class="sec" id="premium" style="background:var(--bg-alt);border-top:1px solid var(--border)">
   <div class="wrap">
     <div class="sec-lbl">Individual Acquisitions</div>
-    <h2 class="sec-h2">Premium Individual Assets &mdash; Available Separately</h2>
-    <p class="sec-sub">Five stand-alone homes with above-average rents and NOI, available for individual sale or MLS listing.</p>
+    <h2 class="sec-h2">5 Individual Investment Properties</h2>
+    <div class="divbar"></div>
+    <p class="sec-sub">Five stand-alone homes available for individual sale, each offering strong rental income in established Canton neighborhoods.</p>
     <div class="prem-grid">
 
       <div class="prem-card">
-        <span class="prem-badge">Premium</span>
-        <div class="prem-addr">300 Montrose Ave NW</div>
-        <div class="prem-beds">5 bed / 2 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
-        <div class="prem-metrics">
-          <div class="prem-row"><span class="prem-row__lbl">Mo. Rent</span><span class="prem-row__val">$2,300</span></div>
-          <div class="prem-row"><span class="prem-row__lbl">2025 NOI</span><span class="prem-row__val">$22,309</span></div>
+        <img class="prem-card__img" src="https://static.wixstatic.com/media/d9828b_1a1d76a9b76443d5a64141ebcf6c48ca~mv2.jpg" alt="300 Montrose Ave NW"/>
+        <div class="prem-card__body">
+          <span class="prem-badge">Individual Property</span>
+          <div class="prem-addr">300 Montrose Ave NW</div>
+          <div class="prem-beds">5 bed &nbsp;/&nbsp; 2 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
+          </div>
         </div>
       </div>
 
       <div class="prem-card">
-        <span class="prem-badge">Premium</span>
-        <div class="prem-addr">2631 Demington Ave NW</div>
-        <div class="prem-beds">3 bed / 2 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
-        <div class="prem-metrics">
-          <div class="prem-row"><span class="prem-row__lbl">Mo. Rent</span><span class="prem-row__val">$2,000</span></div>
-          <div class="prem-row"><span class="prem-row__lbl">2025 NOI</span><span class="prem-row__val">$42,941</span></div>
+        <img class="prem-card__img" src="https://static.wixstatic.com/media/d9828b_a56f5a5658184c74bcb3132dcb85eedc~mv2.jpg" alt="2631 Demington Ave NW"/>
+        <div class="prem-card__body">
+          <span class="prem-badge">Individual Property</span>
+          <div class="prem-addr">2631 Demington Ave NW</div>
+          <div class="prem-beds">3 bed &nbsp;/&nbsp; 2 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
+          </div>
         </div>
       </div>
 
       <div class="prem-card">
-        <span class="prem-badge">Premium</span>
-        <div class="prem-addr">1103 22nd St NE</div>
-        <div class="prem-beds">4 bed / 2.5 bath &nbsp;&middot;&nbsp; ZIP 44714</div>
-        <div class="prem-metrics">
-          <div class="prem-row"><span class="prem-row__lbl">Mo. Rent</span><span class="prem-row__val">$1,800</span></div>
-          <div class="prem-row"><span class="prem-row__lbl">2025 NOI</span><span class="prem-row__val">$14,909</span></div>
+        <img class="prem-card__img" src="https://static.wixstatic.com/media/d9828b_01ee6699f540475790cef8f11779998d~mv2.jpg" alt="1103 22nd St NE"/>
+        <div class="prem-card__body">
+          <span class="prem-badge">Individual Property</span>
+          <div class="prem-addr">1103 22nd St NE</div>
+          <div class="prem-beds">4 bed &nbsp;/&nbsp; 2.5 bath &nbsp;&middot;&nbsp; ZIP 44714</div>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
+          </div>
         </div>
       </div>
 
       <div class="prem-card">
-        <span class="prem-badge">Premium</span>
-        <div class="prem-addr">225 Grandview Ave NW</div>
-        <div class="prem-beds">4 bed / 2.5 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
-        <div class="prem-metrics">
-          <div class="prem-row"><span class="prem-row__lbl">Mo. Rent</span><span class="prem-row__val">$1,600</span></div>
-          <div class="prem-row"><span class="prem-row__lbl">2025 NOI</span><span class="prem-row__val">$15,818</span></div>
+        <img class="prem-card__img" src="https://static.wixstatic.com/media/d9828b_d344fde378c4422bbb1ae9b9758a0fc9~mv2.jpg" alt="225 Grandview Ave NW"/>
+        <div class="prem-card__body">
+          <span class="prem-badge">Individual Property</span>
+          <div class="prem-addr">225 Grandview Ave NW</div>
+          <div class="prem-beds">4 bed &nbsp;/&nbsp; 2.5 bath &nbsp;&middot;&nbsp; ZIP 44708</div>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
+          </div>
         </div>
       </div>
 
       <div class="prem-card">
-        <span class="prem-badge">Premium</span>
-        <div class="prem-addr">903 23rd St NW</div>
-        <div class="prem-beds">4 bed / 1.5 bath &nbsp;&middot;&nbsp; ZIP 44709</div>
-        <div class="prem-metrics">
-          <div class="prem-row"><span class="prem-row__lbl">Mo. Rent</span><span class="prem-row__val">$1,410</span></div>
-          <div class="prem-row"><span class="prem-row__lbl">2025 NOI</span><span class="prem-row__val" style="font-size:11px;color:var(--muted)">Upon Request</span></div>
+        <img class="prem-card__img" src="https://static.wixstatic.com/media/d9828b_4a43c60a2a3343bdb4aad6e86ecf49cb~mv2.png" alt="903 23rd St NW"/>
+        <div class="prem-card__body">
+          <span class="prem-badge">Individual Property</span>
+          <div class="prem-addr">903 23rd St NW</div>
+          <div class="prem-beds">4 bed &nbsp;/&nbsp; 1.5 bath &nbsp;&middot;&nbsp; ZIP 44709</div>
+          <div class="pdf-btns">
+            <a class="pdf-btn" href="${PDF_BASE}2024_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2024 P&amp;L</a>
+            <a class="pdf-btn" href="${PDF_BASE}2025_Individual_Properties.pdf" target="_blank" rel="noopener">&#128196; 2025 P&amp;L</a>
+          </div>
         </div>
       </div>
 
@@ -542,11 +437,20 @@ details[open] summary::after{content:' ↑'}
   </div>
 </section>
 
+<!-- ══ CONTACT CTA #3 ══ -->
+<div class="cta-strip">
+  <div class="cta-strip__inner">
+    <p class="cta-strip__text">Have questions about individual properties or want to arrange a walkthrough? Our team is here to help.</p>
+    <a class="cta-contact-btn" href="/contact">Contact an Advisor &rarr;</a>
+  </div>
+</div>
+
 <!-- ══ GENEVA ON THE LAKE ══ -->
-<section class="sec" id="geneva" style="background:var(--navy-mid);border-top:1px solid var(--border)">
+<section class="sec" id="geneva" style="background:var(--bg);border-top:1px solid var(--border)">
   <div class="wrap">
-    <div class="sec-lbl">Property #45</div>
+    <div class="sec-lbl">Property #45 &middot; Short-Term Rental</div>
     <h2 class="sec-h2">Geneva on the Lake</h2>
+    <div class="divbar"></div>
     <div class="gen-grid">
       <div>
         <span class="gen-tag">Airbnb Superhost &middot; Turnkey STR</span>
@@ -557,12 +461,20 @@ details[open] summary::after{content:' ↑'}
           <div class="adu__ttl">ADU Conversion Opportunity</div>
           <div class="adu__txt">The detached garage already has a walk-out second-story door, support pillars, new windows, full insulation, and updated electrical. Ready to convert to a 2-bed/1-bath second unit. Local comparables suggest this addition would double annual gross revenue &mdash; creating a &ldquo;sleep 16&rdquo; arrangement impossible to find in GOTL. Rent it with the house or separately.</div>
         </div>
+        <div class="gen-gallery-wrap">
+          <button class="gen-gallery-btn" type="button">&#128247; View Photos &#9660;</button>
+          <div class="gen-gallery-grid hidden">
+            <img src="https://static.wixstatic.com/media/64b604_523186930e5946028762053d55f0b1ce~mv2.jpeg" alt="Geneva property exterior"/>
+            <img src="https://static.wixstatic.com/media/64b604_75503cda2c4b4ac3bb503c6a29d09021~mv2.jpeg" alt="Geneva property interior"/>
+            <img src="https://static.wixstatic.com/media/64b604_0fdb97b825944fcab5668957f3e3c78f~mv2.png" alt="Geneva property view"/>
+          </div>
+        </div>
       </div>
       <div class="gen-metrics">
         <div class="gm">
-          <div class="gm__val">$26,000</div>
-          <div class="gm__lbl">2024 Gross Revenue</div>
-          <div class="gm__note">$2,167/mo equivalent</div>
+          <div class="gm__val">$22,000</div>
+          <div class="gm__lbl">2025 Gross Revenue</div>
+          <div class="gm__note">$1,833/mo equivalent</div>
         </div>
         <div class="gm">
           <div class="gm__val">$52,000</div>
@@ -574,62 +486,177 @@ details[open] summary::after{content:' ↑'}
           <div class="gm__lbl">Asking Price</div>
           <div class="gm__note">Turnkey &mdash; all contents included</div>
         </div>
-        <a class="p-cta" href="/geneva-str" style="margin-top:4px">View Geneva Property &rarr;</a>
+        <a class="p-cta" href="/geneva-str">View Geneva Property &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══ WHY CANTON ══ -->
-<section class="sec" id="why-canton" style="background:var(--navy);border-top:1px solid var(--border)">
+<section class="sec" id="why-canton" style="background:var(--bg-alt);border-top:1px solid var(--border)">
   <div class="wrap">
     <div class="sec-lbl">Market Fundamentals</div>
     <h2 class="sec-h2">Why Canton, Ohio</h2>
-    <p class="sec-sub">Six demand drivers within 5 miles of every property in this portfolio.</p>
-    <div class="wc-grid">
-      <div class="wc-card">
-        <span class="wc-icon">&#127944;</span>
-        <div class="wc-title">Pro Football Hall of Fame Village</div>
-        <div class="wc-txt">All properties within 2 miles. A multi-phase development bringing a waterpark, hotels, restaurants, retail, and gaming. Hundreds of new service-industry jobs directly expand the renter pool.</div>
+    <div class="divbar"></div>
+    <p class="wc-tagline">All properties are within 5 miles of some of the greatest attractions northeastern Ohio has to offer&hellip;</p>
+
+    <div class="wc-features">
+
+      <div class="wc-feature">
+        <div class="wc-feature__row">
+          <div>
+            <div class="wc-feature__title">Pro Football Hall of Fame Village</div>
+            <p class="wc-feature__desc">The Pro Football Hall of Fame Village is a transformative multi-phase development reshaping Canton&rsquo;s economic landscape and drawing visitors year-round from across the country.</p>
+            <ul class="wc-feature__list">
+              <li>Will create hundreds of service industry jobs</li>
+              <li>Shopping, restaurants, gaming, waterpark, and hotel</li>
+            </ul>
+            <span class="wc-hi">ALL HOMES WITHIN 2 MILES OF THE VILLAGE</span>
+          </div>
+          <div class="wc-imgs">
+            <img src="https://static.wixstatic.com/media/d9828b_73a402f4b5bc40cf8d3f9e89eee05f43~mv2.jpg" alt="Hall of Fame Village render"/>
+            <img src="https://static.wixstatic.com/media/d9828b_7704f74b30634709b76a6039e9d2f2da~mv2.jpg" alt="Hall of Fame Village aerial"/>
+          </div>
+        </div>
+        <img class="wc-img-wide" src="https://static.wixstatic.com/media/d9828b_9eee10d2942b431a9e9e13c5d8102d47~mv2.jpg" alt="Hall of Fame Village site map"/>
       </div>
-      <div class="wc-card">
-        <span class="wc-icon">&#127973;</span>
-        <div class="wc-title">Two Major Hospital Systems</div>
-        <div class="wc-txt">Cleveland Clinic Mercy and Aultman Hospital are within 5 miles of all homes. Combined 10,000 employees. Traveling nurses and healthcare workers provide strong rental demand year-round.</div>
+
+      <div class="wc-feature">
+        <div class="wc-feature__row">
+          <div>
+            <div class="wc-feature__title">Two State-of-the-Art Hospitals</div>
+            <p class="wc-feature__desc">Both Cleveland Clinic Mercy Hospital and Aultman Hospital are within just 5 miles of all homes. These are destination healthcare facilities drawing employees from over an hour away.</p>
+            <ul class="wc-feature__list">
+              <li>Both hospitals are desired by people from over an hour away looking to work here</li>
+              <li>Multiple colleges and universities nearby provide a steady stream of incoming healthcare workers for the area</li>
+              <li>Opens up the opportunity for short-term rentals &mdash; a large volume of traveling nurses work here throughout the year</li>
+              <li>Between both hospitals they provide a combined 10,000 employees</li>
+            </ul>
+            <span class="wc-hi">10,000 Combined Employees</span>
+          </div>
+          <div class="wc-imgs">
+            <img src="https://static.wixstatic.com/media/d9828b_0be8a50b8f2c46acb0a4a9a33af28fe6~mv2.jpg" alt="Cleveland Clinic Mercy Hospital"/>
+            <img src="https://static.wixstatic.com/media/d9828b_7d0744e6a26a433ab646be7344333331~mv2.jpg" alt="Aultman Hospital"/>
+          </div>
+        </div>
       </div>
-      <div class="wc-card">
-        <span class="wc-icon">&#128230;</span>
-        <div class="wc-title">Amazon Distribution Center</div>
-        <div class="wc-txt">A major Amazon fulfillment center a few miles away sustains 1,000+ workers, the majority of whom are renters. Consistent, low-variance demand anchor.</div>
+
+      <div class="wc-feature">
+        <div class="wc-feature__row">
+          <div>
+            <div class="wc-feature__title">Flow of Educational Traffic</div>
+            <p class="wc-feature__desc">Canton is home to four colleges and universities, each generating consistent demand for housing from students, faculty, and post-graduates every year.</p>
+            <ul class="wc-feature__list">
+              <li><strong>Malone University</strong> &mdash; NCAA Division 2</li>
+              <li><strong>Walsh University</strong> &mdash; NCAA Division 2</li>
+              <li><strong>Kent State University, Stark County Campus</strong> &mdash; NCAA Division 1 branch campus</li>
+              <li><strong>Stark State College</strong> &mdash; Technical and professional programs</li>
+              <li>Growing need for college housing and post-graduate living</li>
+            </ul>
+          </div>
+          <div class="wc-imgs">
+            <img src="https://static.wixstatic.com/media/d9828b_10c51c7b08c4488d9c9296202b5f3454~mv2.jpg" alt="Stark State College"/>
+            <img src="https://static.wixstatic.com/media/d9828b_8d81de147cb348ffad5bc46408c5e58b~mv2.jpg" alt="Walsh University Campus Center"/>
+          </div>
+        </div>
+        <div class="wc-imgs-row">
+          <img src="https://static.wixstatic.com/media/d9828b_635e1839b035460388f835d024dee216~mv2.jpg" alt="Malone University"/>
+          <img src="https://static.wixstatic.com/media/d9828b_cf37a9bbb71646169df17c582ab242b9~mv2.jpg" alt="Malone University sign"/>
+        </div>
       </div>
-      <div class="wc-card">
-        <span class="wc-icon">&#127979;</span>
-        <div class="wc-title">Four Colleges &amp; Universities</div>
-        <div class="wc-txt">Malone University, Walsh University, Stark State College, and Kent State Stark create a steady stream of students and post-graduate renters every year.</div>
+
+      <div class="wc-feature">
+        <div class="wc-feature__row">
+          <div class="wc-imgs">
+            <img src="https://static.wixstatic.com/media/d9828b_9a15bac0c8e1412583f3a1ef682c4ba6~mv2.png" alt="Amazon fulfillment sign"/>
+            <img src="https://static.wixstatic.com/media/d9828b_e821dd14d7b44480b9635f48fc147c18~mv2.jpg" alt="Amazon distribution interior"/>
+          </div>
+          <div>
+            <div class="wc-feature__title">Amazon Distribution Center</div>
+            <p class="wc-feature__desc">The Amazon distribution center is just a few miles away from all properties. Amazon warehouses provide a consistent, low-variance anchor of tenant demand.</p>
+            <ul class="wc-feature__list">
+              <li>Service workers are primarily renters</li>
+              <li>The center created and maintains over 1,000 employees at one time</li>
+              <li>Also located near the Hall of Fame Village</li>
+            </ul>
+            <span class="wc-hi">1,000+ Employees</span>
+          </div>
+        </div>
       </div>
-      <div class="wc-card">
-        <span class="wc-icon">&#128717;</span>
-        <div class="wc-title">Belden Village Shopping Corridor</div>
-        <div class="wc-txt">One of Ohio&rsquo;s densest retail and restaurant corridors. 80+ retail shops and 90+ restaurants within 5 miles including Gervasi Vineyard. Large and growing service-worker renter base.</div>
+
+      <div class="wc-feature">
+        <div class="wc-feature__row">
+          <div>
+            <div class="wc-feature__title">Belden Village Shopping District</div>
+            <p class="wc-feature__desc">The Belden Village shopping area is one of the most densely populated areas of restaurants and shopping in all of Ohio, creating a long-term supply of service workers who need to rent.</p>
+            <ul class="wc-feature__list">
+              <li>Over 80 retail shops</li>
+              <li>Over 90 restaurants and eateries within a 5-mile radius, including Gervasi Vineyard</li>
+              <li>An ever-growing need for service workers creating a long-term supply of people needing to rent</li>
+            </ul>
+            <span class="wc-hi">80+ Shops &nbsp;&middot;&nbsp; 90+ Restaurants</span>
+          </div>
+          <div class="wc-imgs">
+            <img src="https://static.wixstatic.com/media/d9828b_4bfe468c3e494c7baa1d07abca280136~mv2.jpg" alt="Belden Village Mall"/>
+            <img src="https://static.wixstatic.com/media/d9828b_742580d84f934878b83167d3cd0ab455~mv2.jpg" alt="Belden Village Shopping"/>
+          </div>
+        </div>
       </div>
-      <div class="wc-card">
-        <span class="wc-icon">&#127963;</span>
-        <div class="wc-title">Opportunity Zones</div>
-        <div class="wc-txt">Many of these properties fall within federally designated Opportunity Zones, providing potential capital gains tax deferral and exemption benefits for qualifying investors.</div>
-      </div>
+
     </div>
+
+    <div class="wc-close">
+      <div class="wc-close__val">And Everything is Within 8 Miles of All Properties</div>
+      <div class="wc-close__txt">Every single property in this portfolio sits within 8 miles of all five demand drivers above &mdash; a concentration of employment, education, healthcare, retail, and entertainment that is impossible to replicate at this price point in Northeast Ohio.</div>
+    </div>
+
   </div>
 </section>
 
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
-  &copy; 2025 CSH Rentals &nbsp;&middot;&nbsp; 1428 Market Ave. N., Canton, OH 44714 &nbsp;&middot;&nbsp; customstarkhomes@gmail.com
+  &copy; 2025 CSH Rentals &nbsp;&middot;&nbsp; 1428 Market Ave. N., Canton, OH 44714 &nbsp;&middot;&nbsp; scottprivate@tagplanning.com
 </footer>
 `;
 
+    // ── Slideshow ──
+    var cur = 0;
+    var self = this;
+    var slideEls = Array.from(self.querySelectorAll('.slide'));
+    var dotEls = Array.from(self.querySelectorAll('.dot'));
+
+    function goTo(n) {
+      slideEls[cur].classList.remove('active');
+      dotEls[cur].classList.remove('active');
+      cur = ((n % slideEls.length) + slideEls.length) % slideEls.length;
+      slideEls[cur].classList.add('active');
+      dotEls[cur].classList.add('active');
+    }
+
+    self.querySelector('.slide-prev').addEventListener('click', function() { goTo(cur - 1); });
+    self.querySelector('.slide-next').addEventListener('click', function() { goTo(cur + 1); });
+    dotEls.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
+    var autoPlay = setInterval(function() { goTo(cur + 1); }, 5000);
+    var heroEl = self.querySelector('.hero');
+    heroEl.addEventListener('mouseenter', function() { clearInterval(autoPlay); });
+    heroEl.addEventListener('mouseleave', function() { autoPlay = setInterval(function() { goTo(cur + 1); }, 5000); });
+
+    // ── Navigation & gallery ──
     const _b = window.location.hostname.includes('wixstudio.com')
       ? '/' + window.location.pathname.split('/')[1] : '';
-    this.addEventListener('click', function(e) {
+
+    self.addEventListener('click', (e) => {
+      // Geneva gallery toggle
+      const galBtn = e.target.closest('.gen-gallery-btn');
+      if (galBtn) {
+        e.preventDefault(); e.stopPropagation();
+        const grid = galBtn.nextElementSibling;
+        const nowHidden = grid.classList.toggle('hidden');
+        galBtn.innerHTML = nowHidden ? '&#128247; View Photos &#9660;' : '&#128247; Hide Photos &#9650;';
+        return;
+      }
+
+      // Internal link navigation (skip external / PDF links)
       const link = e.target.closest('a');
       if (!link) return;
       const href = link.getAttribute('href');

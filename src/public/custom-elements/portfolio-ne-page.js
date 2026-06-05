@@ -60,18 +60,30 @@ class CshPortfolioNe extends HTMLElement {
       }
     ];
 
+    var RENTS = {'1210 25th St NE':'$1,390','1207 Colonial Blvd NE':'$1,350','1335 22nd St NE':'$1,220','1206 24th St NE':'$1,625','1012 28th St NE':'$1,450','1219 24th St NE':'$1,320','1330 24th St NE':'$1,325','804 29th St NE':'$1,450','1326 24th St NE':'$1,140','1203 25th St NE':'$1,200','1306 22nd St NE':'$1,495'};
     var cardsHtml = PROPERTIES.map(function(p, i) {
-      return '<div class="prop-card" data-idx="' + i + '"><div class="prop-card__img-wrap"><img class="prop-card__cover" src="' + p.cover + '" alt="' + p.address + '" loading="lazy" /><span class="prop-card__badge">For Rent</span></div><div class="prop-card__info"><div class="prop-card__address">' + p.address + '</div><div class="prop-card__city">' + p.city + '</div><div class="prop-card__specs">' + p.beds + ' Bed &nbsp;&middot;&nbsp; ' + p.baths + ' Bath &nbsp;&middot;&nbsp; Single Family</div><div class="prop-card__btn">View Details &rarr;</div></div></div>';
+      var rent = RENTS[p.address] || '';
+      return '<div class="prop-card" data-idx="' + i + '"><div class="prop-card__img-wrap"><img class="prop-card__cover" src="' + p.cover + '" alt="' + p.address + '" loading="lazy" /><span class="prop-card__badge">For Rent</span></div><div class="prop-card__info"><div class="prop-card__address">' + p.address + '</div><div class="prop-card__city">' + p.city + '</div><div class="prop-card__specs">' + p.beds + ' Bed &nbsp;&middot;&nbsp; ' + p.baths + ' Bath &nbsp;&middot;&nbsp; Single Family</div>' + (rent ? '<div class="prop-card__rent">' + rent + '/mo</div>' : '') + '<div class="prop-card__btn">View Details &rarr;</div></div></div>';
     }).join('');
 
     this.innerHTML = `
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 csh-portfolio-ne { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: #f5f7fa; }
-.site-header { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 14px 32px; display: flex; align-items: center; gap: 16px; }
-.site-header img { height: 48px; width: auto; cursor: pointer; }
-.site-header__back { margin-left: auto; font-size: 12px; font-weight: 700; color: #1A3557; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
-.site-header__back:hover { opacity: 1; }
+.csh-hdr{background:#0a1628;border-bottom:1px solid rgba(255,255,255,.08);padding:0 28px;display:flex;align-items:center;height:68px;position:sticky;top:0;z-index:200}
+.csh-hdr__logo{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;flex-shrink:0}
+.csh-hdr__logo-img{height:40px;width:auto;border-radius:4px;display:block;object-fit:cover}
+.csh-hdr__logo-text{font-size:8px;font-weight:900;letter-spacing:.22em;color:rgba(255,255,255,.85);text-transform:uppercase}
+.csh-hdr__nav{margin-left:auto;display:flex;align-items:center;gap:10px}
+.csh-hdr__btn{padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);transition:background .2s;white-space:nowrap}
+.csh-hdr__btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);color:#fff}
+.csh-hdr__btn--gold{background:#c8962a;border-color:#c8962a;color:#0a1628}
+.csh-hdr__btn--gold:hover{background:#dba83a;border-color:#dba83a}
+.csh-hdr__email{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;transition:background .2s}
+.csh-hdr__email:hover{background:rgba(255,255,255,.1)}
+.csh-back{display:block;padding:10px 28px;font-size:11px;font-weight:700;color:#5a6b85;text-decoration:none;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid #e0e4ea;background:#fff}
+.csh-back:hover{color:#0d1f35}
+.prop-card__rent{font-size:15px;font-weight:800;color:#c8962a;margin-bottom:12px}
 .hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 52px 32px 48px; text-align: center; }
 .hero__badge { display: inline-block; background: #C8962A; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
 .hero__title { font-size: clamp(26px, 4.5vw, 44px); font-weight: 900; margin-bottom: 8px; }
@@ -93,10 +105,18 @@ csh-portfolio-ne { display: block; font-family: 'Segoe UI', Arial, sans-serif; c
 .prop-card__btn { width: 100%; padding: 12px; background: #1A3557; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 7px; text-align: center; }
 .prop-card:hover .prop-card__btn { background: #0D1F35; }
 </style>
-<header class="site-header">
-  <a href="/"><img src="https://static.wixstatic.com/media/64b604_646bc5dcd19547abb135695264b23b0f~mv2.png" alt="CSH Rentals" /></a>
-  <a class="site-header__back" href="/investors">&larr; All Portfolios</a>
+<header class="csh-hdr">
+  <a href="/" class="csh-hdr__logo">
+    <img class="csh-hdr__logo-img" src="https://static.wixstatic.com/media/d9828b_5f2ddd29097a4c6c83d205f0ff3bc984~mv2.jpg" alt="CSH Rentals"/>
+    <span class="csh-hdr__logo-text">CSH RENTALS</span>
+  </a>
+  <nav class="csh-hdr__nav">
+    <a class="csh-hdr__btn" href="/tenants">Tenant Pre-Approval</a>
+    <a class="csh-hdr__btn csh-hdr__btn--gold" href="/contact">Contact</a>
+    <a class="csh-hdr__email" href="mailto:scottprivate@tagplanning.com" title="Email Us">&#9993;</a>
+  </nav>
 </header>
+<a class="csh-back" href="/investors">&larr; Back to All Portfolios</a>
 <section class="hero">
   <div class="hero__badge">Portfolio D &mdash; NE Canton</div>
   <h1 class="hero__title">Portfolio D: NE / Market-Colonial Cluster</h1>
