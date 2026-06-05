@@ -111,7 +111,7 @@ csh-portfolio-nw { display: block; font-family: 'Segoe UI', Arial, sans-serif; c
     <a class="csh-hdr__email" href="mailto:scottprivate@tagplanning.com" title="Email Us">&#9993;</a>
   </nav>
 </header>
-<a class="csh-back" href="/investors">&larr; Back to All Portfolios</a>
+<a class="csh-back" href="/">&larr; Back to All Portfolios</a>
 <section class="hero">
   <div class="hero__badge">Portfolio B &mdash; NW Canton</div>
   <h1 class="hero__title">Portfolio B: NW 21st&ndash;24th Operating Cluster</h1>

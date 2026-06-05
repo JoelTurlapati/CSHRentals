@@ -106,7 +106,7 @@ csh-portfolio-central { display: block; font-family: 'Segoe UI', Arial, sans-ser
     <a class="csh-hdr__email" href="mailto:scottprivate@tagplanning.com" title="Email Us">&#9993;</a>
   </nav>
 </header>
-<a class="csh-back" href="/investors">&larr; Back to All Portfolios</a>
+<a class="csh-back" href="/">&larr; Back to All Portfolios</a>
 <section class="hero">
   <div class="hero__badge">Portfolio C &mdash; NW Canton</div>
   <h1 class="hero__title">Portfolio C: NW 25th&ndash;27th Density Cluster</h1>
