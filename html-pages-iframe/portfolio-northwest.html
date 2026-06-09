@@ -4,8 +4,6 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CSH Rentals | Northwest Central Portfolio</title>
-</head>
-<body>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #1a1a1a; }
@@ -14,6 +12,7 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
 .site-header img { height: 48px; width: auto; cursor: pointer; }
 .site-header__back { margin-left: auto; font-size: 13px; font-weight: 600; color: #1A3557; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
 .site-header__back:hover { opacity: 1; }
+@media(max-width:480px){.site-header{padding:10px 16px}.site-header__back{font-size:11px;letter-spacing:0}}
 
 .hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 48px 32px 44px; text-align: center; }
 .hero__zip { display: inline-block; background: #C8962A; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
@@ -35,12 +34,18 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
 .prop-card__btn { flex-shrink: 0; padding: 8px 14px; background: #1A3557; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 5px; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
 .prop-card__btn:hover { background: #0D1F35; }
 </style>
+</head>
+<body style="background:#f5f7fa">
 
 <script>
 function viewProperty(address) {
-  try { localStorage.setItem('csh_prop', JSON.stringify({ address: address, portfolio: 'Northwest Central — 44709' })); } catch(e) {}
+  var portfolio = 'Northwest Central — 44709';
+  try { localStorage.setItem('csh_prop', JSON.stringify({ address: address, portfolio: portfolio })); } catch(e) {}
+  var url = 'https://tagplanning.wixstudio.com/csh-rentals/property-detail'
+            + '?address=' + encodeURIComponent(address)
+            + '&portfolio=' + encodeURIComponent(portfolio);
   var a = document.createElement('a');
-  a.href = 'https://tagplanning.wixstudio.com/csh-rentals/property-detail';
+  a.href = url;
   a.target = '_top';
   document.body.appendChild(a);
   a.click();

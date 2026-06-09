@@ -4,8 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CSH Rentals | Canton, Ohio</title>
-</head>
-<body>
+<link rel="preload" as="image" href="https://static.wixstatic.com/media/64b604_952be5d06ea04a69bc9932917a74d19c~mv2.jpeg">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #1a1a1a; }
@@ -48,6 +47,7 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
   margin-left: 8px;
 }
 .nav__link--cta:hover { background: #0D1F35; }
+@media(max-width:768px){.nav{padding:0 16px}.nav__links{display:none}.nav__logo img{height:38px}}
 
 /* ── HERO ── */
 .hero {
@@ -244,6 +244,8 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
   line-height: 1.6;
 }
 </style>
+</head>
+<body style="background:#f5f7fa">
 
 <!-- NAV -->
 <nav class="nav">

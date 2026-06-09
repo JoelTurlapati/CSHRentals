@@ -4,8 +4,6 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CSH Rentals | Geneva on the Lake — Vacation Rental</title>
-</head>
-<body>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #1a1a1a; }
@@ -15,6 +13,7 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
 .site-header img { height: 48px; width: auto; cursor: pointer; }
 .site-header__back { margin-left: auto; font-size: 13px; font-weight: 600; color: #1A3557; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
 .site-header__back:hover { opacity: 1; }
+@media(max-width:480px){.site-header{padding:10px 16px}.site-header__back{font-size:11px;letter-spacing:0}}
 
 /* HERO IMAGE */
 .hero-img { position: relative; width: 100%; height: clamp(280px, 45vw, 520px); overflow: hidden; }
@@ -60,6 +59,8 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
 .btn-secondary { display: inline-block; padding: 13px 28px; background: transparent; color: #1A3557; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 6px; text-decoration: none; cursor: pointer; border: 2px solid #1A3557; transition: all 0.2s; }
 .btn-secondary:hover { background: #1A3557; color: #fff; }
 </style>
+</head>
+<body style="background:#f5f7fa">
 
 <!-- HEADER -->
 <header class="site-header">

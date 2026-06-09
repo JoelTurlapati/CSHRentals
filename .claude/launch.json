@@ -1,11 +1,1 @@
-{
-  "version": "0.0.1",
-  "configurations": [
-    {
-      "name": "CSH Rentals Preview",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "html-pages", "-p", "3500", "--no-clipboard"],
-      "port": 3500
-    }
-  ]
-}
+{"version":"0.0.1","configurations":[{"name":"CSH Rentals","runtimeExecutable":"npx","runtimeArgs":["serve","html-pages-iframe","-p","3100","--no-clipboard"],"port":3100}]}

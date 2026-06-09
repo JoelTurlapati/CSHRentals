@@ -1,6 +1,7 @@
 // @ts-nocheck
 class CshPropertyDetail extends HTMLElement {
   connectedCallback() {
+    this.style.cssText = 'display:block;background:#f5f7fa;min-height:100vh';
     var BACK_SLUGS = {
       'West — 44708':              'portfolio-west',
       'Northwest Central — 44709': 'portfolio-northwest',
@@ -79,6 +80,19 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
 .csh-hdr__btn--gold:hover{background:#dba83a;border-color:#dba83a}
 .csh-hdr__email{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;transition:background .2s,border-color .2s}
 .csh-hdr__email:hover{background:rgba(255,255,255,.1)}
+.csh-hdr__burger{display:none;flex-direction:column;justify-content:space-between;width:26px;height:19px;background:none;border:none;cursor:pointer;padding:0;margin-left:auto;flex-shrink:0}
+.csh-hdr__burger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:transform .25s,opacity .25s}
+.csh-hdr__burger.open span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
+.csh-hdr__burger.open span:nth-child(2){opacity:0}
+.csh-hdr__burger.open span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)}
+.csh-mob-nav{display:none;position:absolute;top:94px;left:0;right:0;background:#0a1628;border-top:1px solid rgba(255,255,255,.08);z-index:199;box-shadow:0 8px 32px rgba(0,0,0,.35)}
+.csh-mob-nav.open{display:block}
+.csh-mob-nav__inner{display:flex;flex-direction:column;padding:8px 0 16px}
+.csh-mob-nav__link{padding:15px 20px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);transition:background .15s}
+.csh-mob-nav__link:hover{background:rgba(255,255,255,.06)}
+.csh-mob-nav__link:last-child{border-bottom:none}
+.csh-mob-nav__link--gold{color:#c8962a}
+@media(max-width:768px){.csh-hdr{padding:0 16px}.csh-hdr__nav{display:none}.csh-hdr__burger{display:flex}}
 
 .hero { background: linear-gradient(135deg, #0D1F35 0%, #1A3557 60%, #1e3f68 100%); color: #fff; padding: 44px 32px 40px; text-align: center; }
 .hero__badge { display: inline-block; background: #C8962A; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
@@ -139,9 +153,19 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
   <nav class="csh-hdr__nav">
     <a class="csh-hdr__btn" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-hdr__btn csh-hdr__btn--gold" href="/contact">Contact</a>
-    <a class="csh-hdr__email" href="mailto:scottprivate@tagplanning.com" title="Email Us">&#9993;</a>
+    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com" title="Email Us">&#9993;</a>
   </nav>
+  <button class="csh-hdr__burger" id="csh-burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+<div class="csh-mob-nav" id="csh-mob-nav">
+  <div class="csh-mob-nav__inner">
+    <a class="csh-mob-nav__link" href="/tenants">Tenant Pre-Approval</a>
+    <a class="csh-mob-nav__link csh-mob-nav__link--gold" href="/contact">Contact</a>
+    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com">&#9993;&nbsp; Email Us</a>
+  </div>
+</div>
 
 <div id="main-content">
   <section class="hero">
@@ -212,6 +236,17 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
   </div>
 </div>
 `;
+
+    const burger = this.querySelector('#csh-burger');
+    const mobNav = this.querySelector('#csh-mob-nav');
+    if (burger && mobNav) {
+      burger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobNav.classList.toggle('open');
+        burger.classList.toggle('open', isOpen);
+        burger.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
 
     var _b = window.location.hostname.includes('wixstudio.com')
       ? '/' + window.location.pathname.split('/')[1] : '';

@@ -4,8 +4,6 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CSH Rentals | Investors</title>
-</head>
-<body>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #1a1a1a; }
@@ -32,6 +30,7 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
   transition: opacity 0.2s;
 }
 .site-header__back:hover { opacity: 1; }
+@media(max-width:480px){.site-header{padding:10px 16px}.site-header__back{font-size:11px;letter-spacing:0}}
 
 /* HERO */
 .hero {
@@ -251,6 +250,8 @@ html, body { margin: 0; padding: 0; width: 100%; font-family: 'Segoe UI', Arial,
   border-left: 3px solid #C8962A;
 }
 </style>
+</head>
+<body style="background:#f5f7fa">
 
 <!-- HEADER -->
 <header class="site-header">

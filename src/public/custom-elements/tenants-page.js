@@ -1,6 +1,7 @@
 // @ts-nocheck
 class CshTenants extends HTMLElement {
   connectedCallback() {
+    this.style.cssText = 'display:block;background:#f5f7fa;min-height:100vh';
     this.innerHTML = `
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
