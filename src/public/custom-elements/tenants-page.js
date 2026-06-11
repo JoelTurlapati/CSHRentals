@@ -21,7 +21,7 @@ csh-tenants { display: block; font-family: 'Segoe UI', Arial, sans-serif; color:
 .form-section__heading { font-size: 16px; font-weight: 800; color: #0D1F35; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
 
 .cognito-wrap { background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); overflow: hidden; }
-.cognito-wrap iframe { display: block; width: 100%; min-height: 700px; border: none; }
+.cognito-wrap iframe { display: block; width: 100%; height: 820px; border: none; }
 
 .footer { background: #0D1F35; padding: 20px 32px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
 </style>
@@ -40,7 +40,7 @@ csh-tenants { display: block; font-family: 'Segoe UI', Arial, sans-serif; color:
 <div class="form-section">
   <div class="form-section__heading">Rental Pre-Approval</div>
   <div class="cognito-wrap">
-    <iframe src="https://services.cognitoforms.com/s/faZh5--E3U28FO23IbMiRQ" title="Tenant Pre-Approval Form" allowfullscreen></iframe>
+    <iframe src="https://www.cognitoforms.com/TheAffinityGroup1/CSHRentalsPreApprovalForm" title="Tenant Pre-Approval Form" allowfullscreen></iframe>
   </div>
 </div>
 

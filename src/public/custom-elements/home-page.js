@@ -9,22 +9,24 @@ class CshHome extends HTMLElement {
       document.head.appendChild(l);
     }
 
-    var SLIDES = [
-      'https://static.wixstatic.com/media/64b604_0f42533432c64b84adbdfbda61fcc7e7~mv2.jpeg',
-      'https://static.wixstatic.com/media/64b604_9ee44dbc31dd4d6d851071343ea0fa94~mv2.jpeg',
-      'https://static.wixstatic.com/media/64b604_be845510679b49f29054081aaa6680a9~mv2.jpeg',
-      'https://static.wixstatic.com/media/64b604_b071b082c3314191a292bd349728b657~mv2.jpeg',
-      'https://static.wixstatic.com/media/64b604_150af085b1024681984084f74ed2ed18~mv2.jpeg'
+    var self = this;
+
+    var INDIVIDUAL_PROPS = [
+      {
+        address: '5192 University Ave', city: 'Geneva, OH 44041', beds: 2, baths: 1,
+        portfolio: 'Individual Properties',
+        photos: [
+          'https://static.wixstatic.com/media/d9828b_b54105f8c7654bddb2b98a8c32c498a9~mv2.png',
+          'https://static.wixstatic.com/media/d9828b_2bcaeb3dfcee4ac09e02c5ef2b9fc41d~mv2.jpg',
+          'https://static.wixstatic.com/media/d9828b_88702235d5204eb8a2062465eceac5f9~mv2.jpg'
+        ]
+      },
+      {
+        address: '903 23rd St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
+        portfolio: 'Individual Properties',
+        photos: ['https://static.wixstatic.com/media/d9828b_4a43c60a2a3343bdb4aad6e86ecf49cb~mv2.png']
+      }
     ];
-
-    var slidesHtml = SLIDES.map(function(url, i) {
-      return '<div class="slide' + (i === 0 ? ' active' : '') + '" style="background-image:url(\'' + url + '\')"></div>';
-    }).join('');
-    var dotsHtml = SLIDES.map(function(_, i) {
-      return '<button class="dot' + (i === 0 ? ' active' : '') + '" aria-label="Slide ' + (i + 1) + '"></button>';
-    }).join('');
-
-    var PDF_BASE = 'https://raw.githubusercontent.com/JoelTurlapati/CSHRentals/master/src/public/resources/';
 
     this.innerHTML = `
 <style>
@@ -66,94 +68,95 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .csh-mob-nav__link--gold{color:#c8962a}
 @media(max-width:768px){.csh-hdr{padding:0 16px}.csh-hdr__nav{display:none}.csh-hdr__burger{display:flex}}
 
-/* ── SLIDESHOW ── */
-.hero{position:relative;width:100%;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}
-.slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,15,30,.5) 0%,rgba(5,15,30,.6) 60%,rgba(5,15,30,.75) 100%)}
-.slide.active{opacity:1}
-.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.35);color:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:22px;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(6px);line-height:1}
-.slide-arrow:hover{background:rgba(255,255,255,.25)}
-.slide-prev{left:20px}.slide-next{right:20px}
-.hero__body{position:relative;z-index:2;text-align:center;padding:80px 24px 90px;max-width:800px}
-.hero__eyebrow{display:inline-block;background:var(--gold);color:#fff;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:22px}
-.hero__title{font-size:clamp(38px,7.2vw,74px);font-weight:900;color:#fff;line-height:1.06;margin-bottom:16px;letter-spacing:-.02em}
-.hero__sub{font-size:clamp(16px,2.2vw,19px);color:rgba(255,255,255,.75);line-height:1.65;max-width:580px;margin:0 auto}
-.slide-dots{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:8px}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;padding:0;transition:background .3s,transform .2s}
-.dot.active{background:#fff;transform:scale(1.4)}
+/* ── VIDEO HERO ── */
+.hero-video{position:relative;width:100%;min-height:580px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-video__overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,15,30,.42) 0%,rgba(5,15,30,.6) 60%,rgba(5,15,30,.82) 100%);z-index:1}
+.hero-video__body{position:relative;z-index:2;text-align:center;padding:100px 24px 110px;max-width:840px}
+.hero__eyebrow{display:inline-block;background:var(--gold);color:#fff;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:26px}
+.hero__title{font-size:clamp(38px,7.2vw,78px);font-weight:900;color:#fff;line-height:1.04;margin-bottom:20px;letter-spacing:-.025em}
+.hero__sub{font-size:clamp(16px,2.2vw,20px);color:rgba(255,255,255,.78);line-height:1.7;max-width:620px;margin:0 auto}
+@media(max-width:600px){.hero-video{min-height:460px}.hero-video__body{padding:70px 20px 80px}}
 
 /* ── SECTION SHARED ── */
 .sec{padding:72px 40px}
-@media(max-width:768px){.sec{padding:56px 24px}}
-.wrap{max-width:1200px;margin:0 auto}
+@media(max-width:768px){.sec{padding:48px 20px}}
+.wrap{max-width:1500px;margin:0 auto}
 .sec-lbl{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .sec-h2{font-size:clamp(26px,3.6vw,43px);font-weight:800;color:var(--navy);line-height:1.12;letter-spacing:-.02em;margin-bottom:12px}
-.sec-sub{font-size:18px;color:var(--muted);line-height:1.75;max-width:640px}
+.sec-sub{font-size:17px;color:var(--muted);line-height:1.8;max-width:660px}
 .divbar{width:44px;height:3px;background:var(--gold);margin-bottom:22px}
 
 /* ── INTRO ── */
-.intro{background:var(--card);padding:64px 40px 56px;border-bottom:1px solid var(--border)}
-.intro__wrap{max-width:880px;margin:0 auto}
+.intro{background:var(--card);padding:64px 40px 60px;border-bottom:1px solid var(--border)}
+.intro__wrap{max-width:1200px;margin:0 auto}
 .intro__tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-g);padding:5px 16px;border-radius:20px;margin-bottom:24px}
-.intro__h1{font-size:clamp(29px,4.8vw,48px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
-.intro__desc{font-size:18px;color:var(--muted);line-height:1.85;margin-bottom:36px}
-.intro__cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px}
-@media(max-width:640px){.intro__cols{grid-template-columns:1fr}}
-.intro__box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px 22px}
-.intro__box-ttl{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.intro__box ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.intro__box li{font-size:16px;color:var(--muted);line-height:1.55;padding-left:16px;position:relative}
-.intro__box li::before{content:'•';position:absolute;left:0;color:var(--gold);font-weight:700}
-.intro__price{background:linear-gradient(135deg,#0a1628,#0d2545);border:1px solid var(--border-g);border-radius:10px;padding:28px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
-.intro__price-note{font-size:16px;color:rgba(255,255,255,.75);line-height:1.75;max-width:560px}
-.intro__price-btn{display:inline-block;padding:12px 26px;background:var(--gold);color:#0a1628;font-size:14px;font-weight:800;letter-spacing:.05em;text-decoration:none;border-radius:6px;white-space:nowrap;transition:background .2s;flex-shrink:0}
-.intro__price-btn:hover{background:var(--gold-lt)}
+.intro__h1{font-size:clamp(28px,4.8vw,48px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:22px}
+.intro__desc{font-size:17px;color:var(--muted);line-height:1.9;margin-bottom:14px}
+.intro__desc+.intro__desc{margin-bottom:36px}
+.highlights-hdr{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.highlights-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:980px){.highlights-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.highlights-grid{grid-template-columns:1fr}}
+.hl-item{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 12px;text-align:center;transition:box-shadow .2s,border-color .2s,background .2s}
+.hl-item:hover{box-shadow:0 4px 16px rgba(10,30,60,.1);border-color:var(--border-g);background:#fff}
+.hl-item__emoji{font-size:22px;margin-bottom:8px;display:block}
+.hl-item__text{font-size:12px;font-weight:700;color:var(--navy);line-height:1.45}
 
-/* ── CONTACT CTA STRIP ── */
-.cta-strip{background:#0a1628;padding:32px 40px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
-.cta-strip__inner{max-width:640px;margin:0 auto}
-.cta-strip__text{font-size:17px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6}
-.cta-contact-btn{display:inline-block;padding:13px 36px;background:var(--gold);color:#0a1628;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;text-decoration:none;transition:background .2s}
-.cta-contact-btn:hover{background:var(--gold-lt)}
+/* ── OVERVIEW MAP ── */
+.map-overview{background:var(--bg-alt);padding:60px 40px;border-top:1px solid var(--border)}
+@media(max-width:768px){.map-overview{padding:44px 20px}}
+.map-overview__wrap{max-width:1500px;margin:0 auto}
+.map-responsive{position:relative;width:100%;padding-bottom:52%;height:0;border-radius:14px;overflow:hidden;box-shadow:0 4px 28px rgba(10,30,60,.14);border:2px solid var(--border-g);margin-top:30px}
+.map-responsive iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+@media(max-width:600px){.map-responsive{padding-bottom:110%}}
+.map-legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;padding:12px 20px;background:#fff;border-radius:10px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.map-legend__item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--navy);white-space:nowrap}
+.map-legend__pin{width:13px;height:13px;border-radius:50%;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,.25)}
 
-/* ── PORTFOLIO CARDS ── */
-.p-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+/* ── PORTFOLIO GRID ── */
+.p-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
 @media(max-width:900px){.p-grid{grid-template-columns:1fr}}
-.p-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:visible;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:box-shadow .2s}
-.p-card:hover{box-shadow:0 4px 24px rgba(10,30,60,.13)}
-.p-card--center{grid-column:1 / -1;max-width:calc(50% - 12px);margin:0 auto}
-@media(max-width:900px){.p-card--center{max-width:100%}}
-.p-card__img{width:100%;height:200px;object-fit:cover;display:block;border-radius:12px 12px 0 0}
-.p-card__body{padding:24px;flex:1;display:flex;flex-direction:column;gap:14px}
-.p-card__hdr{display:flex;align-items:center;gap:14px}
-.p-letter{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--gold);color:#0a1628;font-size:23px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.p-title{font-size:19px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
-.p-meta{font-size:14px;color:var(--muted)}
-.p-cta{display:block;width:100%;padding:12px;background:var(--navy);color:#fff;text-align:center;font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;text-decoration:none;transition:background .2s}
-.p-cta:hover{background:#1a3557}
 
-/* ── DROPDOWN ── */
-.drop-wrap{position:relative;display:block}
-.drop-trigger{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px 14px;background:transparent;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1.5px solid var(--border-g);border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s,color .2s;line-height:1}
-.drop-trigger:hover{background:rgba(200,150,42,.09);color:var(--gold-lt)}
-.drop-arrow{font-size:10px;transition:transform .2s;display:inline-block;flex-shrink:0}
-.drop-wrap.open .drop-arrow{transform:rotate(180deg)}
-.drop-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1.5px solid var(--border-g);border-radius:8px;box-shadow:0 8px 32px rgba(10,30,60,.15);z-index:100;overflow:hidden;min-width:220px}
-.drop-wrap.open .drop-menu{display:block}
-.drop-item{display:block;padding:12px 16px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:background .2s,color .2s;white-space:nowrap}
-.drop-item:hover{background:rgba(200,150,42,.08);color:var(--gold-lt)}
-.drop-item+.drop-item{border-top:1px solid rgba(200,150,42,.18)}
+/* Portfolio card — top/mid/bottom panels */
+.p-card{border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(10,30,60,.14);transition:box-shadow .25s,transform .25s;cursor:pointer;background:#fff;border:1px solid var(--border)}
+.p-card:hover{box-shadow:0 10px 36px rgba(10,30,60,.2);transform:translateY(-3px)}
+.p-card--individual{border:2px solid var(--border-g)}
+.p-card__img{width:100%;height:260px;object-fit:cover;object-position:top;display:block}
+.p-card__body{padding:22px 24px 26px}
+.p-card__actions{margin-top:22px}
 
-/* ── INDIVIDUAL / PREMIUM CARDS ── */
-.prem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:700px;margin:28px auto 0}
-@media(max-width:560px){.prem-grid{grid-template-columns:1fr}}
-.prem-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:visible;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:box-shadow .2s}
-.prem-card:hover{box-shadow:0 4px 20px rgba(10,30,60,.12)}
-.prem-card__img{width:100%;height:160px;object-fit:cover;display:block;border-radius:10px 10px 0 0}
-.prem-card__body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.prem-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:#0a1628;padding:3px 8px;border-radius:3px;width:fit-content}
-.prem-addr{font-size:17px;font-weight:800;color:var(--navy);line-height:1.3}
-.prem-beds{font-size:14px;color:var(--muted);margin-bottom:2px}
+/* Top white panel */
+.p-card__top{background:#fff;padding:22px 24px 18px;border-bottom:1px solid var(--border)}
+.p-card__badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;background:var(--navy);color:#fff;padding:4px 10px;border-radius:4px;width:fit-content;margin-bottom:10px}
+.p-card__badge--prem{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#0a1628}
+.p-card__title{font-size:22px;font-weight:900;color:var(--navy);line-height:1.2;margin-bottom:4px;letter-spacing:-.01em}
+.p-card__count{font-size:13px;color:var(--muted);font-weight:500}
+
+/* Middle image panel */
+.p-card__mid{position:relative;height:220px;background-size:cover;background-position:center;flex-shrink:0}
+.p-card__mid-overlay{position:absolute;inset:0;background:rgba(5,15,30,.45)}
+.p-card__mid-btns{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;padding:0 20px}
+.p-map-view{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.55);border-radius:7px;color:#fff;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;backdrop-filter:blur(4px);white-space:nowrap;cursor:pointer;transition:background .2s,border-color .2s}
+.p-map-view:hover{background:rgba(255,255,255,.25);border-color:#fff}
+.p-cta{display:inline-flex;align-items:center;padding:10px 20px;background:var(--gold);color:#0a1628;text-align:center;font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:7px;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap}
+.p-cta:hover{background:var(--gold-lt)}
+
+/* Bottom white panel */
+.p-card__bot{background:#fff;padding:18px 24px 22px;border-top:1px solid var(--border)}
+.p-stats{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.p-stat{padding:4px 0}
+.p-stat+.p-stat{border-left:1px solid var(--border);padding-left:20px}
+.p-stat__label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.p-stat__value{font-size:20px;font-weight:900;color:var(--navy);letter-spacing:-.01em;line-height:1.1}
+.p-stat__value--gold{color:var(--gold)}
+
+/* ── INDIVIDUAL SECTION ── */
+.individual-section{background:var(--bg-alt);border-top:3px solid var(--border-g);padding:64px 40px}
+@media(max-width:768px){.individual-section{padding:44px 20px}}
+.individual-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,520px));gap:28px;margin-top:36px}
+@media(max-width:600px){.individual-grid{grid-template-columns:1fr}}
+
 
 /* ── WHY CANTON ── */
 .wc-tagline{font-size:19px;color:var(--muted);line-height:1.8;text-align:center;max-width:700px;margin:16px auto 44px;font-style:italic}
@@ -176,36 +179,18 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .wc-close{margin-top:40px;background:linear-gradient(135deg,#0a1628,#0d2545);border:1px solid var(--border-g);border-radius:12px;padding:32px 36px;text-align:center}
 .wc-close__val{font-size:clamp(26px,3.6vw,41px);font-weight:900;color:var(--gold);letter-spacing:-.02em;margin-bottom:10px}
 .wc-close__txt{font-size:17px;color:rgba(255,255,255,.7);line-height:1.75;max-width:600px;margin:0 auto}
-@media(max-width:768px){
-  .wc-feature{padding:22px 18px}
-  .wc-feature__row{grid-template-columns:1fr}
-  .wc-close{padding:24px 20px}
-}
+@media(max-width:768px){.wc-feature{padding:22px 18px}.wc-feature__row{grid-template-columns:1fr}.wc-close{padding:24px 20px}}
+
+/* ── CTA STRIP ── */
+.cta-strip{background:#0a1628;padding:32px 40px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.cta-strip__inner{max-width:640px;margin:0 auto}
+.cta-strip__text{font-size:17px;color:rgba(255,255,255,.65);margin-bottom:16px;line-height:1.6}
+.cta-contact-btn{display:inline-block;padding:13px 36px;background:var(--gold);color:#0a1628;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:7px;text-decoration:none;transition:background .2s}
+.cta-contact-btn:hover{background:var(--gold-lt)}
+
 
 /* ── FOOTER ── */
 .footer{background:#0a1628;border-top:1px solid rgba(255,255,255,.08);padding:24px 40px;text-align:center;font-size:14px;color:rgba(255,255,255,.45)}
-
-/* ── FIN BUTTON (drop-item as button) ── */
-button.drop-item.fin-btn{background:none;border:none;width:100%;text-align:left;font-family:'Inter',sans-serif;cursor:pointer}
-
-/* ── FINANCIALS MODAL ── */
-.fin-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px}
-.fin-modal__overlay{position:absolute;inset:0;background:rgba(5,15,30,.75);backdrop-filter:blur(4px)}
-.fin-modal__box{position:relative;background:#fff;border-radius:14px;max-width:800px;width:100%;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.35)}
-.fin-modal__head{padding:18px 24px;border-bottom:1px solid #e0e4ea;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.fin-modal__title{font-size:16px;font-weight:800;color:#0d1f35;letter-spacing:-.01em}
-.fin-modal__close{background:none;border:none;font-size:26px;cursor:pointer;color:#5a6b85;line-height:1;padding:0 4px;transition:color .2s}
-.fin-modal__close:hover{color:#0d1f35}
-.fin-modal__body{overflow-y:auto;padding:8px 24px 24px}
-.fin-modal__scroll{overflow-x:auto}
-.fin-tbl{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
-.fin-tbl th{background:#0a1628;color:#fff;font-weight:700;text-align:right;padding:10px 12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.fin-tbl th:first-child{text-align:left}
-.fin-tbl td{padding:9px 12px;border-bottom:1px solid #e8ecf2;color:#0d1f35;text-align:right;vertical-align:middle}
-.fin-tbl td:first-child{text-align:left;font-weight:700}
-.fin-tbl tr:last-child td{border-bottom:none;background:#f0f4fa;font-weight:800}
-.fin-tbl tr:not(:last-child):hover td{background:#f7f9fc}
-.fin-tbl__gold{color:#c8962a}
 </style>
 
 <!-- ══ HEADER ══ -->
@@ -217,7 +202,7 @@ button.drop-item.fin-btn{background:none;border:none;width:100%;text-align:left;
   <nav class="csh-hdr__nav">
     <a class="csh-hdr__btn" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-hdr__btn csh-hdr__btn--gold" href="/contact">Contact</a>
-    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com" title="Email Us">&#9993;</a>
+    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com" title="Email Us">&#9993;</a>
   </nav>
   <button class="csh-hdr__burger" id="csh-burger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -227,21 +212,21 @@ button.drop-item.fin-btn{background:none;border:none;width:100%;text-align:left;
   <div class="csh-mob-nav__inner">
     <a class="csh-mob-nav__link" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-mob-nav__link csh-mob-nav__link--gold" href="/contact">Contact</a>
-    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com">&#9993;&nbsp; Email Us</a>
+    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com">&#9993;&nbsp; Email Us</a>
   </div>
 </div>
 
-<!-- ══ SLIDESHOW ══ -->
-<section class="hero">
-  ${slidesHtml}
-  <button class="slide-arrow slide-prev" aria-label="Previous">&#8249;</button>
-  <button class="slide-arrow slide-next" aria-label="Next">&#8250;</button>
-  <div class="hero__body">
+<!-- ══ VIDEO HERO ══ -->
+<section class="hero-video">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="https://video.wixstatic.com/video/64b604_4da27ce3fcc34154b9300c106a370079/720p/mp4/file.mp4" type="video/mp4"/>
+  </video>
+  <div class="hero-video__overlay"></div>
+  <div class="hero-video__body">
     <span class="hero__eyebrow">Canton, Ohio &middot; CSH Rentals</span>
     <h1 class="hero__title">Quality Rentals.<br/>Proven Portfolio.</h1>
-    <p class="hero__sub">46 single-family rental homes across Canton, OH &mdash; 100% occupied with proven cash flow.</p>
+    <p class="hero__sub">46 professionally managed rental homes across Stark County, Ohio &mdash; organized into 4 geographically concentrated investment portfolios with proven cash flow.</p>
   </div>
-  <div class="slide-dots">${dotsHtml}</div>
 </section>
 
 <!-- ══ INTRO ══ -->
@@ -249,188 +234,152 @@ button.drop-item.fin-btn{background:none;border:none;width:100%;text-align:left;
   <div class="intro__wrap">
     <div class="intro__tag">Investment Opportunity &middot; Stark County, Ohio</div>
     <h1 class="intro__h1">Investment Opportunities in Stark County, Ohio</h1>
-    <p class="intro__desc">We are offering a unique opportunity to acquire a collection of 46 investment properties located throughout Stark County, Ohio and Geneva-on-the-Lake. These properties include professionally managed single-family rental homes, individual investment properties, and a short-term rental asset, providing investors with multiple acquisition options to fit their investment strategy.</p>
-    <div class="intro__cols">
-      <div class="intro__box">
-        <div class="intro__box-ttl">Available Investment Opportunities</div>
-        <ul>
-          <li>Portfolio 1 (West / 44708) &mdash; 9 rental properties</li>
-          <li>Portfolio 2 (NW 21st&ndash;24th Operating Cluster) &mdash; 10 rental properties</li>
-          <li>Portfolio 3 (NW 25th&ndash;27th Density Cluster) &mdash; 9 rental properties</li>
-          <li>Portfolio 4 (NE / Market-Colonial Cluster) &mdash; 11 rental properties</li>
-          <li>Portfolio 5 (High End Rent Portfolio) &mdash; 5 rental properties</li>
-          <li>Portfolio 6 (Premium Individual Properties) &mdash; 2 properties</li>
-        </ul>
-      </div>
-      <div class="intro__box">
-        <div class="intro__box-ttl">Available Acquisition Options</div>
-        <ul>
-          <li>Purchase of an individual portfolio</li>
-          <li>Purchase of multiple portfolios</li>
-          <li>Purchase of individual properties (including properties within the portfolios)</li>
-          <li>Purchase of all six portfolios as a single transaction</li>
-          <li>Purchase of all 46 properties as a single transaction</li>
-        </ul>
-      </div>
+    <p class="intro__desc">Most Northeast Ohio rental portfolios are built around one thing: maximizing rent from aging properties.</p>
+    <p class="intro__desc">This opportunity is different.</p>
+    <p class="intro__desc">Over the last 15 years, we have carefully assembled and renovated a collection of homes located in some of Canton&rsquo;s most desirable neighborhoods. Rather than chasing the highest immediate cash flow, we focused on acquiring properties in areas with strong long-term appreciation potential and then invested heavily to restore them to a standard rarely found in Midwest rental portfolios.</p>
+    <p class="intro__desc">The result is a collection of professionally managed homes that generate attractive income today while offering meaningful upside through future appreciation. These are not tired rentals in marginal locations. They are quality homes in established neighborhoods that tenants are proud to call home and investors can confidently own.</p>
+    <p class="intro__desc">To create flexibility for investors, the portfolio has been organized into four geographically concentrated investment portfolios, each offering operational efficiencies and simplified management. In addition, two premium properties are available for individual acquisition.</p>
+    <p class="intro__desc">Whether your goal is dependable cash flow, long-term appreciation, or a combination of both, this is a rare opportunity to acquire renovated, income-producing homes in some of Stark County&rsquo;s most established rental markets.</p>
+  </div>
+</section>
+
+<!-- ══ OVERVIEW MAP ══ -->
+<section class="map-overview">
+  <div class="map-overview__wrap">
+    <div class="sec-lbl">Geographic Distribution</div>
+    <h2 class="sec-h2">4 Investment Portfolios &amp; 2 Individual Properties</h2>
+    <div class="divbar"></div>
+    <p class="sec-sub">Every portfolio is geographically tight, reducing travel time and management overhead. All properties sit within close proximity to major employment, healthcare, and education anchors.</p>
+    <div class="map-responsive">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1-UjOFoDqjCvel-Hh8xbCvZUu4CTQLeI&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
     </div>
-    <div class="intro__price">
-      <p class="intro__price-note">Whether you are seeking a single investment property, an established rental portfolio, or a large-scale acquisition opportunity, these assets offer strong income-producing potential in one of Northeast Ohio&rsquo;s most established rental markets.</p>
-      <a class="intro__price-btn" href="https://www.crexi.com/properties/1746554/ohio-canton-oh-44-sfh-portfolio" target="_blank">View on CREXI &rarr;</a>
+    <div class="map-legend">
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#e8a900"></span>Portfolio 1 &mdash; Malone / HoF Area 1</div>
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#e05b00"></span>Portfolio 2 &mdash; Malone / HoF Area 2</div>
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a8c35"></span>Portfolio 3 &mdash; Colonial Heights</div>
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#9c27b0"></span>Portfolio 4 &mdash; High-End Portfolio</div>
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a3557"></span>Premium Individual Properties</div>
     </div>
   </div>
 </section>
 
-<!-- ══ CONTACT CTA #1 ══ -->
-<div class="cta-strip">
-  <div class="cta-strip__inner">
-    <p class="cta-strip__text">Interested in learning more about this investment opportunity? Our team is ready to answer your questions.</p>
-    <a class="cta-contact-btn" href="/contact">Schedule a Call &rarr;</a>
-  </div>
-</div>
-
-<!-- ══ FIVE PORTFOLIOS ══ -->
+<!-- ══ 4 INVESTMENT PORTFOLIOS ══ -->
 <section class="sec" id="portfolios" style="background:var(--bg)">
   <div class="wrap">
     <div class="sec-lbl">Investor Portfolios</div>
-    <h2 class="sec-h2">The Six Investment Portfolios</h2>
+    <h2 class="sec-h2">4 Investment Portfolios</h2>
     <div class="divbar"></div>
-    <p class="sec-sub">Each portfolio is a geographically tight cluster, fully occupied, and available independently or as part of a bulk acquisition.</p>
+    <p class="sec-sub">Each portfolio is a geographically tight cluster, professionally managed, and available independently or as part of a bulk acquisition.</p>
 
     <div class="p-grid">
 
-      <!-- PORTFOLIO 1 -->
-      <div class="p-card">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/64b604_58624372dd254cd1862819ae1f18967c~mv2.jpeg" alt="Portfolio 1"/>
-        <div class="p-card__body">
-          <div class="p-card__hdr">
-            <div class="p-letter">1</div>
-            <div>
-              <div class="p-title">Portfolio 1 &mdash; West / 44708</div>
-              <div class="p-meta">9 homes &nbsp;&middot;&nbsp; ZIP 44708 / 44709 / 44706</div>
-            </div>
+      <!-- ─ PORTFOLIO 1 ─ -->
+      <div class="p-card" data-href="/portfolio-northwest">
+        <div class="p-card__top">
+          <div class="p-card__badge">Portfolio 1</div>
+          <div class="p-card__title">Malone University / Pro Football Hall of Fame Area 1</div>
+          <div class="p-card__count">16 Properties</div>
+        </div>
+        <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/d9828b_65a1d84ce8814d63beab35b2edd16bb2~mv2.jpg')">
+          <div class="p-card__mid-overlay"></div>
+          <div class="p-card__mid-btns">
+            <span class="p-map-view">&#128205; Map View</span>
+            <a class="p-cta" href="/portfolio-northwest">View Portfolio &rarr;</a>
           </div>
-          <a class="p-cta" href="/portfolio-west">View Portfolio 1 &rarr;</a>
-          <div class="drop-wrap">
-            <button class="drop-trigger" type="button">&#128196; Portfolio Financials <span class="drop-arrow">&#9660;</span></button>
-            <div class="drop-menu">
-              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_A.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_A.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
-              <button class="drop-item fin-btn" type="button" data-fin="1">&#128200; Financials</button>
+        </div>
+        <div class="p-card__bot">
+          <div class="p-stats">
+            <div class="p-stat">
+              <div class="p-stat__label">Annual Rent</div>
+              <div class="p-stat__value p-stat__value--gold">$241,680</div>
+            </div>
+            <div class="p-stat">
+              <div class="p-stat__label">Portfolio Value</div>
+              <div class="p-stat__value">$2,235,000</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PORTFOLIO 2 -->
-      <div class="p-card">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/64b604_9225bf5be3764aff89bdf709ab0c474e~mv2.jpeg" alt="Portfolio 2"/>
-        <div class="p-card__body">
-          <div class="p-card__hdr">
-            <div class="p-letter">2</div>
-            <div>
-              <div class="p-title">Portfolio 2 &mdash; NW 21st&ndash;24th Operating Cluster</div>
-              <div class="p-meta">10 homes &nbsp;&middot;&nbsp; ZIP 44709 / 44703</div>
-            </div>
+      <!-- ─ PORTFOLIO 2 ─ -->
+      <div class="p-card" data-href="/portfolio-central">
+        <div class="p-card__top">
+          <div class="p-card__badge">Portfolio 2</div>
+          <div class="p-card__title">Malone University / Pro Football Hall of Fame Area 2</div>
+          <div class="p-card__count">11 Properties</div>
+        </div>
+        <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/d9828b_9a2dd8d6ab744124b24a5874644e9226~mv2.jpg')">
+          <div class="p-card__mid-overlay"></div>
+          <div class="p-card__mid-btns">
+            <span class="p-map-view">&#128205; Map View</span>
+            <a class="p-cta" href="/portfolio-central">View Portfolio &rarr;</a>
           </div>
-          <a class="p-cta" href="/portfolio-northwest">View Portfolio 2 &rarr;</a>
-          <div class="drop-wrap">
-            <button class="drop-trigger" type="button">&#128196; Portfolio Financials <span class="drop-arrow">&#9660;</span></button>
-            <div class="drop-menu">
-              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_B.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_B.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
-              <button class="drop-item fin-btn" type="button" data-fin="2">&#128200; Financials</button>
+        </div>
+        <div class="p-card__bot">
+          <div class="p-stats">
+            <div class="p-stat">
+              <div class="p-stat__label">Annual Rent</div>
+              <div class="p-stat__value p-stat__value--gold">$171,420</div>
+            </div>
+            <div class="p-stat">
+              <div class="p-stat__label">Portfolio Value</div>
+              <div class="p-stat__value">$1,552,900</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PORTFOLIO 3 -->
-      <div class="p-card">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/64b604_5849d546b0c34c91ac87049e3cd2c186~mv2.jpeg" alt="Portfolio 3"/>
-        <div class="p-card__body">
-          <div class="p-card__hdr">
-            <div class="p-letter">3</div>
-            <div>
-              <div class="p-title">Portfolio 3 &mdash; NW 25th&ndash;27th Density Cluster</div>
-              <div class="p-meta">9 homes &nbsp;&middot;&nbsp; ZIP 44709</div>
-            </div>
+      <!-- ─ PORTFOLIO 3 ─ -->
+      <div class="p-card" data-href="/portfolio-northeast">
+        <div class="p-card__top">
+          <div class="p-card__badge">Portfolio 3</div>
+          <div class="p-card__title">Colonial Heights</div>
+          <div class="p-card__count">11 Properties</div>
+        </div>
+        <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/d9828b_a07e1aed3e8a435fa168a9933d12bfdc~mv2.jpg')">
+          <div class="p-card__mid-overlay"></div>
+          <div class="p-card__mid-btns">
+            <span class="p-map-view">&#128205; Map View</span>
+            <a class="p-cta" href="/portfolio-northeast">View Portfolio &rarr;</a>
           </div>
-          <a class="p-cta" href="/portfolio-central">View Portfolio 3 &rarr;</a>
-          <div class="drop-wrap">
-            <button class="drop-trigger" type="button">&#128196; Portfolio Financials <span class="drop-arrow">&#9660;</span></button>
-            <div class="drop-menu">
-              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_C.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_C.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
-              <button class="drop-item fin-btn" type="button" data-fin="3">&#128200; Financials</button>
+        </div>
+        <div class="p-card__bot">
+          <div class="p-stats">
+            <div class="p-stat">
+              <div class="p-stat__label">Annual Rent</div>
+              <div class="p-stat__value p-stat__value--gold">$187,860</div>
+            </div>
+            <div class="p-stat">
+              <div class="p-stat__label">Portfolio Value</div>
+              <div class="p-stat__value">$1,716,000</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PORTFOLIO 4 -->
-      <div class="p-card">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/64b604_2fadc168b10c4853b32cb35c72fc023b~mv2.jpeg" alt="Portfolio 4"/>
-        <div class="p-card__body">
-          <div class="p-card__hdr">
-            <div class="p-letter">4</div>
-            <div>
-              <div class="p-title">Portfolio 4 &mdash; NE / Market-Colonial Cluster</div>
-              <div class="p-meta">11 homes &nbsp;&middot;&nbsp; ZIP 44714</div>
-            </div>
-          </div>
-          <a class="p-cta" href="/portfolio-northeast">View Portfolio 4 &rarr;</a>
-          <div class="drop-wrap">
-            <button class="drop-trigger" type="button">&#128196; Portfolio Financials <span class="drop-arrow">&#9660;</span></button>
-            <div class="drop-menu">
-              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_D.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_D.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
-              <button class="drop-item fin-btn" type="button" data-fin="4">&#128200; Financials</button>
-            </div>
+      <!-- ─ PORTFOLIO 4 ─ -->
+      <div class="p-card" data-href="/portfolio-highend">
+        <div class="p-card__top">
+          <div class="p-card__badge">Portfolio 4</div>
+          <div class="p-card__title">High-End Portfolio</div>
+          <div class="p-card__count">6 Properties</div>
+        </div>
+        <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/d9828b_3821574328f3405195c69f761eb602e5~mv2.jpg')">
+          <div class="p-card__mid-overlay"></div>
+          <div class="p-card__mid-btns">
+            <span class="p-map-view">&#128205; Map View</span>
+            <a class="p-cta" href="/portfolio-highend">View Portfolio &rarr;</a>
           </div>
         </div>
-      </div>
-
-      <!-- PORTFOLIO 5 — HIGH END RENT PORTFOLIO -->
-      <div class="p-card">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/d9828b_d344fde378c4422bbb1ae9b9758a0fc9~mv2.jpg" alt="Portfolio 5 — High End Rent Portfolio"/>
-        <div class="p-card__body">
-          <div class="p-card__hdr">
-            <div class="p-letter" style="font-size:19px">5</div>
-            <div>
-              <div class="p-title">Portfolio 5 &mdash; High End Rent Portfolio</div>
-              <div class="p-meta">5 homes &nbsp;&middot;&nbsp; ZIP 44708 / 44709</div>
+        <div class="p-card__bot">
+          <div class="p-stats">
+            <div class="p-stat">
+              <div class="p-stat__label">Annual Rent</div>
+              <div class="p-stat__value p-stat__value--gold">$132,840</div>
             </div>
-          </div>
-          <a class="p-cta" href="/portfolio-highend">View Portfolio 5 &rarr;</a>
-          <div class="drop-wrap">
-            <button class="drop-trigger" type="button">&#128196; Portfolio Financials <span class="drop-arrow">&#9660;</span></button>
-            <div class="drop-menu">
-              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_E.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_E.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
-              <button class="drop-item fin-btn" type="button" data-fin="5">&#128200; Financials</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PORTFOLIO 6 — PREMIUM INDIVIDUAL PROPERTIES -->
-      <div class="p-card">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/d9828b_60416b463d874134a83e6aa5a5c50a86~mv2.jpg" alt="Portfolio 6 — Premium Individual Properties"/>
-        <div class="p-card__body">
-          <div class="p-card__hdr">
-            <div class="p-letter" style="font-size:19px">6</div>
-            <div>
-              <div class="p-title">Portfolio 6 &mdash; Premium Individual Properties</div>
-              <div class="p-meta">2 properties &nbsp;&middot;&nbsp; Geneva-on-the-Lake / ZIP 44709</div>
-            </div>
-          </div>
-          <a class="p-cta" href="/portfolio-premium">View Portfolio 6 &rarr;</a>
-          <div class="drop-wrap">
-            <button class="drop-trigger" type="button">&#128196; Portfolio Financials <span class="drop-arrow">&#9660;</span></button>
-            <div class="drop-menu">
-              <a class="drop-item" href="${PDF_BASE}2024_Portfolio_F.pdf" target="_blank" rel="noopener">&#128196; 2024 Income Statement</a>
-              <a class="drop-item" href="${PDF_BASE}2025_Portfolio_F.pdf" target="_blank" rel="noopener">&#128196; 2025 Income Statement</a>
-              <button class="drop-item fin-btn" type="button" data-fin="6">&#128200; Financials</button>
+            <div class="p-stat">
+              <div class="p-stat__label">Portfolio Value</div>
+              <div class="p-stat__value">$1,180,300</div>
             </div>
           </div>
         </div>
@@ -440,10 +389,69 @@ button.drop-item.fin-btn{background:none;border:none;width:100%;text-align:left;
   </div>
 </section>
 
-<!-- ══ CONTACT CTA #2 ══ -->
+<!-- ══ INDIVIDUAL PROPERTIES ══ -->
+<section class="individual-section" id="individual">
+  <div class="wrap">
+    <div class="sec-lbl">Individual Acquisition</div>
+    <h2 class="sec-h2">Individual Investment Properties</h2>
+    <div class="divbar"></div>
+    <p class="sec-sub">2 premium properties available for individual acquisition &mdash; each positioned within established rental markets with strong income potential.</p>
+    <div class="individual-grid">
+
+      <!-- ─ 5192 University Ave ─ -->
+      <div class="p-card p-card--individual" data-prop-idx="0">
+        <img class="p-card__img" src="https://static.wixstatic.com/media/d9828b_b54105f8c7654bddb2b98a8c32c498a9~mv2.png" alt="5192 University Ave"/>
+        <div class="p-card__body">
+          <div class="p-card__badge p-card__badge--prem">&#11088; STR &nbsp;&middot;&nbsp; Individual</div>
+          <div class="p-card__title">5192 University Ave</div>
+          <div class="p-card__count">Geneva, OH 44041 &nbsp;&middot;&nbsp; 2 bd &nbsp;&middot;&nbsp; 1 ba</div>
+          <div class="p-stats" style="margin-top:16px">
+            <div class="p-stat">
+              <div class="p-stat__label">Annual Rent</div>
+              <div class="p-stat__value p-stat__value--gold" style="font-size:14px;line-height:1.35">Short-Term<br/>Rental</div>
+            </div>
+            <div class="p-stat">
+              <div class="p-stat__label">Est. Value</div>
+              <div class="p-stat__value">$280,000</div>
+            </div>
+          </div>
+          <div class="p-card__actions">
+            <button class="p-cta">View Property Images &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─ 903 23rd St NW ─ -->
+      <div class="p-card p-card--individual" data-prop-idx="1">
+        <img class="p-card__img" src="https://static.wixstatic.com/media/d9828b_4a43c60a2a3343bdb4aad6e86ecf49cb~mv2.png" alt="903 23rd St NW"/>
+        <div class="p-card__body">
+          <div class="p-card__badge p-card__badge--prem">&#11088; Individual</div>
+          <div class="p-card__title">903 23rd St NW</div>
+          <div class="p-card__count">Canton, OH 44709 &nbsp;&middot;&nbsp; 3 bd &nbsp;&middot;&nbsp; 1 ba</div>
+          <div class="p-stats" style="margin-top:16px">
+            <div class="p-stat">
+              <div class="p-stat__label">Annual Rent</div>
+              <div class="p-stat__value p-stat__value--gold">$17,100/yr</div>
+            </div>
+            <div class="p-stat">
+              <div class="p-stat__label">Est. Value</div>
+              <div class="p-stat__value">$135,000</div>
+            </div>
+          </div>
+          <div class="p-card__actions">
+            <button class="p-cta">View Property Images &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT CTA ══ -->
 <div class="cta-strip">
   <div class="cta-strip__inner">
-    <p class="cta-strip__text">Ready to explore a portfolio acquisition? Reach out and we'll walk you through the numbers.</p>
+    <p class="cta-strip__text">Ready to explore a portfolio acquisition? Reach out and we&rsquo;ll walk you through the numbers.</p>
     <a class="cta-contact-btn" href="/contact">Inquire About a Portfolio &rarr;</a>
   </div>
 </div>
@@ -457,7 +465,6 @@ button.drop-item.fin-btn{background:none;border:none;width:100%;text-align:left;
     <p class="wc-tagline">All properties are within 5 miles of some of the greatest attractions northeastern Ohio has to offer&hellip;</p>
 
     <div class="wc-features">
-
       <div class="wc-feature">
         <div class="wc-feature__row">
           <div>
@@ -558,32 +565,14 @@ button.drop-item.fin-btn{background:none;border:none;width:100%;text-align:left;
           </div>
         </div>
       </div>
-
     </div>
 
     <div class="wc-close">
       <div class="wc-close__val">And Everything is Within 8 Miles of All Properties</div>
       <div class="wc-close__txt">Every single property in this portfolio sits within 8 miles of all five demand drivers above &mdash; a concentration of employment, education, healthcare, retail, and entertainment that is impossible to replicate at this price point in Northeast Ohio.</div>
     </div>
-
   </div>
 </section>
-
-<!-- ══ FINANCIALS MODAL ══ -->
-<div id="fin-modal" class="fin-modal" style="display:none" role="dialog" aria-modal="true">
-  <div class="fin-modal__overlay" id="fin-modal-overlay"></div>
-  <div class="fin-modal__box">
-    <div class="fin-modal__head">
-      <span class="fin-modal__title" id="fin-modal-title"></span>
-      <button class="fin-modal__close" id="fin-modal-close" aria-label="Close">&times;</button>
-    </div>
-    <div class="fin-modal__body">
-      <div class="fin-modal__scroll">
-        <table class="fin-tbl" id="fin-tbl"></table>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
@@ -591,187 +580,51 @@ button.drop-item.fin-btn{background:none;border:none;width:100%;text-align:left;
 </footer>
 `;
 
-    // ── Slideshow ──
-    var cur = 0;
-    var self = this;
-    var slideEls = Array.from(self.querySelectorAll('.slide'));
-    var dotEls = Array.from(self.querySelectorAll('.dot'));
-
-    function goTo(n) {
-      slideEls[cur].classList.remove('active');
-      dotEls[cur].classList.remove('active');
-      cur = ((n % slideEls.length) + slideEls.length) % slideEls.length;
-      slideEls[cur].classList.add('active');
-      dotEls[cur].classList.add('active');
-    }
-
-    self.querySelector('.slide-prev').addEventListener('click', function() { goTo(cur - 1); });
-    self.querySelector('.slide-next').addEventListener('click', function() { goTo(cur + 1); });
-    dotEls.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
-    var autoPlay = setInterval(function() { goTo(cur + 1); }, 5000);
-    var heroEl = self.querySelector('.hero');
-    heroEl.addEventListener('mouseenter', function() { clearInterval(autoPlay); });
-    heroEl.addEventListener('mouseleave', function() { autoPlay = setInterval(function() { goTo(cur + 1); }, 5000); });
-
-    // ── Hamburger menu ──
-    const burger = self.querySelector('#csh-burger');
-    const mobNav = self.querySelector('#csh-mob-nav');
+    // ── Hamburger ──
+    var burger = self.querySelector('#csh-burger');
+    var mobNav = self.querySelector('#csh-mob-nav');
     if (burger && mobNav) {
-      burger.addEventListener('click', (e) => {
+      burger.addEventListener('click', function(e) {
         e.stopPropagation();
-        const isOpen = mobNav.classList.toggle('open');
+        var isOpen = mobNav.classList.toggle('open');
         burger.classList.toggle('open', isOpen);
         burger.setAttribute('aria-expanded', String(isOpen));
       });
     }
 
-    // ── Financial data for modal ──
-    var FIN_DATA = {
-      '1': {
-        title: 'Portfolio 1 — West / 44708',
-        rows: [
-          ['1502 37th St NW',      '$160,000', '$1,150', '$13,800', '$13,500'],
-          ['2007 Kirk Ct NW',      '$140,000', '$1,350', '$16,200', '$13,500'],
-          ['2923 Helen Pl NW',     '$175,000', '$1,350', '$16,200', '$16,230'],
-          ['2945 15th St NW',      '$160,000', '$1,300', '$15,600', '$15,600'],
-          ['307 Bellflower Ave NW','$160,000', '$1,375', '$16,500', '$12,575'],
-          ['426 Vince Ave NW',     '$160,000', '$1,550', '$18,600', '$18,600'],
-          ['635 Greenfield Ave SW', '$95,000', '$1,200', '$14,400', '$14,500'],
-          ['806 23rd St NW',       '$131,000', '$1,200', '$14,400', '$14,400'],
-          ['818 25th St NW',       '$150,000', '$1,250', '$15,000', '$15,000']
-        ],
-        total: ['Total — 9 Properties', '$1,331,000', '$11,725/mo', '$140,700/yr', '$133,905']
-      },
-      '2': {
-        title: 'Portfolio 2 — NW 21st–24th Operating Cluster',
-        rows: [
-          ['1430 19th St NW',      '$139,500', '$1,325', '$15,900', '$16,100'],
-          ['1511 23rd St NW',      '$125,000', '$1,300', '$15,600', '$15,600'],
-          ['1708 18th St NW',      '$160,000', '$1,100', '$13,200', '$14,540'],
-          ['1734 Woodland Ave NW',  '$90,000', '$1,055', '$12,660', '$12,100'],
-          ['1919 Frazer Ave NW',   '$150,000', '$1,200', '$14,400', '$13,360'],
-          ['2211 Myrtle Ave NW',   '$134,500', '$1,250', '$15,000', '$12,800'],
-          ['519 21st St NW',       '$140,000', '$1,385', '$16,620', '$16,620'],
-          ['523 21st St NW',       '$135,000', '$1,200', '$14,400', '$14,400'],
-          ['725 22nd St NW',       '$125,000', '$1,150', '$13,800',  '$6,865'],
-          ['800 22nd St NW',       '$150,000', '$1,450', '$17,400', '$17,400']
-        ],
-        total: ['Total — 10 Properties', '$1,349,000', '$12,415/mo', '$148,980/yr', '$139,785']
-      },
-      '3': {
-        title: 'Portfolio 3 — NW 25th–27th Density Cluster',
-        rows: [
-          ['1338 25th St NW',      '$148,000', '$1,400', '$16,800', '$17,000'],
-          ['1341 Ridgeway Pl NW',  '$151,000', '$1,450', '$17,400', '$15,120'],
-          ['1344 24th St NW',      '$135,000', '$1,150', '$13,800', '$10,850'],
-          ['1507 Ridgeway Pl NW',  '$125,000', '$1,300', '$15,600', '$14,638'],
-          ['1540 Norwood Pl NW',   '$130,000', '$1,260', '$15,120', '$15,120'],
-          ['1569 25th St NW',      '$145,000', '$1,275', '$15,300', '$15,300'],
-          ['1600 27th St NW',      '$140,900', '$1,400', '$16,800', '$16,800'],
-          ['1611 25th St NW',      '$140,000', '$1,300', '$15,600', '$11,400'],
-          ['1701 27th St NW',      '$153,000', '$1,300', '$15,600', '$15,175']
-        ],
-        total: ['Total — 9 Properties', '$1,267,900', '$11,835/mo', '$142,020/yr', '$131,403']
-      },
-      '4': {
-        title: 'Portfolio 4 — NE / Market-Colonial Cluster',
-        rows: [
-          ['804 29th St NE',         '$175,000', '$1,450', '$17,400', '$17,420'],
-          ['1012 28th St NE',        '$164,000', '$1,545', '$18,540', '$13,392'],
-          ['1203 25th St NE',        '$140,000', '$1,200', '$14,400', '$14,343'],
-          ['1206 24th St NE',        '$160,000', '$1,645', '$19,740', '$19,700'],
-          ['1207 Colonial Blvd NE',  '$160,000', '$1,400', '$16,800', '$16,950'],
-          ['1210 25th St NE',        '$150,000', '$1,430', '$17,160', '$16,660'],
-          ['1219 24th St NE',        '$182,000', '$1,320', '$15,840', '$16,040'],
-          ['1306 22nd St NE',        '$150,000', '$1,515', '$18,180', '$12,080'],
-          ['1326 24th St NE',        '$150,000', '$1,550', '$18,600', '$12,870'],
-          ['1330 24th St NE',        '$140,000', '$1,400', '$16,800', '$13,250'],
-          ['1335 22nd St NE',        '$145,000', '$1,200', '$14,400', '$14,840']
-        ],
-        total: ['Total — 11 Properties', '$1,716,000', '$15,655/mo', '$187,860/yr', '$167,545']
-      },
-      '5': {
-        title: 'Portfolio 5 — High End Rent Portfolio',
-        rows: [
-          ['225 Grandview Ave NW',   '$176,300', '$1,600', '$19,200', '$19,400'],
-          ['244 Harter Ave NW',      '$199,000', '$1,640', '$19,680', '$19,540'],
-          ['300 Montrose Ave NW',    '$225,000', '$2,330', '$27,960', '$27,800'],
-          ['1103 22nd St NW',        '$210,000', '$1,850', '$22,200', '$21,600'],
-          ['2631 Demington Ave NW',  '$210,000', '$2,100', '$25,200', '$19,350']
-        ],
-        total: ['Total — 5 Properties', '$1,020,300', '$9,520/mo', '$114,240/yr', '$107,690']
-      },
-      '6': {
-        title: 'Portfolio 6 — Premium Individual Properties',
-        rows: [
-          ['5192 University Ave',    '$280,000', 'STR', 'STR', '$21,210'],
-          ['903 23rd St NW',         '$135,000', '$1,425', '$17,100', '$5,670']
-        ],
-        total: ['Total — 2 Properties', '$415,000', '—', '—', '$26,880']
-      }
-    };
-
-    // ── Modal logic ──
-    var finModal = self.querySelector('#fin-modal');
-    var finTitle = self.querySelector('#fin-modal-title');
-    var finTbl   = self.querySelector('#fin-tbl');
-    var finClose = self.querySelector('#fin-modal-close');
-    var finOverlay = self.querySelector('#fin-modal-overlay');
-
-    function openFinModal(key) {
-      var d = FIN_DATA[key];
-      if (!d) return;
-      finTitle.textContent = d.title;
-      var h = '<thead><tr><th>Property</th><th>Value</th><th>Monthly Rent</th><th>Annual @ 100%</th><th>2025 Collected</th></tr></thead><tbody>';
-      d.rows.forEach(function(r) {
-        h += '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td class="fin-tbl__gold">' + r[2] + '</td><td>' + r[3] + '</td><td>' + r[4] + '</td></tr>';
-      });
-      h += '<tr><td>' + d.total[0] + '</td><td>' + d.total[1] + '</td><td class="fin-tbl__gold">' + d.total[2] + '</td><td>' + d.total[3] + '</td><td>' + d.total[4] + '</td></tr></tbody>';
-      finTbl.innerHTML = h;
-      finModal.style.display = 'flex';
-    }
-
-    function closeFinModal() { finModal.style.display = 'none'; }
-    finClose.addEventListener('click', closeFinModal);
-    finOverlay.addEventListener('click', closeFinModal);
-
-    // ── Navigation, dropdowns ──
-    const _b = window.location.hostname.includes('wixstudio.com')
+    // ── Navigation & Card Clicks ──
+    var _b = window.location.hostname.includes('wixstudio.com')
       ? '/' + window.location.pathname.split('/')[1] : '';
 
-    self.addEventListener('click', (e) => {
-      // Financials modal button
-      const finBtn = e.target.closest('.fin-btn');
-      if (finBtn) {
-        e.preventDefault(); e.stopPropagation();
-        self.querySelectorAll('.drop-wrap.open').forEach(w => w.classList.remove('open'));
-        openFinModal(finBtn.dataset.fin);
-        return;
+    self.addEventListener('click', function(e) {
+      var card = e.target.closest('.p-card');
+      if (card) {
+        var propIdx = card.dataset.propIdx;
+        if (propIdx !== undefined) {
+          // Individual property card (any click, including button)
+          e.preventDefault(); e.stopPropagation();
+          var p = INDIVIDUAL_PROPS[parseInt(propIdx, 10)];
+          try { localStorage.setItem('csh_prop', JSON.stringify({address: p.address, city: p.city, portfolio: p.portfolio, beds: p.beds, baths: p.baths, photos: p.photos})); } catch(err) {}
+          window.location.assign(window.location.origin + _b + '/property-detail');
+          return;
+        }
+        // Portfolio card click → navigate (skip if clicking the CTA link)
+        if (!e.target.closest('.p-cta')) {
+          var cardHref = card.dataset.href;
+          if (cardHref) {
+            e.preventDefault(); e.stopPropagation();
+            window.location.assign(window.location.origin + _b + cardHref);
+            return;
+          }
+        }
       }
 
-      // Dropdown toggle
-      const dropTrig = e.target.closest('.drop-trigger');
-      if (dropTrig) {
-        e.preventDefault(); e.stopPropagation();
-        const wrap = dropTrig.closest('.drop-wrap');
-        const isOpen = wrap.classList.contains('open');
-        self.querySelectorAll('.drop-wrap.open').forEach(w => w.classList.remove('open'));
-        if (!isOpen) wrap.classList.add('open');
-        return;
-      }
-
-      // Close open dropdowns when clicking outside any drop-wrap
-      if (!e.target.closest('.drop-wrap')) {
-        self.querySelectorAll('.drop-wrap.open').forEach(w => w.classList.remove('open'));
-      }
-
-      // Internal link navigation (skip external / PDF links)
-      const link = e.target.closest('a');
+      // Regular anchor links
+      var link = e.target.closest('a');
       if (!link) return;
-      const href = link.getAttribute('href');
+      var href = link.getAttribute('href');
       if (!href || !href.startsWith('/')) return;
-      e.preventDefault();
-      e.stopPropagation();
+      e.preventDefault(); e.stopPropagation();
       window.location.assign(window.location.origin + _b + href);
     });
   }

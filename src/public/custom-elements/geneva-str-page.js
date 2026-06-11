@@ -75,7 +75,7 @@ csh-geneva-str { display: block; font-family: 'Segoe UI', Arial, sans-serif; col
   <nav class="csh-hdr__nav">
     <a class="csh-hdr__btn" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-hdr__btn csh-hdr__btn--gold" href="/contact">Contact</a>
-    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com" title="Email Us">&#9993;</a>
+    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com" title="Email Us">&#9993;</a>
   </nav>
   <button class="csh-hdr__burger" id="csh-burger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -85,7 +85,7 @@ csh-geneva-str { display: block; font-family: 'Segoe UI', Arial, sans-serif; col
   <div class="csh-mob-nav__inner">
     <a class="csh-mob-nav__link" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-mob-nav__link csh-mob-nav__link--gold" href="/contact">Contact</a>
-    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com">&#9993;&nbsp; Email Us</a>
+    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com">&#9993;&nbsp; Email Us</a>
   </div>
 </div>
 
@@ -171,7 +171,7 @@ csh-geneva-str { display: block; font-family: 'Segoe UI', Arial, sans-serif; col
     <h2 class="booking__title">Book Your Stay</h2>
     <p class="booking__text">Contact us for availability, nightly rates, and to reserve your dates. We typically respond within one business day.</p>
     <div class="booking__actions">
-      <a class="btn-primary" href="mailto:customstarkhomes@gmail.com">Email to Book</a>
+      <a class="btn-primary" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com">Email to Book</a>
       <a class="btn-secondary" href="/">Back to Home</a>
     </div>
   </div>

@@ -3,10 +3,12 @@ class CshPropertyDetail extends HTMLElement {
   connectedCallback() {
     this.style.cssText = 'display:block;background:#f5f7fa;min-height:100vh';
     var BACK_SLUGS = {
-      'West — 44708':              'portfolio-west',
-      'Northwest Central — 44709': 'portfolio-northwest',
-      'Northeast — 44714':         'portfolio-northeast',
-      'Central — 44703':           'portfolio-central'
+      'Portfolio 1 — Malone University / Pro Football Hall of Fame Area 1': 'portfolio-northwest',
+      'Portfolio 1 — McKinley Presidential Library & Museum':               'portfolio-west',
+      'Portfolio 2 — Malone University / Pro Football Hall of Fame Area 2': 'portfolio-central',
+      'Portfolio 3 — Colonial Heights':                                      'portfolio-northeast',
+      'Portfolio 4 — High-End Portfolio':                                    'portfolio-highend',
+      'Portfolio 6 — Premium Individual Properties':                         'portfolio-premium'
     };
 
     var PHOTO_POOLS = {
@@ -153,7 +155,7 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
   <nav class="csh-hdr__nav">
     <a class="csh-hdr__btn" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-hdr__btn csh-hdr__btn--gold" href="/contact">Contact</a>
-    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com" title="Email Us">&#9993;</a>
+    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com" title="Email Us">&#9993;</a>
   </nav>
   <button class="csh-hdr__burger" id="csh-burger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -163,7 +165,7 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
   <div class="csh-mob-nav__inner">
     <a class="csh-mob-nav__link" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-mob-nav__link csh-mob-nav__link--gold" href="/contact">Contact</a>
-    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com">&#9993;&nbsp; Email Us</a>
+    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com">&#9993;&nbsp; Email Us</a>
   </div>
 </div>
 
@@ -216,23 +218,13 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
     </div>
   </div>
 
-  <div class="contact">
-    <div class="contact__card">
-      <h2 class="contact__title">Interested in This Property?</h2>
-      <p class="contact__text">Contact us for rental rates, availability, and to schedule a showing.<br/>We typically respond within one business day.</p>
-      <div class="contact__actions">
-        <a class="btn-primary" href="mailto:customstarkhomes@gmail.com">Email Us</a>
-        <a id="contact-back-btn" class="btn-secondary" href="/investors">View All Portfolios</a>
-      </div>
-    </div>
-  </div>
 </div>
 
 <div id="not-found" style="display:none;">
   <div class="not-found">
     <h2>No Property Selected</h2>
     <p>Please select a property from one of the portfolio pages.</p>
-    <a class="btn-primary" href="/investors">View Portfolios</a>
+    <a class="btn-primary" href="/">View Portfolios</a>
   </div>
 </div>
 `;
@@ -263,10 +255,9 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
     var data = {};
     try { data = JSON.parse(localStorage.getItem('csh_prop') || '{}'); } catch(e) {}
 
-    var backSlug = BACK_SLUGS[data.portfolio] || 'investors';
+    var backSlug = BACK_SLUGS[data.portfolio] || '';
     var bb = document.getElementById('back-btn');
     if (bb) bb.setAttribute('href', '/' + backSlug);
-    document.getElementById('contact-back-btn').setAttribute('href', '/' + backSlug);
 
     if (!data.address) {
       document.getElementById('main-content').style.display = 'none';
