@@ -126,6 +126,42 @@ class CshPortfolioNw extends HTMLElement {
       return (num < 0 ? '(' : '') + s + (num < 0 ? ')' : '');
     }
 
+    function downloadCSV(filename, csvContent) {
+      var blob = new Blob(['﻿' + csvContent], {type:'text/csv;charset=utf-8;'});
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = filename;
+      document.body.appendChild(a); a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    }
+
+    function buildPLCsv(year) {
+      var d = PL_TABLE[year];
+      if (!d) return '';
+      var lines = [d.co, d.subtitle, d.period, ''];
+      lines.push([''].concat(d.cols).map(function(c){ return '"'+c+'"'; }).join(','));
+      d.rows.forEach(function(row) {
+        if (!row.v) { lines.push('"' + row.label + '"'); return; }
+        var cells = ['"' + row.label + '"'];
+        row.v.forEach(function(v){ cells.push(v === 0 ? '' : v); });
+        lines.push(cells.join(','));
+      });
+      return lines.join('\r\n');
+    }
+
+    function buildRRCsv() {
+      var lines = ['"Property","Property Value","Monthly Rent","Annualized Rent"'];
+      RENT_ROLL.forEach(function(r) {
+        lines.push('"' + r.address + '",' + r.value + ',' + r.monthlyRent + ',' + r.annualizedRent);
+      });
+      var tv = RENT_ROLL.reduce(function(s,r){return s+r.value;},0);
+      var tm = RENT_ROLL.reduce(function(s,r){return s+r.monthlyRent;},0);
+      var ty = RENT_ROLL.reduce(function(s,r){return s+r.annualizedRent;},0);
+      lines.push('"Portfolio 1 Total",' + tv + ',' + tm + ',' + ty);
+      return lines.join('\r\n');
+    }
+
     var PROPERTIES = [
       {address:'806 23rd St NW',city:'Canton, OH 44708',beds:2,baths:1,cover:'https://static.wixstatic.com/media/d9828b_65a1d84ce8814d63beab35b2edd16bb2~mv2.jpg',photos:['https://static.wixstatic.com/media/d9828b_6be40f64a2de453484382ec7f20d89ef~mv2.jpg','https://static.wixstatic.com/media/d9828b_558ebde4146b433a988f575c6e2e9752~mv2.jpg','https://static.wixstatic.com/media/d9828b_65a1d84ce8814d63beab35b2edd16bb2~mv2.jpg','https://static.wixstatic.com/media/d9828b_0ff07cb2e9b342969e528ef0f014acd2~mv2.jpg','https://static.wixstatic.com/media/d9828b_e11019144a96401ebbe72e57a5c64659~mv2.jpg','https://static.wixstatic.com/media/d9828b_04c804fbbfe245fda20fe7b9f50c84e9~mv2.jpg','https://static.wixstatic.com/media/d9828b_8abf24fbabcd4444a2670f37abbcb0a9~mv2.jpg','https://static.wixstatic.com/media/d9828b_5f2a09967b5a4f18b0715e47f734e249~mv2.jpg','https://static.wixstatic.com/media/d9828b_c7278f7201834cc5ab2979f274b059e5~mv2.jpg','https://static.wixstatic.com/media/d9828b_a4ee87ea194c44ef9f7c493dab6a3c6a~mv2.jpg','https://static.wixstatic.com/media/d9828b_0d488f0320df4914ab8c7476c4d16fe4~mv2.jpg','https://static.wixstatic.com/media/d9828b_cec56acee666435d965bf5a77414642e~mv2.jpg','https://static.wixstatic.com/media/d9828b_dedef0dc4e0d4175b28c1f0abdf40e49~mv2.jpg','https://static.wixstatic.com/media/d9828b_7fd78d333d58490e93fd3c5bffe1a047~mv2.jpg','https://static.wixstatic.com/media/d9828b_4f209ce8a5404569bdadd56685be0488~mv2.jpg','https://static.wixstatic.com/media/d9828b_86c3dc0b1edb44bca57fc411399884d5~mv2.jpg','https://static.wixstatic.com/media/d9828b_d1480d3bbaab4a769da11b87ba9a0a45~mv2.jpg','https://static.wixstatic.com/media/d9828b_c9af6b16b1b44e288260d4aad13f1cbe~mv2.jpg','https://static.wixstatic.com/media/d9828b_091a27f145224f20a2c943abfcb46cb0~mv2.jpg','https://static.wixstatic.com/media/d9828b_9ae359a9c80e498294c0d688c7d970c3~mv2.jpg']},
       {address:'2007 Kirk Ct NW',city:'Canton, OH 44709',beds:3,baths:1,cover:'https://static.wixstatic.com/media/d9828b_23e65475ee2943f694e904a9b6f5e626~mv2.jpg',photos:['https://static.wixstatic.com/media/d9828b_a3f1b8fe26ca497aae692326ef428623~mv2.jpg','https://static.wixstatic.com/media/d9828b_7aba94f5a0994b8299fdf12ba3c5dbaa~mv2.jpg','https://static.wixstatic.com/media/d9828b_80ef7b47cf114f8da0dba2efa93ef0b6~mv2.jpg','https://static.wixstatic.com/media/d9828b_23e65475ee2943f694e904a9b6f5e626~mv2.jpg','https://static.wixstatic.com/media/d9828b_bde14c4b6a104f0b8eaae98c9d43ce75~mv2.jpg','https://static.wixstatic.com/media/d9828b_5660d011886d4025be71cd95c893adc4~mv2.jpg','https://static.wixstatic.com/media/d9828b_15061a07e3a44120831f1ae5134c083d~mv2.jpg','https://static.wixstatic.com/media/d9828b_88b526fb445544c58350648aa73af21a~mv2.jpg','https://static.wixstatic.com/media/d9828b_dfe81723f16548b79fed1163188e25e3~mv2.jpg','https://static.wixstatic.com/media/d9828b_f7bff44ccb0e46a8b312bb75f1cd49b6~mv2.jpg','https://static.wixstatic.com/media/d9828b_3739d8d7628c45f2af7a70c91952c39d~mv2.jpg','https://static.wixstatic.com/media/d9828b_fbc37a1f66bb4a0c8df5fbbb3d2836a2~mv2.jpg','https://static.wixstatic.com/media/d9828b_088161bda5214f48acd4ab57b7096275~mv2.jpg','https://static.wixstatic.com/media/d9828b_d1ade30b09d74bd991d00bf452d0f21e~mv2.jpg','https://static.wixstatic.com/media/d9828b_e5e29ccbbc3a401b8bc19be80d4a53de~mv2.jpg']},
@@ -152,7 +188,6 @@ class CshPortfolioNw extends HTMLElement {
       return '<div class="prop-card" data-idx="' + i + '">' +
         '<div class="prop-card__img-wrap">' +
         '<img class="prop-card__cover" src="' + p.cover + '" alt="' + p.address + '" loading="lazy"/>' +
-        '<span class="prop-card__badge">For Rent</span>' +
         '</div><div class="prop-card__info">' +
         '<div class="prop-card__address">' + p.address + '</div>' +
         '<div class="prop-card__city">' + p.city + '</div>' +
@@ -320,6 +355,10 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 .rr-table tfoot td{background:#0a1628;color:#fff;font-weight:800;padding:12px 12px;font-size:13.5px}
 .rr-table tfoot td:not(:first-child){text-align:right}
 .rr-rent-val{color:#c8962a;font-weight:800}
+.pl-modal__foot{padding:12px 22px;background:#f5f7fa;border-top:1px solid rgba(10,30,60,.08);border-radius:0 0 16px 16px;display:flex;justify-content:flex-end;flex-shrink:0}
+.rr-modal__foot{padding:12px 22px 16px;background:#f5f7fa;border-top:1px solid rgba(10,30,60,.08);border-radius:0 0 16px 16px;display:flex;justify-content:flex-end;flex-shrink:0}
+.dl-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#c8962a;color:#0a1628;border:none;border-radius:8px;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:'Inter','Segoe UI',Arial,sans-serif;transition:background .2s,transform .15s}
+.dl-btn:hover{background:#dba83a;transform:translateY(-1px)}
 </style>
 
 <header class="csh-hdr">
@@ -396,6 +435,9 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
       <button class="pl-modal__close" id="pl-modal-close" aria-label="Close">&times;</button>
     </div>
     <div class="pl-modal__body" id="pl-modal-body"></div>
+    <div class="pl-modal__foot">
+      <button class="dl-btn" id="pl-download-btn" type="button">&#8595; Download CSV</button>
+    </div>
   </div>
 </div>
 
@@ -409,6 +451,9 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
       <button class="rr-modal__close" id="rr-modal-close" aria-label="Close">&times;</button>
     </div>
     <div class="rr-modal__body" id="rr-modal-body"></div>
+    <div class="rr-modal__foot">
+      <button class="dl-btn" id="rr-download-btn" type="button">&#8595; Download CSV</button>
+    </div>
   </div>
 </div>
 `;
@@ -448,7 +493,10 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
     var plClose   = self.querySelector('#pl-modal-close');
     var plOverlay = self.querySelector('#pl-modal-overlay');
 
+    var _currentPlYear = null;
+
     function openPLByProp(year) {
+      _currentPlYear = year;
       var d = PL_TABLE[year];
       if (!d) return;
       plTitle.textContent  = d.co;
@@ -523,6 +571,15 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') { closePL(); closeRR(); }
+    });
+
+    var plDlBtn = self.querySelector('#pl-download-btn');
+    var rrDlBtn = self.querySelector('#rr-download-btn');
+    if (plDlBtn) plDlBtn.addEventListener('click', function() {
+      if (_currentPlYear) downloadCSV('Portfolio1_MaloneArea1_PL_' + _currentPlYear + '.csv', buildPLCsv(_currentPlYear));
+    });
+    if (rrDlBtn) rrDlBtn.addEventListener('click', function() {
+      downloadCSV('Portfolio1_MaloneArea1_RentRoll.csv', buildRRCsv());
     });
 
     // ── Navigation ──

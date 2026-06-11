@@ -201,7 +201,6 @@ class CshPortfolioNe extends HTMLElement {
       return '<div class="prop-card" data-idx="' + i + '">' +
         '<div class="prop-card__img-wrap">' +
         '<img class="prop-card__cover" src="' + p.cover + '" alt="' + p.address + '" loading="lazy" />' +
-        '<span class="prop-card__badge">For Rent</span>' +
         '</div><div class="prop-card__info">' +
         '<div class="prop-card__address">' + p.address + '</div>' +
         '<div class="prop-card__city">' + p.city + '</div>' +

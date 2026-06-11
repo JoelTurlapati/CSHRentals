@@ -64,7 +64,14 @@ class CshPortfolioPremium extends HTMLElement {
       {
         address: '903 23rd St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
         cover: 'https://static.wixstatic.com/media/d9828b_4a43c60a2a3343bdb4aad6e86ecf49cb~mv2.png',
-        photos: ['https://static.wixstatic.com/media/d9828b_4a43c60a2a3343bdb4aad6e86ecf49cb~mv2.png'],
+        photos: [
+          'https://static.wixstatic.com/media/d9828b_64a240d942334ac684a99b3bb863c72d~mv2.jpg',
+          'https://static.wixstatic.com/media/d9828b_0a83680bf27642598f25c1e7a4b6338f~mv2.jpg',
+          'https://static.wixstatic.com/media/d9828b_70634627b8804909900f791c69e50c8c~mv2.png',
+          'https://static.wixstatic.com/media/d9828b_a088bfee25054ccb8d8186ec6db601d4~mv2.png',
+          'https://static.wixstatic.com/media/d9828b_4a43c60a2a3343bdb4aad6e86ecf49cb~mv2.png',
+          'https://static.wixstatic.com/media/d9828b_b6bf7c9fc5e947ec8db45274f682eca1~mv2.jpg'
+        ],
         note: ''
       }
     ];
@@ -75,7 +82,7 @@ class CshPortfolioPremium extends HTMLElement {
       var rentLabel = rent === 'STR' ? 'Short-Term Rental' : (rent ? rent + '/mo' : '');
       return '<div class="prop-card" data-idx="' + i + '">' +
         '<div class="prop-card__img-wrap"><img class="prop-card__cover" src="' + p.cover + '" alt="' + p.address + '" loading="lazy"/>' +
-        '<span class="prop-card__badge">' + (rent === 'STR' ? 'Short-Term Rental' : 'For Rent') + '</span></div>' +
+        '</div>' +
         '<div class="prop-card__info"><div class="prop-card__address">' + p.address + '</div>' +
         '<div class="prop-card__city">' + p.city + '</div>' +
         '<div class="prop-card__meta">' + p.beds + ' bd &nbsp;&middot;&nbsp; ' + p.baths + ' ba' + (rentLabel ? ' &nbsp;&middot;&nbsp; ' + rentLabel : '') + '</div>' +

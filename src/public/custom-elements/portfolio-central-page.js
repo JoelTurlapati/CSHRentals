@@ -134,7 +134,7 @@ class CshPortfolioCentral extends HTMLElement {
       },
       {
         address: '1701 27th St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        cover: 'https://static.wixstatic.com/media/d9828b_2822522851e240599541658734bfc88a~mv2.jpg',
+        cover: 'https://static.wixstatic.com/media/d9828b_7f5cd7a5a7a54526b5deac6063ede291~mv2.jpg',
         photos: ['https://static.wixstatic.com/media/d9828b_2822522851e240599541658734bfc88a~mv2.jpg','https://static.wixstatic.com/media/d9828b_858509336eca473e84667ad080ca4522~mv2.jpg','https://static.wixstatic.com/media/d9828b_e2c829e9a6d74aa483d1c11a737978a3~mv2.jpg','https://static.wixstatic.com/media/d9828b_50cc3d8abd1047ca81141f68eaffd990~mv2.jpg','https://static.wixstatic.com/media/d9828b_66fbd9cc90724c839d3cb6704a7ef0b3~mv2.jpg','https://static.wixstatic.com/media/d9828b_9afe149394594f31b9199cb2a925bd7e~mv2.jpg','https://static.wixstatic.com/media/d9828b_d0a6ff38b2854f51b94dd382c543eadc~mv2.jpg','https://static.wixstatic.com/media/d9828b_87b2a351600349dca4fe3d3fd7b2e25d~mv2.jpg','https://static.wixstatic.com/media/d9828b_a5c4f5a481fb47098703d735fb694ff9~mv2.jpg','https://static.wixstatic.com/media/d9828b_bfec9101870049a1b5d6b4b1c994799d~mv2.jpg','https://static.wixstatic.com/media/d9828b_62a71228e83f485b8db3cc08d023a99c~mv2.jpg','https://static.wixstatic.com/media/d9828b_7061fbfc48c348c087825af0184023cb~mv2.jpg','https://static.wixstatic.com/media/d9828b_25e695ca76a2469780359a3ed4e568a4~mv2.jpg','https://static.wixstatic.com/media/d9828b_701cb0e6c9da4c1a854a588bd210d492~mv2.jpg','https://static.wixstatic.com/media/d9828b_35ed385ac03e4e9ea71ef614a89ba94a~mv2.jpg','https://static.wixstatic.com/media/d9828b_dc02f282885e43e7ac96231fdb21a3cc~mv2.jpg','https://static.wixstatic.com/media/d9828b_2875f1317572426fb6aa6127d21aff14~mv2.jpg','https://static.wixstatic.com/media/d9828b_7f5cd7a5a7a54526b5deac6063ede291~mv2.jpg','https://static.wixstatic.com/media/d9828b_2822522851e240599541658734bfc88a~mv2.jpg','https://static.wixstatic.com/media/d9828b_e5000b0f562d439e8099b38343cec546~mv2.jpg','https://static.wixstatic.com/media/d9828b_045363138ce2426e89a800c8e2114e94~mv2.jpg']
       },
       {
@@ -202,7 +202,6 @@ class CshPortfolioCentral extends HTMLElement {
       return '<div class="prop-card" data-idx="' + i + '">' +
         '<div class="prop-card__img-wrap">' +
         '<img class="prop-card__cover" src="' + p.cover + '" alt="' + p.address + '" loading="lazy" />' +
-        '<span class="prop-card__badge">For Rent</span>' +
         '</div><div class="prop-card__info">' +
         '<div class="prop-card__address">' + p.address + '</div>' +
         '<div class="prop-card__city">' + p.city + '</div>' +

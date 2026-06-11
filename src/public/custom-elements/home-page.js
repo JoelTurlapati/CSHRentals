@@ -131,7 +131,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .wrap{max-width:1500px;margin:0 auto}
 .sec-lbl{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .sec-h2{font-size:clamp(26px,3.6vw,43px);font-weight:800;color:var(--navy);line-height:1.12;letter-spacing:-.02em;margin-bottom:12px}
-.sec-sub{font-size:17px;color:var(--muted);line-height:1.8;max-width:660px}
+.sec-sub{font-size:17px;color:var(--muted);line-height:1.8}
 .divbar{width:44px;height:3px;background:var(--gold);margin-bottom:22px}
 
 /* ── INTRO ── */
@@ -157,7 +157,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .map-responsive{position:relative;width:100%;padding-bottom:52%;height:0;border-radius:14px;overflow:hidden;box-shadow:0 4px 28px rgba(10,30,60,.14);border:2px solid var(--border-g);margin-top:30px}
 .map-responsive iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 @media(max-width:600px){.map-responsive{padding-bottom:110%}}
-.map-legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;padding:12px 20px;background:#fff;border-radius:10px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.map-legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:16px;padding:12px 20px;background:#fff;border-radius:10px;border:1px solid var(--border);box-shadow:var(--shadow)}
 .map-legend__item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--navy);white-space:nowrap}
 .map-legend__pin{width:13px;height:13px;border-radius:50%;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,.25)}
 
@@ -297,15 +297,15 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
     <h2 class="sec-h2">4 Investment Portfolios &amp; 2 Individual Properties</h2>
     <div class="divbar"></div>
     <p class="sec-sub">Every portfolio is geographically tight, reducing travel time and management overhead. All properties sit within close proximity to major employment, healthcare, and education anchors.</p>
-    <div class="map-responsive">
-      <iframe src="https://www.google.com/maps/d/embed?mid=1-UjOFoDqjCvel-Hh8xbCvZUu4CTQLeI&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
-    </div>
     <div class="map-legend">
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#e8a900"></span>Portfolio 1 &mdash; Malone / HoF Area 1</div>
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#e05b00"></span>Portfolio 2 &mdash; Malone / HoF Area 2</div>
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a8c35"></span>Portfolio 3 &mdash; Colonial Heights</div>
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#9c27b0"></span>Portfolio 4 &mdash; High-End Portfolio</div>
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a3557"></span>Premium Individual Properties</div>
+    </div>
+    <div class="map-responsive">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1-UjOFoDqjCvel-Hh8xbCvZUu4CTQLeI&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
