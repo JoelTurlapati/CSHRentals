@@ -9,7 +9,7 @@ class CshPortfolioHighend extends HTMLElement {
       document.head.appendChild(l);
     }
 
-    var PORTFOLIO = 'Portfolio 4 — High-End Portfolio';
+    var PORTFOLIO = 'Portfolio 4 — Higher Value Portfolio';
 
     // ── QuickBooks-style P&L (properties as columns) ──
     var PL_TABLE = {
@@ -123,8 +123,8 @@ class CshPortfolioHighend extends HTMLElement {
       },
       {
         address: '2631 Demington Ave NW', city: 'Canton, OH 44709', beds: 3, baths: 2,
-        cover: 'https://static.wixstatic.com/media/d9828b_88702235d5204eb8a2062465eceac5f9~mv2.jpg',
-        photos: ['https://static.wixstatic.com/media/d9828b_88702235d5204eb8a2062465eceac5f9~mv2.jpg','https://static.wixstatic.com/media/d9828b_f8f0a11cb1c7467fa8dc8331962c0a88~mv2.jpg','https://static.wixstatic.com/media/d9828b_72f0431cf10b4593b579924de6b36c34~mv2.jpg','https://static.wixstatic.com/media/d9828b_ccaf87b6733f476e81372e810e924a4b~mv2.jpg','https://static.wixstatic.com/media/d9828b_464d877f650d4a1eb025cecd0e66c08d~mv2.jpg','https://static.wixstatic.com/media/d9828b_7147464688fc42de96d874c72a167c6f~mv2.jpg','https://static.wixstatic.com/media/d9828b_c54592dea6684f10bed556f353837a6f~mv2.jpg','https://static.wixstatic.com/media/d9828b_e6bac556c9184109a493e123efae98fa~mv2.jpg','https://static.wixstatic.com/media/d9828b_267a37a567a54dc283a11cf9da243555~mv2.jpg','https://static.wixstatic.com/media/d9828b_c59158f9271c4497a3024de73b44c9ff~mv2.jpg','https://static.wixstatic.com/media/d9828b_45740064921c4ec88df2219008df6eda~mv2.jpg','https://static.wixstatic.com/media/d9828b_4916395697d64c599fc610663bc68a48~mv2.jpg','https://static.wixstatic.com/media/d9828b_8f277d048e404f0a818d4e257de8cd1a~mv2.jpg','https://static.wixstatic.com/media/d9828b_4f98d257421640a4b9c771d859eab93e~mv2.jpg','https://static.wixstatic.com/media/d9828b_e73a21e2ec4c4dc9917cd65a8d3bb62b~mv2.jpg','https://static.wixstatic.com/media/d9828b_74162ffc3e8b431c8b14254aee25ef71~mv2.jpg','https://static.wixstatic.com/media/d9828b_f9b9250c154d451b8f1dbdccd42f062c~mv2.jpg','https://static.wixstatic.com/media/d9828b_4d3bfddd5b4741adbd7396696e7d0a9a~mv2.jpg','https://static.wixstatic.com/media/d9828b_795f15ea9c2442dfbd16bf06c1f743d0~mv2.jpg','https://static.wixstatic.com/media/d9828b_8560fb4ea56c4b25b8551220f8b67ba5~mv2.jpg','https://static.wixstatic.com/media/d9828b_9625b1b5eb004118b087c1453eabf856~mv2.jpg','https://static.wixstatic.com/media/d9828b_c0111508ee804ea1ad3fbcfe690b95c6~mv2.jpg','https://static.wixstatic.com/media/d9828b_10b0b23bc159436dac64204e2a2e02bf~mv2.jpg','https://static.wixstatic.com/media/d9828b_3518999290d0444dac4b4337738e20e0~mv2.jpg','https://static.wixstatic.com/media/d9828b_c6daf260ec0348d588816030ac681297~mv2.jpg','https://static.wixstatic.com/media/d9828b_544633d33bb641ad9c0ffa241ecac34c~mv2.jpg','https://static.wixstatic.com/media/d9828b_13451ed4cda542c1a8f48287b551b930~mv2.jpg','https://static.wixstatic.com/media/d9828b_1e080b62ad954b2685be55165ccc5450~mv2.jpg','https://static.wixstatic.com/media/d9828b_b74c87ba04534f4cbe2df8f9c403efb5~mv2.jpg','https://static.wixstatic.com/media/d9828b_a2c5527cb00c4a19bd5ce79edec4b317~mv2.jpg']
+        cover: 'https://static.wixstatic.com/media/d9828b_f3696c24d4854f39bb0d0933752611bf~mv2.jpg',
+        photos: ['https://static.wixstatic.com/media/d9828b_f3696c24d4854f39bb0d0933752611bf~mv2.jpg','https://static.wixstatic.com/media/d9828b_6c8d401608224e7b88d92c8dc8de3102~mv2.jpg','https://static.wixstatic.com/media/d9828b_a56f5a5658184c74bcb3132dcb85eedc~mv2.jpg','https://static.wixstatic.com/media/d9828b_ed85fe87ab72490f84716e962ac8d6e6~mv2.jpg','https://static.wixstatic.com/media/d9828b_59f361d617674bd8b4ca5d63853a9dcb~mv2.jpg','https://static.wixstatic.com/media/d9828b_9ef02bf4e608460986c1e3fba9429291~mv2.jpg','https://static.wixstatic.com/media/d9828b_36b059227b7e41aaa53703f40307aadb~mv2.jpg','https://static.wixstatic.com/media/d9828b_2adf4fafebd2407d9c1fd45d66606771~mv2.jpg','https://static.wixstatic.com/media/d9828b_f698e85a2f6a472f8e72e872c0a3de41~mv2.jpg','https://static.wixstatic.com/media/d9828b_9c945d53183e48adb9ce993e606ab18b~mv2.jpg','https://static.wixstatic.com/media/d9828b_7f853b432a0340f887922d19c74e5c17~mv2.jpg','https://static.wixstatic.com/media/d9828b_8fde56e8df9b483cab0a572733984b21~mv2.jpg','https://static.wixstatic.com/media/d9828b_d91b36387f924c3298b1c1d088b8f915~mv2.jpg','https://static.wixstatic.com/media/d9828b_cc8701a1baaa46c5aae268b79e8ab9fb~mv2.jpg','https://static.wixstatic.com/media/d9828b_7e5f6398a8184d7891934af2a67ced25~mv2.jpg','https://static.wixstatic.com/media/d9828b_707fa94718ab493c946a24047e3753e0~mv2.jpg','https://static.wixstatic.com/media/d9828b_8d0ab09443884df289bb20875d946a2b~mv2.jpg','https://static.wixstatic.com/media/d9828b_68fd81afeea14d77a47420a863b3fa97~mv2.jpg','https://static.wixstatic.com/media/d9828b_ce611d95d53743358d642a1a7c30ac0b~mv2.jpg','https://static.wixstatic.com/media/d9828b_e191828c17224642b678c4dc40376857~mv2.jpg','https://static.wixstatic.com/media/d9828b_7282cce3b7ab442ca7c43e3ce3a57010~mv2.jpg','https://static.wixstatic.com/media/d9828b_46125e4fb62140c888f8329847993028~mv2.jpg','https://static.wixstatic.com/media/d9828b_f3e17fb8f5354700891e44e1e5243691~mv2.jpg','https://static.wixstatic.com/media/d9828b_b38eb650126248a0a5fca4ea5408d38c~mv2.jpg']
       },
       {
         address: '1103 22nd St NW', city: 'Canton, OH 44709', beds: 3, baths: 2,
@@ -375,8 +375,8 @@ csh-portfolio-highend{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
 <a class="csh-back" href="/">&larr; Back to All Portfolios</a>
 
 <section class="hero">
-  <div class="hero__badge">Portfolio 4 &mdash; High-End</div>
-  <h1 class="hero__title">Portfolio 4 &mdash; High-End Portfolio</h1>
+  <div class="hero__badge">Portfolio 4 &mdash; Higher Value</div>
+  <h1 class="hero__title">Portfolio 4 &mdash; Higher Value Portfolio</h1>
   <p class="hero__sub">6 premium rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
 </section>
 
@@ -396,7 +396,7 @@ csh-portfolio-highend{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
 <section class="map-wrap">
   <div class="map-container">
     <div class="map-header">
-      <div class="map-header__title">Portfolio 4 &mdash; High-End Portfolio &mdash; Property Locations</div>
+      <div class="map-header__title">Portfolio 4 &mdash; Higher Value Portfolio &mdash; Property Locations</div>
       <div class="map-header__sub">Every portfolio is geographically tight, reducing travel time and management overhead.</div>
     </div>
     <div class="map-layout">
@@ -435,8 +435,8 @@ csh-portfolio-highend{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
   <div class="rr-modal__overlay" id="rr-modal-overlay"></div>
   <div class="rr-modal__box">
     <div class="rr-modal__head">
-      <div class="rr-modal__title">Portfolio 4 &mdash; High-End Portfolio &mdash; Rent Roll</div>
-      <div class="rr-modal__sub">High-End Portfolio &mdash; 6 Properties</div>
+      <div class="rr-modal__title">Portfolio 4 &mdash; Higher Value Portfolio &mdash; Rent Roll</div>
+      <div class="rr-modal__sub">Higher Value Portfolio &mdash; 6 Properties</div>
       <button class="rr-modal__close" id="rr-modal-close" aria-label="Close">&times;</button>
     </div>
     <div class="rr-modal__body" id="rr-modal-body"></div>

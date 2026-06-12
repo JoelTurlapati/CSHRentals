@@ -301,7 +301,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#e8a900"></span>Portfolio 1 &mdash; Malone / HoF Area 1</div>
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#e05b00"></span>Portfolio 2 &mdash; Malone / HoF Area 2</div>
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a8c35"></span>Portfolio 3 &mdash; Colonial Heights</div>
-      <div class="map-legend__item"><span class="map-legend__pin" style="background:#9c27b0"></span>Portfolio 4 &mdash; High-End Portfolio</div>
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#9c27b0"></span>Portfolio 4 &mdash; Higher Value Portfolio</div>
       <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a3557"></span>Premium Individual Properties</div>
     </div>
     <div class="map-responsive">
@@ -408,7 +408,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
       <div class="p-card" data-href="/portfolio-highend">
         <div class="p-card__top">
           <div class="p-card__badge">Portfolio 4</div>
-          <div class="p-card__title">High-End Portfolio</div>
+          <div class="p-card__title">Higher Value Portfolio</div>
           <div class="p-card__count">6 Properties</div>
         </div>
         <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/d9828b_3821574328f3405195c69f761eb602e5~mv2.jpg')">
