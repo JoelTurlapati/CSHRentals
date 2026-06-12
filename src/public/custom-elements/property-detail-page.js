@@ -1,4 +1,4 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 class CshPropertyDetail extends HTMLElement {
   connectedCallback() {
     this.style.cssText = 'display:block;background:#f5f7fa;min-height:100vh';
@@ -149,7 +149,7 @@ csh-property-detail { display: block; font-family: 'Segoe UI', Arial, sans-serif
 
 <header class="csh-hdr">
   <a href="/" class="csh-hdr__logo">
-    <img class="csh-hdr__logo-img" src="https://static.wixstatic.com/media/d9828b_5f2ddd29097a4c6c83d205f0ff3bc984~mv2.jpg" alt="CSH Rentals"/>
+    <img class="csh-hdr__logo-img" src="https://static.wixstatic.com/media/64b604_4ea6080e0e5c4c62892adb131d8d6c09~mv2.jpeg" alt="CSH Rentals"/>
     <span class="csh-hdr__logo-text">CSH RENTALS</span>
   </a>
   <nav class="csh-hdr__nav">

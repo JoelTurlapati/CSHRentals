@@ -1,4 +1,4 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 class CshTenants extends HTMLElement {
   connectedCallback() {
     this.style.cssText = 'display:block;background:#f5f7fa;min-height:100vh';
