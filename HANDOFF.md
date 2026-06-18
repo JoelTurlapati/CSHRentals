@@ -10,9 +10,10 @@ Rebuilding https://www.cshrentals.com for owner **Scott** in Wix Studio. Goal: p
 |---|---|
 | Local repo | `C:\Pravaltech\Developer\OneDrive - Praval\Desktop\CSHRentals` |
 | GitHub repo | `JoelTurlapati/CSHRentals` (PUBLIC) |
+| Wix site name | **"CSH Rentals Dev"** — match this in `ListWixSites` to get the siteId; this is the site to touch |
 | Wix demo URL | `https://tagplanning.wixstudio.com/cshdemo` |
 | Wix login | `scottprivate@tagplanning.com` |
-| Wix siteId | **UNCONFIRMED** for the cshdemo site — run `ListWixSites` and match to the cshdemo URL before any `UploadImageToWixSite`. (A prior note had `c0bd8f71-520a-4a4c-9e5e-47ea8ceb592d`, but verify — it may be a different/older site.) |
+| Wix siteId | Not recorded — resolve from the "CSH Rentals Dev" site via `ListWixSites` before any `UploadImageToWixSite`. (A prior note had `c0bd8f71-520a-4a4c-9e5e-47ea8ceb592d`; verify it matches "CSH Rentals Dev".) |
 | Asset trackers | `asset-upload-tracker.csv`, `url-mapping.csv` (image → wixstatic.com URL maps) |
 
 ## Two approaches — transition in progress
@@ -53,7 +54,7 @@ Node v22.22.3 (nvm-windows), GitHub CLI authed as JoelTurlapati.
 
 ## New-account setup checklist (same machine)
 - [ ] **Reconnect the Wix MCP connector** and log in as `scottprivate@tagplanning.com`.
-- [ ] Run `ListWixSites` and **confirm the siteId for the cshdemo site** before uploading any images.
+- [ ] Run `ListWixSites`, find the **"CSH Rentals Dev"** site, and note its siteId before uploading any images.
 - [ ] Confirm GitHub CLI is authed as JoelTurlapati (`gh auth status`).
 - [ ] Confirm local memory files auto-loaded — they live at
       `C:\Users\joel.t\.claude\projects\C--Pravaltech-Developer-OneDrive---Praval-Desktop-Komal\memory\` (filesystem-based, not tied to the Claude login).
