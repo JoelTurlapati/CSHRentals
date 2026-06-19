@@ -71,7 +71,7 @@ class CshHome extends HTMLElement {
       {
         address: '903 23rd St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
         portfolio: 'Individual Properties',
-        photos: ['https://static.wixstatic.com/media/64b604_33ba492a11134da4bf528511adbc6375~mv2.png']
+        photos: ['https://static.wixstatic.com/media/64b604_6b41010a798f4493b960561d67349923~mv2.png']
       }
     ];
 
@@ -470,7 +470,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 
       <!-- ─ 903 23rd St NW ─ -->
       <div class="p-card p-card--individual" data-prop-idx="1">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/64b604_33ba492a11134da4bf528511adbc6375~mv2.png" alt="903 23rd St NW"/>
+        <img class="p-card__img" src="https://static.wixstatic.com/media/64b604_6b41010a798f4493b960561d67349923~mv2.png" alt="903 23rd St NW"/>
         <div class="p-card__body">
           <div class="p-card__badge p-card__badge--prem">&#11088; Individual</div>
           <div class="p-card__title">903 23rd St NW</div>
