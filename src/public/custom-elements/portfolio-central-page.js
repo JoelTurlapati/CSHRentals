@@ -257,19 +257,19 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
 @media(max-width:768px){.csh-hdr{padding:0 16px}.csh-hdr__nav{display:none}.csh-hdr__burger{display:flex}}
 .csh-back{display:block;padding:10px 28px;font-size:13px;font-weight:700;color:#5a6b85;text-decoration:none;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid #e0e4ea;background:#fff}
 .csh-back:hover{color:#0d1f35}
-.hero{background:linear-gradient(135deg,#0D1F35 0%,#1A3557 60%,#1e3f68 100%);color:#fff;padding:52px 32px 48px;text-align:center}
-.hero__badge{display:inline-block;background:#C8962A;color:#fff;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:16px}
+.hero{background:linear-gradient(135deg,#0D1F35 0%,#1A3557 60%,#1e3f68 100%);color:#fff;padding:40px 32px 36px;text-align:center}
+.hero__badge{display:inline-block;background:#C8962A;color:#fff;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:12px}
 .hero__title{font-size:clamp(24px,4.8vw,46px);font-weight:900;margin-bottom:8px}
 .hero__sub{font-size:18px;color:rgba(255,255,255,0.68)}
-.reports-section{background:#fff;border-bottom:2px solid rgba(10,30,60,.08);padding:32px 36px}
+.reports-section{background:#fff;border-bottom:2px solid rgba(10,30,60,.08);padding:24px 36px}
 .reports-section__inner{max-width:900px;margin:0 auto}
-.reports-section__label{font-size:11px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#5a6b85;margin-bottom:18px}
+.reports-section__label{font-size:11px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#5a6b85;margin-bottom:12px}
 .reports-section__btns{display:flex;gap:14px;flex-wrap:wrap}
 .report-btn{flex:1;min-width:200px;padding:18px 22px;background:#0d1f35;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;font-family:'Inter','Segoe UI',Arial,sans-serif;transition:background .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(10,30,60,.18)}
 .report-btn:hover{background:#1a3557;transform:translateY(-2px)}
-.map-wrap{background:#f0f4fa;border-top:2px solid rgba(10,30,60,.08);border-bottom:2px solid rgba(10,30,60,.08);padding:36px}
+.map-wrap{background:#f0f4fa;border-top:2px solid rgba(10,30,60,.08);border-bottom:2px solid rgba(10,30,60,.08);padding:28px 36px}
 .map-container{max-width:1100px;margin:0 auto}
-.map-header{margin-bottom:18px}
+.map-header{margin-bottom:12px}
 .map-header__title{font-size:20px;font-weight:800;color:#0d1f35;margin-bottom:4px}
 .map-header__sub{font-size:14px;color:#5a6b85}
 .map-layout{display:grid;grid-template-columns:220px 1fr;gap:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(10,30,60,.14);border:1px solid rgba(10,30,60,.1)}
@@ -285,10 +285,10 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
 .map-frame-wrap{height:580px}
 .map-frame-wrap iframe{width:100%;height:100%;border:0;display:block}
 @media(max-width:680px){.map-layout{grid-template-columns:1fr}.map-list{max-height:220px}.map-frame-wrap{height:420px}.map-wrap{padding:20px 16px}}
-.section-head{max-width:1040px;margin:48px auto 20px;padding:0 24px;display:flex;align-items:baseline;justify-content:space-between}
+.section-head{max-width:1040px;margin:36px auto 16px;padding:0 24px;display:flex;align-items:baseline;justify-content:space-between}
 .section-head h2{font-size:22px;font-weight:800;color:#0D1F35;text-transform:uppercase;letter-spacing:.08em}
 .section-head span{font-size:16px;color:#888}
-.prop-grid{max-width:1040px;margin:0 auto 64px;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
+.prop-grid{max-width:1040px;margin:0 auto 44px;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
 .prop-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;cursor:pointer}
 .prop-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,0.16)}
 .prop-card__img-wrap{position:relative;height:220px;overflow:hidden}
@@ -297,8 +297,8 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
 .prop-card__badge{position:absolute;top:12px;left:12px;background:#C8962A;color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:12px}
 .prop-card__info{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
 .prop-card__address{font-size:20px;font-weight:800;color:#0D1F35;margin-bottom:4px;line-height:1.3}
-.prop-card__city{font-size:14px;color:#999;margin-bottom:10px}
-.prop-card__specs{font-size:16px;color:#555;font-weight:600;margin-bottom:18px;flex:1}
+.prop-card__city{font-size:14px;color:#999;margin-bottom:6px}
+.prop-card__specs{font-size:16px;color:#555;font-weight:600;margin-bottom:12px;flex:1}
 .prop-card__rent{font-size:18px;font-weight:800;color:#c8962a;margin-bottom:12px}
 .prop-card__btn{width:100%;padding:12px;background:#1A3557;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:7px;text-align:center}
 .prop-card:hover .prop-card__btn{background:#0D1F35}
