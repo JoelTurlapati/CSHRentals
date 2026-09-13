@@ -72,18 +72,18 @@ class CshPortfolioNw extends HTMLElement {
     // ── Rent Roll ──
     var RENT_ROLL = [
       {address:'806 23rd St NW',       value:140000, monthlyRent:1200, annualizedRent:14400},
-      {address:'2007 Kirk Ct NW',      value:140000, monthlyRent:1475, annualizedRent:16200},
+      {address:'2007 Kirk Ct NW',      value:140000, monthlyRent:1475, annualizedRent:17700},
       {address:'818 25th St NW',       value:130000, monthlyRent:1525, annualizedRent:18300},
       {address:'519 21st St NW',       value:150000, monthlyRent:1385, annualizedRent:16620},
-      {address:'523 21st St NW',       value:140000, monthlyRent:1210, annualizedRent:14400},
-      {address:'1430 19th St NW',      value:139500, monthlyRent:1335, annualizedRent:16200},
-      {address:'1919 Frazer Ave NW',   value:155000, monthlyRent:1210, annualizedRent:14400},
+      {address:'523 21st St NW',       value:140000, monthlyRent:1210, annualizedRent:14520},
+      {address:'1430 19th St NW',      value:139500, monthlyRent:1335, annualizedRent:16020},
+      {address:'1919 Frazer Ave NW',   value:155000, monthlyRent:1210, annualizedRent:14520},
       {address:'1708 18th St NW',      value:165000, monthlyRent:1100, annualizedRent:13200},
       {address:'1734 Woodland Ave NW', value:95000,  monthlyRent:1055, annualizedRent:12660},
       {address:'2211 Myrtle Ave NW',   value:135000, monthlyRent:1250, annualizedRent:15000},
       {address:'800 22nd St NW',       value:155000, monthlyRent:1450, annualizedRent:17400},
       {address:'725 22nd St NW',       value:126200, monthlyRent:1150, annualizedRent:13800},
-      {address:'2923 Helen Pl NW',     value:180000, monthlyRent:1360, annualizedRent:16200},
+      {address:'2923 Helen Pl NW',     value:180000, monthlyRent:1360, annualizedRent:16320},
       {address:'2945 15th St NW',      value:160000, monthlyRent:1300, annualizedRent:15600}
     ];
 
@@ -399,7 +399,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   </div>
 </section>
 
-<div class="section-head"><h2>Properties</h2><span>14 homes &middot; $18,005/mo &middot; $214,380 Annual</span></div>
+<div class="section-head"><h2>Properties</h2><span>14 homes &middot; $18,005/mo &middot; $216,060 Annual</span></div>
 <div class="prop-grid">${cardsHtml}</div>
 
 <!-- ══ MAP ══ -->

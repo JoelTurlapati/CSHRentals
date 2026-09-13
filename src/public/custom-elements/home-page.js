@@ -245,7 +245,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
           <div class="p-stats">
             <div class="p-stat">
               <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold">$214,380</div>
+              <div class="p-stat__value p-stat__value--gold">$216,060</div>
             </div>
             <div class="p-stat">
               <div class="p-stat__label">Portfolio Value</div>
@@ -260,7 +260,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
         <div class="p-card__top">
           <div class="p-card__badge">Portfolio 2</div>
           <div class="p-card__title">Hall of Fame Village / Malone University #2</div>
-          <div class="p-card__count">13 Properties</div>
+          <div class="p-card__count">12 Properties</div>
         </div>
         <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/64b604_6d787ec44dd14bb5820d300ba95679dd~mv2.jpeg')">
           <div class="p-card__mid-overlay"></div>
@@ -273,11 +273,11 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
           <div class="p-stats">
             <div class="p-stat">
               <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold">$204,600</div>
+              <div class="p-stat__value p-stat__value--gold">$189,600</div>
             </div>
             <div class="p-stat">
               <div class="p-stat__label">Portfolio Value</div>
-              <div class="p-stat__value">$1,846,000</div>
+              <div class="p-stat__value">$1,681,000</div>
             </div>
           </div>
         </div>
@@ -316,7 +316,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
         <div class="p-card__top">
           <div class="p-card__badge">Portfolio 4</div>
           <div class="p-card__title">Individual Home Sale Opportunities</div>
-          <div class="p-card__count">7 Properties</div>
+          <div class="p-card__count">8 Properties</div>
         </div>
         <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/64b604_8fa8e45f055b4c67b1f87daba6780dd6~mv2.jpeg')">
           <div class="p-card__mid-overlay"></div>
@@ -329,11 +329,11 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
           <div class="p-stats">
             <div class="p-stat">
               <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold">$147,240</div>
+              <div class="p-stat__value p-stat__value--gold">$163,980</div>
             </div>
             <div class="p-stat">
               <div class="p-stat__label">Portfolio Value</div>
-              <div class="p-stat__value">$1,330,200</div>
+              <div class="p-stat__value">$1,495,200</div>
             </div>
           </div>
         </div>

@@ -71,10 +71,11 @@ class CshPortfolioHighend extends HTMLElement {
     var RENT_ROLL = [
       {address:'426 Vince Ave NW',      value:185000, monthlyRent:1550, annualizedRent:18600},
       {address:'244 Harter Ave NW',     value:199000, monthlyRent:1640, annualizedRent:19680},
-      {address:'300 Montrose Ave NW',   value:225000, monthlyRent:2310, annualizedRent:27960},
-      {address:'2631 Demington Ave NW', value:204200, monthlyRent:2110, annualizedRent:25200},
-      {address:'1103 22nd St NE',       value:215000, monthlyRent:1860, annualizedRent:22200},
-      {address:'225 Grandview Ave NW',  value:180000, monthlyRent:1610, annualizedRent:19200},
+      {address:'300 Montrose Ave NW',   value:225000, monthlyRent:2310, annualizedRent:27720},
+      {address:'2631 Demington Ave NW', value:204200, monthlyRent:2110, annualizedRent:25320},
+      {address:'1103 22nd St NE',       value:215000, monthlyRent:1860, annualizedRent:22320},
+      {address:'225 Grandview Ave NW',  value:180000, monthlyRent:1610, annualizedRent:19320},
+      {address:'307 Bellflower Ave NW', value:165000, monthlyRent:1385, annualizedRent:16620},
       {address:'635 Greenfield Ave SW', value:122000, monthlyRent:1200, annualizedRent:14400}
     ];
 
@@ -87,6 +88,7 @@ class CshPortfolioHighend extends HTMLElement {
       {label:'2631 Demington Ave NW', addr:'2631 Demington Ave NW, Canton, OH'},
       {label:'1103 22nd St NE',       addr:'1103 22nd St NE, Canton, OH'},
       {label:'225 Grandview Ave NW',  addr:'225 Grandview Ave NW, Canton, OH'},
+      {label:'307 Bellflower Ave NW', addr:'307 Bellflower Ave NW, Canton, OH'},
       {label:'635 Greenfield Ave SW', addr:'635 Greenfield Ave SW, Canton, OH'}
     ];
 
@@ -139,13 +141,18 @@ class CshPortfolioHighend extends HTMLElement {
         photos: ['https://static.wixstatic.com/media/64b604_4eebe50b98154767a4488689fc84477b~mv2.jpeg','https://static.wixstatic.com/media/64b604_f49f94829a794373940073ba4bd4b744~mv2.jpeg','https://static.wixstatic.com/media/64b604_d387b51836ad4ec79c63ffc02666c3a9~mv2.jpeg','https://static.wixstatic.com/media/64b604_b6f688912dd544689f42e586c94bda6b~mv2.jpeg','https://static.wixstatic.com/media/64b604_fd3bcb8da39140ea9bff08efa0a77f45~mv2.jpeg','https://static.wixstatic.com/media/64b604_40faa1ee4a06425a95495d674320adc3~mv2.jpeg','https://static.wixstatic.com/media/64b604_4ef0b87e1e2645f38f49d757dccdc75a~mv2.jpeg','https://static.wixstatic.com/media/64b604_b0cab118c114438d809c1404d4dbf051~mv2.jpeg','https://static.wixstatic.com/media/64b604_15d2dde4b1744cd69fd59d909a844e8a~mv2.jpeg','https://static.wixstatic.com/media/64b604_eedc0bff02424094b8f6663a89081673~mv2.jpeg','https://static.wixstatic.com/media/64b604_4a49adab34be41b98645aa475bcddfa5~mv2.jpeg','https://static.wixstatic.com/media/64b604_3a571a259c5941f296bca56bca73be6e~mv2.jpeg','https://static.wixstatic.com/media/64b604_727dd17c911f440ead4f40801f3d87e1~mv2.jpeg','https://static.wixstatic.com/media/64b604_1c4f379bc58f4e7088b0bee7ace38766~mv2.jpeg','https://static.wixstatic.com/media/64b604_6cc0f5ef38cb437798a4345f1dfa25c1~mv2.jpeg','https://static.wixstatic.com/media/64b604_366e0a03372e4ddaa8848126ddd25c05~mv2.jpeg','https://static.wixstatic.com/media/64b604_38666275954c40cf93c1f9b295fb152d~mv2.jpeg','https://static.wixstatic.com/media/64b604_69879f6429b6444d8ad491636721691a~mv2.jpeg','https://static.wixstatic.com/media/64b604_aafbf6180299480abc88b62fbe6f8e9b~mv2.jpeg','https://static.wixstatic.com/media/64b604_0c06f32cabe64258b2b6e3a02b7efe1d~mv2.jpeg','https://static.wixstatic.com/media/64b604_e8a474f13d5b4f66bf5feb94dd0713e6~mv2.jpeg','https://static.wixstatic.com/media/64b604_ba862daf50264670ac24458a92dd843d~mv2.jpeg','https://static.wixstatic.com/media/64b604_71f2d7f601c84f2485f0b88957f6881d~mv2.jpeg','https://static.wixstatic.com/media/64b604_cf256d55bfb1466ca04e43f6174a13d0~mv2.jpeg','https://static.wixstatic.com/media/64b604_dfe30bf75e0a47619f76aa5efc864aad~mv2.jpeg','https://static.wixstatic.com/media/64b604_68d4d02bf63e454e9db2f18e646cc573~mv2.jpeg','https://static.wixstatic.com/media/64b604_2ba6861541784057a70655e945c4c840~mv2.jpeg','https://static.wixstatic.com/media/64b604_5cbc5cba2e5d45b99fc6ccf20260d28d~mv2.jpeg','https://static.wixstatic.com/media/64b604_a159273bfcc8402ebb9e7d69ffa45c87~mv2.jpeg','https://static.wixstatic.com/media/64b604_f18fddd3af8540c18a24c0faf25f39bb~mv2.jpeg','https://static.wixstatic.com/media/64b604_d9ce56c013bf40479c0d6986b5e53f40~mv2.jpeg','https://static.wixstatic.com/media/64b604_9557437739674e04a46472635be2b371~mv2.jpeg','https://static.wixstatic.com/media/64b604_a259e265fda94a599c7707f059d6f854~mv2.jpeg','https://static.wixstatic.com/media/64b604_1c018447db2d473394eab43860599cd9~mv2.jpeg','https://static.wixstatic.com/media/64b604_6d73a46f2efb403986541ecb89bb187d~mv2.jpeg','https://static.wixstatic.com/media/64b604_095b77f5ee8d4fd89029cff311ddc373~mv2.jpeg','https://static.wixstatic.com/media/64b604_e65fc250bbbc4ebab0a7df7ad6df5907~mv2.jpeg','https://static.wixstatic.com/media/64b604_e4360e673fe84b65ba0995a9ce8a3288~mv2.jpeg','https://static.wixstatic.com/media/64b604_51a90576d3f14d758517c44ba490fe76~mv2.jpeg','https://static.wixstatic.com/media/64b604_a88e848b991844a2a01ed4c4d90ca13e~mv2.jpeg','https://static.wixstatic.com/media/64b604_6d7234a8440e4efc8c736259042333f8~mv2.jpeg','https://static.wixstatic.com/media/64b604_3e44605129fe4dad99035d3f33584a9b~mv2.jpeg','https://static.wixstatic.com/media/64b604_bc2ad695774e480391db52ab703103b8~mv2.jpeg','https://static.wixstatic.com/media/64b604_197d16a1a1354cfbae3635430d5c32f8~mv2.jpeg','https://static.wixstatic.com/media/64b604_db61c9afea164c29b66adffbaed35aba~mv2.jpeg','https://static.wixstatic.com/media/64b604_1d63e261cfff4cd3bf69aaaa1603d44c~mv2.jpeg','https://static.wixstatic.com/media/64b604_bc41c000832947e8a056f9091bcb7714~mv2.jpeg','https://static.wixstatic.com/media/64b604_b20a449df93b4e848d61f4086d925705~mv2.jpeg']
       },
       {
+        address: '307 Bellflower Ave NW', city: 'Canton, OH 44708', beds: 3, baths: 1.5,
+        cover: 'https://static.wixstatic.com/media/64b604_28a42e5cd1994e2a9d2c3c73d0cdbbf4~mv2.jpeg',
+        photos: ['https://static.wixstatic.com/media/64b604_0f7be59ea6f6404d9993facda7f4bf56~mv2.jpeg','https://static.wixstatic.com/media/64b604_aa41f41c304d407fb746142e781d74a0~mv2.jpeg','https://static.wixstatic.com/media/64b604_24d8159ca79847e6b29019c6147c8361~mv2.jpeg','https://static.wixstatic.com/media/64b604_46d27b8f8ae742a3a8ffede925513281~mv2.jpeg','https://static.wixstatic.com/media/64b604_41fa6309ea914a0db241e8d0232ee6c0~mv2.jpeg','https://static.wixstatic.com/media/64b604_a1ec155490534718a58cabea27e85959~mv2.jpeg','https://static.wixstatic.com/media/64b604_59d6f2b98de84d1291461f03902e4668~mv2.jpeg','https://static.wixstatic.com/media/64b604_ce72d6b8c30d4ad7adec8ae026b5c423~mv2.jpeg','https://static.wixstatic.com/media/64b604_11829af3dc624c2b96e53e9d8b76f732~mv2.jpeg','https://static.wixstatic.com/media/64b604_57b22e0b87b54f92ad87344fec65494e~mv2.jpeg','https://static.wixstatic.com/media/64b604_2b09c12635344d8eb3f20726cadcc416~mv2.jpeg','https://static.wixstatic.com/media/64b604_64341f46689f47f8b036a214bad02813~mv2.jpeg','https://static.wixstatic.com/media/64b604_3d05ff1703fe4131b56602f57f6a3846~mv2.jpeg','https://static.wixstatic.com/media/64b604_67d1162df55748898f0bd74acabd4f83~mv2.jpeg','https://static.wixstatic.com/media/64b604_358e87e9f268476f85d02a9ebed0a4ee~mv2.jpeg','https://static.wixstatic.com/media/64b604_aa724bfdcbda4cc7a628394e98f872e3~mv2.jpeg','https://static.wixstatic.com/media/64b604_3843517fb0ac4df69b122df8465cf7f9~mv2.jpeg','https://static.wixstatic.com/media/64b604_fb0cc83f894944a98681c06cd5039ef1~mv2.jpeg','https://static.wixstatic.com/media/64b604_eed72c1637af44c2b596fe78c9e21732~mv2.jpeg','https://static.wixstatic.com/media/64b604_78356ee58e7a44b39cedbcee486aa5ec~mv2.jpeg','https://static.wixstatic.com/media/64b604_adc759c5f63d4e3d8ed352839df99ea4~mv2.jpeg']
+      },
+      {
         address: '635 Greenfield Ave SW', city: 'Canton, OH 44706', beds: 2, baths: 2,
         cover: 'https://static.wixstatic.com/media/64b604_c53805e63cfc4e6ea8185865e9574cab~mv2.jpeg',
         photos: ['https://static.wixstatic.com/media/64b604_940177374d5542b098ad6c74a37c2ec7~mv2.jpeg','https://static.wixstatic.com/media/64b604_b667e6f4d0c1425aa80d0fbac20c3b93~mv2.jpeg','https://static.wixstatic.com/media/64b604_e1f81fb0d29549e4bb66e822ab5ec4dc~mv2.jpeg','https://static.wixstatic.com/media/64b604_940177374d5542b098ad6c74a37c2ec7~mv2.jpeg','https://static.wixstatic.com/media/64b604_db13505dabef4c27b4130edc03d526e7~mv2.jpeg','https://static.wixstatic.com/media/64b604_ce4ffabcfa754ddf829e6773bf293a15~mv2.jpeg','https://static.wixstatic.com/media/64b604_989c3c702a384553869441e0c6798675~mv2.jpeg','https://static.wixstatic.com/media/64b604_e7f2e0d66f6c49e599ee1f433aa20fff~mv2.jpeg','https://static.wixstatic.com/media/64b604_7b46acc41c384ef284d592a891a2cf5d~mv2.jpeg','https://static.wixstatic.com/media/64b604_668b074364c34ded882d300406fb5ed3~mv2.jpeg','https://static.wixstatic.com/media/64b604_2fcb74e2925a47f587bbcc82d91e5cfe~mv2.jpeg','https://static.wixstatic.com/media/64b604_0cc6d76060324c8aba0ea98ead379253~mv2.jpeg','https://static.wixstatic.com/media/64b604_59d977d85141442f88c9e1df86554aed~mv2.jpeg','https://static.wixstatic.com/media/64b604_8ff9de41d9d64055bca0cdf3bb190729~mv2.jpeg','https://static.wixstatic.com/media/64b604_73990df58e124fe292128da0f8f5466f~mv2.jpeg','https://static.wixstatic.com/media/64b604_ce7bc681d40f440ea823300c44d65709~mv2.jpeg','https://static.wixstatic.com/media/64b604_d7ca473d42df48ff8a3d787bddf37656~mv2.jpeg','https://static.wixstatic.com/media/64b604_a2d9dfd891624456a7e72cdce2188566~mv2.jpeg','https://static.wixstatic.com/media/64b604_204a0bb2c592496e90b58d9eaca2e431~mv2.jpeg','https://static.wixstatic.com/media/64b604_dbf870f3b32c46fb8c5821ea831f3505~mv2.jpeg','https://static.wixstatic.com/media/64b604_fe0f540f908a493fbc785bad211774f8~mv2.jpeg','https://static.wixstatic.com/media/64b604_c889ce7e527040ba971e0f30a1510f57~mv2.jpeg','https://static.wixstatic.com/media/64b604_b659f4932b1647b89e6ebd8eeb3ffa5b~mv2.jpeg','https://static.wixstatic.com/media/64b604_81496074fd2e4e369cb065f9388dd19e~mv2.jpeg','https://static.wixstatic.com/media/64b604_aade381e30de47389a03f18650b18686~mv2.jpeg','https://static.wixstatic.com/media/64b604_f4370a409240435593a6b827d59c360e~mv2.jpeg']
       }
     ];
 
-    var RENTS = {'426 Vince Ave NW':'$1,550','244 Harter Ave NW':'$1,640','300 Montrose Ave NW':'$2,310','2631 Demington Ave NW':'$2,110','1103 22nd St NE':'$1,860','225 Grandview Ave NW':'$1,610','635 Greenfield Ave SW':'$1,200'};
+    var RENTS = {'426 Vince Ave NW':'$1,550','244 Harter Ave NW':'$1,640','300 Montrose Ave NW':'$2,310','2631 Demington Ave NW':'$2,110','1103 22nd St NE':'$1,860','225 Grandview Ave NW':'$1,610','307 Bellflower Ave NW':'$1,385','635 Greenfield Ave SW':'$1,200'};
 
     function downloadCSV(filename, csvContent) {
       var blob = new Blob(['﻿' + csvContent], {type:'text/csv;charset=utf-8;'});
@@ -385,7 +392,7 @@ csh-portfolio-highend{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
 <section class="hero">
   <div class="hero__badge">Portfolio 4</div>
   <h1 class="hero__title">Portfolio 4 &mdash; Individual Home Sale Opportunities</h1>
-  <p class="hero__sub">7 single-family rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
+  <p class="hero__sub">8 single-family rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
   <p class="hero__desc">We are going to auction off each of these homes individually. All of these homes, except for 635 Greenfield Ave SW, represent our highest-value properties &mdash; and because of the value of these homes and the desire for individual purchases, we are going to auction each of these homes off separately. We can also offer the entire portfolio as one combined portfolio.</p>
 </section>
 
@@ -401,7 +408,7 @@ csh-portfolio-highend{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
   </div>
 </section>
 
-<div class="section-head"><h2>Properties</h2><span>7 homes &middot; $12,280/mo &middot; $147,240 Annual</span></div>
+<div class="section-head"><h2>Properties</h2><span>8 homes &middot; $13,665/mo &middot; $163,980 Annual</span></div>
 <div class="prop-grid">${cardsHtml}</div>
 
 <!-- ══ MAP ══ -->
@@ -445,7 +452,7 @@ csh-portfolio-highend{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
   <div class="rr-modal__box">
     <div class="rr-modal__head">
       <div class="rr-modal__title">Portfolio 4 &mdash; Individual Home Sale Opportunities &mdash; Rent Roll</div>
-      <div class="rr-modal__sub">Individual Home Sale Opportunities &mdash; 7 Properties</div>
+      <div class="rr-modal__sub">Individual Home Sale Opportunities &mdash; 8 Properties</div>
       <button class="rr-modal__close" id="rr-modal-close" aria-label="Close">&times;</button>
     </div>
     <div class="rr-modal__body" id="rr-modal-body"></div>
@@ -563,7 +570,7 @@ csh-portfolio-highend{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
       var totalVal = RENT_ROLL.reduce(function(s,r){return s+r.value;},0);
       var totalMo  = RENT_ROLL.reduce(function(s,r){return s+r.monthlyRent;},0);
       var totalYr  = RENT_ROLL.reduce(function(s,r){return s+r.annualizedRent;},0);
-      var html = '<div class="rr-portfolio-badge">Portfolio 4 &mdash; 7 Properties</div><div class="rr-table-wrap"><table class="rr-table">' +
+      var html = '<div class="rr-portfolio-badge">Portfolio 4 &mdash; 8 Properties</div><div class="rr-table-wrap"><table class="rr-table">' +
         '<thead><tr><th>Property</th><th>Property Value</th><th>Monthly Rent</th><th>Annualized Rent</th></tr></thead><tbody>';
       RENT_ROLL.forEach(function(r) {
         html += '<tr><td>' + r.address + '</td>' +

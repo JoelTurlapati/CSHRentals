@@ -71,16 +71,16 @@ class CshPortfolioNe extends HTMLElement {
     // ── Rent Roll ──
     var RENT_ROLL = [
       {address:'804 29th St NE',        value:175000, monthlyRent:1450, annualizedRent:17400},
-      {address:'1012 28th St NE',       value:164000, monthlyRent:1595, annualizedRent:18540},
-      {address:'1203 25th St NE',       value:140000, monthlyRent:1250, annualizedRent:14400},
-      {address:'1206 24th St NE',       value:160000, monthlyRent:1655, annualizedRent:19740},
+      {address:'1012 28th St NE',       value:164000, monthlyRent:1595, annualizedRent:19140},
+      {address:'1203 25th St NE',       value:140000, monthlyRent:1250, annualizedRent:15000},
+      {address:'1206 24th St NE',       value:160000, monthlyRent:1655, annualizedRent:19860},
       {address:'1207 Colonial Blvd NE', value:160000, monthlyRent:1400, annualizedRent:16800},
-      {address:'1210 25th St NE',       value:150000, monthlyRent:1480, annualizedRent:17160},
-      {address:'1219 24th St NE',       value:182000, monthlyRent:1330, annualizedRent:15840},
-      {address:'1306 22nd St NE',       value:150000, monthlyRent:1385, annualizedRent:18180},
+      {address:'1210 25th St NE',       value:150000, monthlyRent:1480, annualizedRent:17760},
+      {address:'1219 24th St NE',       value:182000, monthlyRent:1330, annualizedRent:15960},
+      {address:'1306 22nd St NE',       value:150000, monthlyRent:1385, annualizedRent:16620},
       {address:'1326 24th St NE',       value:160000, monthlyRent:1550, annualizedRent:18600},
-      {address:'1330 24th St NE',       value:145000, monthlyRent:1410, annualizedRent:16800},
-      {address:'1335 22nd St NE',       value:145000, monthlyRent:1210, annualizedRent:15120}
+      {address:'1330 24th St NE',       value:145000, monthlyRent:1410, annualizedRent:16920},
+      {address:'1335 22nd St NE',       value:145000, monthlyRent:1210, annualizedRent:14520}
     ];
 
     var MAP_DEFAULT = 'https://www.google.com/maps/d/embed?mid=12Bp_xXe_PNGF2XpCulohuskkvzkRGxA&ehbc=2E312F&noprof=1';
