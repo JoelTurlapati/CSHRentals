@@ -9,7 +9,7 @@ class CshPortfolioCentral extends HTMLElement {
       document.head.appendChild(l);
     }
 
-    var PORTFOLIO = 'Portfolio 2 — Malone University / Pro Football Hall of Fame Area 2';
+    var PORTFOLIO = 'Portfolio 2 — Hall of Fame Village / Malone University #2';
 
     // ── QuickBooks-style P&L (properties as columns) ──
     // Column order: 1338 25th | 1341 Ridgeway | 1344 24th | 1502 37th | 1507 Ridgeway | 1511 23rd | 1540 Norwood | 1569 25th | 1600 27th | 1611 25th | 1701 27th | Total
@@ -71,33 +71,37 @@ class CshPortfolioCentral extends HTMLElement {
 
     // ── Rent Roll ──
     var RENT_ROLL = [
-      {address:'1338 25th St NW',       value:148000, monthlyRent:1400, annualizedRent:16800},
-      {address:'1344 24th St NW',       value:135000, monthlyRent:1150, annualizedRent:13800},
-      {address:'1540 Norwood Pl NW',    value:130000, monthlyRent:1260, annualizedRent:15120},
+      {address:'1338 25th St NW',       value:148000, monthlyRent:1410, annualizedRent:16800},
+      {address:'1344 24th St NW',       value:130000, monthlyRent:1160, annualizedRent:13800},
+      {address:'1540 Norwood Pl NW',    value:130000, monthlyRent:1310, annualizedRent:15600},
       {address:'1507 Ridgeway Pl NW',   value:125000, monthlyRent:1300, annualizedRent:15600},
-      {address:'1569 25th St NW',       value:145000, monthlyRent:1275, annualizedRent:15300},
-      {address:'1600 27th St NW',       value:140900, monthlyRent:1400, annualizedRent:16800},
+      {address:'1569 25th St NW',       value:150000, monthlyRent:1275, annualizedRent:15300},
+      {address:'1600 27th St NW',       value:140000, monthlyRent:1400, annualizedRent:16800},
       {address:'1701 27th St NW',       value:153000, monthlyRent:1300, annualizedRent:15600},
-      {address:'1341 Ridgeway Pl NW',   value:151000, monthlyRent:1450, annualizedRent:17400},
-      {address:'1611 25th St NW',       value:140000, monthlyRent:1300, annualizedRent:15600},
-      {address:'1502 37th St NW',       value:160000, monthlyRent:1150, annualizedRent:13800},
-      {address:'1511 23rd St NW',       value:125000, monthlyRent:1300, annualizedRent:15600}
+      {address:'1341 Ridgeway Pl NW',   value:145000, monthlyRent:1450, annualizedRent:17400},
+      {address:'1611 25th St NW',       value:140000, monthlyRent:1300, annualizedRent:14400},
+      {address:'1502 37th St NW',       value:160000, monthlyRent:1160, annualizedRent:13800},
+      {address:'1511 23rd St NW',       value:125000, monthlyRent:1310, annualizedRent:15600},
+      {address:'307 Bellflower Ave NW', value:165000, monthlyRent:1385, annualizedRent:16800},
+      {address:'903 23rd St NW',        value:135000, monthlyRent:1425, annualizedRent:17100}
     ];
 
     var MAP_DEFAULT = 'https://www.google.com/maps/d/embed?mid=1Hz5pboINJedil-qGmu8HEj_EfkOM_bs&ehbc=2E312F&noprof=1';
 
     var MAP_PROPS = [
       {label:'1338 25th St NW',       addr:'1338 25th St NW, Canton, OH'},
-      {label:'1341 Ridgeway Pl NW',   addr:'1341 Ridgeway Pl NW, Canton, OH'},
       {label:'1344 24th St NW',       addr:'1344 24th St NW, Canton, OH'},
-      {label:'1502 37th St NW',       addr:'1502 37th St NW, Canton, OH'},
-      {label:'1507 Ridgeway Pl NW',   addr:'1507 Ridgeway Pl NW, Canton, OH'},
-      {label:'1511 23rd St NW',       addr:'1511 23rd St NW, Canton, OH'},
       {label:'1540 Norwood Pl NW',    addr:'1540 Norwood Pl NW, Canton, OH'},
+      {label:'1507 Ridgeway Pl NW',   addr:'1507 Ridgeway Pl NW, Canton, OH'},
       {label:'1569 25th St NW',       addr:'1569 25th St NW, Canton, OH'},
       {label:'1600 27th St NW',       addr:'1600 27th St NW, Canton, OH'},
+      {label:'1701 27th St NW',       addr:'1701 27th St NW, Canton, OH'},
+      {label:'1341 Ridgeway Pl NW',   addr:'1341 Ridgeway Pl NW, Canton, OH'},
       {label:'1611 25th St NW',       addr:'1611 25th St NW, Canton, OH'},
-      {label:'1701 27th St NW',       addr:'1701 27th St NW, Canton, OH'}
+      {label:'1502 37th St NW',       addr:'1502 37th St NW, Canton, OH'},
+      {label:'1511 23rd St NW',       addr:'1511 23rd St NW, Canton, OH'},
+      {label:'307 Bellflower Ave NW', addr:'307 Bellflower Ave NW, Canton, OH'},
+      {label:'903 23rd St NW',        addr:'903 23rd St NW, Canton, OH'}
     ];
 
     // ── EXISTING property data preserved exactly ──
@@ -156,10 +160,20 @@ class CshPortfolioCentral extends HTMLElement {
         address: '1511 23rd St NW', city: 'Canton, OH 44709', beds: 3, baths: 2,
         cover: 'https://static.wixstatic.com/media/64b604_2fadc168b10c4853b32cb35c72fc023b~mv2.jpeg',
         photos: ['https://static.wixstatic.com/media/64b604_5d5045dbbfa74a518e09b97ed0b12ff3~mv2.jpeg','https://static.wixstatic.com/media/64b604_49ff04def6064f378f3041c856ae54b2~mv2.jpeg','https://static.wixstatic.com/media/64b604_e22b1831d3d34d9cae534c2d285606f9~mv2.jpeg','https://static.wixstatic.com/media/64b604_bc9ca55dd8cb49cdb5799e84801c76e6~mv2.jpeg','https://static.wixstatic.com/media/64b604_12c73cf568694082b8392ef8c438c657~mv2.jpeg','https://static.wixstatic.com/media/64b604_0160deacd6bc4cd7879a3070531761d7~mv2.jpeg','https://static.wixstatic.com/media/64b604_b0062023c56c468a9476c313bdb9d755~mv2.jpeg','https://static.wixstatic.com/media/64b604_378a4fd93ca040a09e6dd879c988d07b~mv2.jpeg','https://static.wixstatic.com/media/64b604_f840a7b9e0b1433889ed1a6e634445cd~mv2.jpeg','https://static.wixstatic.com/media/64b604_b19a505b00a14ef0998377219f4944ee~mv2.jpeg','https://static.wixstatic.com/media/64b604_16d6bb3c24ec49eba27a69b6242453cc~mv2.jpeg','https://static.wixstatic.com/media/64b604_2522f11df9e940e6a3b4b01b36104255~mv2.jpeg','https://static.wixstatic.com/media/64b604_a2debb5b90fb4f669a1f2560254a6c89~mv2.jpeg','https://static.wixstatic.com/media/64b604_0da48ac37e4249f886942ae12e4e3947~mv2.jpeg','https://static.wixstatic.com/media/64b604_aedd660a547c4bd0b38aef1bddbccc58~mv2.jpeg','https://static.wixstatic.com/media/64b604_68689a5e13914f03961a53107ca7d632~mv2.jpeg','https://static.wixstatic.com/media/64b604_7bbf4ff2be934f2483a903571df59261~mv2.jpeg','https://static.wixstatic.com/media/64b604_1fc2f4762bcc4cd4a3192d03ebfb0d65~mv2.jpeg','https://static.wixstatic.com/media/64b604_d4ea44296fd646b0b6080cc5871d62f7~mv2.jpeg','https://static.wixstatic.com/media/64b604_2587f30ba6484bf68be8c787f089e595~mv2.jpeg','https://static.wixstatic.com/media/64b604_99fc21ef18974a268d31544799d293a6~mv2.jpeg']
+      },
+      {
+        address: '307 Bellflower Ave NW', city: 'Canton, OH 44708', beds: 3, baths: 1.5,
+        cover: 'https://static.wixstatic.com/media/64b604_28a42e5cd1994e2a9d2c3c73d0cdbbf4~mv2.jpeg',
+        photos: ['https://static.wixstatic.com/media/64b604_0f7be59ea6f6404d9993facda7f4bf56~mv2.jpeg','https://static.wixstatic.com/media/64b604_aa41f41c304d407fb746142e781d74a0~mv2.jpeg','https://static.wixstatic.com/media/64b604_24d8159ca79847e6b29019c6147c8361~mv2.jpeg','https://static.wixstatic.com/media/64b604_46d27b8f8ae742a3a8ffede925513281~mv2.jpeg','https://static.wixstatic.com/media/64b604_41fa6309ea914a0db241e8d0232ee6c0~mv2.jpeg','https://static.wixstatic.com/media/64b604_a1ec155490534718a58cabea27e85959~mv2.jpeg','https://static.wixstatic.com/media/64b604_59d6f2b98de84d1291461f03902e4668~mv2.jpeg','https://static.wixstatic.com/media/64b604_ce72d6b8c30d4ad7adec8ae026b5c423~mv2.jpeg','https://static.wixstatic.com/media/64b604_11829af3dc624c2b96e53e9d8b76f732~mv2.jpeg','https://static.wixstatic.com/media/64b604_57b22e0b87b54f92ad87344fec65494e~mv2.jpeg','https://static.wixstatic.com/media/64b604_2b09c12635344d8eb3f20726cadcc416~mv2.jpeg','https://static.wixstatic.com/media/64b604_64341f46689f47f8b036a214bad02813~mv2.jpeg','https://static.wixstatic.com/media/64b604_3d05ff1703fe4131b56602f57f6a3846~mv2.jpeg','https://static.wixstatic.com/media/64b604_67d1162df55748898f0bd74acabd4f83~mv2.jpeg','https://static.wixstatic.com/media/64b604_358e87e9f268476f85d02a9ebed0a4ee~mv2.jpeg','https://static.wixstatic.com/media/64b604_aa724bfdcbda4cc7a628394e98f872e3~mv2.jpeg','https://static.wixstatic.com/media/64b604_3843517fb0ac4df69b122df8465cf7f9~mv2.jpeg','https://static.wixstatic.com/media/64b604_fb0cc83f894944a98681c06cd5039ef1~mv2.jpeg','https://static.wixstatic.com/media/64b604_eed72c1637af44c2b596fe78c9e21732~mv2.jpeg','https://static.wixstatic.com/media/64b604_78356ee58e7a44b39cedbcee486aa5ec~mv2.jpeg','https://static.wixstatic.com/media/64b604_adc759c5f63d4e3d8ed352839df99ea4~mv2.jpeg']
+      },
+      {
+        address: '903 23rd St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
+        cover: 'https://static.wixstatic.com/media/64b604_6b41010a798f4493b960561d67349923~mv2.png',
+        photos: ['https://static.wixstatic.com/media/64b604_6b41010a798f4493b960561d67349923~mv2.png','https://static.wixstatic.com/media/64b604_c58eb9ea0ced4a29abe6cc697b75090b~mv2.jpeg','https://static.wixstatic.com/media/64b604_7c60a98272d94fcfb3f36a58fba513fa~mv2.jpeg','https://static.wixstatic.com/media/64b604_d399f3d6cf654c9fbf1470c05ba5560c~mv2.png','https://static.wixstatic.com/media/64b604_f094eb63f97744faa89447256b6a59af~mv2.png','https://static.wixstatic.com/media/64b604_12edfd48ec51432fbf534916afea53be~mv2.jpeg']
       }
     ];
 
-    var RENTS = {'1338 25th St NW':'$1,400','1344 24th St NW':'$1,150','1540 Norwood Pl NW':'$1,260','1507 Ridgeway Pl NW':'$1,300','1569 25th St NW':'$1,275','1600 27th St NW':'$1,400','1701 27th St NW':'$1,300','1341 Ridgeway Pl NW':'$1,450','1611 25th St NW':'$1,300','1502 37th St NW':'$1,150','1511 23rd St NW':'$1,300'};
+    var RENTS = {'1338 25th St NW':'$1,410','1344 24th St NW':'$1,160','1540 Norwood Pl NW':'$1,310','1507 Ridgeway Pl NW':'$1,300','1569 25th St NW':'$1,275','1600 27th St NW':'$1,400','1701 27th St NW':'$1,300','1341 Ridgeway Pl NW':'$1,450','1611 25th St NW':'$1,300','1502 37th St NW':'$1,160','1511 23rd St NW':'$1,310','307 Bellflower Ave NW':'$1,385','903 23rd St NW':'$1,425'};
 
     function downloadCSV(filename, csvContent) {
       var blob = new Blob(['﻿' + csvContent], {type:'text/csv;charset=utf-8;'});
@@ -260,7 +274,7 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
 .reports-section__btns{display:flex;gap:14px;flex-wrap:wrap}
 .report-btn{flex:1;min-width:200px;padding:18px 22px;background:#0d1f35;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;font-family:'Inter','Segoe UI',Arial,sans-serif;transition:background .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(10,30,60,.18)}
 .report-btn:hover{background:#1a3557;transform:translateY(-2px)}
-.map-wrap{background:#f0f4fa;border-bottom:2px solid rgba(10,30,60,.08);padding:36px}
+.map-wrap{background:#f0f4fa;border-top:2px solid rgba(10,30,60,.08);border-bottom:2px solid rgba(10,30,60,.08);padding:36px}
 .map-container{max-width:1100px;margin:0 auto}
 .map-header{margin-bottom:18px}
 .map-header__title{font-size:20px;font-weight:800;color:#0d1f35;margin-bottom:4px}
@@ -382,9 +396,9 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
 <a class="csh-back" href="/">&larr; Back to All Portfolios</a>
 
 <section class="hero">
-  <div class="hero__badge">Portfolio 2 &mdash; Malone / Pro Football Hall of Fame</div>
-  <h1 class="hero__title">Portfolio 2 &mdash; Malone University / Pro Football Hall of Fame Area 2</h1>
-  <p class="hero__sub">11 single-family rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
+  <div class="hero__badge">Portfolio 2</div>
+  <h1 class="hero__title">Portfolio 2 &mdash; Hall of Fame Village / Malone University #2</h1>
+  <p class="hero__sub">13 single-family rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
 </section>
 
 <section class="reports-section">
@@ -398,10 +412,14 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
   </div>
 </section>
 
+<div class="section-head"><h2>Properties</h2><span>13 homes &middot; $17,185/mo &middot; $204,600 Annual</span></div>
+<div class="prop-grid">${cardsHtml}</div>
+
+<!-- ══ MAP ══ -->
 <section class="map-wrap">
   <div class="map-container">
     <div class="map-header">
-      <div class="map-header__title">Portfolio 2 &mdash; Malone University / Pro Football Hall of Fame Area 2 &mdash; Property Locations</div>
+      <div class="map-header__title">Portfolio 2 &mdash; Hall of Fame Village / Malone University #2 &mdash; Property Locations</div>
       <div class="map-header__sub">Every portfolio is geographically tight, reducing travel time and management overhead.</div>
     </div>
     <div class="map-layout">
@@ -415,9 +433,6 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
     </div>
   </div>
 </section>
-
-<div class="section-head"><h2>Properties</h2><span>11 homes &middot; $14,285/mo &middot; $171,420 Annual</span></div>
-<div class="prop-grid">${cardsHtml}</div>
 
 <div id="pl-modal" class="pl-modal" style="display:none" role="dialog" aria-modal="true">
   <div class="pl-modal__overlay" id="pl-modal-overlay"></div>
@@ -438,8 +453,8 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
   <div class="rr-modal__overlay" id="rr-modal-overlay"></div>
   <div class="rr-modal__box">
     <div class="rr-modal__head">
-      <div class="rr-modal__title">Portfolio 2 &mdash; Malone University / Pro Football Hall of Fame Area 2 &mdash; Rent Roll</div>
-      <div class="rr-modal__sub">Malone Area 2 &mdash; 11 Properties</div>
+      <div class="rr-modal__title">Portfolio 2 &mdash; Hall of Fame Village / Malone University #2 &mdash; Rent Roll</div>
+      <div class="rr-modal__sub">Hall of Fame Village / Malone University #2 &mdash; 13 Properties</div>
       <button class="rr-modal__close" id="rr-modal-close" aria-label="Close">&times;</button>
     </div>
     <div class="rr-modal__body" id="rr-modal-body"></div>
@@ -536,7 +551,7 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
     if (plOverlay) plOverlay.addEventListener('click', closePL);
     if (plDlBtn)   plDlBtn.addEventListener('click', function(e) {
       e.stopPropagation();
-      if (_currentPlYear) downloadCSV('Portfolio2_Malone_PL_' + _currentPlYear + '.csv', buildPLCsv(_currentPlYear));
+      if (_currentPlYear) downloadCSV('Portfolio2_HallOfFameVillage_Malone2_PL_' + _currentPlYear + '.csv', buildPLCsv(_currentPlYear));
     });
 
     // ── Rent Roll Modal ──
@@ -550,7 +565,7 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
       var totalVal = RENT_ROLL.reduce(function(s,r){return s+r.value;},0);
       var totalMo  = RENT_ROLL.reduce(function(s,r){return s+r.monthlyRent;},0);
       var totalYr  = RENT_ROLL.reduce(function(s,r){return s+r.annualizedRent;},0);
-      var html = '<div class="rr-portfolio-badge">Portfolio 2 &mdash; Malone University / Pro Football Hall of Fame Area 2 &mdash; 11 Properties</div><div class="rr-table-wrap"><table class="rr-table">' +
+      var html = '<div class="rr-portfolio-badge">Portfolio 2 &mdash; Hall of Fame Village / Malone University #2 &mdash; 13 Properties</div><div class="rr-table-wrap"><table class="rr-table">' +
         '<thead><tr><th>Property</th><th>Property Value</th><th>Monthly Rent</th><th>Annualized Rent</th></tr></thead><tbody>';
       RENT_ROLL.forEach(function(r) {
         html += '<tr><td>' + r.address + '</td>' +
@@ -571,7 +586,7 @@ csh-portfolio-central{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
     if (rrOverlay) rrOverlay.addEventListener('click', closeRR);
     if (rrDlBtn)   rrDlBtn.addEventListener('click', function(e) {
       e.stopPropagation();
-      downloadCSV('Portfolio2_Malone_RentRoll.csv', buildRRCsv());
+      downloadCSV('Portfolio2_HallOfFameVillage_Malone2_RentRoll.csv', buildRRCsv());
     });
 
     document.addEventListener('keydown', function(e) {

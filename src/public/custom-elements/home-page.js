@@ -11,77 +11,6 @@ class CshHome extends HTMLElement {
 
     var self = this;
 
-    var INDIVIDUAL_PROPS = [
-      {
-        address: '5192 University Ave', city: 'Geneva, OH 44041', beds: 2, baths: 1,
-        portfolio: 'Individual Properties',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_0fdb97b825944fcab5668957f3e3c78f~mv2.png',
-          'https://static.wixstatic.com/media/64b604_2977e61099b74dfd84efd15af03370dd~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_5ea751320b474ee7ae6edd69157491f6~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_872c7e3ac3a4428a8a448c5dd1c44f84~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_2006be719a834de78a375ebf855685f8~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_523186930e5946028762053d55f0b1ce~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_c9e73982d6194845ba795fbc4cdae945~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_3a6d2c1e80204c4280c3cd6a13f512a4~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_9e363d43d0494979a574fd7a3b50676b~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_b02b163940664a65bc84c530c5a81fee~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_eb52e4d9ca8c4c888db787b8bdc4f9aa~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_82857d6e4fbc4f2b9355f8c6e1c9b1ff~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_6c9032bdcab541ebb294afc300d33a36~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_59837074eef94f8cb4178fee18644d2e~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_9ad948fd9884401c9e4f8c3cf63b5561~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_6e4c5afca63b4bcfa615b2024f0e90b9~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_7bd280037fe54170b8f223bb94f71eb2~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_44500f8175af4d6f9bee682b7f92b69a~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_7c2a0ed587dd403fa9d7b56f9f4fda42~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_befebc2cee0b4ff182b564a4c4908f74~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_80213895d1a545278781ecfa3f429968~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_48e2d40c5a544c318c70a41ebe44d1b5~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_3d791034cc244baa9aa51bb3f18627de~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_f44f8fe96ad942f4936e7cd8ea7eb6e1~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_1f7b7fa232f84dcfb4ac8e25e76e78c4~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_0d8188dfec7f4112bdf81099b439cdfb~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_75503cda2c4b4ac3bb503c6a29d09021~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_420ffecd895f406c9996add2900ac594~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_ba563646acdb4cb9b2cb1599a152497a~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_eaf12081dc2842dda79c25ccb440e2be~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_a448fb7f2bd34e46beac4e3648c2b38f~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_797d5fa46d8048eb880628bf9001eff3~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_cc2c51e02bdc4e1792a1c0da6f05df58~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_ad936ad898894d4da3e0f2869270d6cb~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_137960f8786243cda8ef9ca304b9c62d~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_2a8ecc4e19134746af1ab14f59970fa8~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_49556e028ce444e2be2459758da9abf9~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_a484eaa371d640328dbf492c372f6626~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_07590b31ffaf4bf1adc085963702ee19~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_156e39fa2ad04095baa32268d27152a1~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_095aeb579c41403d9da39d94f5c8a633~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_47a02fc45a354c02824530f5029e11d5~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_e634b05a03684819b5bb8cac7bfcfbd4~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_733af89787244cd989e46f07dd800021~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_dc558fe1a1814bd7bceff2ed6d4eb878~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_8c7aedcac24b4499ad4abb6d47fff125~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_80cfa4a18f784c669b0caa9eacf5ce27~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_081d5304cd70482fa4e77d100ae80fca~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_212828865ce149c194111b2923bf474e~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_428a3b386b2843b2906627f2a512c352~mv2.jpeg'
-        ]
-      },
-      {
-        address: '903 23rd St NW', city: 'Canton, OH 44709', beds: 3, baths: 1,
-        portfolio: 'Individual Properties',
-        photos: [
-          'https://static.wixstatic.com/media/64b604_6b41010a798f4493b960561d67349923~mv2.png',
-          'https://static.wixstatic.com/media/64b604_c58eb9ea0ced4a29abe6cc697b75090b~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_7c60a98272d94fcfb3f36a58fba513fa~mv2.jpeg',
-          'https://static.wixstatic.com/media/64b604_d399f3d6cf654c9fbf1470c05ba5560c~mv2.png',
-          'https://static.wixstatic.com/media/64b604_f094eb63f97744faa89447256b6a59af~mv2.png',
-          'https://static.wixstatic.com/media/64b604_12edfd48ec51432fbf534916afea53be~mv2.jpeg'
-        ]
-      }
-    ];
-
     this.innerHTML = `
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -147,7 +76,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .intro__tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-g);padding:5px 16px;border-radius:20px;margin-bottom:24px}
 .intro__h1{font-size:clamp(28px,4.8vw,48px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:22px}
 .intro__desc{font-size:17px;color:var(--muted);line-height:1.9;margin-bottom:14px}
-.intro__desc+.intro__desc{margin-bottom:36px}
+.intro__desc+.intro__desc{margin-bottom:18px}
 .highlights-hdr{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
 .highlights-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 @media(max-width:980px){.highlights-grid{grid-template-columns:repeat(2,1fr)}}
@@ -175,10 +104,6 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 /* Portfolio card — top/mid/bottom panels */
 .p-card{border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(10,30,60,.14);transition:box-shadow .25s,transform .25s;cursor:pointer;background:#fff;border:1px solid var(--border)}
 .p-card:hover{box-shadow:0 10px 36px rgba(10,30,60,.2);transform:translateY(-3px)}
-.p-card--individual{border:2px solid var(--border-g)}
-.p-card__img{width:100%;height:260px;object-fit:cover;object-position:top;display:block}
-.p-card__body{padding:22px 24px 26px}
-.p-card__actions{margin-top:22px}
 
 /* Top white panel */
 .p-card__top{background:#fff;padding:22px 24px 18px;border-bottom:1px solid var(--border)}
@@ -205,11 +130,6 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .p-stat__value{font-size:20px;font-weight:900;color:var(--navy);letter-spacing:-.01em;line-height:1.1}
 .p-stat__value--gold{color:var(--gold)}
 
-/* ── INDIVIDUAL SECTION ── */
-.individual-section{background:var(--bg-alt);border-top:3px solid var(--border-g);padding:64px 40px}
-@media(max-width:768px){.individual-section{padding:44px 20px}}
-.individual-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,520px));gap:28px;margin-top:36px}
-@media(max-width:600px){.individual-grid{grid-template-columns:1fr}}
 
 
 /* ── WHY CANTON ── */
@@ -279,7 +199,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
   <div class="hero-video__body">
     <span class="hero__eyebrow">Canton, Ohio &middot; CSH Rentals</span>
     <h1 class="hero__title">Quality Rentals.<br/>Proven Portfolio.</h1>
-    <p class="hero__sub">46 professionally managed rental homes across Stark County, Ohio &mdash; organized into 4 geographically concentrated investment portfolios with proven cash flow.</p>
+    <p class="hero__sub">45 professionally managed rental homes across Stark County, Ohio &mdash; organized into 4 geographically concentrated investment portfolios with proven cash flow.</p>
   </div>
 </section>
 
@@ -292,28 +212,8 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
     <p class="intro__desc">This opportunity is different.</p>
     <p class="intro__desc">Over the last 15 years, we have carefully assembled and renovated a collection of homes located in some of Canton&rsquo;s most desirable neighborhoods. Rather than chasing the highest immediate cash flow, we focused on acquiring properties in areas with strong long-term appreciation potential and then invested heavily to restore them to a standard rarely found in Midwest rental portfolios.</p>
     <p class="intro__desc">The result is a collection of professionally managed homes that generate attractive income today while offering meaningful upside through future appreciation. These are not tired rentals in marginal locations. They are quality homes in established neighborhoods that tenants are proud to call home and investors can confidently own.</p>
-    <p class="intro__desc">To create flexibility for investors, the portfolio has been organized into four geographically concentrated investment portfolios, each offering operational efficiencies and simplified management. In addition, two premium properties are available for individual acquisition.</p>
+    <p class="intro__desc">To create flexibility for investors, the portfolio has been organized into four geographically concentrated investment portfolios, each offering operational efficiencies and simplified management.</p>
     <p class="intro__desc">Whether your goal is dependable cash flow, long-term appreciation, or a combination of both, this is a rare opportunity to acquire renovated, income-producing homes in some of Stark County&rsquo;s most established rental markets.</p>
-  </div>
-</section>
-
-<!-- ══ OVERVIEW MAP ══ -->
-<section class="map-overview">
-  <div class="map-overview__wrap">
-    <div class="sec-lbl">Geographic Distribution</div>
-    <h2 class="sec-h2">4 Investment Portfolios &amp; 2 Individual Properties</h2>
-    <div class="divbar"></div>
-    <p class="sec-sub">Every portfolio is geographically tight, reducing travel time and management overhead. All properties sit within close proximity to major employment, healthcare, and education anchors.</p>
-    <div class="map-legend">
-      <div class="map-legend__item"><span class="map-legend__pin" style="background:#e8a900"></span>Portfolio 1 &mdash; Malone / HoF Area 1</div>
-      <div class="map-legend__item"><span class="map-legend__pin" style="background:#e05b00"></span>Portfolio 2 &mdash; Malone / HoF Area 2</div>
-      <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a8c35"></span>Portfolio 3 &mdash; Colonial Heights</div>
-      <div class="map-legend__item"><span class="map-legend__pin" style="background:#9c27b0"></span>Portfolio 4 &mdash; Higher Value Portfolio</div>
-      <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a3557"></span>Premium Individual Properties</div>
-    </div>
-    <div class="map-responsive">
-      <iframe src="https://www.google.com/maps/d/embed?mid=1-UjOFoDqjCvel-Hh8xbCvZUu4CTQLeI&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
-    </div>
   </div>
 </section>
 
@@ -331,8 +231,8 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
       <div class="p-card" data-href="/portfolio-northwest">
         <div class="p-card__top">
           <div class="p-card__badge">Portfolio 1</div>
-          <div class="p-card__title">Malone University / Pro Football Hall of Fame Area 1</div>
-          <div class="p-card__count">16 Properties</div>
+          <div class="p-card__title">Hall of Fame Village / Malone University #1</div>
+          <div class="p-card__count">14 Properties</div>
         </div>
         <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/64b604_e54c155ba0154360b5f6da668c16b252~mv2.jpeg')">
           <div class="p-card__mid-overlay"></div>
@@ -345,11 +245,11 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
           <div class="p-stats">
             <div class="p-stat">
               <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold">$241,680</div>
+              <div class="p-stat__value p-stat__value--gold">$214,380</div>
             </div>
             <div class="p-stat">
               <div class="p-stat__label">Portfolio Value</div>
-              <div class="p-stat__value">$2,235,000</div>
+              <div class="p-stat__value">$2,010,700</div>
             </div>
           </div>
         </div>
@@ -359,8 +259,8 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
       <div class="p-card" data-href="/portfolio-central">
         <div class="p-card__top">
           <div class="p-card__badge">Portfolio 2</div>
-          <div class="p-card__title">Malone University / Pro Football Hall of Fame Area 2</div>
-          <div class="p-card__count">11 Properties</div>
+          <div class="p-card__title">Hall of Fame Village / Malone University #2</div>
+          <div class="p-card__count">13 Properties</div>
         </div>
         <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/64b604_6d787ec44dd14bb5820d300ba95679dd~mv2.jpeg')">
           <div class="p-card__mid-overlay"></div>
@@ -373,11 +273,11 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
           <div class="p-stats">
             <div class="p-stat">
               <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold">$171,420</div>
+              <div class="p-stat__value p-stat__value--gold">$204,600</div>
             </div>
             <div class="p-stat">
               <div class="p-stat__label">Portfolio Value</div>
-              <div class="p-stat__value">$1,552,900</div>
+              <div class="p-stat__value">$1,846,000</div>
             </div>
           </div>
         </div>
@@ -387,7 +287,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
       <div class="p-card" data-href="/portfolio-northeast">
         <div class="p-card__top">
           <div class="p-card__badge">Portfolio 3</div>
-          <div class="p-card__title">Colonial Heights</div>
+          <div class="p-card__title">Hall of Fame Village / Malone University #3</div>
           <div class="p-card__count">11 Properties</div>
         </div>
         <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/64b604_4205f0e960d94555857430409d7a840d~mv2.jpeg')">
@@ -401,11 +301,11 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
           <div class="p-stats">
             <div class="p-stat">
               <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold">$187,860</div>
+              <div class="p-stat__value p-stat__value--gold">$188,580</div>
             </div>
             <div class="p-stat">
               <div class="p-stat__label">Portfolio Value</div>
-              <div class="p-stat__value">$1,716,000</div>
+              <div class="p-stat__value">$1,731,000</div>
             </div>
           </div>
         </div>
@@ -415,8 +315,8 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
       <div class="p-card" data-href="/portfolio-highend">
         <div class="p-card__top">
           <div class="p-card__badge">Portfolio 4</div>
-          <div class="p-card__title">Higher Value Portfolio</div>
-          <div class="p-card__count">6 Properties</div>
+          <div class="p-card__title">Individual Home Sale Opportunities</div>
+          <div class="p-card__count">7 Properties</div>
         </div>
         <div class="p-card__mid" style="background-image:url('https://static.wixstatic.com/media/64b604_8fa8e45f055b4c67b1f87daba6780dd6~mv2.jpeg')">
           <div class="p-card__mid-overlay"></div>
@@ -429,11 +329,11 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
           <div class="p-stats">
             <div class="p-stat">
               <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold">$132,840</div>
+              <div class="p-stat__value p-stat__value--gold">$147,240</div>
             </div>
             <div class="p-stat">
               <div class="p-stat__label">Portfolio Value</div>
-              <div class="p-stat__value">$1,180,300</div>
+              <div class="p-stat__value">$1,330,200</div>
             </div>
           </div>
         </div>
@@ -443,61 +343,21 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
   </div>
 </section>
 
-<!-- ══ INDIVIDUAL PROPERTIES ══ -->
-<section class="individual-section" id="individual">
-  <div class="wrap">
-    <div class="sec-lbl">Individual Acquisition</div>
-    <h2 class="sec-h2">Individual Investment Properties</h2>
+<!-- ══ OVERVIEW MAP ══ -->
+<section class="map-overview">
+  <div class="map-overview__wrap">
+    <div class="sec-lbl">Geographic Distribution</div>
+    <h2 class="sec-h2">Portfolio Locations</h2>
     <div class="divbar"></div>
-    <p class="sec-sub">2 premium properties available for individual acquisition &mdash; each positioned within established rental markets with strong income potential.</p>
-    <div class="individual-grid">
-
-      <!-- ─ 5192 University Ave ─ -->
-      <div class="p-card p-card--individual" data-prop-idx="0">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/64b604_0fdb97b825944fcab5668957f3e3c78f~mv2.png" alt="5192 University Ave"/>
-        <div class="p-card__body">
-          <div class="p-card__badge p-card__badge--prem">&#11088; STR &nbsp;&middot;&nbsp; Individual</div>
-          <div class="p-card__title">5192 University Ave</div>
-          <div class="p-card__count">Geneva, OH 44041 &nbsp;&middot;&nbsp; 2 bd &nbsp;&middot;&nbsp; 1 ba</div>
-          <div class="p-stats" style="margin-top:16px">
-            <div class="p-stat">
-              <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold" style="font-size:14px;line-height:1.35">Short-Term<br/>Rental</div>
-            </div>
-            <div class="p-stat">
-              <div class="p-stat__label">Est. Value</div>
-              <div class="p-stat__value">$280,000</div>
-            </div>
-          </div>
-          <div class="p-card__actions">
-            <button class="p-cta">View Property Images &rarr;</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- ─ 903 23rd St NW ─ -->
-      <div class="p-card p-card--individual" data-prop-idx="1">
-        <img class="p-card__img" src="https://static.wixstatic.com/media/64b604_6b41010a798f4493b960561d67349923~mv2.png" alt="903 23rd St NW"/>
-        <div class="p-card__body">
-          <div class="p-card__badge p-card__badge--prem">&#11088; Individual</div>
-          <div class="p-card__title">903 23rd St NW</div>
-          <div class="p-card__count">Canton, OH 44709 &nbsp;&middot;&nbsp; 3 bd &nbsp;&middot;&nbsp; 1 ba</div>
-          <div class="p-stats" style="margin-top:16px">
-            <div class="p-stat">
-              <div class="p-stat__label">Annual Rent</div>
-              <div class="p-stat__value p-stat__value--gold">$17,100/yr</div>
-            </div>
-            <div class="p-stat">
-              <div class="p-stat__label">Est. Value</div>
-              <div class="p-stat__value">$135,000</div>
-            </div>
-          </div>
-          <div class="p-card__actions">
-            <button class="p-cta">View Property Images &rarr;</button>
-          </div>
-        </div>
-      </div>
-
+    <p class="sec-sub">Every portfolio is geographically tight, reducing travel time and management overhead. All properties sit within close proximity to major employment, healthcare, and education anchors.</p>
+    <div class="map-legend">
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#e8a900"></span>Portfolio 1 &mdash; Hall of Fame Village / Malone University #1</div>
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#e05b00"></span>Portfolio 2 &mdash; Hall of Fame Village / Malone University #2</div>
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#1a8c35"></span>Portfolio 3 &mdash; Hall of Fame Village / Malone University #3</div>
+      <div class="map-legend__item"><span class="map-legend__pin" style="background:#9c27b0"></span>Portfolio 4 &mdash; Individual Home Sale Opportunities</div>
+    </div>
+    <div class="map-responsive">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1-UjOFoDqjCvel-Hh8xbCvZUu4CTQLeI&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -653,15 +513,6 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
     self.addEventListener('click', function(e) {
       var card = e.target.closest('.p-card');
       if (card) {
-        var propIdx = card.dataset.propIdx;
-        if (propIdx !== undefined) {
-          // Individual property card (any click, including button)
-          e.preventDefault(); e.stopPropagation();
-          var p = INDIVIDUAL_PROPS[parseInt(propIdx, 10)];
-          try { localStorage.setItem('csh_prop', JSON.stringify({address: p.address, city: p.city, portfolio: p.portfolio, beds: p.beds, baths: p.baths, photos: p.photos})); } catch(err) {}
-          window.location.assign(window.location.origin + _b + '/property-detail');
-          return;
-        }
         // Portfolio card click → navigate (skip if clicking the CTA link)
         if (!e.target.closest('.p-cta')) {
           var cardHref = card.dataset.href;

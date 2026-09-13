@@ -9,7 +9,7 @@ class CshPortfolioNe extends HTMLElement {
       document.head.appendChild(l);
     }
 
-    var PORTFOLIO = 'Portfolio 3 — Colonial Heights';
+    var PORTFOLIO = 'Portfolio 3 — Hall of Fame Village / Malone University #3';
 
     // ── QuickBooks-style P&L (properties as columns) ──
     var PL_TABLE = {
@@ -70,17 +70,17 @@ class CshPortfolioNe extends HTMLElement {
 
     // ── Rent Roll ──
     var RENT_ROLL = [
-      {address:'1210 25th St NE',        value:150000, monthlyRent:1430, annualizedRent:17160},
-      {address:'1207 Colonial Blvd NE',  value:160000, monthlyRent:1400, annualizedRent:16800},
-      {address:'1335 22nd St NE',        value:145000, monthlyRent:1200, annualizedRent:14400},
-      {address:'1206 24th St NE',        value:160000, monthlyRent:1645, annualizedRent:19740},
-      {address:'1012 28th St NE',        value:164000, monthlyRent:1545, annualizedRent:18540},
-      {address:'1219 24th St NE',        value:182000, monthlyRent:1320, annualizedRent:15840},
-      {address:'1330 24th St NE',        value:140000, monthlyRent:1400, annualizedRent:16800},
-      {address:'804 29th St NE',         value:175000, monthlyRent:1450, annualizedRent:17400},
-      {address:'1326 24th St NE',        value:150000, monthlyRent:1550, annualizedRent:18600},
-      {address:'1203 25th St NE',        value:140000, monthlyRent:1200, annualizedRent:14400},
-      {address:'1306 22nd St NE',        value:150000, monthlyRent:1515, annualizedRent:18180}
+      {address:'804 29th St NE',        value:175000, monthlyRent:1450, annualizedRent:17400},
+      {address:'1012 28th St NE',       value:164000, monthlyRent:1595, annualizedRent:18540},
+      {address:'1203 25th St NE',       value:140000, monthlyRent:1250, annualizedRent:14400},
+      {address:'1206 24th St NE',       value:160000, monthlyRent:1655, annualizedRent:19740},
+      {address:'1207 Colonial Blvd NE', value:160000, monthlyRent:1400, annualizedRent:16800},
+      {address:'1210 25th St NE',       value:150000, monthlyRent:1480, annualizedRent:17160},
+      {address:'1219 24th St NE',       value:182000, monthlyRent:1330, annualizedRent:15840},
+      {address:'1306 22nd St NE',       value:150000, monthlyRent:1385, annualizedRent:18180},
+      {address:'1326 24th St NE',       value:160000, monthlyRent:1550, annualizedRent:18600},
+      {address:'1330 24th St NE',       value:145000, monthlyRent:1410, annualizedRent:16800},
+      {address:'1335 22nd St NE',       value:145000, monthlyRent:1210, annualizedRent:15120}
     ];
 
     var MAP_DEFAULT = 'https://www.google.com/maps/d/embed?mid=12Bp_xXe_PNGF2XpCulohuskkvzkRGxA&ehbc=2E312F&noprof=1';
@@ -158,7 +158,7 @@ class CshPortfolioNe extends HTMLElement {
       }
     ];
 
-    var RENTS = {'804 29th St NE':'$1,450','1012 28th St NE':'$1,545','1203 25th St NE':'$1,200','1206 24th St NE':'$1,645','1207 Colonial Blvd NE':'$1,400','1210 25th St NE':'$1,430','1219 24th St NE':'$1,320','1306 22nd St NE':'$1,515','1326 24th St NE':'$1,550','1330 24th St NE':'$1,400','1335 22nd St NE':'$1,200'};
+    var RENTS = {'804 29th St NE':'$1,450','1012 28th St NE':'$1,595','1203 25th St NE':'$1,250','1206 24th St NE':'$1,655','1207 Colonial Blvd NE':'$1,400','1210 25th St NE':'$1,480','1219 24th St NE':'$1,330','1306 22nd St NE':'$1,385','1326 24th St NE':'$1,550','1330 24th St NE':'$1,410','1335 22nd St NE':'$1,210'};
 
     function downloadCSV(filename, csvContent) {
       var blob = new Blob(['﻿' + csvContent], {type:'text/csv;charset=utf-8;'});
@@ -259,7 +259,7 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 .reports-section__btns{display:flex;gap:14px;flex-wrap:wrap}
 .report-btn{flex:1;min-width:200px;padding:18px 22px;background:#0d1f35;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;font-family:'Inter','Segoe UI',Arial,sans-serif;transition:background .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(10,30,60,.18)}
 .report-btn:hover{background:#1a3557;transform:translateY(-2px)}
-.map-wrap{background:#f0f4fa;border-bottom:2px solid rgba(10,30,60,.08);padding:36px}
+.map-wrap{background:#f0f4fa;border-top:2px solid rgba(10,30,60,.08);border-bottom:2px solid rgba(10,30,60,.08);padding:36px}
 .map-container{max-width:1100px;margin:0 auto}
 .map-header{margin-bottom:18px}
 .map-header__title{font-size:20px;font-weight:800;color:#0d1f35;margin-bottom:4px}
@@ -381,8 +381,8 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 <a class="csh-back" href="/">&larr; Back to All Portfolios</a>
 
 <section class="hero">
-  <div class="hero__badge">Portfolio 3 &mdash; Colonial Heights</div>
-  <h1 class="hero__title">Portfolio 3 &mdash; Colonial Heights</h1>
+  <div class="hero__badge">Portfolio 3</div>
+  <h1 class="hero__title">Portfolio 3 &mdash; Hall of Fame Village / Malone University #3</h1>
   <p class="hero__sub">11 single-family rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
 </section>
 
@@ -397,10 +397,14 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   </div>
 </section>
 
+<div class="section-head"><h2>Properties</h2><span>11 homes &middot; $15,715/mo &middot; $188,580 Annual</span></div>
+<div class="prop-grid">${cardsHtml}</div>
+
+<!-- ══ MAP ══ -->
 <section class="map-wrap">
   <div class="map-container">
     <div class="map-header">
-      <div class="map-header__title">Portfolio 3 &mdash; Colonial Heights &mdash; Property Locations</div>
+      <div class="map-header__title">Portfolio 3 &mdash; Hall of Fame Village / Malone University #3 &mdash; Property Locations</div>
       <div class="map-header__sub">Every portfolio is geographically tight, reducing travel time and management overhead.</div>
     </div>
     <div class="map-layout">
@@ -414,9 +418,6 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
     </div>
   </div>
 </section>
-
-<div class="section-head"><h2>Properties</h2><span>11 homes &middot; $15,655/mo &middot; $187,860 Annual</span></div>
-<div class="prop-grid">${cardsHtml}</div>
 
 <div id="pl-modal" class="pl-modal" style="display:none" role="dialog" aria-modal="true">
   <div class="pl-modal__overlay" id="pl-modal-overlay"></div>
@@ -437,8 +438,8 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   <div class="rr-modal__overlay" id="rr-modal-overlay"></div>
   <div class="rr-modal__box">
     <div class="rr-modal__head">
-      <div class="rr-modal__title">Portfolio 3 &mdash; Colonial Heights &mdash; Rent Roll</div>
-      <div class="rr-modal__sub">Colonial Heights &mdash; 11 Properties</div>
+      <div class="rr-modal__title">Portfolio 3 &mdash; Hall of Fame Village / Malone University #3 &mdash; Rent Roll</div>
+      <div class="rr-modal__sub">Hall of Fame Village / Malone University #3 &mdash; 11 Properties</div>
       <button class="rr-modal__close" id="rr-modal-close" aria-label="Close">&times;</button>
     </div>
     <div class="rr-modal__body" id="rr-modal-body"></div>
@@ -535,7 +536,7 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
     if (plOverlay) plOverlay.addEventListener('click', closePL);
     if (plDlBtn)   plDlBtn.addEventListener('click', function(e) {
       e.stopPropagation();
-      if (_currentPlYear) downloadCSV('Portfolio3_ColonialHeights_PL_' + _currentPlYear + '.csv', buildPLCsv(_currentPlYear));
+      if (_currentPlYear) downloadCSV('Portfolio3_HallOfFameVillage_Malone3_PL_' + _currentPlYear + '.csv', buildPLCsv(_currentPlYear));
     });
 
     // ── Rent Roll Modal ──
@@ -549,7 +550,7 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
       var totalVal = RENT_ROLL.reduce(function(s,r){return s+r.value;},0);
       var totalMo  = RENT_ROLL.reduce(function(s,r){return s+r.monthlyRent;},0);
       var totalYr  = RENT_ROLL.reduce(function(s,r){return s+r.annualizedRent;},0);
-      var html = '<div class="rr-portfolio-badge">Portfolio 3 &mdash; Colonial Heights &mdash; 11 Properties</div><div class="rr-table-wrap"><table class="rr-table">' +
+      var html = '<div class="rr-portfolio-badge">Portfolio 3 &mdash; Hall of Fame Village / Malone University #3 &mdash; 11 Properties</div><div class="rr-table-wrap"><table class="rr-table">' +
         '<thead><tr><th>Property</th><th>Property Value</th><th>Monthly Rent</th><th>Annualized Rent</th></tr></thead><tbody>';
       RENT_ROLL.forEach(function(r) {
         html += '<tr><td>' + r.address + '</td>' +
@@ -570,7 +571,7 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
     if (rrOverlay) rrOverlay.addEventListener('click', closeRR);
     if (rrDlBtn)   rrDlBtn.addEventListener('click', function(e) {
       e.stopPropagation();
-      downloadCSV('Portfolio3_ColonialHeights_RentRoll.csv', buildRRCsv());
+      downloadCSV('Portfolio3_HallOfFameVillage_Malone3_RentRoll.csv', buildRRCsv());
     });
 
     document.addEventListener('keydown', function(e) {

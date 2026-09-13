@@ -9,7 +9,7 @@ class CshPortfolioNw extends HTMLElement {
       document.head.appendChild(l);
     }
 
-    var PORTFOLIO = 'Portfolio 1 — Malone University / Pro Football Hall of Fame Area 1';
+    var PORTFOLIO = 'Portfolio 1 — Hall of Fame Village / Malone University #1';
 
     // ── QuickBooks-style P&L (properties as columns) ──
     var PL_TABLE = {
@@ -71,22 +71,20 @@ class CshPortfolioNw extends HTMLElement {
 
     // ── Rent Roll ──
     var RENT_ROLL = [
-      {address:'806 23rd St NW',      value:131000, monthlyRent:1200,  annualizedRent:14400},
-      {address:'2007 Kirk Ct NW',     value:140000, monthlyRent:1350,  annualizedRent:16200},
-      {address:'818 25th St NW',      value:150000, monthlyRent:1250,  annualizedRent:15000},
-      {address:'519 21st St NW',      value:140000, monthlyRent:1385,  annualizedRent:16620},
-      {address:'523 21st St NW',      value:135000, monthlyRent:1200,  annualizedRent:14400},
-      {address:'1430 19th St NW',     value:139500, monthlyRent:1325,  annualizedRent:15900},
-      {address:'1919 Frazer Ave NW',  value:150000, monthlyRent:1200,  annualizedRent:14400},
-      {address:'1708 18th St NW',     value:160000, monthlyRent:1100,  annualizedRent:13200},
-      {address:'1734 Woodland Ave NW',value:90000,  monthlyRent:1055,  annualizedRent:12660},
-      {address:'2211 Myrtle Ave NW',  value:134500, monthlyRent:1250,  annualizedRent:15000},
-      {address:'800 22nd St NW',      value:150000, monthlyRent:1450,  annualizedRent:17400},
-      {address:'725 22nd St NW',      value:125000, monthlyRent:1150,  annualizedRent:13800},
-      {address:'635 Greenfield Ave SW', value:95000,  monthlyRent:1200, annualizedRent:14400},
-      {address:'2923 Helen Pl NW',      value:175000, monthlyRent:1350, annualizedRent:16200},
-      {address:'307 Bellflower Ave NW', value:160000, monthlyRent:1375, annualizedRent:16500},
-      {address:'2945 15th St NW',       value:160000, monthlyRent:1300, annualizedRent:15600}
+      {address:'806 23rd St NW',       value:140000, monthlyRent:1200, annualizedRent:14400},
+      {address:'2007 Kirk Ct NW',      value:140000, monthlyRent:1475, annualizedRent:16200},
+      {address:'818 25th St NW',       value:130000, monthlyRent:1525, annualizedRent:18300},
+      {address:'519 21st St NW',       value:150000, monthlyRent:1385, annualizedRent:16620},
+      {address:'523 21st St NW',       value:140000, monthlyRent:1210, annualizedRent:14400},
+      {address:'1430 19th St NW',      value:139500, monthlyRent:1335, annualizedRent:16200},
+      {address:'1919 Frazer Ave NW',   value:155000, monthlyRent:1210, annualizedRent:14400},
+      {address:'1708 18th St NW',      value:165000, monthlyRent:1100, annualizedRent:13200},
+      {address:'1734 Woodland Ave NW', value:95000,  monthlyRent:1055, annualizedRent:12660},
+      {address:'2211 Myrtle Ave NW',   value:135000, monthlyRent:1250, annualizedRent:15000},
+      {address:'800 22nd St NW',       value:155000, monthlyRent:1450, annualizedRent:17400},
+      {address:'725 22nd St NW',       value:126200, monthlyRent:1150, annualizedRent:13800},
+      {address:'2923 Helen Pl NW',     value:180000, monthlyRent:1360, annualizedRent:16200},
+      {address:'2945 15th St NW',      value:160000, monthlyRent:1300, annualizedRent:15600}
     ];
 
     var MAP_DEFAULT = 'https://www.google.com/maps/d/embed?mid=1M9A4m9qZKIT60ybVrkdDyCk87Xhjt08&ehbc=2E312F&noprof=1';
@@ -103,11 +101,9 @@ class CshPortfolioNw extends HTMLElement {
       {label:'1734 Woodland Ave NW', addr:'1734 Woodland Ave NW, Canton, OH'},
       {label:'2211 Myrtle Ave NW',   addr:'2211 Myrtle Ave NW, Canton, OH'},
       {label:'800 22nd St NW',       addr:'800 22nd St NW, Canton, OH'},
-      {label:'725 22nd St NW',         addr:'725 22nd St NW, Canton, OH'},
-      {label:'635 Greenfield Ave SW',  addr:'635 Greenfield Ave SW, Canton, OH'},
-      {label:'2923 Helen Pl NW',       addr:'2923 Helen Pl NW, Canton, OH'},
-      {label:'307 Bellflower Ave NW',  addr:'307 Bellflower Ave NW, Canton, OH'},
-      {label:'2945 15th St NW',        addr:'2945 15th St NW, Canton, OH'}
+      {label:'725 22nd St NW',       addr:'725 22nd St NW, Canton, OH'},
+      {label:'2923 Helen Pl NW',     addr:'2923 Helen Pl NW, Canton, OH'},
+      {label:'2945 15th St NW',      addr:'2945 15th St NW, Canton, OH'}
     ];
 
     function fmt(n) {
@@ -175,13 +171,11 @@ class CshPortfolioNw extends HTMLElement {
       {address:'2211 Myrtle Ave NW',city:'Canton, OH 44709',beds:3,baths:1,cover:'https://static.wixstatic.com/media/64b604_5c6291bfcc0a4ea2affe04e0bff92e03~mv2.jpeg',photos:['https://static.wixstatic.com/media/64b604_5c6291bfcc0a4ea2affe04e0bff92e03~mv2.jpeg','https://static.wixstatic.com/media/64b604_b8350ab015cc4ec2b46436d41e71177a~mv2.jpeg','https://static.wixstatic.com/media/64b604_ec13da5c46eb47debe6a59eedf407081~mv2.jpeg','https://static.wixstatic.com/media/64b604_92df9e8bef1a43f3b0d261c2e297ad7f~mv2.jpeg','https://static.wixstatic.com/media/64b604_2c0ddf54d811490f9719c18128b54fcf~mv2.jpeg','https://static.wixstatic.com/media/64b604_5be6b63ef0ee4dd2aa753e3f6f1b012f~mv2.jpeg','https://static.wixstatic.com/media/64b604_d4c4fef2d0254c5b8680ac8e1edf0bf4~mv2.jpeg','https://static.wixstatic.com/media/64b604_0de8e6af8d804436a4bd610e0bb73bd0~mv2.jpeg','https://static.wixstatic.com/media/64b604_c938b75db99b4dbbbf6040c996d002a5~mv2.jpeg','https://static.wixstatic.com/media/64b604_12edf9d4c7814baa96b0b5322d1c4667~mv2.jpeg','https://static.wixstatic.com/media/64b604_97b75dcf556546fd95697a5ccad89ae3~mv2.jpeg','https://static.wixstatic.com/media/64b604_5a46613da0db464598bca5a0f357d18a~mv2.jpeg','https://static.wixstatic.com/media/64b604_974339dc037941c2b40bcd92c56226ce~mv2.jpeg','https://static.wixstatic.com/media/64b604_a793fa4bcdce4a298daf98afc7745b2b~mv2.jpeg','https://static.wixstatic.com/media/64b604_88d865c67e6e40bda81a777a5708734f~mv2.jpeg','https://static.wixstatic.com/media/64b604_2a26a078bd1a4c318b7bf24b46cdd8ba~mv2.jpeg','https://static.wixstatic.com/media/64b604_4da5cb94c01b49df8211117ef00e0c17~mv2.jpeg','https://static.wixstatic.com/media/64b604_4b08ced39c49482597384598c0a166dd~mv2.jpeg','https://static.wixstatic.com/media/64b604_de018ee641da493d9721b77e419cbee5~mv2.jpeg','https://static.wixstatic.com/media/64b604_204fa8f601244d59b12191047983f7d9~mv2.jpeg','https://static.wixstatic.com/media/64b604_757806b1544e4b8799d04abadf26854f~mv2.jpeg','https://static.wixstatic.com/media/64b604_1edf084e3d844220987ba14574c9aedf~mv2.jpeg','https://static.wixstatic.com/media/64b604_7b3e141982da464f99c7a1780ecd06a0~mv2.jpeg','https://static.wixstatic.com/media/64b604_76d79ade972644d0aee7cb7b30f4acf3~mv2.jpeg']},
       {address:'800 22nd St NW',city:'Canton, OH 44709',beds:4,baths:1.5,cover:'https://static.wixstatic.com/media/64b604_5f5afd2ffaac449d835ef226329f2470~mv2.jpeg',photos:['https://static.wixstatic.com/media/64b604_5d91ccaf9c6b40c0b5744b4ab63b7afe~mv2.jpeg','https://static.wixstatic.com/media/64b604_572885e717ff49048d661d072cb2afc7~mv2.jpeg','https://static.wixstatic.com/media/64b604_73e39602e30746d89f11c9b2249c7dcc~mv2.jpeg','https://static.wixstatic.com/media/64b604_ce34f80c2f3c4e11ae14f37bf6edef4c~mv2.jpeg','https://static.wixstatic.com/media/64b604_c13c78390e994e58a713652a650ccaa6~mv2.jpeg','https://static.wixstatic.com/media/64b604_6e2fb6e63a3a4d9e8744a955f3eaadab~mv2.jpeg','https://static.wixstatic.com/media/64b604_62427442ba954278a26b1b16ad5c17ca~mv2.jpeg','https://static.wixstatic.com/media/64b604_0873bcc5daf44c169002fc6663868c73~mv2.jpeg','https://static.wixstatic.com/media/64b604_c41cd725c82844aea0f8c05276c05fc5~mv2.jpeg']},
       {address:'725 22nd St NW',city:'Canton, OH 44709',beds:3,baths:1,cover:'https://static.wixstatic.com/media/64b604_2f12bc452b22496b9086d6f5a95623ad~mv2.jpeg',photos:['https://static.wixstatic.com/media/64b604_f5a6017dd44249a9a7375375267c9c99~mv2.jpeg','https://static.wixstatic.com/media/64b604_31aaec9acda343ed9131e3d9c293e4c4~mv2.jpeg','https://static.wixstatic.com/media/64b604_b78bc093db8346a195c5921b8a6dad98~mv2.jpeg','https://static.wixstatic.com/media/64b604_dc0cd91cf2434c86b9269e48ecd8174f~mv2.jpeg','https://static.wixstatic.com/media/64b604_879850dea0df4c5f88d90c39e4b1e35a~mv2.jpeg','https://static.wixstatic.com/media/64b604_4b86a2046e104dce8741f557a0914d6c~mv2.jpeg','https://static.wixstatic.com/media/64b604_06945c548e694e8795802e41c97b0ccf~mv2.jpeg','https://static.wixstatic.com/media/64b604_b7dfe8af0fb44fcbb45cdc809e21096c~mv2.jpeg']},
-      {address:'635 Greenfield Ave SW',city:'Canton, OH 44706',beds:2,baths:2,cover:'https://static.wixstatic.com/media/64b604_c53805e63cfc4e6ea8185865e9574cab~mv2.jpeg',photos:['https://static.wixstatic.com/media/64b604_940177374d5542b098ad6c74a37c2ec7~mv2.jpeg','https://static.wixstatic.com/media/64b604_b667e6f4d0c1425aa80d0fbac20c3b93~mv2.jpeg','https://static.wixstatic.com/media/64b604_e1f81fb0d29549e4bb66e822ab5ec4dc~mv2.jpeg','https://static.wixstatic.com/media/64b604_940177374d5542b098ad6c74a37c2ec7~mv2.jpeg','https://static.wixstatic.com/media/64b604_db13505dabef4c27b4130edc03d526e7~mv2.jpeg','https://static.wixstatic.com/media/64b604_ce4ffabcfa754ddf829e6773bf293a15~mv2.jpeg','https://static.wixstatic.com/media/64b604_989c3c702a384553869441e0c6798675~mv2.jpeg','https://static.wixstatic.com/media/64b604_e7f2e0d66f6c49e599ee1f433aa20fff~mv2.jpeg','https://static.wixstatic.com/media/64b604_7b46acc41c384ef284d592a891a2cf5d~mv2.jpeg','https://static.wixstatic.com/media/64b604_668b074364c34ded882d300406fb5ed3~mv2.jpeg','https://static.wixstatic.com/media/64b604_2fcb74e2925a47f587bbcc82d91e5cfe~mv2.jpeg','https://static.wixstatic.com/media/64b604_0cc6d76060324c8aba0ea98ead379253~mv2.jpeg','https://static.wixstatic.com/media/64b604_59d977d85141442f88c9e1df86554aed~mv2.jpeg','https://static.wixstatic.com/media/64b604_8ff9de41d9d64055bca0cdf3bb190729~mv2.jpeg','https://static.wixstatic.com/media/64b604_73990df58e124fe292128da0f8f5466f~mv2.jpeg','https://static.wixstatic.com/media/64b604_ce7bc681d40f440ea823300c44d65709~mv2.jpeg','https://static.wixstatic.com/media/64b604_d7ca473d42df48ff8a3d787bddf37656~mv2.jpeg','https://static.wixstatic.com/media/64b604_a2d9dfd891624456a7e72cdce2188566~mv2.jpeg','https://static.wixstatic.com/media/64b604_204a0bb2c592496e90b58d9eaca2e431~mv2.jpeg','https://static.wixstatic.com/media/64b604_dbf870f3b32c46fb8c5821ea831f3505~mv2.jpeg','https://static.wixstatic.com/media/64b604_fe0f540f908a493fbc785bad211774f8~mv2.jpeg','https://static.wixstatic.com/media/64b604_c889ce7e527040ba971e0f30a1510f57~mv2.jpeg','https://static.wixstatic.com/media/64b604_b659f4932b1647b89e6ebd8eeb3ffa5b~mv2.jpeg','https://static.wixstatic.com/media/64b604_81496074fd2e4e369cb065f9388dd19e~mv2.jpeg','https://static.wixstatic.com/media/64b604_aade381e30de47389a03f18650b18686~mv2.jpeg','https://static.wixstatic.com/media/64b604_f4370a409240435593a6b827d59c360e~mv2.jpeg']},
       {address:'2923 Helen Pl NW',city:'Canton, OH 44708',beds:3,baths:1,cover:'https://static.wixstatic.com/media/64b604_58624372dd254cd1862819ae1f18967c~mv2.jpeg',photos:['https://static.wixstatic.com/media/64b604_296278139a8949368e9d5bb5db702146~mv2.jpeg','https://static.wixstatic.com/media/64b604_054367b837d8455fbb6cd5bf7749d05c~mv2.jpeg','https://static.wixstatic.com/media/64b604_5140b5a114284d1dbad6e237972957ff~mv2.jpeg','https://static.wixstatic.com/media/64b604_7f080e1470a84cf2b4e97380ea515444~mv2.jpeg','https://static.wixstatic.com/media/64b604_41109bd30b724fb7998eb3735edeb774~mv2.jpeg','https://static.wixstatic.com/media/64b604_299fa1ee80a445609a5ed2451bacd558~mv2.jpeg','https://static.wixstatic.com/media/64b604_bea586d38112449fad4c5ec53b151ddd~mv2.jpeg','https://static.wixstatic.com/media/64b604_596c6c26f4e641e5979875b19c47b5b6~mv2.jpeg','https://static.wixstatic.com/media/64b604_582f360c952b4abb8bf7db78f902dae7~mv2.jpeg','https://static.wixstatic.com/media/64b604_08d73a3c6fb14da5a2922686347ec6bc~mv2.jpeg','https://static.wixstatic.com/media/64b604_58624372dd254cd1862819ae1f18967c~mv2.jpeg','https://static.wixstatic.com/media/64b604_78cf855c89d24155b74b3223c629f1da~mv2.jpeg','https://static.wixstatic.com/media/64b604_60c601e61541479ead7012753af1227b~mv2.jpeg','https://static.wixstatic.com/media/64b604_37852f0736344199aaf3f1bcfe208a2a~mv2.jpeg','https://static.wixstatic.com/media/64b604_7920b65b467346cc8ea0c9e0b8924f70~mv2.jpeg']},
-      {address:'307 Bellflower Ave NW',city:'Canton, OH 44708',beds:3,baths:1.5,cover:'https://static.wixstatic.com/media/64b604_28a42e5cd1994e2a9d2c3c73d0cdbbf4~mv2.jpeg',photos:['https://static.wixstatic.com/media/64b604_0f7be59ea6f6404d9993facda7f4bf56~mv2.jpeg','https://static.wixstatic.com/media/64b604_aa41f41c304d407fb746142e781d74a0~mv2.jpeg','https://static.wixstatic.com/media/64b604_24d8159ca79847e6b29019c6147c8361~mv2.jpeg','https://static.wixstatic.com/media/64b604_46d27b8f8ae742a3a8ffede925513281~mv2.jpeg','https://static.wixstatic.com/media/64b604_41fa6309ea914a0db241e8d0232ee6c0~mv2.jpeg','https://static.wixstatic.com/media/64b604_a1ec155490534718a58cabea27e85959~mv2.jpeg','https://static.wixstatic.com/media/64b604_59d6f2b98de84d1291461f03902e4668~mv2.jpeg','https://static.wixstatic.com/media/64b604_ce72d6b8c30d4ad7adec8ae026b5c423~mv2.jpeg','https://static.wixstatic.com/media/64b604_11829af3dc624c2b96e53e9d8b76f732~mv2.jpeg','https://static.wixstatic.com/media/64b604_57b22e0b87b54f92ad87344fec65494e~mv2.jpeg','https://static.wixstatic.com/media/64b604_2b09c12635344d8eb3f20726cadcc416~mv2.jpeg','https://static.wixstatic.com/media/64b604_64341f46689f47f8b036a214bad02813~mv2.jpeg','https://static.wixstatic.com/media/64b604_3d05ff1703fe4131b56602f57f6a3846~mv2.jpeg','https://static.wixstatic.com/media/64b604_67d1162df55748898f0bd74acabd4f83~mv2.jpeg','https://static.wixstatic.com/media/64b604_358e87e9f268476f85d02a9ebed0a4ee~mv2.jpeg','https://static.wixstatic.com/media/64b604_aa724bfdcbda4cc7a628394e98f872e3~mv2.jpeg','https://static.wixstatic.com/media/64b604_3843517fb0ac4df69b122df8465cf7f9~mv2.jpeg','https://static.wixstatic.com/media/64b604_fb0cc83f894944a98681c06cd5039ef1~mv2.jpeg','https://static.wixstatic.com/media/64b604_eed72c1637af44c2b596fe78c9e21732~mv2.jpeg','https://static.wixstatic.com/media/64b604_78356ee58e7a44b39cedbcee486aa5ec~mv2.jpeg','https://static.wixstatic.com/media/64b604_adc759c5f63d4e3d8ed352839df99ea4~mv2.jpeg']},
       {address:'2945 15th St NW',city:'Canton, OH 44708',beds:3,baths:1,cover:'https://static.wixstatic.com/media/64b604_ab764bbc2bd341e593c144de14e3839a~mv2.jpeg',photos:['https://static.wixstatic.com/media/64b604_d1f99b62c7134110a1ded73d93c35f2e~mv2.jpeg','https://static.wixstatic.com/media/64b604_aefb12adf7e3476594b2b1036b7da5b0~mv2.jpeg','https://static.wixstatic.com/media/64b604_6f55fbc5917b46fcb76ebadd1e66b908~mv2.jpeg','https://static.wixstatic.com/media/64b604_2ec983e4267149408f1cd3ceaa975bf3~mv2.jpeg','https://static.wixstatic.com/media/64b604_bd6642cb0e9f403c9ca46cfc4ecbf40b~mv2.jpeg','https://static.wixstatic.com/media/64b604_e5a32dbdceef443ebde5a5722b0dbb59~mv2.jpeg','https://static.wixstatic.com/media/64b604_35df9b19480e439fb7ff7400eebfc13a~mv2.jpeg','https://static.wixstatic.com/media/64b604_00bb8704f44c4acca09ad2dfa9b8a595~mv2.jpeg','https://static.wixstatic.com/media/64b604_19e4e1868809406593cf43c0bf56c6ab~mv2.jpeg','https://static.wixstatic.com/media/64b604_ab764bbc2bd341e593c144de14e3839a~mv2.jpeg','https://static.wixstatic.com/media/64b604_65daebcaa239455291784a2d54c8bc8b~mv2.jpeg','https://static.wixstatic.com/media/64b604_12c060754bff4acfa5a5afaddb1bbe7b~mv2.jpeg','https://static.wixstatic.com/media/64b604_7d25a283113f4859bc16106de5c1be13~mv2.jpeg','https://static.wixstatic.com/media/64b604_f931d4b521c146ffb6834eb523601cc7~mv2.jpeg','https://static.wixstatic.com/media/64b604_ab0be4f474494d76b8a0db8541d5c809~mv2.jpeg','https://static.wixstatic.com/media/64b604_76977a7b003a4c46a476ee530faa1a5d~mv2.jpeg','https://static.wixstatic.com/media/64b604_75bbf0a444f4432cbb26722148f8b2b9~mv2.jpeg','https://static.wixstatic.com/media/64b604_a01b8ad2049a44dd9544cd716c515442~mv2.jpeg','https://static.wixstatic.com/media/64b604_495e3ee514ea4a7ab556f84f3e83f86c~mv2.jpeg','https://static.wixstatic.com/media/64b604_68fe67c2fd9e48cf991a5bcaec240c3d~mv2.jpeg','https://static.wixstatic.com/media/64b604_11f1f2ab80bb4b78afb5f6370bed4c41~mv2.jpeg']}
     ];
 
-    var RENTS = {'806 23rd St NW':'$1,200','2007 Kirk Ct NW':'$1,350','818 25th St NW':'$1,250','519 21st St NW':'$1,385','523 21st St NW':'$1,200','1430 19th St NW':'$1,325','1919 Frazer Ave NW':'$1,200','1708 18th St NW':'$1,100','1734 Woodland Ave NW':'$1,055','2211 Myrtle Ave NW':'$1,250','800 22nd St NW':'$1,450','725 22nd St NW':'$1,150','635 Greenfield Ave SW':'$1,200','2923 Helen Pl NW':'$1,350','307 Bellflower Ave NW':'$1,375','2945 15th St NW':'$1,300'};
+    var RENTS = {'806 23rd St NW':'$1,200','2007 Kirk Ct NW':'$1,475','818 25th St NW':'$1,525','519 21st St NW':'$1,385','523 21st St NW':'$1,210','1430 19th St NW':'$1,335','1919 Frazer Ave NW':'$1,210','1708 18th St NW':'$1,100','1734 Woodland Ave NW':'$1,055','2211 Myrtle Ave NW':'$1,250','800 22nd St NW':'$1,450','725 22nd St NW':'$1,150','2923 Helen Pl NW':'$1,360','2945 15th St NW':'$1,300'};
 
     var cardsHtml = PROPERTIES.map(function(p, i) {
       var rent = RENTS[p.address] || '';
@@ -244,6 +238,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 .hero__badge{display:inline-block;background:#C8962A;color:#fff;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:16px}
 .hero__title{font-size:clamp(22px,4.4vw,44px);font-weight:900;margin-bottom:8px}
 .hero__sub{font-size:18px;color:rgba(255,255,255,0.68)}
+.hero__desc{font-size:17px;color:rgba(255,255,255,.88);line-height:1.75;max-width:760px;margin:18px auto 0}
 
 /* ── FINANCIAL REPORTS SECTION ── */
 .reports-section{background:#fff;border-bottom:2px solid rgba(10,30,60,.08);padding:32px 36px}
@@ -256,7 +251,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 .report-btn--gold:hover{background:linear-gradient(135deg,#dba83a,#c8962a)}
 
 /* ── MAP SECTION ── */
-.map-wrap{background:#f0f4fa;border-bottom:2px solid rgba(10,30,60,.08);padding:36px}
+.map-wrap{background:#f0f4fa;border-top:2px solid rgba(10,30,60,.08);border-bottom:2px solid rgba(10,30,60,.08);padding:36px}
 .map-container{max-width:1100px;margin:0 auto}
 .map-header{margin-bottom:18px}
 .map-header__title{font-size:20px;font-weight:800;color:#0d1f35;margin-bottom:4px}
@@ -386,9 +381,10 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 <a class="csh-back" href="/">&larr; Back to All Portfolios</a>
 
 <section class="hero">
-  <div class="hero__badge">Portfolio 1 &mdash; Malone Area 1</div>
-  <h1 class="hero__title">Portfolio 1: Malone University / Pro Football Hall of Fame Area 1</h1>
-  <p class="hero__sub">16 single-family rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
+  <div class="hero__badge">Portfolio 1</div>
+  <h1 class="hero__title">Portfolio 1: Hall of Fame Village / Malone University #1</h1>
+  <p class="hero__sub">14 single-family rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
+  <p class="hero__desc">All the properties in Portfolio 1 are located within 2 miles of each other.</p>
 </section>
 
 <!-- ══ FINANCIAL REPORTS ══ -->
@@ -403,12 +399,15 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   </div>
 </section>
 
+<div class="section-head"><h2>Properties</h2><span>14 homes &middot; $18,005/mo &middot; $214,380 Annual</span></div>
+<div class="prop-grid">${cardsHtml}</div>
+
 <!-- ══ MAP ══ -->
 <section class="map-wrap">
   <div class="map-container">
     <div class="map-header">
       <div class="map-header__title">Portfolio 1 — Property Locations</div>
-      <div class="map-header__sub">Every portfolio is geographically tight, reducing travel time and management overhead.</div>
+      <div class="map-header__sub">All the properties in Portfolio 1 are located within 2 miles of each other.</div>
     </div>
     <div class="map-layout">
       <div class="map-list">
@@ -421,9 +420,6 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
     </div>
   </div>
 </section>
-
-<div class="section-head"><h2>Properties</h2><span>16 homes &middot; $20,140/mo &middot; $241,680 Annual</span></div>
-<div class="prop-grid">${cardsHtml}</div>
 
 <!-- ══ P&L MODAL ══ -->
 <div id="pl-modal" class="pl-modal" style="display:none" role="dialog" aria-modal="true">
@@ -447,7 +443,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   <div class="rr-modal__box">
     <div class="rr-modal__head">
       <div class="rr-modal__title">Portfolio 1 &mdash; Rent Roll</div>
-      <div class="rr-modal__sub">Malone University / Pro Football Hall of Fame Area 1</div>
+      <div class="rr-modal__sub">Hall of Fame Village / Malone University #1</div>
       <button class="rr-modal__close" id="rr-modal-close" aria-label="Close">&times;</button>
     </div>
     <div class="rr-modal__body" id="rr-modal-body"></div>
@@ -549,7 +545,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
       var totalVal = RENT_ROLL.reduce(function(s,r){return s+r.value;},0);
       var totalMo  = RENT_ROLL.reduce(function(s,r){return s+r.monthlyRent;},0);
       var totalYr  = RENT_ROLL.reduce(function(s,r){return s+r.annualizedRent;},0);
-      var html = '<div class="rr-portfolio-badge">Portfolio 1 &mdash; 16 Properties</div><div class="rr-table-wrap"><table class="rr-table">' +
+      var html = '<div class="rr-portfolio-badge">Portfolio 1 &mdash; 14 Properties</div><div class="rr-table-wrap"><table class="rr-table">' +
         '<thead><tr><th>Property</th><th>Property Value</th><th>Monthly Rent</th><th>Annualized Rent</th></tr></thead><tbody>';
       RENT_ROLL.forEach(function(r) {
         html += '<tr><td>' + r.address + '</td>' +
@@ -576,10 +572,10 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
     var plDlBtn = self.querySelector('#pl-download-btn');
     var rrDlBtn = self.querySelector('#rr-download-btn');
     if (plDlBtn) plDlBtn.addEventListener('click', function() {
-      if (_currentPlYear) downloadCSV('Portfolio1_MaloneArea1_PL_' + _currentPlYear + '.csv', buildPLCsv(_currentPlYear));
+      if (_currentPlYear) downloadCSV('Portfolio1_HallOfFameVillage_Malone1_PL_' + _currentPlYear + '.csv', buildPLCsv(_currentPlYear));
     });
     if (rrDlBtn) rrDlBtn.addEventListener('click', function() {
-      downloadCSV('Portfolio1_MaloneArea1_RentRoll.csv', buildRRCsv());
+      downloadCSV('Portfolio1_HallOfFameVillage_Malone1_RentRoll.csv', buildRRCsv());
     });
 
     // ── Navigation ──

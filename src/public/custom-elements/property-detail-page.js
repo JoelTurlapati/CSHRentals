@@ -3,11 +3,11 @@ class CshPropertyDetail extends HTMLElement {
   connectedCallback() {
     this.style.cssText = 'display:block;background:#f5f7fa;min-height:100vh';
     var BACK_SLUGS = {
-      'Portfolio 1 — Malone University / Pro Football Hall of Fame Area 1': 'portfolio-northwest',
+      'Portfolio 1 — Hall of Fame Village / Malone University #1': 'portfolio-northwest',
       'Portfolio 1 — McKinley Presidential Library & Museum':               'portfolio-west',
-      'Portfolio 2 — Malone University / Pro Football Hall of Fame Area 2': 'portfolio-central',
-      'Portfolio 3 — Colonial Heights':                                      'portfolio-northeast',
-      'Portfolio 4 — High-End Portfolio':                                    'portfolio-highend',
+      'Portfolio 2 — Hall of Fame Village / Malone University #2': 'portfolio-central',
+      'Portfolio 3 — Hall of Fame Village / Malone University #3': 'portfolio-northeast',
+      'Portfolio 4 — Individual Home Sale Opportunities':                  'portfolio-highend',
       'Portfolio 6 — Premium Individual Properties':                         'portfolio-premium'
     };
 
