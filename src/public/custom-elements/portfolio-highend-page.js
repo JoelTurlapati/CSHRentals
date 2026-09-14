@@ -393,7 +393,9 @@ csh-portfolio-highend{display:block;font-family:'Inter','Segoe UI',Arial,sans-se
   <div class="hero__badge">Portfolio 4</div>
   <h1 class="hero__title">Portfolio 4 &mdash; Individual Home Sale Opportunities</h1>
   <p class="hero__sub">8 single-family rental homes &nbsp;&middot;&nbsp; Canton, OH</p>
-  <p class="hero__desc">We are going to auction off each of these homes individually. All of these homes, except for 635 Greenfield Ave SW, represent our highest-value properties &mdash; and because of the value of these homes and the desire for individual purchases, we are going to auction each of these homes off separately. We can also offer the entire portfolio as one combined portfolio.</p>
+  <p class="hero__desc">These homes, with the exception of 635 Greenfield Ave., represent some of the highest-value properties in our portfolio. Given the value of these homes and the anticipated interest from individual buyers, they will be offered through a multi-parcel combination auction.</p>
+  <p class="hero__desc">Each home will first be auctioned individually, allowing buyers to bid on the specific property or properties they wish to purchase. The highest individual bids will then be combined to establish an aggregate sale price for the portfolio.</p>
+  <p class="hero__desc">The entire group of properties will then be offered together as a single package. To purchase the portfolio as a whole, a package bidder must exceed the combined value of the winning individual bids. Whichever method produces the highest total sale proceeds &mdash; the combined individual bids or the portfolio package bid &mdash; will determine how the properties are sold.</p>
 </section>
 
 <!-- ══ FINANCIAL REPORTS ══ -->
