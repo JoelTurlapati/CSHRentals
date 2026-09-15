@@ -57,7 +57,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .hero-video__overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,15,30,.42) 0%,rgba(5,15,30,.6) 60%,rgba(5,15,30,.82) 100%);z-index:1}
 .hero-video__body{position:relative;z-index:2;text-align:center;padding:100px 24px 110px;max-width:840px}
 .hero__eyebrow{display:inline-block;background:var(--gold);color:#fff;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:26px}
-.hero__title{font-size:clamp(38px,7.2vw,78px);font-weight:900;color:#fff;line-height:1.04;margin-bottom:16px;letter-spacing:-.025em}
+.hero__title{font-size:clamp(28px,4.6vw,52px);font-weight:900;color:#fff;line-height:1.12;margin-bottom:16px;letter-spacing:-.02em}
 .hero__sub{font-size:clamp(16px,2.2vw,20px);color:rgba(255,255,255,.78);line-height:1.55;max-width:620px;margin:0 auto}
 @media(max-width:600px){.hero-video{min-height:460px}.hero-video__body{padding:70px 20px 80px}}
 
@@ -69,6 +69,14 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .sec-h2{font-size:clamp(26px,3.6vw,43px);font-weight:800;color:var(--navy);line-height:1.12;letter-spacing:-.02em;margin-bottom:12px}
 .sec-sub{font-size:17px;color:var(--muted);line-height:1.6}
 .divbar{width:44px;height:3px;background:var(--gold);margin-bottom:16px}
+
+/* ── AUCTION NOTICE ── */
+.auction{background:var(--bg-alt);border-bottom:1px solid var(--border);padding:34px 40px}
+@media(max-width:768px){.auction{padding:26px 20px}}
+.auction__wrap{max-width:1000px;margin:0 auto;text-align:center;border:1.5px solid var(--border-g);border-radius:12px;background:var(--card);padding:26px 30px;box-shadow:var(--shadow)}
+@media(max-width:768px){.auction__wrap{padding:20px 18px}}
+.auction__tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.auction__text{font-size:17px;color:var(--muted);line-height:1.6}
 
 /* ── INTRO ── */
 .intro{background:var(--card);padding:48px 40px 44px;border-bottom:1px solid var(--border)}
@@ -199,8 +207,16 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
   <div class="hero-video__overlay"></div>
   <div class="hero-video__body">
     <span class="hero__eyebrow">Canton, Ohio &middot; CSH Rentals</span>
-    <h1 class="hero__title">A Distinctive Residential Investment Opportunity</h1>
-    <p class="hero__sub">Four carefully assembled portfolios of income-producing residential properties will be offered at auction in November 2026. Portfolio 4 will be presented through a multi-parcel auction format, allowing buyers to acquire select individual properties or compete for the portfolio in its entirety.</p>
+    <h1 class="hero__title">A Distinctive Residential<br/>Investment Opportunity</h1>
+    <p class="hero__sub">45 professionally managed rental homes across Stark County, Ohio &mdash; organized into 4 geographically concentrated investment portfolios with proven cash flow.</p>
+  </div>
+</section>
+
+<!-- ══ AUCTION NOTICE ══ -->
+<section class="auction">
+  <div class="auction__wrap">
+    <div class="auction__tag">Auction &middot; November 2026</div>
+    <p class="auction__text">Four carefully assembled portfolios of income-producing residential properties will be offered at auction in November 2026. Portfolio 4 will be presented through a multi-parcel auction format, allowing buyers to acquire select individual properties or compete for the portfolio in its entirety.</p>
   </div>
 </section>
 
