@@ -213,6 +213,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 <!-- ══ INTRO ══ -->
 <section class="intro">
   <div class="intro__wrap">
+    <p class="intro__desc">Four carefully assembled portfolios of income-producing residential properties will be offered at auction in November 2026. Portfolio 4 will be presented through a multi-parcel auction format, allowing buyers to acquire select individual properties or compete for the portfolio in its entirety.</p>
     <p class="intro__desc">These are not typical rental portfolios. Many large single-family rental portfolios are assembled primarily around yield &mdash; often emphasizing lower acquisition costs and maximum rent while giving considerably less attention to the quality, condition, location, or underlying value of the individual homes.</p>
     <p class="intro__desc">The CSH Rentals portfolio was built with a fundamentally different philosophy. Over the past 15 years, we selectively acquired 45 homes in some of Canton&rsquo;s most established and desirable neighborhoods. Our strategy was straightforward: acquire homes in locations where people genuinely want to live, improve them substantially, and create rental properties that possess value well beyond their current income stream.</p>
     <p class="intro__desc">Many began as what could best be described as the ugliest house on the nicest street. They were then comprehensively renovated and repositioned as quality homes within strong residential neighborhoods.</p>
