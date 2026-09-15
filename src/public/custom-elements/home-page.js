@@ -76,6 +76,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .intro__tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-g);padding:5px 16px;border-radius:20px;margin-bottom:18px}
 .intro__h1{font-size:clamp(28px,4.8vw,48px);font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
 .intro__desc{font-size:17px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.intro__h2{font-size:clamp(20px,2.6vw,27px);font-weight:800;color:var(--navy);line-height:1.25;letter-spacing:-.01em;margin:20px 0 8px}
 .intro__desc:last-child{margin-bottom:0}
 .highlights-hdr{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
 .highlights-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
@@ -198,8 +199,8 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
   <div class="hero-video__overlay"></div>
   <div class="hero-video__body">
     <span class="hero__eyebrow">Canton, Ohio &middot; CSH Rentals</span>
-    <h1 class="hero__title">Quality Rentals.<br/>Proven Portfolio.</h1>
-    <p class="hero__sub">45 professionally managed rental homes across Stark County, Ohio &mdash; organized into 4 geographically concentrated investment portfolios with proven cash flow.</p>
+    <h1 class="hero__title">A Distinctive Residential Investment Opportunity</h1>
+    <p class="hero__sub">Four carefully assembled portfolios of income-producing residential properties will be offered at auction in November 2026. Portfolio 4 will be presented through a multi-parcel auction format, allowing buyers to acquire select individual properties or compete for the portfolio in its entirety.</p>
   </div>
 </section>
 
@@ -208,12 +209,15 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
   <div class="intro__wrap">
     <div class="intro__tag">Investment Opportunity &middot; Stark County, Ohio</div>
     <h1 class="intro__h1">Investment Opportunities in Stark County, Ohio</h1>
-    <p class="intro__desc">Most Northeast Ohio rental portfolios are built around one thing: maximizing rent from aging properties.</p>
-    <p class="intro__desc">This opportunity is different.</p>
-    <p class="intro__desc">Over the last 15 years, we have carefully assembled and renovated a collection of homes located in some of Canton&rsquo;s most desirable neighborhoods. Rather than chasing the highest immediate cash flow, we focused on acquiring properties in areas with strong long-term appreciation potential and then invested heavily to restore them to a standard rarely found in Midwest rental portfolios.</p>
-    <p class="intro__desc">The result is a collection of professionally managed homes that generate attractive income today while offering meaningful upside through future appreciation. These are not tired rentals in marginal locations. They are quality homes in established neighborhoods that tenants are proud to call home and investors can confidently own.</p>
-    <p class="intro__desc">To create flexibility for investors, the portfolio has been organized into four geographically concentrated investment portfolios, each offering operational efficiencies and simplified management.</p>
-    <p class="intro__desc">Whether your goal is dependable cash flow, long-term appreciation, or a combination of both, this is a rare opportunity to acquire renovated, income-producing homes in some of Stark County&rsquo;s most established rental markets.</p>
+    <p class="intro__desc">These are not typical rental portfolios. Many large single-family rental portfolios are assembled primarily around yield &mdash; often emphasizing lower acquisition costs and maximum rent while giving considerably less attention to the quality, condition, location, or underlying value of the individual homes.</p>
+    <p class="intro__desc">The CSH Rentals portfolio was built with a fundamentally different philosophy. Over the past 15 years, we selectively acquired 45 homes in some of Canton&rsquo;s most established and desirable neighborhoods. Our strategy was straightforward: acquire homes in locations where people genuinely want to live, improve them substantially, and create rental properties that possess value well beyond their current income stream.</p>
+    <p class="intro__desc">Many began as what could best be described as the ugliest house on the nicest street. They were then comprehensively renovated and repositioned as quality homes within strong residential neighborhoods.</p>
+    <p class="intro__desc">The result is something increasingly difficult to find in the investment market: A portfolio that combines attractive rental income with meaningful underlying residential real estate value.</p>
+    <h2 class="intro__h2">More Than a Rental Income Stream</h2>
+    <p class="intro__desc">The distinction is important. Each property generates income as part of the portfolio, but each home also represents a desirable residential asset in its own right.</p>
+    <p class="intro__desc">These are renovated homes in established neighborhoods &mdash; properties that can appeal not only to tenants and investors, but ultimately to individual homeowners as well. That creates an additional dimension of value that is absent from many rental portfolios.</p>
+    <p class="intro__desc">An investor is not simply acquiring a stream of rent from a collection of aging properties. The investor is acquiring 45 individually marketable residential assets, each with its own underlying value and potential future disposition strategy.</p>
+    <p class="intro__desc">This combination of current income, individual property value, neighborhood desirability, and long-term appreciation potential is one of the defining characteristics of the offering.</p>
   </div>
 </section>
 
@@ -359,6 +363,36 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
     <div class="map-responsive">
       <iframe src="https://www.google.com/maps/d/embed?mid=1-UjOFoDqjCvel-Hh8xbCvZUu4CTQLeI&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
     </div>
+  </div>
+</section>
+
+<!-- ══ PORTFOLIO ADVANTAGES ══ -->
+<section class="sec" id="advantages" style="background:var(--card);border-top:1px solid var(--border)">
+  <div class="wrap" style="max-width:1200px">
+    <div class="sec-lbl">Portfolio Advantages</div>
+    <h2 class="sec-h2">Exceptional Geographic Concentration</h2>
+    <div class="divbar"></div>
+    <p class="intro__desc">The portfolio is equally distinctive in its geographic concentration. Rather than accumulating properties indiscriminately throughout Stark County, acquisitions were intentionally concentrated within just three specific areas of the Canton market.</p>
+    <p class="intro__desc">Within each portfolio, the homes are located remarkably close to one another. In many instances, properties are within walking distance. This concentration provides many of the operational advantages normally associated with multifamily ownership while retaining the flexibility and individual asset value of single-family homes. Property management, maintenance, leasing, inspections, tenant service, and capital improvements can all be coordinated within an unusually compact geographic footprint.</p>
+    <p class="intro__desc">The result is the efficiency of a concentrated portfolio without sacrificing the individuality or marketability of the underlying real estate.</p>
+
+    <h2 class="intro__h2">Located Near Canton&rsquo;s Principal Demand Drivers</h2>
+    <p class="intro__desc">The properties are positioned near many of the Canton area&rsquo;s most important employment, healthcare, education, entertainment, and retail destinations, including:</p>
+    <ul class="wc-feature__list" style="margin:12px 0 14px">
+      <li>Aultman Hospital</li>
+      <li>Cleveland Clinic Mercy Hospital</li>
+      <li>Malone University</li>
+      <li>The Pro Football Hall of Fame</li>
+      <li>Hall of Fame Village</li>
+      <li>The Belden Village retail corridor</li>
+      <li>Extensive shopping, entertainment, and more than 80 area restaurants</li>
+    </ul>
+    <p class="intro__desc">These established neighborhoods and nearby economic anchors contribute to both rental demand and the long-term desirability of the underlying homes.</p>
+
+    <h2 class="intro__h2">Income Today. Real Estate Value Tomorrow.</h2>
+    <p class="intro__desc">For investors evaluating residential portfolios, income is only one part of the equation. The quality of the real estate underneath that income matters. These portfolios offer both.</p>
+    <p class="intro__desc">Renovated homes. Established neighborhoods. Strong rental income. Concentrated management. Individual resale flexibility. And residential properties with intrinsic value independent of the portfolio itself.</p>
+    <p class="intro__desc">Whether acquired for current cash flow, long-term appreciation, strategic resale, or a combination of all three, this offering represents a rare opportunity to acquire a substantial collection of quality residential real estate in the Canton market.</p>
   </div>
 </section>
 
