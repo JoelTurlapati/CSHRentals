@@ -71,9 +71,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 .divbar{width:44px;height:3px;background:var(--gold);margin-bottom:16px}
 
 /* ── AUCTION NOTICE ── */
-.auction{background:var(--bg-alt);border-bottom:1px solid var(--border);padding:34px 40px}
-@media(max-width:768px){.auction{padding:26px 20px}}
-.auction__wrap{max-width:1000px;margin:0 auto;text-align:center;border:1.5px solid var(--border-g);border-radius:12px;background:var(--card);padding:26px 30px;box-shadow:var(--shadow)}
+.auction__wrap{max-width:1000px;margin:0 auto 18px;text-align:center;border:1.5px solid var(--border-g);border-radius:12px;background:var(--card);padding:26px 30px;box-shadow:var(--shadow)}
 @media(max-width:768px){.auction__wrap{padding:20px 18px}}
 .auction__tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .auction__text{font-size:17px;color:var(--muted);line-height:1.6}
@@ -212,19 +210,15 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
   </div>
 </section>
 
-<!-- ══ AUCTION NOTICE ══ -->
-<section class="auction">
-  <div class="auction__wrap">
-    <div class="auction__tag">Auction &middot; November 2026</div>
-    <p class="auction__text">Four carefully assembled portfolios of income-producing residential properties will be offered at auction in November 2026. Portfolio 4 will be presented through a multi-parcel auction format, allowing buyers to acquire select individual properties or compete for the portfolio in its entirety.</p>
-  </div>
-</section>
-
 <!-- ══ INTRO ══ -->
 <section class="intro">
   <div class="intro__wrap">
     <div class="intro__tag">Investment Opportunity &middot; Stark County, Ohio</div>
     <h1 class="intro__h1">Investment Opportunities in Stark County, Ohio</h1>
+    <div class="auction__wrap">
+      <div class="auction__tag">Auction &middot; November 2026</div>
+      <p class="auction__text">Four carefully assembled portfolios of income-producing residential properties will be offered at auction in November 2026. Portfolio 4 will be presented through a multi-parcel auction format, allowing buyers to acquire select individual properties or compete for the portfolio in its entirety.</p>
+    </div>
     <p class="intro__desc">These are not typical rental portfolios. Many large single-family rental portfolios are assembled primarily around yield &mdash; often emphasizing lower acquisition costs and maximum rent while giving considerably less attention to the quality, condition, location, or underlying value of the individual homes.</p>
     <p class="intro__desc">The CSH Rentals portfolio was built with a fundamentally different philosophy. Over the past 15 years, we selectively acquired 45 homes in some of Canton&rsquo;s most established and desirable neighborhoods. Our strategy was straightforward: acquire homes in locations where people genuinely want to live, improve them substantially, and create rental properties that possess value well beyond their current income stream.</p>
     <p class="intro__desc">Many began as what could best be described as the ugliest house on the nicest street. They were then comprehensively renovated and repositioned as quality homes within strong residential neighborhoods.</p>
