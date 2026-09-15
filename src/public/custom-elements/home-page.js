@@ -213,17 +213,10 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 <!-- ══ INTRO ══ -->
 <section class="intro">
   <div class="intro__wrap">
-    <div class="intro__tag">Investment Opportunity &middot; Stark County, Ohio</div>
-    <h1 class="intro__h1">Investment Opportunities in Stark County, Ohio</h1>
-    <div class="auction__wrap">
-      <div class="auction__tag">Auction &middot; November 2026</div>
-      <p class="auction__text">Four carefully assembled portfolios of income-producing residential properties will be offered at auction in November 2026. Portfolio 4 will be presented through a multi-parcel auction format, allowing buyers to acquire select individual properties or compete for the portfolio in its entirety.</p>
-    </div>
     <p class="intro__desc">These are not typical rental portfolios. Many large single-family rental portfolios are assembled primarily around yield &mdash; often emphasizing lower acquisition costs and maximum rent while giving considerably less attention to the quality, condition, location, or underlying value of the individual homes.</p>
     <p class="intro__desc">The CSH Rentals portfolio was built with a fundamentally different philosophy. Over the past 15 years, we selectively acquired 45 homes in some of Canton&rsquo;s most established and desirable neighborhoods. Our strategy was straightforward: acquire homes in locations where people genuinely want to live, improve them substantially, and create rental properties that possess value well beyond their current income stream.</p>
     <p class="intro__desc">Many began as what could best be described as the ugliest house on the nicest street. They were then comprehensively renovated and repositioned as quality homes within strong residential neighborhoods.</p>
     <p class="intro__desc">The result is something increasingly difficult to find in the investment market: A portfolio that combines attractive rental income with meaningful underlying residential real estate value.</p>
-    <h2 class="intro__h2">More Than a Rental Income Stream</h2>
     <p class="intro__desc">The distinction is important. Each property generates income as part of the portfolio, but each home also represents a desirable residential asset in its own right.</p>
     <p class="intro__desc">These are renovated homes in established neighborhoods &mdash; properties that can appeal not only to tenants and investors, but ultimately to individual homeowners as well. That creates an additional dimension of value that is absent from many rental portfolios.</p>
     <p class="intro__desc">An investor is not simply acquiring a stream of rent from a collection of aging properties. The investor is acquiring 45 individually marketable residential assets, each with its own underlying value and potential future disposition strategy.</p>
