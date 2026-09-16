@@ -273,7 +273,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 /* ── PROPERTY GRID ── */
 .section-head{max-width:1040px;margin:36px auto 16px;padding:0 24px;display:flex;align-items:baseline;justify-content:space-between}
 .section-head h2{font-size:22px;font-weight:800;color:#0D1F35;text-transform:uppercase;letter-spacing:.08em}
-.section-head span{font-size:16px;color:#888}
+.section-head span{font-size:21px;font-weight:800;color:#c8962a}
 .prop-grid{max-width:1040px;margin:0 auto 44px;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
 .prop-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.08);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;cursor:pointer}
 .prop-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.16)}
@@ -408,7 +408,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   </div>
 </section>
 
-<div class="section-head"><h2>Properties</h2><span>14 homes &middot; $18,005/mo &middot; $216,060 Annual</span></div>
+<div class="section-head"><span>14 homes &middot; $18,005/mo &middot; $216,060 Annual</span></div>
 <div class="prop-grid">${cardsHtml}</div>
 
 <!-- ══ MAP ══ -->
@@ -416,7 +416,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   <div class="map-container">
     <div class="map-header">
       <div class="map-header__title">Portfolio 1 — Property Locations</div>
-      <div class="map-header__sub">All the properties in Portfolio 1 are located within 2 miles of each other.</div>
+      <div class="map-header__sub">12 of the 14 properties are situated within approximately one mile of one another, with the remaining two properties located within approximately two miles &mdash; creating significant efficiencies for management, maintenance, and operations.</div>
     </div>
     <div class="map-layout">
       <div class="map-list">

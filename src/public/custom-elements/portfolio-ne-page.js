@@ -279,7 +279,7 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 @media(max-width:680px){.map-layout{grid-template-columns:1fr}.map-list{max-height:220px}.map-frame-wrap{height:420px}.map-wrap{padding:20px 16px}}
 .section-head{max-width:1040px;margin:36px auto 16px;padding:0 24px;display:flex;align-items:baseline;justify-content:space-between}
 .section-head h2{font-size:22px;font-weight:800;color:#0D1F35;text-transform:uppercase;letter-spacing:.08em}
-.section-head span{font-size:16px;color:#888}
+.section-head span{font-size:21px;font-weight:800;color:#c8962a}
 .prop-grid{max-width:1040px;margin:0 auto 44px;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
 .prop-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;cursor:pointer}
 .prop-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,0.16)}
@@ -406,7 +406,7 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   </div>
 </section>
 
-<div class="section-head"><h2>Properties</h2><span>11 homes &middot; $15,715/mo &middot; $188,580 Annual</span></div>
+<div class="section-head"><span>11 homes &middot; $15,715/mo &middot; $188,580 Annual</span></div>
 <div class="prop-grid">${cardsHtml}</div>
 
 <!-- ══ MAP ══ -->
@@ -414,7 +414,7 @@ csh-portfolio-ne{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
   <div class="map-container">
     <div class="map-header">
       <div class="map-header__title">Portfolio 3 &mdash; Hall of Fame Village / Malone University #3 &mdash; Property Locations</div>
-      <div class="map-header__sub">Every portfolio is geographically tight, reducing travel time and management overhead.</div>
+      <div class="map-header__sub">8 of the 11 properties are situated within approximately one mile of one another, with the remaining 3 properties located within approximately 1.5 miles &mdash; creating significant efficiencies for management, maintenance, and operations.</div>
     </div>
     <div class="map-layout">
       <div class="map-list">
