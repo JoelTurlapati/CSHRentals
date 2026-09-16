@@ -183,7 +183,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
   <nav class="csh-hdr__nav">
     <a class="csh-hdr__btn" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-hdr__btn csh-hdr__btn--gold" href="/contact">Contact</a>
-    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com" title="Email Us">&#9993;</a>
+    <a class="csh-hdr__email" href="mailto:customstarkhomes@gmail.com" title="Email Us">&#9993;</a>
   </nav>
   <button class="csh-hdr__burger" id="csh-burger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -193,7 +193,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
   <div class="csh-mob-nav__inner">
     <a class="csh-mob-nav__link" href="/tenants">Tenant Pre-Approval</a>
     <a class="csh-mob-nav__link csh-mob-nav__link--gold" href="/contact">Contact</a>
-    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com,ScottPrivate@tagplanning.com">&#9993;&nbsp; Email Us</a>
+    <a class="csh-mob-nav__link" href="mailto:customstarkhomes@gmail.com">&#9993;&nbsp; Email Us</a>
   </div>
 </div>
 
@@ -529,7 +529,7 @@ csh-home{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;backgroun
 
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
-  &copy; 2025 CSH Rentals &nbsp;&middot;&nbsp; 1428 Market Ave. N., Canton, OH 44714 &nbsp;&middot;&nbsp; scottprivate@tagplanning.com
+  &copy; 2025 CSH Rentals &nbsp;&middot;&nbsp; 1428 Market Ave. N., Canton, OH 44714
 </footer>
 `;
 
