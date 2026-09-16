@@ -290,25 +290,25 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 .prop-card:hover .prop-card__btn{background:#0D1F35}
 
 /* ── P&L MODAL (wide for 12 columns) ── */
-.pl-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:12px}
+.pl-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:10px}
 .pl-modal__overlay{position:absolute;inset:0;background:rgba(5,15,30,.78);backdrop-filter:blur(4px)}
-.pl-modal__box{position:relative;background:#fff;border-radius:16px;width:100%;max-width:1200px;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.4)}
-.pl-modal__head{padding:18px 52px 16px 22px;background:#0a1628;border-radius:16px 16px 0 0;flex-shrink:0}
-.pl-modal__title{font-size:14px;font-weight:800;color:#fff;line-height:1.3}
-.pl-modal__period{font-size:11px;color:#c8962a;font-weight:700;margin-top:4px;letter-spacing:.1em;text-transform:uppercase}
-.pl-modal__close{position:absolute;top:13px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;color:rgba(255,255,255,.6);line-height:1;padding:4px 6px;transition:color .2s;border-radius:4px}
+.pl-modal__box{position:relative;background:#fff;border-radius:12px;width:100%;max-width:none;max-height:calc(100vh - 20px);display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.4)}
+.pl-modal__head{padding:9px 48px 8px 18px;background:#0a1628;border-radius:12px 12px 0 0;flex-shrink:0}
+.pl-modal__title{font-size:13px;font-weight:800;color:#fff;line-height:1.3}
+.pl-modal__period{font-size:10px;color:#c8962a;font-weight:700;margin-top:2px;letter-spacing:.1em;text-transform:uppercase}
+.pl-modal__close{position:absolute;top:6px;right:10px;background:none;border:none;font-size:22px;cursor:pointer;color:rgba(255,255,255,.6);line-height:1;padding:4px 6px;transition:color .2s;border-radius:4px}
 .pl-modal__close:hover{color:#fff;background:rgba(255,255,255,.1)}
-.pl-modal__body{overflow:auto;padding:18px;flex:1}
+.pl-modal__body{overflow:auto;padding:6px 12px 8px;flex:1;min-height:0}
 
 /* ── QuickBooks P&L Table ── */
-.pl-class-table{width:100%;border-collapse:collapse;font-size:12.5px;font-family:'Inter','Segoe UI',Arial,sans-serif}
+.pl-class-table{width:100%;border-collapse:collapse;font-size:11px;font-family:'Inter','Segoe UI',Arial,sans-serif}
 .pl-class-table thead tr{background:#0a1628}
-.pl-ct-th-lbl{text-align:left;padding:9px 10px;color:rgba(255,255,255,.7);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;min-width:130px;position:sticky;left:0;background:#0a1628;z-index:2}
-.pl-ct-th-val{text-align:right;padding:9px 8px;color:rgba(255,255,255,.7);font-size:11px;font-weight:700;letter-spacing:.08em;white-space:nowrap;min-width:90px}
-.pl-ct-th-tot{text-align:right;padding:9px 10px;color:#c8962a;font-size:11px;font-weight:800;letter-spacing:.08em;white-space:nowrap;min-width:100px}
-.pl-ct-section td{background:#1e3f68;color:#fff;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:8px 10px}
+.pl-ct-th-lbl{text-align:left;padding:5px 8px;color:rgba(255,255,255,.7);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;min-width:120px;position:sticky;left:0;background:#0a1628;z-index:2}
+.pl-ct-th-val{text-align:right;padding:5px 6px;color:rgba(255,255,255,.7);font-size:10px;font-weight:700;letter-spacing:.04em;white-space:nowrap;min-width:78px}
+.pl-ct-th-tot{text-align:right;padding:5px 8px;color:#c8962a;font-size:10px;font-weight:800;letter-spacing:.04em;white-space:nowrap;min-width:86px}
+.pl-ct-section td{background:#1e3f68;color:#fff;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:4px 8px}
 .pl-ct-section .pl-ct-lbl{position:sticky;left:0;background:#1e3f68;z-index:1}
-.pl-ct-group-hdr td{background:#f0f4fa;color:#5a6b85;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-bottom:1px solid rgba(10,30,60,.08)}
+.pl-ct-group-hdr td{background:#f0f4fa;color:#5a6b85;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-bottom:1px solid rgba(10,30,60,.08)}
 .pl-ct-group-hdr .pl-ct-lbl{position:sticky;left:0;background:#f0f4fa;z-index:1}
 .pl-ct-group td,.pl-ct-group .pl-ct-lbl{background:#fff}
 .pl-ct-group .pl-ct-lbl{position:sticky;left:0;z-index:1;font-weight:700;color:#0d1f35}
@@ -322,11 +322,20 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 .pl-ct-total .pl-ct-lbl{position:sticky;left:0;background:#e4ecf7;z-index:1}
 .pl-ct-noi td{background:#0a1628;color:#fff;font-weight:800}
 .pl-ct-noi .pl-ct-lbl{position:sticky;left:0;background:#0a1628;z-index:1;color:#fff}
-.pl-ct-noi .pl-ct-tot-col{color:#c8962a;font-size:14px;font-weight:900}
-.pl-ct-lbl{padding:7px 10px;text-align:left;white-space:nowrap;font-size:12.5px}
-.pl-ct-ind{padding-left:26px!important}
-.pl-ct-val{padding:7px 8px;text-align:right;white-space:nowrap;color:#0d1f35;font-variant-numeric:tabular-nums;font-size:12px}
-.pl-ct-tot-col{padding:7px 10px;text-align:right;white-space:nowrap;font-weight:800;font-variant-numeric:tabular-nums;font-size:12.5px;color:#0d1f35}
+.pl-ct-noi .pl-ct-tot-col{color:#c8962a;font-size:12px;font-weight:900}
+.pl-ct-lbl{padding:3px 8px;text-align:left;white-space:nowrap;font-size:11px}
+.pl-ct-ind{padding-left:20px!important}
+.pl-ct-val{padding:3px 6px;text-align:right;white-space:nowrap;color:#0d1f35;font-variant-numeric:tabular-nums;font-size:11px}
+.pl-ct-tot-col{padding:3px 8px;text-align:right;white-space:nowrap;font-weight:800;font-variant-numeric:tabular-nums;font-size:11px;color:#0d1f35}
+/* P&L horizontal scrollbar shown above the table */
+.pl-hscroll-top{overflow-x:auto;overflow-y:hidden;position:sticky;top:0;z-index:3;background:#fff;margin-bottom:4px;scrollbar-width:auto;scrollbar-color:#c8962a #e4ecf7}
+.pl-hscroll-top__inner{height:1px}
+.pl-hscroll-top::-webkit-scrollbar{height:14px}
+.pl-hscroll-top::-webkit-scrollbar-track{background:#e4ecf7;border-radius:7px}
+.pl-hscroll-top::-webkit-scrollbar-thumb{background:#c8962a;border-radius:7px;border:2px solid #e4ecf7}
+.pl-hscroll-top::-webkit-scrollbar-thumb:hover{background:#a67820}
+.pl-hscroll{overflow-x:auto;scrollbar-width:none}
+.pl-hscroll::-webkit-scrollbar{display:none}
 
 /* ── RENT ROLL MODAL ── */
 .rr-modal{position:fixed;inset:0;z-index:1001;display:flex;align-items:center;justify-content:center;padding:16px}
@@ -350,7 +359,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 .rr-table tfoot td{background:#0a1628;color:#fff;font-weight:800;padding:12px 12px;font-size:13.5px}
 .rr-table tfoot td:not(:first-child){text-align:right}
 .rr-rent-val{color:#c8962a;font-weight:800}
-.pl-modal__foot{padding:12px 22px;background:#f5f7fa;border-top:1px solid rgba(10,30,60,.08);border-radius:0 0 16px 16px;display:flex;justify-content:flex-end;flex-shrink:0}
+.pl-modal__foot{padding:6px 16px;background:#f5f7fa;border-top:1px solid rgba(10,30,60,.08);border-radius:0 0 12px 12px;display:flex;justify-content:flex-end;flex-shrink:0}
 .rr-modal__foot{padding:12px 22px 16px;background:#f5f7fa;border-top:1px solid rgba(10,30,60,.08);border-radius:0 0 16px 16px;display:flex;justify-content:flex-end;flex-shrink:0}
 .dl-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#c8962a;color:#0a1628;border:none;border-radius:8px;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:'Inter','Segoe UI',Arial,sans-serif;transition:background .2s,transform .15s}
 .dl-btn:hover{background:#dba83a;transform:translateY(-1px)}
@@ -491,6 +500,18 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
 
     var _currentPlYear = null;
 
+    function syncPlScroll() {
+      var top = plBody.querySelector('#pl-hscroll-top');
+      var wrap = plBody.querySelector('#pl-hscroll');
+      if (!top || !wrap) return;
+      top.firstChild.style.width = wrap.scrollWidth + 'px';
+      top.style.display = wrap.scrollWidth > wrap.clientWidth + 1 ? 'block' : 'none';
+      top.scrollLeft = wrap.scrollLeft;
+      top.onscroll = function() { if (wrap.scrollLeft !== top.scrollLeft) wrap.scrollLeft = top.scrollLeft; };
+      wrap.onscroll = function() { if (top.scrollLeft !== wrap.scrollLeft) top.scrollLeft = wrap.scrollLeft; };
+    }
+    window.addEventListener('resize', function() { if (plModal.style.display === 'flex') syncPlScroll(); });
+
     function openPLByProp(year) {
       _currentPlYear = year;
       var d = PL_TABLE[year];
@@ -507,7 +528,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
         return num < 0 ? '(' + s + ')' : s;
       }
       var propCount = d.cols.length - 1;
-      var html = '<div style="overflow-x:auto"><table class="pl-class-table"><thead><tr>';
+      var html = '<div class="pl-hscroll-top" id="pl-hscroll-top"><div class="pl-hscroll-top__inner"></div></div><div class="pl-hscroll" id="pl-hscroll"><table class="pl-class-table"><thead><tr>';
       html += '<th class="pl-ct-th-lbl"></th>';
       for (var ci = 0; ci < propCount; ci++) { html += '<th class="pl-ct-th-val">' + d.cols[ci] + '</th>'; }
       html += '<th class="pl-ct-th-tot">Total</th></tr></thead><tbody>';
@@ -529,6 +550,7 @@ csh-portfolio-nw{display:block;font-family:'Inter','Segoe UI',Arial,sans-serif;c
       html += '</tbody></table></div>';
       plBody.innerHTML = html;
       plModal.style.display = 'flex';
+      syncPlScroll();
     }
 
     function closePL() { plModal.style.display = 'none'; }
